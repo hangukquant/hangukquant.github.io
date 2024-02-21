@@ -190,6 +190,12 @@
   
     
     
+      
+  
+  
+  
+    
+    
       <li class="md-tabs__item">
         <a href="simulator/simulator/" class="md-tabs__link">
           
@@ -204,38 +210,7 @@
     
   
 
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="tutorials/" class="md-tabs__link">
-        
-  
     
-  
-  Tutorials
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="developer_guide/" class="md-tabs__link">
-        
-  
-    
-  
-  Developer Guide
-
-      </a>
-    </li>
   
 
       
@@ -345,9 +320,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#backtesting" class="md-nav__link">
+  <a href="#user-documentation-and-examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Backtesting
+      User Documentation and Examples
     </span>
   </a>
   
@@ -436,7 +411,7 @@
             
   
   <span class="md-ellipsis">
-    quantpylib.simulator
+    quantpylib
   </span>
   
 
@@ -445,6 +420,46 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            quantpylib
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    quantpylib.simulator
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
             <span class="md-nav__icon md-icon"></span>
             quantpylib.simulator
           </label>
@@ -569,43 +584,11 @@
     </li>
   
 
-    
+              
+            
+          </ul>
+        </nav>
       
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="tutorials/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tutorials
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="developer_guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Developer Guide
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -642,14 +625,8 @@ Sharing and distribution of any material taken herein is not allowed without exp
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
 <li><a href="#installation">Installation</a></li>
-<li>
-<p><a href="#getting-started">Getting Started</a></p>
-<p>1.1. <a href="#backtesting">Backtesting</a></p>
-<p>1.2. <a href="#no-code-backtesting">No-Code Backtesting</a></p>
-</li>
-<li>
-<p><a href="#running-tests">Running Tests</a></p>
-</li>
+<li><a href="#user-documentation-and-examples">User Documentation and Examples</a></li>
+<li><a href="#running-tests">Running Tests</a></li>
 </ol>
 <h2 id="installation">Installation</h2>
 <p>To install this library, users need to obtain access to the private <a href="https://github.com/hangukquant/quantpylib">Github repo</a> by leaving your Github id on our <a href="https://hangukquant.substack.com/p/hangukquant-community-github-repo">post</a> or directly requesting to be shortlisted (for unpaid readers) to HangukQuant by email (hangukquant@gmail.com).</p>
@@ -660,15 +637,17 @@ in the working directory with the <code>setup.py</code> Python script.</p>
 <p>To run our example scripts, you may run 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python3 -m pip install -r example_requirements.txt
 </code></pre></div></p>
-<h2 id="backtesting">Backtesting</h2>
+<h2 id="user-documentation-and-examples">User Documentation and Examples</h2>
+<p>Please refer to our user documentation and examples <a href="simulator/simulator/">here</a>.</p>
 <h2 id="running-tests">Running Tests</h2>
 <p>Our test suites can be run using the <code>pytest</code> framework. To run all tests, run 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python3 -m pytest quantpylib/tests 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python3 -m pip install pytest
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>python3 -m pytest quantpylib/tests 
 </code></pre></div>
 For more verbose test information, run
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python3 -m pytest quantpylib/tests -vs 
 </code></pre></div>
-You can choose only some module or script to test by specifying the path to the test suite
+You can choose specific modules or scripts to test by specifying the path to the test suite
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python3 -m pytest quantpylib/tests/simulator
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>python3 -m pytest quantpylib/tests/simulator/test_operators.py
 </code></pre></div>

@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quantpylib.simulator.alpha" class="md-skip">
+        <a href="#alpha" class="md-skip">
           Skip to content
         </a>
       
@@ -194,6 +194,14 @@
   
     
     
+      
+  
+  
+    
+  
+  
+    
+    
       <li class="md-tabs__item md-tabs__item--active">
         <a href="../simulator/" class="md-tabs__link">
           
@@ -208,38 +216,7 @@
     
   
 
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../tutorials/" class="md-tabs__link">
-        
-  
     
-  
-  Tutorials
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../developer_guide/" class="md-tabs__link">
-        
-  
-    
-  
-  Developer Guide
-
-      </a>
-    </li>
   
 
       
@@ -374,7 +351,7 @@
             
   
   <span class="md-ellipsis">
-    quantpylib.simulator
+    quantpylib
   </span>
   
 
@@ -383,6 +360,48 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            quantpylib
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    quantpylib.simulator
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1_1">
             <span class="md-nav__icon md-icon"></span>
             quantpylib.simulator
           </label>
@@ -458,16 +477,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quantpylib.simulator.alpha" class="md-nav__link">
-    <span class="md-ellipsis">
-      alpha
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quantpylib.simulator.alpha.Alpha" class="md-nav__link">
+  <a href="#alpha" class="md-nav__link">
     <span class="md-ellipsis">
       Alpha
     </span>
@@ -477,9 +487,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#quantpylib.simulator.alpha.Alpha.compute_forecasts" class="md-nav__link">
+  <a href="#quantpylib.simulator.alpha.BaseAlpha.__init__" class="md-nav__link">
     <span class="md-ellipsis">
-      compute_forecasts
+      __init__
     </span>
   </a>
   
@@ -494,25 +504,37 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quantpylib.simulator.alpha.BaseAlpha" class="md-nav__link">
+          <li class="md-nav__item">
+  <a href="#quantpylib.simulator.alpha.Alpha.compute_forecasts" class="md-nav__link">
     <span class="md-ellipsis">
-      BaseAlpha
+      compute_forecasts
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="BaseAlpha">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#quantpylib.simulator.alpha.BaseAlpha.__init__" class="md-nav__link">
+  <a href="#quantpylib.simulator.alpha.BaseAlpha.instantiate_eligibilities_and_strat_variables" class="md-nav__link">
     <span class="md-ellipsis">
-      __init__
+      instantiate_eligibilities_and_strat_variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.simulator.alpha.BaseAlpha.run_simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      run_simulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.simulator.alpha.BaseAlpha.get_performance_measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_performance_measures
     </span>
   </a>
   
@@ -618,43 +640,11 @@
     </li>
   
 
-    
+              
+            
+          </ul>
+        </nav>
       
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorials/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tutorials
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../developer_guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Developer Guide
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -676,260 +666,32 @@
 
   <h1>quantpylib.simulator.alpha</h1>
 
-<div class="doc doc-object doc-module">
+<p><a href="."><code>quantpylib.simulator.alpha</code></a> is our core backtesting module, and exposes multiple abstract 
+base classes that can be easily extended to implement your own custom trading strategies.
+<code>quantpylib.simulator.alpha.BaseAlpha</code> encodes the underlying backtest logic, and <a href=".#alpha"><code>quantpylib.simulator.alpha.Alpha</code></a> extends <code>BaseAlpha</code> and implements important features such that the user only has to write code for generating relative forecasts/signals. Position-sizing, risk-management, volatility targeting, PnL accounting and trade simulation is then handled by the backtest logic.</p>
+<p>In addition, we provide simple but powerful access to an assortment of performance metrics and hypothesis tests (monte carlo permutation tests) on any instance of the <code>BaseAlpha</code> object to test for strategy effectiveness.</p>
+<p>Users would likely only have to interact with the abstract <a href=".#alpha"><code>quantpylib.simulator.alpha.Alpha</code></a> class, and implement the<a href=".#quantpylib.simulator.alpha.Alpha.compute_forecasts"><code>compute_forecasts</code></a> and <a href=".#quantpylib.simulator.alpha.Alpha.compute_signals"><code>compute_signals</code></a> function in custom-classes that extend the <a href=".#alpha"><code>Alpha</code></a> class. Additionally, users may opt to use our automatic formulaic parser and use <a href="../gene/#geneticalpha"><code>quantpylib.simulator.gene.GeneticAlpha</code></a> that extends the <a href=".#alpha"><code>Alpha</code></a> class to opt for a no-code backtest by just encoding their trading strategy as a simple Python <code>str</code>, for which all the abstract functions would be automatically implemented.</p>
+<summary>
+Using the quantpylib.simulator.gene.GeneticAlpha is the simplest and recommended way of using our BaseAlpha and Alpha classes, as no additional code needs to be written. If the primitives supported by our gene module is not sufficient to encode your trading strategy, then the Alpha class should be sufficient for most needs. 
+</summary>
+
+<h2 id="alpha">Alpha</h2>
+<h3 class="doc doc-heading">
+    <code class="highlight language-python">
+    __init__
+    </code>
+</h3>
 
 
 
-<a id="quantpylib.simulator.alpha"></a>
+<div class="doc doc-object doc-function">
+
+
+
+
+<a id="quantpylib.simulator.alpha.BaseAlpha.__init__"></a>
   <div class="doc doc-contents first">
   
-      <p>quantpylib's core backtesting library.</p>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-<div class="doc doc-object doc-class">
-
-
-
-<h2 id="quantpylib.simulator.alpha.Alpha" class="doc doc-heading">
-          <code>Alpha</code>
-
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-          <p class="doc doc-class-bases">
-            Bases: <code><a class="autorefs autorefs-internal" title="quantpylib.simulator.alpha.BaseAlpha" href="#quantpylib.simulator.alpha.BaseAlpha">BaseAlpha</a></code></p>
-
-
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="quantpylib.simulator.alpha.Alpha.compute_forecasts" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">compute_forecasts</span><span class="p">(</span><span class="n">portfolio_i</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">eligibles_row</span><span class="p">)</span></code>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Computes forecasts for trading positions based on alpha signals and eligibility.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>portfolio_i</code></td>
-          <td>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Portfolio index.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>date</code></td>
-          <td>
-                <code><span title="datetime.datetime">datetime</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The date for which forecasts are to be computed.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>eligibles_row</code></td>
-          <td>
-                <code><span title="pandas.Series">Series</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A row from the eligibility dataframe.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>np.array: An array representing the forecasted trading positions.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="quantpylib.simulator.alpha.Alpha.compute_signals" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">compute_signals</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Computes unaligned signals for the Alpha trading strategy.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>index</code></td>
-          <td>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>An optional index to subset the data.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<details class="updates" open>
-  <summary>Updates</summary>
-  <p>self.pad_ffill_dfs: Updated with the computed alpha dataframe.</p>
-</details>
-  </div>
-
-</div>
-
-
-
-  </div>
-
-  </div>
-
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-<h2 id="quantpylib.simulator.alpha.BaseAlpha" class="doc doc-heading">
-          <code>BaseAlpha</code>
-
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-
-
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="quantpylib.simulator.alpha.BaseAlpha.__init__" class="doc doc-heading">
-          <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">trade_range</span><span class="p">,</span> <span class="n">instruments</span><span class="o">=</span><span class="p">[],</span> <span class="n">execrates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">commrates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">longswps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shortswps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dfs</span><span class="o">=</span><span class="p">{},</span> <span class="n">positional_inertia</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">portfolio_vol</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">currency_denomination</span><span class="o">=</span><span class="s1">&#39;USD&#39;</span><span class="p">)</span></code>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Initializes a BaseAlpha object.</p>
 
 
 
@@ -952,7 +714,7 @@
           <td>
             <div class="doc-md-description">
               <p>Trading date range (start_date, end_date) of tz-aware datetime.datetime objects.
-Example would be trade_range=(datetime(2000,1,1, tzinfo=pytz.utc),datetime.now(pytz.utc))</p>
+Example would be <code>trade_range=(datetime(2000,1,1, tzinfo=pytz.utc),datetime.now(pytz.utc))</code></p>
             </div>
           </td>
           <td>
@@ -1090,33 +852,459 @@ Example would be trade_range=(datetime(2000,1,1, tzinfo=pytz.utc),datetime.now(p
 
 <details class="notes" open>
   <summary>Notes</summary>
-  <p>execrates, commrates, longswps, shortswps are presented in decimals. execrates = [0.001, 0.005, ...] encodes
+  <p>execrates, commrates, longswps, shortswps are presented in decimals. <code>execrates = [0.001, 0.005, ...]</code> encodes
 that 0.1% of notional value transacted is deducted as execution costs. commrates specify commisions in the same 
 units (as percentage of notional value), as for overnight swap rates for both long and short positions.</p>
 </details>
   </div>
 
-</div>
+</div><summary>
+For the dfs dictionary passed into BaseAlpha objects, it should contain the DataFrames for all data required in the trading strategy.
+Minimally, dfs should contain key-value pair of (ticker:pd.DataFrame) with OHLCV data for PnL accounting. The pd.DataFrame objects provided should have timezone aware DatetimeIndex properties. For instance:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="s1">&#39;BRKB&#39;</span><span class="p">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>                                <span class="nb">open</span>      <span class="n">high</span>       <span class="n">low</span>        <span class="n">close</span>        <span class="n">adj_close</span> <span class="n">volume</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">datetime</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="mi">2000</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">03</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">1825.0000</span>  <span class="mf">1829.0000</span>  <span class="mf">1741.0000</span>  <span class="mf">1765.0000</span>    <span class="mf">35.3000</span>   <span class="mi">873500</span>     
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="mi">2000</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">04</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">1725.0000</span>  <span class="mf">1733.0000</span>  <span class="mf">1695.0000</span>  <span class="mf">1704.0000</span>    <span class="mf">34.0800</span>  <span class="mi">1380000</span>     
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="mi">2000</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">05</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">1707.0000</span>  <span class="mf">1773.0000</span>  <span class="mf">1695.0000</span>  <span class="mf">1732.0000</span>    <span class="mf">34.6400</span>   <span class="mi">997000</span>     
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="mi">2000</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">06</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">1745.0000</span>  <span class="mf">1804.0000</span>  <span class="mf">1727.0000</span>  <span class="mf">1804.0000</span>    <span class="mf">36.0800</span>   <span class="mi">917000</span>     
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="mi">2000</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">07</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">1830.0000</span>  <span class="mf">1848.0000</span>  <span class="mf">1805.0000</span>  <span class="mf">1820.0000</span>    <span class="mf">36.4000</span>  <span class="mi">1001500</span>     
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="o">...</span>                              <span class="o">...</span>        <span class="o">...</span>        <span class="o">...</span>        <span class="o">...</span>        <span class="o">...</span>      <span class="o">...</span>     
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="mi">2009</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">24</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">3281.9999</span>  <span class="mf">3295.9899</span>  <span class="mf">3274.9999</span>  <span class="mf">3286.9999</span>    <span class="mf">65.7400</span>   <span class="mi">607600</span>     
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="mi">2009</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">28</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">3279.9999</span>  <span class="mf">3289.9999</span>  <span class="mf">3274.9999</span>  <span class="mf">3285.3699</span>    <span class="mf">65.7074</span>  <span class="mi">1080250</span>     
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="mi">2009</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">29</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">3284.9999</span>  <span class="mf">3289.6899</span>  <span class="mf">3269.9999</span>  <span class="mf">3279.9999</span>    <span class="mf">65.6000</span>  <span class="mi">1105300</span>     
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="mi">2009</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">30</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">3282.9999</span>  <span class="mf">3289.6499</span>  <span class="mf">3279.9999</span>  <span class="mf">3289.6499</span>    <span class="mf">65.7930</span>   <span class="mi">560350</span>     
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="mi">2009</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">31</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">3289.9999</span>  <span class="mf">3300.9899</span>  <span class="mf">3279.9999</span>  <span class="mf">3285.9999</span>    <span class="mf">65.7200</span>   <span class="mi">972900</span> 
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">}</span> 
+</code></pre></div>
+</summary>
+
+<h3 class="doc doc-heading">
+    <code class="highlight language-python">
+    compute_signals
+    </code>
+    <span class="doc doc-labels">
+        <small class="doc doc-label doc-label-async"><code>async, abstract</code>
+        </small>
+    </span>
+</h3>
+
 
 
 <div class="doc doc-object doc-function">
 
 
 
-<h3 id="quantpylib.simulator.alpha.BaseAlpha.hypothesis_tests" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">hypothesis_tests</span><span class="p">(</span><span class="n">num_decision_shuffles</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">num_data_shuffles</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
 
+<a id="quantpylib.simulator.alpha.Alpha.compute_signals"></a>
+  <div class="doc doc-contents first">
+  
+      <p>Abstract function that should be implemented in child-class extending the <code>Alpha</code> class.
+This is where users can manipulate the dataframes in <code>dfs</code> dict passed by accessing 
+<code>self.dfs</code> to compute useful metrics such as technical indicators.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>index</code></td>
+          <td>
+                <code><span title="pandas.DatetimeIndex">DatetimeIndex</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>trade_range specified at daily granularity.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div><h3 class="doc doc-heading">
+    <code class="highlight language-python">
+    compute_forecasts
+    </code>
+    <span class="doc doc-labels">
+        <small class="doc doc-label doc-label-async"><code>abstract</code>
+        </small>
+    </span>
 </h3>
 
 
-  <div class="doc doc-contents ">
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<a id="quantpylib.simulator.alpha.Alpha.compute_forecasts"></a>
+  <div class="doc doc-contents first">
+  
+      <p>Abstract function that should be implemented in child-class extending the <code>Alpha</code> class.
+Computes relative forecasts for <code>self.instruments</code> on <code>date</code>.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>portfolio_i</code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of days passed between date and backtest start.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>date</code></td>
+          <td>
+                <code><span title="datetime.datetime.datetime">datetime</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The date for which forecasts are to be computed.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>eligibles_row</code></td>
+          <td>
+                <code><span title="numpy.ndarray">ndarray</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>An array mask of length <code>len(self.instruments)</code>
+that acts as a bit mask for eligible trading universe.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="numpy.array">array</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>An array representing the relative forecasts for each of instruments in <code>self.instruments</code> with length <code>len(self.instruments)</code>.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+<details class="note" open>
+  <summary>Note</summary>
+  <p>It is not required for the forecasts to be indicative of the number of contracts the strategy should trade.
+The values in the returned array need only be indicative of the relative strength in the signal forecast.
+For instance, <code>[-1, 1, 1.5]</code> means we want to be as short the first instrument as we are long the second instrument,
+and we want to be longer by a factor of 1.5 in the third instrument as we are in the second instrument.
+Position sizing in the underlying contracts are dealt with automatically in the backtest engine using volatility 
+targeting at the instrument and strategy level. <code>np.nan</code>, <code>np.inf</code> values are treated as zero.</p>
+</details>
+  </div>
+
+</div><h3 class="doc doc-heading">
+    <code class="highlight language-python">
+    instantiate_eligibilities_and_strat_variables
+    </code>
+</h3>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<a id="quantpylib.simulator.alpha.BaseAlpha.instantiate_eligibilities_and_strat_variables"></a>
+  <div class="doc doc-contents first">
+  
+      <p>This is where the child class can instantiate object attributes that can be used in the <code>compute_forecasts</code>
+function. Optional to implement. <code>eligiblesdf</code> is the default bit mask DataFrame encoding trading universe on 
+each date in <code>trade_range</code>, but it may be modified in an overriding method to use a different universe set throughout the backtest. </p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>eligiblesdf</code></td>
+          <td>
+                <code><span title="pandas.DataFrame">DataFrame</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Bit mask DataFrame. Value of 1 means the instrument is eligible to be considered 
+for trading on given date, and value of 0 means not eligible. Computed based on the market data given in <code>self.dfs</code>.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="pandas.DataFrame">DataFrame</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>eligiblesdf is returned to the caller, and is used as the updated (if modified) bit-mask. If the function is not 
+implemented, the default <code>eligiblesdf</code> is used.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+<details class="note" open>
+  <summary>Note</summary>
+  <p>This function is optional to implement. The default implemention is a one-liner returning <code>eligiblesdf</code>.</p>
+</details>
+  </div>
+
+</div><p>The remaining functions are not abstract and no further implementation is required or warranted.</p>
+<h3 class="doc doc-heading">
+    <code class="highlight language-python">
+    run_simulation
+    </code>
+    <span class="doc doc-labels">
+        <small class="doc doc-label doc-label-async"><code>async</code>
+        </small>
+    </span>
+</h3>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<a id="quantpylib.simulator.alpha.BaseAlpha.run_simulation"></a>
+  <div class="doc doc-contents first">
+  
+      <p>Runs the entire backtest. Should only be called after concrete implementation of <code>compute_signals</code> and <code>compute_forecasts</code>.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>verbose</code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>(boolean, optional) flag to print out backtest simulation information at runtime.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="pandas.DataFrame">DataFrame</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>a DataFrame containing backtest statistics. Contains information about contracts held throughtout the backtest,
+portfolio weights, portfolio leverage, nominal exposusure, execution costs, commissions, swaps, PnL, portfolio capital and so on.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div><h3 class="doc doc-heading">
+    <code class="highlight language-python">
+    get_performance_measures
+    </code>
+</h3>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<a id="quantpylib.simulator.alpha.BaseAlpha.get_performance_measures"></a>
+  <div class="doc doc-contents first">
+  
+      <p>Computes the performance metrics for the trading strategy.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A dictionary containing various performance metrics:</p>
+<ul>
+<li>"cum_ret": Cumulative returns over time.</li>
+<li>"log_ret": Logarithmic returns.</li>
+<li>"max_dd": Maximum drawdown.</li>
+<li>"1y_roll_dd": One-year rolling drawdown.</li>
+<li>"1y_roll_max_dd": One-year rolling maximum drawdown.</li>
+<li>"sortino": Sortino ratio.</li>
+<li>"sharpe": Sharpe ratio.</li>
+<li>"mean_ret": Mean return per annum.</li>
+<li>"median_ret": Median return per annum.</li>
+<li>"stdev_ret": Standard deviation of returns per annum.</li>
+<li>"var_ret": Variance of returns per annum.</li>
+<li>"skew_ret": Skewness of returns.</li>
+<li>"kurt_exc": Excess kurtosis of returns.</li>
+<li>"cagr": Compound annual growth rate.</li>
+<li>"3y_roll_cagr": Three-year rolling compound annual growth rate.</li>
+<li>"3y_roll_calmar": Three-year rolling Calmar ratio.</li>
+<li>"omega(0)": Omega ratio.</li>
+<li>"ulcer": Ulcer index.</li>
+<li>"VaR95": Value at Risk at 95% confidence level.</li>
+<li>"cVaR95": Conditional Value at Risk at 95% confidence level.</li>
+<li>"gain_to_pain": Gain-to-pain ratio.</li>
+<li>"w_summary": Summary statistics of weights.</li>
+<li>"directionality": Market long bias directionality.</li>
+<li>"parity_distance": Distance from a 1/n equal weight portfolio.</li>
+</ul>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div><h3 class="doc doc-heading">
+    <code class="highlight language-python">
+    hypothesis_tests
+    </code>
+    <span class="doc doc-labels">
+        <small class="doc doc-label doc-label-async"><code>async</code>
+        </small>
+    </span>
+</h3>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<a id="quantpylib.simulator.alpha.BaseAlpha.hypothesis_tests"></a>
+  <div class="doc doc-contents first">
   
       <p>Conducts monte carlo permutation p-value hypothesis tests on the performance of the 
-trading strategy represented by BaseAlpha object.</p>
+trading strategy represented by the object instance.</p>
 
 
 
@@ -1152,7 +1340,7 @@ trading strategy represented by BaseAlpha object.</p>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Number of data shuffles for permutation tests. Default is 10.</p>
+              <p>Number of data shuffles for permutation tests. Default is 10 (computationally expensive).</p>
             </div>
           </td>
           <td>
@@ -1168,45 +1356,29 @@ trading strategy represented by BaseAlpha object.</p>
   <table>
     <thead>
       <tr>
-<th>Name</th>        <th>Type</th>
+        <th>Type</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
         <tr>
-<td><code>dict</code></td>          <td>
+          <td>
+                <code>dict</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>A dictionary containing the results of hypothesis tests.
-Keys:
-    - 'timer_p': p-value from asset-timing test shuffling time-series asset returns.
-    - 'picker_p': p-value from asset-picking shuffler test shuffling cross-sectional asset returns.
-    - 'trader_p1': p-value from decision-making test shuffling time-series and cross-sectional asset returns.
-    - 'trader_p2': p-value from decision-making test obtained from shuffling market data.</p>
+              <p>A dictionary containing the results of hypothesis tests.</p>
+<ul>
+<li>'timer_p': p-value from asset-timing test that shuffles time-series asset returns.</li>
+<li>'picker_p': p-value from asset-picking shuffler test that shuffles cross-sectional asset returns.</li>
+<li>'trader_p1': p-value from decision-making test that shuffles both time-series and cross-sectional asset returns.</li>
+<li>'trader_p2': p-value from decision-making test that shuffles market data.</li>
+</ul>
             </div>
           </td>
         </tr>
     </tbody>
   </table>
-
-  </div>
-
-</div>
-
-
-
-  </div>
-
-  </div>
-
-
-</div>
-
-
-
-
-  </div>
 
   </div>
 

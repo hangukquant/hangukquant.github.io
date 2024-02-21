@@ -12,8 +12,6 @@
         <link rel="prev" href="../operators/">
       
       
-        <link rel="next" href="../../tutorials/">
-      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
@@ -194,6 +192,14 @@
   
     
     
+      
+  
+  
+    
+  
+  
+    
+    
       <li class="md-tabs__item md-tabs__item--active">
         <a href="../simulator/" class="md-tabs__link">
           
@@ -208,38 +214,7 @@
     
   
 
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../tutorials/" class="md-tabs__link">
-        
-  
     
-  
-  Tutorials
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../developer_guide/" class="md-tabs__link">
-        
-  
-    
-  
-  Developer Guide
-
-      </a>
-    </li>
   
 
       
@@ -374,7 +349,7 @@
             
   
   <span class="md-ellipsis">
-    quantpylib.simulator
+    quantpylib
   </span>
   
 
@@ -383,6 +358,48 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            quantpylib
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    quantpylib.simulator
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1_1">
             <span class="md-nav__icon md-icon"></span>
             quantpylib.simulator
           </label>
@@ -561,43 +578,11 @@
     </li>
   
 
-    
+              
+            
+          </ul>
+        </nav>
       
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorials/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tutorials
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../developer_guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Developer Guide
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -731,41 +716,44 @@
   <table>
     <thead>
       <tr>
-<th>Name</th>        <th>Type</th>
+        <th>Type</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
         <tr>
-<td><code>dict</code></td>          <td>
+          <td>
+                <code>dict</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>A dictionary containing various performance metrics:
-- "cum_ret": Cumulative returns over time.
-- "log_ret": Logarithmic returns.
-- "max_dd": Maximum drawdown.
-- "1y_roll_dd": One-year rolling drawdown.
-- "1y_roll_max_dd": One-year rolling maximum drawdown.
-- "sortino": Sortino ratio.
-- "sharpe": Sharpe ratio.
-- "mean_ret": Mean return per annum.
-- "median_ret": Median return per annum.
-- "stdev_ret": Standard deviation of returns per annum.
-- "var_ret": Variance of returns per annum.
-- "skew_ret": Skewness of returns.
-- "kurt_exc": Excess kurtosis of returns.
-- "cagr": Compound annual growth rate.
-- "3y_roll_cagr": Three-year rolling compound annual growth rate.
-- "3y_roll_calmar": Three-year rolling Calmar ratio.
-- "omega(0)": Omega ratio.
-- "ulcer": Ulcer index.
-- "VaR95": Value at Risk at 95% confidence level.
-- "cVaR95": Conditional Value at Risk at 95% confidence level.
-- "gain_to_pain": Gain-to-pain ratio.
-- "w_summary": Summary statistics of weights.
-- "directionality": Market lopg bias directionality.
-- "parity_distance": Distance from a 1/n equal weight portfolio.</p>
+              <p>A dictionary containing various performance metrics:</p>
+<ul>
+<li>"cum_ret": Cumulative returns over time.</li>
+<li>"log_ret": Logarithmic returns.</li>
+<li>"max_dd": Maximum drawdown.</li>
+<li>"1y_roll_dd": One-year rolling drawdown.</li>
+<li>"1y_roll_max_dd": One-year rolling maximum drawdown.</li>
+<li>"sortino": Sortino ratio.</li>
+<li>"sharpe": Sharpe ratio.</li>
+<li>"mean_ret": Mean return per annum.</li>
+<li>"median_ret": Median return per annum.</li>
+<li>"stdev_ret": Standard deviation of returns per annum.</li>
+<li>"var_ret": Variance of returns per annum.</li>
+<li>"skew_ret": Skewness of returns.</li>
+<li>"kurt_exc": Excess kurtosis of returns.</li>
+<li>"cagr": Compound annual growth rate.</li>
+<li>"3y_roll_cagr": Three-year rolling compound annual growth rate.</li>
+<li>"3y_roll_calmar": Three-year rolling Calmar ratio.</li>
+<li>"omega(0)": Omega ratio.</li>
+<li>"ulcer": Ulcer index.</li>
+<li>"VaR95": Value at Risk at 95% confidence level.</li>
+<li>"cVaR95": Conditional Value at Risk at 95% confidence level.</li>
+<li>"gain_to_pain": Gain-to-pain ratio.</li>
+<li>"w_summary": Summary statistics of weights.</li>
+<li>"directionality": Market long bias directionality.</li>
+<li>"parity_distance": Distance from a 1/n equal weight portfolio.</li>
+</ul>
             </div>
           </td>
         </tr>
