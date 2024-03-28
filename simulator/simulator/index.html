@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -598,6 +598,117 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    quantpylib.throttler
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            quantpylib.throttler
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../throttler/throttler/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.throttler
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../throttler/rate_semaphore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.throttler.rate_semaphore
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../throttler/decorators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.throttler.decorators
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -633,7 +744,7 @@
 <p>This page describes how you may use our <code>quantpylib.simulator</code> module and the functionalities exposed by our APIs. This module provides comprehensive backtesting functionality and statistical tools to analyse your own trading strategies. The core backtesting engine is made available via the <a href="../alpha/"><code>quantpylib.simulator.alpha</code></a> module's <a href="../alpha/#alpha"><code>Alpha</code></a> class, which leverages in-house statistical packages such as monte-carlo permutation hypothesis tests and performance metrics computation.
 This feature is further enhanced by our evaluator-parser in the <a href="../gene/"><code>quantpylib.simulator.gene</code></a> module's <a href="../gene/#gene"><code>Gene</code></a> class, which is leveraged by the <a href="../gene/#geneticalpha"><code>GeneticAlpha</code></a> class to bring simple, efficient, accurate and no-code 'batteries-included' backtesting functionality.</p>
 <p>A high-level walkthrough of the individual quant packages are presented in this page. Comprehensive documentation may be found in the respective pages. To follow along, make sure you have installed the necessary <a href="../../#installation">dependencies</a>.
-Code example scripts are also provided in the repo. Suppose we would like to test some trading strategy ideas, as well as run some tests and performance metrics on them. The trading stratefies may be encoded via the succinct rules as follows:
+Code example scripts are also provided in the repo. Suppose we would like to test some trading strategy ideas, as well as run some tests and performance metrics on them. The trading strategies may be encoded via the succinct rules as follows:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">example1</span><span class="o">=</span><span class="s2">&quot;ls_10/90(mult(div(minus(low,close),minus(high,low)),div(open,close)))&quot;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">example2</span><span class="o">=</span><span class="s2">&quot;ls_10/90(neg(mean_5(csrank(div(logret_5(),volatility_12())))))&quot;</span> 
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">example3</span><span class="o">=</span><span class="s2">&quot;mac_50/100(close)&quot;</span>
@@ -944,7 +1055,7 @@ We also get access to <a href="../alpha/#quantpylib.simulator.alpha.BaseAlpha.hy
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
       
     
   </body>
