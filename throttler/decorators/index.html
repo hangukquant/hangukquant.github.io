@@ -667,6 +667,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#quantpylib.throttler.decorators.consume_credits" class="md-nav__link">
+    <span class="md-ellipsis">
+      consume_credits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quantpylib.throttler.decorators.wrap_in_thread" class="md-nav__link">
     <span class="md-ellipsis">
       wrap_in_thread
@@ -933,6 +942,160 @@ If the timeout occurs after the coroutine has acquired the semaphore,
 this warning will not be seen but the <code>asyncio.TimeoutError</code> will still 
 be thrown.</p>
 </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="quantpylib.throttler.decorators.consume_credits" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">consume_credits</span><span class="p">(</span><span class="n">_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">costs</span><span class="p">,</span> <span class="n">refund_in</span><span class="p">,</span> <span class="n">attrname</span><span class="o">=</span><span class="s1">&#39;rate_semaphore&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Decorator to wrap an synchronous instance-level method as an synchronous transaction within a rate-limited semaphore.
+The return value is the return value of the decorated method.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>_func</code></td>
+          <td>
+                <code>callable</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The method to be wrapped.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>costs</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of credits required for the transaction.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>refund_in</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The time in seconds after which the credits should be refunded.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>attrname</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The attribute name to access the RateSemaphore belonging to the object instance. Defaults to "rate_semaphore".</p>
+            </div>
+          </td>
+          <td>
+                <code>&#39;rate_semaphore&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>verbose</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Whether to print verbose transaction information. Defaults to True.</p>
+            </div>
+          </td>
+          <td>
+                <code>True</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>any</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The return value of the decorated method.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>AssertionError</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>If the instance does not have the specified attribute or if costs is less than 0.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
   </div>
 
 </div>
