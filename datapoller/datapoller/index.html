@@ -12,7 +12,7 @@
         <link rel="prev" href="../../throttler/decorators/">
       
       
-        <link rel="next" href="../utils/">
+        <link rel="next" href="../master/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -145,6 +145,45 @@
       <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     
     
   </nav>
@@ -728,10 +767,124 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#walkthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      Walkthrough
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Walkthrough">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safe-throttling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safe-Throttling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-ohlcv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get OHLCV
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-tick-historical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Tick Historical
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Fundamentals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-exchange-universe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Exchange Universe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streaming-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Streaming Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Queries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.master
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -749,6 +902,132 @@
   
   <span class="md-ellipsis">
     quantpylib.datapoller.utils
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.base
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crypto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.crypto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../currencies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.currencies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.equities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exchange/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.exchange
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metadata/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.metadata
   </span>
   
 
@@ -874,27 +1153,6 @@
             quantpylib.wrappers
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../wrappers/wrappers/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.wrappers
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -1087,21 +1345,25 @@
 <p>In general, a trader may have requirements for different asset-class/categories of financial data, subscriptions to 
 multiple data sources, with each data source supporting a subset of the asset-class universe. Each data source 
 has its own endpoints, parameters, rate-restrictions and authentication flow - the datapoller abstracts these concerns 
-to provide a seamless interface for data retrieval. </p>
+to provide a seamless interface for data retrieval while attempting to maximize throughput. </p>
 <p>Each datapoller is derived from the base <code>quantpylib.datapoller.base.BasePoller</code> class and implements a set of methods,
 and routs the requests to the specified data source and endpoints. The supported data sources are written as wrappers 
 on the <a href="../../wrappers/wrappers"><code>quantpylib.wrappers</code></a> module, and their supported endpoints share the same function name
 as in the datapollers. 
-The different datapollers are accessible via the master data polling class, given in <code>quantpylib.datapoller.datapoller.Datapoller</code> object instance.
-For instance, if we would like to get trade bars using the <code>quantpylib.datapoller.equities.Equities.get_trade_bars</code>,
-we can do so by creating a <code>obj = DataPoller(...)</code> instance, and calling <code>obj.equities.get_trade_bars(...,src="oanda")</code>.
+The different datapollers are accessible via the master data polling class, given in <code>quantpylib.datapoller.master.Datapoller</code> object instance.
+For instance, if we would like to get trade bars using the <code>quantpylib.datapoller.currencies.Currencies.get_trade_bars</code>,
+we can do so by creating a <code>obj = DataPoller(...)</code> instance, and calling <code>obj.currencies.get_trade_bars(...,src="oanda")</code>.
 The function call is only valid if it is supported by both the datapoller and the datasource, which we can check by their matching 
-function signatures.</p>
-<p>Note that each of the datasource wrappers are also designed to be available for use as standalone Python-SDKs.</p>
-<p>Since the different endpoints may take in different 
-parameter specifications (such as start time of OHLCV historical request in YYYY-MM-DD vs unix-timestamp), the library
-provides a unified standard that convert between these specifications.</p>
-<p>Supported datapollers and datasources are added and updated frequently.</p>
+function signatures. In general each datasource has its own parameters to the vendor-specific endpoint, as well as different
+specifications (such as start time of OHLCV historical request in YYYY-MM-DD vs unix-timestamp), so the library
+provides a unified standard that convert between these specifications. In additional, the datapoller take in flexible arguments 
+to support the different configurations for each external API - it would alot easier to understand through the given examples.</p>
+<p>Note that each of the datasource wrappers are also designed to be available for use as standalone Python-SDKs.
+Supported datapollers and datasources are added and updated frequently.</p>
+<p>To understand the valid function signatures of each datapoller, we need to understand the function’s decorator-type, 
+which is indicated <code>@poller</code> or <code>@ts_poller</code> in the documentation, and is defined in <a href="../utils"><code>quantpylib.datapoller.utils</code></a> module for polling or time-series polling respectively. 
+The default arguments are supplied through these decorators, which also provide parameter-standardization and parameter-guessing 
+for vendor/source-unique specifications. Source-specific arguments are documented in its corresponding data-wrapper.</p>
 
   
 
@@ -1121,7 +1383,447 @@ provides a unified standard that convert between these specifications.</p>
 
   </div>
 
-</div>
+</div><p>We now walkthrough how to construct a valid datapolling request and construct valid parameters to our datapollers for the various datasources. Note that the various endpoints and their matching 
+function name-signatures can be easily looked up in the search-bar (top right):
+<img alt="alt text" src="../../archives/search_bar.png" /></p>
+<p>We need more data sources, more data pollers and more data endpoints to support. If there is a particular functionality 
+you would like documented or implemented, please feel free to reach out to me @ hangukquant@gmail.com or submit a Github issue. Cheers.</p>
+<h2 id="walkthrough">Walkthrough</h2>
+<p>Supposed we are interested in getting some OHLC(V) data for equities.
+From our <a href="../../wrappers/wrappers"><code>quantpylib.wrappers</code></a> library, we see that the datasources supported with equities data is <code>eodhd</code> and <code>yfinance</code>.
+Suppose we have no API access to <code>eodhd</code>, so we will make a request through 
+the <code>yfinance</code> library. To see what endpoints are available 
+in the <code>equities</code> datapoller, we can just look at the <a href="../equities">documentation page</a> - the sidebar has a summary,
+which we see has a <a href="../equities#quantpylib.datapoller.equities.Equities.get_trade_bars"><code>get_trade_bars</code></a> method.
+The arguments are not specified, but it is tagged
+<code>@ts_poller</code>, which means the arguments to supply are 
+given by decorators, documented <a href="../utils/#quantpylib.datapoller.utils.ts_poller">here</a>.
+The augmented arguments are <code>ticker</code>, <code>start</code>, <code>end</code>, <code>periods</code>
+<code>granularity</code>, <code>granularity_multiplier</code> and <code>src</code>.
+We shall provide <code>ticker</code>, <code>start</code>, <code>periods</code> and <code>src</code> to make our request, and let the rest settle to default arguments.</p>
+<p>We already have the keys in our <code>.env</code> file in the current working directory, and we will make the following imports
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">os</span> 
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">load_dotenv</span><span class="p">()</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kn">from</span> <span class="nn">quantpylib.datapoller.master</span> <span class="kn">import</span> <span class="n">DataPoller</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">keys</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="s2">&quot;yfinance&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="s2">&quot;eodhd&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EOD_KEY&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="s2">&quot;binance&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="s2">&quot;phemex&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="s2">&quot;oanda&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;practice&quot;</span><span class="p">,</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;OANDA_ACC&quot;</span><span class="p">),</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;OANDA_KEY&quot;</span><span class="p">)),</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="s2">&quot;coinbase&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">}</span>
+</code></pre></div>
+We just instantiate a master datapoller with our keys, access the equities <code>get_trade_bars</code> method and specify <code>src="yfinance"</code>, like this:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">datapoller</span> <span class="o">=</span> <span class="n">DataPoller</span><span class="p">(</span><span class="n">config_keys</span><span class="o">=</span><span class="n">keys</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">df</span> <span class="o">=</span> <span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">get_trade_bars</span><span class="p">(</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;AAPL&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">start</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">periods</span><span class="o">=</span><span class="mi">365</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">src</span><span class="o">=</span><span class="s2">&quot;yfinance&quot;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+This gives us a year-worth of data for the year 2000~2001:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>                               open      high       low     close     volume
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>datetime                                                                    
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>2000-01-03 00:00:00-05:00  0.792742  0.850379  0.768648  0.846127  535796800
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>2000-01-04 00:00:00-05:00  0.818254  0.836206  0.764869  0.774790  512377600
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>2000-01-05 00:00:00-05:00  0.784238  0.835733  0.778569  0.786128  778321600
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>2000-01-06 00:00:00-05:00  0.802191  0.808805  0.718098  0.718098  767972800
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>2000-01-07 00:00:00-05:00  0.729436  0.763452  0.721878  0.752113  460734400
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>...                             ...       ...       ...       ...        ...
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>2000-12-22 00:00:00-05:00  0.213539  0.226768  0.213539  0.226768  318052000
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>2000-12-26 00:00:00-05:00  0.224878  0.226768  0.215429  0.222044  216815200
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>2000-12-27 00:00:00-05:00  0.216846  0.223933  0.214484  0.223933  325466400
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>2000-12-28 00:00:00-05:00  0.217319  0.225823  0.216374  0.223933  305177600
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>2000-12-29 00:00:00-05:00  0.222044  0.226768  0.219209  0.224878  630336000
+</code></pre></div>
+Now if we were to specify <code>end=datetime(2000,1,1)</code> instead
+of <code>start=datetime(2000,1,1)</code>, then 
+we will have data from 1999~2000. Or we can just specify 
+the <code>start</code>,<code>end</code> directly, which means we can exclude the 
+<code>periods</code> parameter, like this:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">get_trade_bars</span><span class="p">(</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;AAPL&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">start</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">end</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">src</span><span class="o">=</span><span class="s2">&quot;yfinance&quot;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">)</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+to get 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>                                open       high        low      close     volume
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>datetime                                                                        
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>2000-01-03 00:00:00-05:00   0.792742   0.850379   0.768648   0.846127  535796800
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>2000-01-04 00:00:00-05:00   0.818254   0.836206   0.764869   0.774790  512377600
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>2000-01-05 00:00:00-05:00   0.784238   0.835734   0.778569   0.786128  778321600
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>2000-01-06 00:00:00-05:00   0.802191   0.808805   0.718097   0.718097  767972800
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>2000-01-07 00:00:00-05:00   0.729436   0.763452   0.721878   0.752113  460734400
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>...                              ...        ...        ...        ...        ...
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>2019-12-24 00:00:00-05:00  69.250147  69.298799  68.819601  69.147980   48478800
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>2019-12-26 00:00:00-05:00  69.281768  70.536927  69.252580  70.519897   93121200
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>2019-12-27 00:00:00-05:00  70.814237  71.507495  70.084495  70.493149  146266000
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>2019-12-30 00:00:00-05:00  70.410455  71.196148  69.379088  70.911545  144114400
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>2019-12-31 00:00:00-05:00  70.524783  71.436962  70.425051  71.429665  100805600
+</code></pre></div>
+Under the hood, we are mapping the parameters to 
+the <a href="../../wrappers/yfinance/#quantpylib.wrappers.yfinance.YFinance.get_trade_bars"><code>quantpylib.wrappers.yfinance.YFinance.get_trade_bars</code></a> method. You may use this as a standalone SDK,
+but the parameters are alot more rigid. With the master datapoller, we can provide any 2 of the 3 of <code>start</code>, <code>end</code>, and <code>periods</code>.
+But <code>yfinance</code> does not support too many endpoints, and is also 
+not stable, albeit free. Suppose we have an API key for 
+<code>eodhd</code>, we don't need to change much code:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">get_trade_bars</span><span class="p">(</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;AAPL&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">start</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">end</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">)</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>                open      high       low     close  adjusted_close     volume
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>datetime                                                                     
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>2000-01-03  104.8768  112.5040  101.6848  111.9328          0.8461  535796800
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>2000-01-04  108.2480  110.6224  101.1920  102.5024          0.7748  512377600
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>2000-01-05  103.7456  110.5664  102.9952  104.0032          0.7862  778321600
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>2000-01-06  106.1200  107.0048   94.9984   94.9984          0.7181  767972800
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>2000-01-07   96.4992  101.0016   95.5024   99.5008          0.7521  460734400
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>...              ...       ...       ...       ...             ...        ...
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>2024-03-28  171.7500  172.2300  170.5100  171.4800        171.4800   65672700
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>2024-04-01  171.1900  171.2500  169.4800  170.0300        170.0300   46240500
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>2024-04-02  169.0800  169.3400  168.2300  168.8400        168.8400   49329500
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>2024-04-03  168.7900  170.6800  168.5800  169.6500        169.6500   47602100
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>2024-04-04  170.2900  171.9200  168.8200  168.8200        168.8200   53289969
+</code></pre></div>
+Actually we don't even need <code>src="eodhd"</code>, the equities datapoller
+has that as its default, and the <code>@ts_poller</code> decorator is capable of guessing some parameters. This of course routs the request to <a href="../../wrappers/eodhd/#quantpylib.wrappers.eodhd.Eodhd.get_trade_bars"><code>quantpylib.wrappers.eodhd.Eodhd.get_trade_bars</code></a>. Different from the <code>yfinance</code> wrapper's <code>get_trade_bars</code> endpoint, there is an additional parameter
+<code>exchange="US"</code>, that is specific to the <code>eodhd</code> REST API.
+They have parameters to identify which asset with the same 
+ticker the client is referring to, but this nomenclature is unique to this particular vendor. This parameter is actually also 
+guessed by the <code>@ts_poller</code> decorator, but if we know precisely
+what we want, we should pass it in as arguments, as we may guess
+wrongly - here is an example of <code>AAPL</code> on the US and Mexican exchanges:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">get_trade_bars</span><span class="p">(</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;AAPL&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="n">start</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">end</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">exchange</span><span class="o">=</span><span class="s2">&quot;US&quot;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">)</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">df</span> <span class="o">=</span> <span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">get_trade_bars</span><span class="p">(</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;AAPL&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="n">start</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    <span class="n">end</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    <span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="n">exchange</span><span class="o">=</span><span class="s2">&quot;MX&quot;</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="p">)</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+giving
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>                open      high       low     close  adjusted_close     volume
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>datetime                                                                     
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>2000-01-03  104.8768  112.5040  101.6848  111.9328          0.8461  535796800
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>2000-01-04  108.2480  110.6224  101.1920  102.5024          0.7748  512377600
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>2000-01-05  103.7456  110.5664  102.9952  104.0032          0.7862  778321600
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>2000-01-06  106.1200  107.0048   94.9984   94.9984          0.7181  767972800
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>2000-01-07   96.4992  101.0016   95.5024   99.5008          0.7521  460734400
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>...              ...       ...       ...       ...             ...        ...
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>2024-03-28  171.7500  172.2300  170.5100  171.4800        171.4800   65672700
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>2024-04-01  171.1900  171.2500  169.4800  170.0300        170.0300   46240500
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>2024-04-02  169.0800  169.3400  168.2300  168.8400        168.8400   49329500
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>2024-04-03  168.7900  170.6800  168.5800  169.6500        169.6500   47602100
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>2024-04-04  170.2900  171.9200  168.8200  168.8200        168.8200   53289969
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>[6102 rows x 6 columns]
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>                 open       high        low      close  adjusted_close   volume
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>datetime                                                                       
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>2004-12-20   704.4184   704.4184   694.5484   697.9980         11.0377   722401
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>2004-12-21   702.4780   704.4996   702.4780   703.8080         11.1296  1804322
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>2004-12-27   705.1688   705.1688   705.1688   705.1688         11.1511   140000
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>2005-01-05   738.7380   738.7380   738.7380   738.7380         11.6819    14560
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>2005-03-07   471.2496   471.2496   471.2496   471.2496         14.9041   266000
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>...               ...        ...        ...        ...             ...      ...
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>2024-03-27  2846.0000  2874.9900  2842.0000  2874.4299       2874.4299     1941
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>2024-04-01  2873.0000  2873.0000  2819.3500  2827.2100       2827.2100    16860
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>2024-04-02  2808.0000  2813.6900  2792.5000  2799.7800       2799.7800    23005
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>2024-04-03  2798.0000  2829.9900  2798.0000  2810.0000       2810.0000     7258
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>2024-04-04  2810.0000  2839.9900  2800.0000  2807.0300       2807.0300     3685
+</code></pre></div>
+The best is no-guessing, where you specify the source-specific parameters explicitly. For example, this would raise Exception:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>df = datapoller.equities.get_trade_bars(
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    ticker=&quot;BTC-USD&quot;,
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    start=datetime(2000,1,1),
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    end=datetime(2020,1,1),
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    src=&quot;eodhd&quot;
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>)
+</code></pre></div>
+but if you change the request using <code>crypto</code> poller
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>df = datapoller.crypto.get_trade_bars(
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    ticker=&quot;BTC-USD&quot;,
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    start=datetime(2000,1,1),
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    end=datetime(2020,1,1),
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    src=&quot;eodhd&quot;
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>)
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>print(df)
+</code></pre></div>
+we get
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>                    open          high           low         close  adjusted_close       volume
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>datetime                                                                                       
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>2010-07-17      0.049510      0.049510      0.049510      0.049510        0.049510            0
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>2010-07-18      0.049510      0.049510      0.049510      0.049510        0.049510            0
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>2010-07-19      0.085840      0.085840      0.085840      0.085840        0.085840            0
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>2010-07-20      0.080800      0.080800      0.080800      0.080800        0.080800            0
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>2010-07-21      0.074740      0.074740      0.074740      0.074740        0.074740            0
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>...                  ...           ...           ...           ...             ...          ...
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>2024-03-31  69647.779030  71377.779498  69624.868677  71333.647926    71333.647926  20050941373
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>2024-04-01  71333.484717  71342.091454  68110.696020  69702.146113    69702.146113  34873527352
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>2024-04-02  69705.024322  69708.381258  64586.594304  65446.974233    65446.974233  50705240709
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>2024-04-03  65446.671764  66914.322564  64559.899948  65980.808650    65980.808650  34488018367
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>2024-04-04  65975.696667  69291.254806  65113.796534  68508.841844    68508.841844  34439527442
+</code></pre></div>
+The purpose of the <code>@ts_poller</code> adds a layer of complexity, but it's purpose is to both be extremely flexible in the arguments the methods takes in, to generalize to arbitrary data-sources,
+while still providing the simplest possible unified-interface
+at the user-level by routing to the correct wrapper's endpoint.
+In fact, if we knew how they were routed, some 'wrong' calls
+actually work:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>df = datapoller.equities.get_trade_bars(
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    ticker=&quot;BTC-USD&quot;,
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    start=datetime(2000,1,1),
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    end=datetime(2020,1,1),
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    src=&quot;eodhd&quot;,
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    exchange=&quot;CC&quot;
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>)
+</code></pre></div>
+this works because even though we are using the <code>equities</code> datapoller, we specified the <code>CC</code> exchange which maps to the 
+crypto asset class in the <code>eodhd</code> vendor. Of course, we do not 
+recommend such workarounds. Note that additional arguments to otherwise valid requests are simply ignored - this request is valid:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>df = datapoller.crypto.get_trade_bars(
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    ticker=&quot;BTC-USD&quot;,
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    start=datetime(2000,1,1),
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    end=datetime(2020,1,1),
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    src=&quot;eodhd&quot;,
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    gibberish=&quot;gibberish&quot;
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>)
+</code></pre></div>
+Let's make a request to a <code>@poller</code> method, such as 
+the <a href="../equities/#quantpylib.datapoller.equities.Equities.get_ticker_fundamentals"><code>quantpylib.datapoller.equities.get_ticker_fundamentals</code></a>. The <a href="../utils/#quantpylib.datapoller.utils.poller"><code>@poller</code></a> only asks for the <code>src</code> parameter, 
+while <code>get_ticker_fundamentals</code> asks for a <code>ticker</code> parameter, so we can do
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">df</span><span class="o">=</span><span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">get_ticker_fundamentals</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;AAPL&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span><span class="p">)</span>
+</code></pre></div>
+that routs to the <a href="../../wrappers/eodhd/#quantpylib.wrappers.eodhd.Eodhd.get_ticker_fundamentals"><code>eodhd</code> wrapper</a>.
+Everything else is the same.</p>
+<h3 id="safe-throttling">Safe-Throttling</h3>
+<p>As far as possible, when the specified endpoint specifies rate-limits, rapid submission of requests are sent-through 
+to the data-vendor as quickly as possible, while respecting the
+rate-limits. This is done by using our custom semaphore-like logic,
+defined in the <a href="../../throttler/rate_semaphore"><code>quantpylib.throttler.rate_semaphore</code></a>.
+This is specific to each data-vendor, and each instance of the wrapper around 
+our data-source has its own resource-pool. This design is to maximise throughput of user-requests, and is supported in both asynchronous and synchronous methods. All requests submitted to a specific datasource with 
+throttle-support will be paced, with support for multi-threading or coroutines. For instance, suppose we do
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">import</span> <span class="nn">threading</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kn">import</span> <span class="nn">requests</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    <span class="k">def</span> <span class="nf">raw</span><span class="p">():</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>        <span class="n">response</span><span class="o">=</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://eodhd.com/api/fundamentals/AAPL.US?api_token=</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;EOD_KEY&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&amp;fmt=json&quot;</span><span class="p">)</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">429</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;TooManyTooFast&quot;</span><span class="p">)</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>        <span class="k">else</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="hll">    <span class="n">req</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span><span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">get_ticker_fundamentals</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;AAPL&quot;</span><span class="p">)</span>
+</span><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="hll">    <span class="n">threads</span><span class="o">=</span><span class="p">[</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">raw</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">())</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">)]</span>
+</span><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="hll">    <span class="c1"># req=lambda:datapoller.equities.get_ticker_fundamentals(ticker=&quot;AAPL&quot;)</span>
+</span><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="hll">    <span class="c1"># threads=[threading.Thread(target=req,args=()) for i in range(500)]</span>
+</span><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>    <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span> <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>    <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span> <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+</code></pre></div>
+The raw, multi-threaded request will eventually get rejected by the server with a <code>429 TooManyRequests</code> code, while if we try:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># req=lambda:datapoller.equities.get_ticker_fundamentals(ticker=&quot;AAPL&quot;)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c1"># threads=[threading.Thread(target=raw,args=()) for i in range(500)]</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">req</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span><span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">get_ticker_fundamentals</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;AAPL&quot;</span><span class="p">)</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="n">threads</span><span class="o">=</span><span class="p">[</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">req</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">())</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">)]</span>
+</code></pre></div>
+the application will gracefully pace the execution of multiple threads and 
+not crash.</p>
+<h2 id="examples">Examples</h2>
+<p>A number of examples are given.
+This would be the setup:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">import</span> <span class="nn">os</span> 
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kn">import</span> <span class="nn">asyncio</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="n">load_dotenv</span><span class="p">()</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="kn">from</span> <span class="nn">quantpylib.datapoller.master</span> <span class="kn">import</span> <span class="n">DataPoller</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="n">keys</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>    <span class="s2">&quot;yfinance&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>    <span class="s2">&quot;eodhd&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EOD_KEY&quot;</span><span class="p">),</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>    <span class="s2">&quot;binance&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>    <span class="s2">&quot;phemex&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>    <span class="s2">&quot;oanda&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;practice&quot;</span><span class="p">,</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;OANDA_ACC&quot;</span><span class="p">),</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;OANDA_KEY&quot;</span><span class="p">)),</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>    <span class="s2">&quot;coinbase&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="p">}</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="n">datapoller</span> <span class="o">=</span> <span class="n">DataPoller</span><span class="p">(</span><span class="n">config_keys</span><span class="o">=</span><span class="n">keys</span><span class="p">)</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>    <span class="k">pass</span> <span class="c1">#code here</span>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div></p>
+<h3 id="get-ohlcv">Get OHLCV</h3>
+<p>Let's get OHLCV for crypto, currencies and equities.
+We get <code>AAPL</code>, <code>EUR_USD</code>, <code>BTCUSDT</code> OHLCV data from 
+the <code>equities</code>, <code>currencies</code> and <code>crypto</code> datapoller 
+using source <code>eodhd</code>, <code>oanda</code> and <code>binance</code> respectively.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">df1</span><span class="o">=</span><span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">get_trade_bars</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;AAPL&quot;</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span><span class="n">granularity</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">df2</span><span class="o">=</span><span class="n">datapoller</span><span class="o">.</span><span class="n">currencies</span><span class="o">.</span><span class="n">get_trade_bars</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;EUR_USD&quot;</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span><span class="n">granularity</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;oanda&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="n">df3</span><span class="o">=</span><span class="n">datapoller</span><span class="o">.</span><span class="n">crypto</span><span class="o">.</span><span class="n">get_trade_bars</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span><span class="n">granularity</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;binance&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="n">df3</span><span class="p">)</span>
+</code></pre></div>
+We can go for other data-granularities:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">df</span><span class="o">=</span><span class="n">datapoller</span><span class="o">.</span><span class="n">currencies</span><span class="o">.</span><span class="n">get_trade_bars</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;EUR_USD&quot;</span><span class="p">,</span><span class="n">granularity</span><span class="o">=</span><span class="s2">&quot;h&quot;</span><span class="p">,</span><span class="n">granularity_multiplier</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;oanda&quot;</span><span class="p">)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+and we get 4-hour candles:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>                              <span class="nb">open</span>     <span class="n">high</span>      <span class="n">low</span>    <span class="n">close</span>  <span class="n">volume</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">datetime</span>                                                             
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span> <span class="mi">22</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">1.12124</span>  <span class="mf">1.12246</span>  <span class="mf">1.12124</span>  <span class="mf">1.12209</span>     <span class="mi">673</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span> <span class="mi">02</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">1.12206</span>  <span class="mf">1.12247</span>  <span class="mf">1.12010</span>  <span class="mf">1.12044</span>     <span class="mi">700</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span> <span class="mi">06</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">1.12044</span>  <span class="mf">1.12140</span>  <span class="mf">1.12013</span>  <span class="mf">1.12032</span>    <span class="mi">2392</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span> <span class="mi">10</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">1.12034</span>  <span class="mf">1.12039</span>  <span class="mf">1.11830</span>  <span class="mf">1.11966</span>    <span class="mi">2610</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span> <span class="mi">14</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">1.11962</span>  <span class="mf">1.12030</span>  <span class="mf">1.11636</span>  <span class="mf">1.11700</span>    <span class="mi">4887</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="o">...</span>                            <span class="o">...</span>      <span class="o">...</span>      <span class="o">...</span>      <span class="o">...</span>     <span class="o">...</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="mi">2024</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">04</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">1.08587</span>  <span class="mf">1.08620</span>  <span class="mf">1.08319</span>  <span class="mf">1.08374</span>   <span class="mi">13217</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="mi">2024</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">04</span> <span class="mi">21</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">1.08401</span>  <span class="mf">1.08441</span>  <span class="mf">1.08350</span>  <span class="mf">1.08416</span>    <span class="mi">9891</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="mi">2024</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">05</span> <span class="mi">01</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">1.08416</span>  <span class="mf">1.08431</span>  <span class="mf">1.08234</span>  <span class="mf">1.08264</span>    <span class="mi">7608</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="mi">2024</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">05</span> <span class="mi">05</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">1.08263</span>  <span class="mf">1.08464</span>  <span class="mf">1.08226</span>  <span class="mf">1.08376</span>    <span class="mi">9345</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="mi">2024</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">05</span> <span class="mi">09</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mf">1.08374</span>  <span class="err">`</span><span class="mf">1.08422</span>  <span class="mf">1.08350</span>  <span class="mf">1.08393</span>    <span class="mi">1436</span>
+</code></pre></div>
+The datapoller routs to the <code>oanda</code> wrapper, and because Oanda places a limit of candles per request, given your polling-period and granularity desired, there may be multiple requests to 
+the Oanda REST API server to stitch together the non-overlapping periods. This is the advantage of our <code>datapoller</code> and <code>wrapper</code> interface - the user does not have to concern themselves with the source-specific limitations.</p>
+<h3 id="get-tick-historical">Get Tick Historical</h3>
+<p>Some endpoints support historical data. <code>eodhd</code> has support for 
+tick data on the US-listed common-stocks.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">ticks</span><span class="o">=</span><span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">get_trade_ticks</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;META&quot;</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">ticks</span><span class="p">)</span>
+</code></pre></div>
+We get:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>     ex mkt   price      seq  shares    sl sub_mkt             ts
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>0     Q   K  211.00    77001       5  @ TI          1680508800013
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>1     Q   K  211.42    77002       1  @ TI          1680508800013
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>2     Q   K  210.99    77124      10  @ TI          1680508800017
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>3     Q   K  211.42    77125       7  @ TI          1680508800017
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>4     Q   K  211.42    77127      30  @ TI          1680508800017
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>...  ..  ..     ...      ...     ...   ...     ...            ...
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>2071  Q   Q  210.00  3635409      59  @FTI          1680523180411
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>2072  Q   Q  210.00  3635410      41  @FTI          1680523180411
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>2073  Q   K  210.00  3636017     800  @FT           1680523181713
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>2074  Q   Q  210.00  3636650      20  @FTI          1680523184200
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>2075  Q   K  210.00  3637810      27  @FTI          1680523185877
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>[2076 rows x 8 columns]
+</code></pre></div></p>
+<h3 id="get-fundamentals">Get Fundamentals</h3>
+<p>Some assets and datasources support fundamental data. We could 
+get fundamental data for Goldman Sachs and Ethereum like this:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">f1</span><span class="o">=</span><span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">get_ticker_fundamentals</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;GS&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span><span class="p">)</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="n">f2</span><span class="o">=</span><span class="n">datapoller</span><span class="o">.</span><span class="n">crypto</span><span class="o">.</span><span class="n">get_ticker_fundamentals</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;ETH-USD&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+<h3 id="get-exchange-universe">Get Exchange Universe</h3>
+<p>We might also be interested in getting the listed set of tickers for 
+a data vendor or exchange. In the case of <code>eodhd</code>, a data vendor, 
+they support multiple exchanges. We can type in the search-bar (top right) 
+for the endpoint <code>get_tickers_in_exchange</code>, and we see <code>binance</code>, <code>eodhd</code>
+and <code>oanda</code> support this endpoint through the <code>exchange</code> datapoller.
+We can see that the <code>eodhd</code> <a href="../../wrappers/eodhd/#quantpylib.wrappers.eodhd.Eodhd.get_tickers_in_exchange">endpoint</a> takes in an <code>exchange</code> parameter,
+so we can ask for their US-listed stocks as follows:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">tickers</span> <span class="o">=</span> <span class="n">datapoller</span><span class="o">.</span><span class="n">exchange</span><span class="o">.</span><span class="n">get_tickers_in_exchange</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s2">&quot;US&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span><span class="p">)</span>
+</code></pre></div>
+On the other hand Binance is already an exchange, so looking at their <a href="../../wrappers/binance/#quantpylib.wrappers.binance.Binance.get_tickers_in_exchange">endpoint</a>, we see that no additional argument is required, so we can do the route by (same for <code>oanda</code>) 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">tickers</span> <span class="o">=</span> <span class="n">datapoller</span><span class="o">.</span><span class="n">exchange</span><span class="o">.</span><span class="n">get_tickers_in_exchange</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;binance&quot;</span><span class="p">)</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="n">tickers</span> <span class="o">=</span> <span class="n">datapoller</span><span class="o">.</span><span class="n">exchange</span><span class="o">.</span><span class="n">get_tickers_in_exchange</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;oanda&quot;</span><span class="p">)</span>
+</code></pre></div>
+Note that the return type from these endpoints are mostly not-standardized, and no have fixed schema, except for the
+<code>get_trade_bars</code> and common methods. This is a point for improvement that we are hoping contributors can come in,
+as we need the manpower!</p>
+<h3 id="streaming-data">Streaming Data</h3>
+<p>We are capable of streaming market data in an extremely simple interface.
+This is interfaced by an asynchronous method in the datapoller in question,
+and all streamed data is stored in the objects' <code>stream_buffer</code> attribute,
+which is a <code>collections.defaultdict</code> object with <code>deque</code> as the buffer
+for each streamed datapoint.</p>
+<p>We can see that both <code>eodhd</code> and <code>currencies</code> support it, so we can make request:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">await</span> <span class="n">datapoller</span><span class="o">.</span><span class="n">currencies</span><span class="o">.</span><span class="n">stream_market_data</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;EURUSD&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span><span class="p">)</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">datapoller</span><span class="o">.</span><span class="n">currencies</span><span class="o">.</span><span class="n">stream_buffer</span><span class="p">[</span><span class="s2">&quot;EURUSD&quot;</span><span class="p">])</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+and we can print the instance of the <code>stream_buffer</code> anytime we want, which maintains the current
+stream state. The length of <code>stream_buffer</code> is controlled by the object instantiation for any
+datapoller instance, see <a href="../base/"><code>quantpylib.datapoller.base.BasePoller</code></a>. The first two iterations
+give:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>deque([], maxlen=1000000000)
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>deque([{&#39;s&#39;: &#39;EURUSD&#39;, &#39;a&#39;: 1.0835, &#39;b&#39;: 1.0834, &#39;dc&#39;: &#39;-0.0379&#39;, &#39;dd&#39;: &#39;-0.0004&#39;, &#39;ppms&#39;: False, &#39;t&#39;: 1712331637066}, {&#39;s&#39;: &#39;EURUSD&#39;, &#39;a&#39;: 1.0835, &#39;b&#39;: 1.0834, &#39;dc&#39;: &#39;-0.0378&#39;, &#39;dd&#39;: &#39;-0.0004&#39;, &#39;ppms&#39;: False, &#39;t&#39;: 1712331637140}, {&#39;s&#39;: &#39;EURUSD&#39;, &#39;a&#39;: 1.0835, &#39;b&#39;: 1.0834, &#39;dc&#39;: &#39;-0.0377&#39;, &#39;dd&#39;: &#39;-0.0004&#39;, &#39;ppms&#39;: False, &#39;t&#39;: 1712331637278}, 
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>    {&#39;s&#39;: &#39;EURUSD&#39;, &#39;a&#39;: 1.0835, &#39;b&#39;: 1.0834, &#39;dc&#39;: &#39;-0.0393&#39;, &#39;dd&#39;: &#39;-0.0004&#39;, &#39;ppms&#39;: False, &#39;t&#39;: 1712331637844}, {&#39;s&#39;: &#39;EURUSD&#39;, &#39;a&#39;: 1.0835, &#39;b&#39;: 1.0834, &#39;dc&#39;: &#39;-0.0383&#39;, &#39;dd&#39;: &#39;-0.0004&#39;, &#39;ppms&#39;: False, &#39;t&#39;: 1712331637948}, {&#39;s&#39;: &#39;EURUSD&#39;, &#39;a&#39;: 1.0835, &#39;b&#39;: 1.0834, &#39;dc&#39;: &#39;-0.0374&#39;, &#39;dd&#39;: &#39;-0.0004&#39;, &#39;ppms&#39;: False, &#39;t&#39;: 1712331638154}, 
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>    {&#39;s&#39;: &#39;EURUSD&#39;, &#39;a&#39;: 1.0836, &#39;b&#39;: 1.0835, &#39;dc&#39;: &#39;-0.0306&#39;, &#39;dd&#39;: &#39;-0.0003&#39;, &#39;ppms&#39;: False, &#39;t&#39;: 1712331638426}, {&#39;s&#39;: &#39;EURUSD&#39;, &#39;a&#39;: 1.0835, &#39;b&#39;: 1.0835, &#39;dc&#39;: &#39;-0.028&#39;, &#39;dd&#39;: &#39;-0.0003&#39;, &#39;ppms&#39;: False, &#39;t&#39;: 1712331638445}, {&#39;s&#39;: &#39;EURUSD&#39;, &#39;a&#39;: 1.0835, &#39;b&#39;: 1.0835, &#39;dc&#39;: &#39;-0.028&#39;, &#39;dd&#39;: &#39;-0.0003&#39;, &#39;ppms&#39;: False, &#39;t&#39;: 1712331638725}, {&#39;s&#39;: &#39;EURUSD&#39;, &#39;a&#39;: 1.0835, &#39;b&#39;: 1.0835, &#39;dc&#39;: &#39;-0.032&#39;, &#39;dd&#39;: &#39;-0.0003&#39;, &#39;ppms&#39;: False, &#39;t&#39;: 1712331638748}, {&#39;s&#39;: &#39;EURUSD&#39;, &#39;a&#39;: 1.0835, &#39;b&#39;: 1.0835, &#39;dc&#39;: &#39;-0.0283&#39;, &#39;dd&#39;: &#39;-0.0003&#39;, &#39;ppms&#39;: False, &#39;t&#39;: 1712331639048}], maxlen=1000000000)
+</code></pre></div>
+It gets too large afterwards to display here, but we will see that each iteration contains more data.
+Of course, you can stream the same assets from different data sources, different assets from the same data source,
+and so on...all of these are valid:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">await</span> <span class="n">datapoller</span><span class="o">.</span><span class="n">currencies</span><span class="o">.</span><span class="n">stream_market_data</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;EURUSD&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="k">await</span> <span class="n">datapoller</span><span class="o">.</span><span class="n">currencies</span><span class="o">.</span><span class="n">stream_market_data</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;EUR_USD&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;oanda&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="k">await</span> <span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">stream_market_data</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;AAPL&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="k">await</span> <span class="n">datapoller</span><span class="o">.</span><span class="n">crypto</span><span class="o">.</span><span class="n">stream_market_data</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;BTC-USD&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">datapoller</span><span class="o">.</span><span class="n">currencies</span><span class="o">.</span><span class="n">stream_buffer</span><span class="p">[</span><span class="s2">&quot;EURUSD&quot;</span><span class="p">])</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">datapoller</span><span class="o">.</span><span class="n">currencies</span><span class="o">.</span><span class="n">stream_buffer</span><span class="p">[</span><span class="s2">&quot;EUR_USD&quot;</span><span class="p">])</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">stream_buffer</span><span class="p">[</span><span class="s2">&quot;AAPL&quot;</span><span class="p">])</span>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">datapoller</span><span class="o">.</span><span class="n">crypto</span><span class="o">.</span><span class="n">stream_buffer</span><span class="p">[</span><span class="s2">&quot;BTC-USD&quot;</span><span class="p">])</span>
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+Once we are done, we can close all of the streams. Note that the <code>await</code> lines above are executed one-after-another,
+to call concurrently, we can use <code>gather</code>, which we demonstrate in using for closing the streams:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>    <span class="o">*</span><span class="p">[</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>        <span class="n">datapoller</span><span class="o">.</span><span class="n">currencies</span><span class="o">.</span><span class="n">close_market_data_stream</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;EURUSD&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span><span class="p">),</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>        <span class="n">datapoller</span><span class="o">.</span><span class="n">currencies</span><span class="o">.</span><span class="n">close_market_data_stream</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;EUR_USD&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;oanda&quot;</span><span class="p">),</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>        <span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">close_market_data_stream</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;AAPL&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span><span class="p">),</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>        <span class="n">datapoller</span><span class="o">.</span><span class="n">crypto</span><span class="o">.</span><span class="n">close_market_data_stream</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;BTC-USD&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span><span class="p">)</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>    <span class="p">]</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="p">)</span>
+</code></pre></div></p>
+<h3 id="queries">Queries</h3>
+<p>Some data vendors provide a functionality to input some string or alternatively
+formatted specification into their search engine.
+This is provided in the <a href="../metadata/#quantpylib.datapoller.metadata.Metadata.query_engine"><code>quantpylib.datapoller.metadata.query_engine</code></a>
+method:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">query</span> <span class="o">=</span> <span class="n">datapoller</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">query_engine</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;AAPL&quot;</span><span class="p">)</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</code></pre></div>
+gives us
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>      Code Exchange                                               Name          Type  ... Currency          ISIN previousClose  previousCloseDate
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>0     AAPL       US                                          Apple Inc  Common Stock  ...      USD  US0378331005      168.8200         2024-04-04
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>1     AAPL       BA                                      Apple Inc DRC  Common Stock  ...      ARS  US0378331005     8925.5000         2024-04-04
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>2     AAPL       MX                                          Apple Inc  Common Stock  ...      MXN  US0378331005     2807.0300         2024-04-04
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>3     AAPL      NEO                                      Apple Inc CDR  Common Stock  ...      CAD  CA03785Y1007       25.0400         2024-04-04
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>4     AAPL       SN                                          Apple Inc  Common Stock  ...      USD  US0378331005      170.5200         2024-04-04
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>5   AAPL34       SA                                          Apple Inc  Common Stock  ...      BRL  BRAAPLBDR004       42.8200         2024-04-04
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>6     AAPU       US  Direxion Shares ETF Trust - Direxion Daily AAP...           ETF  ...      USD  US25461A8743       21.9100         2024-04-04
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>7     AAPD       US  Direxion Shares ETF Trust - Direxion Daily AAP...           ETF  ...      USD  US25461A3041       23.0400         2024-04-04
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>8     APLY       US           YieldMax AAPL Option Income Strategy ETF           ETF  ...      USD  US88634T8577       16.5600         2024-04-04
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>9     3SAP       PA                                   Granite -3x AAPL           ETF  ...      EUR  XS2193970030       26.9500         2024-04-04
+<a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a>10    APLY      NEO              APPLE (AAPL) Yield Shares Purpose ETF           ETF  ...      CAD          None       22.7000         2024-04-04
+<a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>11    3LAP       PA                                   Granite +3x AAPL           ETF  ...      EUR  XS2193969883       18.4260         2024-04-04
+<a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a>12    SALE      LSE  Leverage Shares 3x Short Apple (AAPL) ETP Secu...           ETF  ...      EUR  XS2472334742        2.9949         2024-04-04
+<a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a>13    3SAA    XETRA               Leverage Shares -3x Short Apple AAPL           ETF  ...      EUR  XS2472334742        2.9892         2024-04-04
+<a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a>14    AAPY       US       Kurv Yield Premium Strategy Apple (AAPL) ETF           ETF  ...      USD          None       23.3839         2024-04-04
+</code></pre></div></p>
 
 
 

@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../datapoller/">
+        <link rel="prev" href="../master/">
       
       
-        <link rel="next" href="../../standards/standards/">
+        <link rel="next" href="../base/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -145,6 +145,45 @@
       <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     
     
   </nav>
@@ -696,6 +735,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../master/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.master
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -771,6 +831,132 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.base
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crypto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.crypto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../currencies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.currencies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.equities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exchange/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.exchange
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metadata/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.metadata
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -892,27 +1078,6 @@
             quantpylib.wrappers
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../wrappers/wrappers/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.wrappers
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -1114,7 +1279,7 @@
   
       <p>Decorator for instance level methods of <code>quantpylib.datapoller.base.BasePoller</code> objects. 
 Let the object be given the variable name <code>poller_obj</code>, then decorated instance level methods 
-have augmented default arguments **kwargs with following key-pairs:</p>
+have augmented default arguments <code>**kwargs</code> with following key-pairs:</p>
 <p>Specs:</p>
 <div class="highlight"><pre><span></span><code>src (string): Data source we want to poll for. Defaults to `poller_obj.default_src`.
 </code></pre></div>
@@ -1205,7 +1370,7 @@ have augmented default arguments **kwargs with following key-pairs:</p>
   
       <p>Decorator for instance level methods of <code>quantpylib.datapoller.base.BasePoller</code> objects. 
 Let the object be given the variable name <code>poller_obj</code>, then decorated instance level methods 
-have augmented default arguments **kwargs with following key-pairs:</p>
+have augmented default arguments <code>**kwargs</code> with following key-pairs:</p>
 <p>Specs:</p>
 <div class="highlight"><pre><span></span><code>ticker (str): The identifier for the time-series of interest. Defaults to None.
 start (datetime.datetime): The start time of the time-series being polled. Defaults to None.
@@ -1331,7 +1496,7 @@ src (string): Data source we want to poll for. Defaults to `poller_obj.default_s
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Whether to assert the validity of time span arguments. Defaults to True.</p>
+              <p>Whether to assert the validity of time span arguments. If <code>True</code>, exactly two of <code>start</code>, <code>end</code>, and <code>periods</code> must be specified. Defaults to <code>True</code>.</p>
             </div>
           </td>
           <td>
@@ -1345,7 +1510,7 @@ src (string): Data source we want to poll for. Defaults to `poller_obj.default_s
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Whether to automatically map (<code>start</code>,<code>end</code>,<code>periods</code>,<code>granularity</code>,<code>granularity_multiplier</code>) into time span arguments. Defaults to True.</p>
+              <p>Whether to automatically map (<code>start</code>,<code>end</code>,<code>periods</code>,<code>granularity</code>,<code>granularity_multiplier</code>) into time span arguments. Defaults to <code>True</code>.</p>
             </div>
           </td>
           <td>
