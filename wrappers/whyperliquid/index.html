@@ -1790,7 +1790,7 @@ We got:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">keep_book_state</span><span class="p">()</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">book</span> <span class="o">=</span> <span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">get_book</span><span class="p">()</span>
 </code></pre></div>
-Any successful calls to <code>get_book</code> does not incur network trips and maintains a copy of the account positions.
+Any succeeding calls to <code>get_book</code> does not incur network trips and maintains a copy of the account positions.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>defaultdict(&lt;function Hyperliquid.get_book.&lt;locals&gt;.&lt;lambda&gt; at 0x10d4316c0&gt;, {&#39;SOL&#39;: Decimal(&#39;-2070.0&#39;), ...})
 </code></pre></div></p>
 <h3 id="stream-l2-order-book-data">Stream L2-Order Book Data</h3>
