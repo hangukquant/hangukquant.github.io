@@ -1303,7 +1303,7 @@
 
 
 <h2 id="quantpylib.simulator.performance.performance_measures" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">performance_measures</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">FOLDER_STRUCTURE</span><span class="o">.</span><span class="n">images_dir</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">performance_measures</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">periods_in_year</span><span class="o">=</span><span class="mi">252</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">FOLDER_STRUCTURE</span><span class="o">.</span><span class="n">images_dir</span><span class="p">)</span></code>
 
 </h2>
 
@@ -1351,6 +1351,20 @@
           </td>
           <td>
               <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>periods_in_year</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of time periods in a year for the granularity of return series passed in. Defaults to 252, the number of trading days in a year.</p>
+            </div>
+          </td>
+          <td>
+                <code>252</code>
           </td>
         </tr>
         <tr>

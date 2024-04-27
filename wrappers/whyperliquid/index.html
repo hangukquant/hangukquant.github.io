@@ -1451,6 +1451,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.whyperliquid.Hyperliquid.get_trade_bars" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_trade_bars
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.wrappers.whyperliquid.Hyperliquid.init_threaded_ws_manager" class="md-nav__link">
     <span class="md-ellipsis">
       init_threaded_ws_manager
@@ -1628,18 +1637,19 @@ order-submission. The endpoints have been implemented on a need-to basis by user
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">load_dotenv</span><span class="p">()</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kn">from</span> <span class="nn">quantpylib.wrappers.whyperliquid</span> <span class="kn">import</span> <span class="n">Hyperliquid</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">hyp</span> <span class="o">=</span> <span class="n">Hyperliquid</span><span class="p">(</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="n">address</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;HYP_PUBLIC&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="n">hyp_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;HYP_KEY&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="p">)</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="c1">#...examples go here</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="kn">import</span> <span class="nn">asyncio</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kn">from</span> <span class="nn">quantpylib.standards</span> <span class="kn">import</span> <span class="n">Period</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kn">from</span> <span class="nn">quantpylib.wrappers.whyperliquid</span> <span class="kn">import</span> <span class="n">Hyperliquid</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="n">hyp</span> <span class="o">=</span> <span class="n">Hyperliquid</span><span class="p">(</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="n">address</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;HYP_PUBLIC&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="n">hyp_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;HYP_KEY&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="p">)</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="c1">#...examples go here</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="kn">import</span> <span class="nn">asyncio</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div></p>
 <h3 id="get-candles-l2-snapshot">Get Candles, L2-Snapshot</h3>
 <p>Let us get candles for <code>BTC</code> on <code>15m</code> intervals for the past hour:
@@ -1675,150 +1685,200 @@ we get:
 <a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>  ...
 <a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>]
 </code></pre></div>
-What about a snapshot of the order-book?
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>    <span class="n">res</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">l2_snapshot</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;BTC&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">pprint</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+What about OHLCV?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">get_trade_bars</span><span class="p">(</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>        <span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;BTC&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="n">start</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">),</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="n">end</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="n">granularity</span><span class="o">=</span><span class="n">Period</span><span class="o">.</span><span class="n">DAILY</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="n">granularity_multiplier</span><span class="o">=</span><span class="mi">1</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+we get
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>              close     high      low     open       volume
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>datetime                                                   
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>2022-12-14  17803.9  18400.0  17659.4  17777.1          0.0
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>2022-12-15  17351.8  17849.5  17258.0  17804.0          0.0
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>2022-12-16  16624.1  17528.0  16521.1  17351.9          0.0
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>2022-12-17  16768.0  16790.0  16571.8  16624.1          0.0
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>2022-12-18  16730.3  16872.0  16656.0  16768.1          0.0
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>...             ...      ...      ...      ...          ...
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>2024-04-19  63781.0  65458.0  59571.0  63501.0  11136.02491
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>2024-04-20  64939.0  65397.0  63066.0  63784.0   4341.65875
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>2024-04-21  64907.0  65721.0  64189.0  64938.0   4474.41357
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>2024-04-22  66865.0  67349.0  64488.0  64908.0   6675.27388
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>2024-04-23  66692.0  67219.0  65822.0  66866.0   3585.15962
+</code></pre></div>
+We can actually directly invoke the official SDK, but we would have 
+to configure the parameters:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>    <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">hyp</span><span class="o">.</span><span class="n">candles_snapshot</span><span class="p">(</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        <span class="n">coin</span><span class="o">=</span><span class="s2">&quot;BTC&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="n">interval</span><span class="o">=</span><span class="s2">&quot;1d&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        <span class="n">startms</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()),</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="n">endms</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">),</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="p">))</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> 
+</code></pre></div>
+which gives:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>                  T        c        h   i        l       n        o    s              t            v
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>0     1597881599999  11763.9  12037.1  1d  11574.8       0  11962.0  BTC  1597795200000          0.0
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>1     1597967999999  11857.9  11888.0  1d  11676.0       0  11763.9  BTC  1597881600000          0.0
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>2     1598054399999  11538.5  11882.7  1d  11491.0       0  11858.5  BTC  1597968000000          0.0
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>3     1598140799999  11670.5  11689.1  1d  11385.1       0  11538.5  BTC  1598054400000          0.0
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>4     1598227199999  11654.0  11724.0  1d  11522.2       0  11670.5  BTC  1598140800000          0.0
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>...             ...      ...      ...  ..      ...     ...      ...  ...            ...          ...
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>1339  1713571199999  63781.0  65458.0  1d  59571.0  160200  63501.0  BTC  1713484800000  11136.02491
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>1340  1713657599999  64939.0  65397.0  1d  63066.0   86872  63784.0  BTC  1713571200000   4341.65875
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>1341  1713743999999  64907.0  65721.0  1d  64189.0   92874  64938.0  BTC  1713657600000   4474.41357
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>1342  1713830399999  66865.0  67349.0  1d  64488.0  126600  64908.0  BTC  1713744000000   6675.27388
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>1343  1713916799999  66744.0  67219.0  1d  65822.0   78935  66866.0  BTC  1713830400000   3600.46869
+</code></pre></div></p>
+<p>What about a snapshot of the order-book?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>    <span class="n">res</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">l2_snapshot</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;BTC&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">pprint</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 </code></pre></div>
 we get 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>{&#39;coin&#39;: &#39;BTC&#39;,
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a> &#39;levels&#39;: [[{&#39;n&#39;: 2, &#39;px&#39;: &#39;63871.0&#39;, &#39;sz&#39;: &#39;0.15751&#39;},
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>             {&#39;n&#39;: 2, &#39;px&#39;: &#39;63869.0&#39;, &#39;sz&#39;: &#39;0.18002&#39;},
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>             {&#39;n&#39;: 3, &#39;px&#39;: &#39;63868.0&#39;, &#39;sz&#39;: &#39;0.2234&#39;},
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>             ...
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>             {&#39;n&#39;: 2, &#39;px&#39;: &#39;63845.0&#39;, &#39;sz&#39;: &#39;0.30832&#39;}],
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>            [{&#39;n&#39;: 1, &#39;px&#39;: &#39;63872.0&#39;, &#39;sz&#39;: &#39;0.02347&#39;},
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>             {&#39;n&#39;: 2, &#39;px&#39;: &#39;63873.0&#39;, &#39;sz&#39;: &#39;0.30814&#39;},
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>             ...
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>             {&#39;n&#39;: 1, &#39;px&#39;: &#39;63898.0&#39;, &#39;sz&#39;: &#39;0.15551&#39;}]],
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a> &#39;time&#39;: 1713624177254}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{&#39;coin&#39;: &#39;BTC&#39;,
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a> &#39;levels&#39;: [[{&#39;n&#39;: 2, &#39;px&#39;: &#39;63871.0&#39;, &#39;sz&#39;: &#39;0.15751&#39;},
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>             {&#39;n&#39;: 2, &#39;px&#39;: &#39;63869.0&#39;, &#39;sz&#39;: &#39;0.18002&#39;},
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>             {&#39;n&#39;: 3, &#39;px&#39;: &#39;63868.0&#39;, &#39;sz&#39;: &#39;0.2234&#39;},
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>             ...
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>             {&#39;n&#39;: 2, &#39;px&#39;: &#39;63845.0&#39;, &#39;sz&#39;: &#39;0.30832&#39;}],
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>            [{&#39;n&#39;: 1, &#39;px&#39;: &#39;63872.0&#39;, &#39;sz&#39;: &#39;0.02347&#39;},
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>             {&#39;n&#39;: 2, &#39;px&#39;: &#39;63873.0&#39;, &#39;sz&#39;: &#39;0.30814&#39;},
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>             ...
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>             {&#39;n&#39;: 1, &#39;px&#39;: &#39;63898.0&#39;, &#39;sz&#39;: &#39;0.15551&#39;}]],
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a> &#39;time&#39;: 1713624177254}
 </code></pre></div></p>
 <h3 id="universe-metadata">Universe Metadata</h3>
 <p>We can get information about all the listed tickers:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>res = hyp.meta()
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>print(res)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>res = hyp.meta()
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>print(res)
 </code></pre></div>
 Note that the <code>meta</code> endpoint is supported by the official repo's <code>Info</code> object, which can also be obtained using the <code>info</code> object attribute:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>res = hyp.info.meta()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>res = hyp.info.meta()
 </code></pre></div>
 This applies to many of the method endpoints - our extension provides parameter supplementation using the object's known 
 attributes.</p>
 <p>For instance...</p>
 <h3 id="retrieve-open-positions-orders-and-more">Retrieve Open Positions, Orders and more...</h3>
 <p>These two do the same thing, and can retrieve positions and margin/equity information:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">res</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">user_state</span><span class="p">()</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">pprint</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">res</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">user_state</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="n">hyp</span><span class="o">.</span><span class="n">address</span><span class="p">)</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">pprint</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">res</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">user_state</span><span class="p">()</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">pprint</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">res</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">user_state</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="n">hyp</span><span class="o">.</span><span class="n">address</span><span class="p">)</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">pprint</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 </code></pre></div>
 or perps account equity:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>eq = await hyp.get_equity()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>eq = await hyp.get_equity()
 </code></pre></div>
 We just provide an endpoint that does not need to explicitly specify the user address, since this is known at object creation.</p>
 <h3 id="funding-history-for-asset-and-user">Funding History for Asset and User</h3>
 <p>Easy, with this:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">res</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">user_funding_history</span><span class="p">()</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">fh</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">funding_history</span><span class="p">(</span><span class="n">coin</span><span class="o">=</span><span class="s2">&quot;SOL&quot;</span><span class="p">)</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">fh</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">res</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">user_funding_history</span><span class="p">()</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">fh</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">funding_history</span><span class="p">(</span><span class="n">coin</span><span class="o">=</span><span class="s2">&quot;SOL&quot;</span><span class="p">)</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">fh</span><span class="p">)</span>
 </code></pre></div></p>
 <h3 id="user-l1-action-rate-limits">User L1-Action Rate Limits</h3>
 <p>Some endpoints not specified in their documentation, and not provided in their official SDK is also provided...
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>res = hyp.user_rate_limit()
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>print(res)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>res = hyp.user_rate_limit()
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>print(res)
 </code></pre></div>
 which gives you your rate limit cap and usage:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>{&#39;cumVlm&#39;: , &#39;nRequestsCap&#39;: , &#39;nRequestsUsed&#39;: }
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>{&#39;cumVlm&#39;: , &#39;nRequestsCap&#39;: , &#39;nRequestsUsed&#39;: }
 </code></pre></div></p>
 <h3 id="get-perps-summary">Get Perps Summary</h3>
 <p>We also provide customized endpoints that process single/multiple endpoints:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">res</span> <span class="o">=</span> <span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">get_perps_data</span><span class="p">()</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">pprint</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">res</span> <span class="o">=</span> <span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">get_perps_data</span><span class="p">()</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">pprint</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 </code></pre></div>
 which gives:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>{ ...
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a> &#39;kPEPE&#39;: {&#39;baseAsset&#39;: &#39;kPEPE&#39;,
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>           &#39;exchange&#39;: &#39;hyp&#39;,
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>           &#39;fr&#39;: 1.25e-05,
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>           &#39;frint&#39;: 1.0,
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>           &#39;marginAsset&#39;: &#39;USDC&#39;,
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>           &#39;markPrice&#39;: 0.005185,
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>           &#39;minQty&#39;: Decimal(&#39;1&#39;),
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>           &#39;min_notional&#39;: 10.0,
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>           &#39;next_funding&#39;: 1713628800000,
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>           &#39;pricePrecision&#39;: Decimal(&#39;6&#39;),
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>           &#39;quantityPrecision&#39;: Decimal(&#39;0&#39;),
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>           &#39;quoteAsset&#39;: &#39;USDT&#39;,
-<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>           &#39;stepSize&#39;: Decimal(&#39;1&#39;),
-<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>           &#39;symbol&#39;: &#39;kPEPE&#39;,
-<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>           &#39;timestamp&#39;: 1713625221000},
-<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a> &#39;kSHIB&#39;: {&#39;baseAsset&#39;: &#39;kSHIB&#39;,
-<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>           &#39;exchange&#39;: &#39;hyp&#39;,
-<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>           &#39;fr&#39;: -1.512e-05,
-<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>           &#39;frint&#39;: 1.0,
-<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>           &#39;marginAsset&#39;: &#39;USDC&#39;,
-<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>           &#39;markPrice&#39;: 0.023169,
-<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>           &#39;minQty&#39;: Decimal(&#39;1&#39;),
-<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>           &#39;min_notional&#39;: 10.0,
-<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>           &#39;next_funding&#39;: 1713628800000,
-<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>           &#39;pricePrecision&#39;: Decimal(&#39;6&#39;),
-<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>           &#39;quantityPrecision&#39;: Decimal(&#39;0&#39;),
-<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>           &#39;quoteAsset&#39;: &#39;USDT&#39;,
-<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>           &#39;stepSize&#39;: Decimal(&#39;1&#39;),
-<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>           &#39;symbol&#39;: &#39;kSHIB&#39;,
-<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>           &#39;timestamp&#39;: 1713625221000}
-<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>{ ...
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a> &#39;kPEPE&#39;: {&#39;baseAsset&#39;: &#39;kPEPE&#39;,
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>           &#39;exchange&#39;: &#39;hyp&#39;,
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>           &#39;fr&#39;: 1.25e-05,
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>           &#39;frint&#39;: 1.0,
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>           &#39;marginAsset&#39;: &#39;USDC&#39;,
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>           &#39;markPrice&#39;: 0.005185,
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>           &#39;minQty&#39;: Decimal(&#39;1&#39;),
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>           &#39;min_notional&#39;: 10.0,
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>           &#39;next_funding&#39;: 1713628800000,
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>           &#39;pricePrecision&#39;: Decimal(&#39;6&#39;),
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>           &#39;quantityPrecision&#39;: Decimal(&#39;0&#39;),
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>           &#39;quoteAsset&#39;: &#39;USDT&#39;,
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>           &#39;stepSize&#39;: Decimal(&#39;1&#39;),
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>           &#39;symbol&#39;: &#39;kPEPE&#39;,
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>           &#39;timestamp&#39;: 1713625221000},
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a> &#39;kSHIB&#39;: {&#39;baseAsset&#39;: &#39;kSHIB&#39;,
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>           &#39;exchange&#39;: &#39;hyp&#39;,
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>           &#39;fr&#39;: -1.512e-05,
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>           &#39;frint&#39;: 1.0,
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>           &#39;marginAsset&#39;: &#39;USDC&#39;,
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>           &#39;markPrice&#39;: 0.023169,
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>           &#39;minQty&#39;: Decimal(&#39;1&#39;),
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>           &#39;min_notional&#39;: 10.0,
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a>           &#39;next_funding&#39;: 1713628800000,
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a>           &#39;pricePrecision&#39;: Decimal(&#39;6&#39;),
+<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a>           &#39;quantityPrecision&#39;: Decimal(&#39;0&#39;),
+<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a>           &#39;quoteAsset&#39;: &#39;USDT&#39;,
+<a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a>           &#39;stepSize&#39;: Decimal(&#39;1&#39;),
+<a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a>           &#39;symbol&#39;: &#39;kSHIB&#39;,
+<a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a>           &#39;timestamp&#39;: 1713625221000}
+<a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a>}
 </code></pre></div></p>
 <h3 id="make-orders-see-orders-cancel-orders">Make Orders, See Orders, Cancel Orders</h3>
 <p>The following example makes a limit order for 10 units of PENDLE at a price of 5.40, waits half a second and then cancels all open orders (using the exchange endpoint in the official repo):
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>    <span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">limit_order</span><span class="p">(</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>        <span class="n">coin</span><span class="o">=</span><span class="s2">&quot;PENDLE&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>        <span class="n">amount</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>        <span class="n">price</span><span class="o">=</span><span class="mf">5.40</span><span class="p">,</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="p">)</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    <span class="n">open_orders</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">get_open_orders</span><span class="p">()</span>
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    <span class="n">cancels</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">exchange</span><span class="o">.</span><span class="n">bulk_cancel</span><span class="p">(</span>
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>        <span class="n">cancel_requests</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;coin&quot;</span><span class="p">:</span><span class="n">order</span><span class="p">[</span><span class="s2">&quot;coin&quot;</span><span class="p">],</span> <span class="s2">&quot;oid&quot;</span><span class="p">:</span><span class="n">order</span><span class="p">[</span><span class="s2">&quot;oid&quot;</span><span class="p">]}</span> <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">open_orders</span><span class="p">]</span>
-<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>    <span class="p">)</span>
-<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">cancels</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>    <span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">limit_order</span><span class="p">(</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>        <span class="n">coin</span><span class="o">=</span><span class="s2">&quot;PENDLE&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>        <span class="n">amount</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>        <span class="n">price</span><span class="o">=</span><span class="mf">5.40</span><span class="p">,</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    <span class="p">)</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>    <span class="n">open_orders</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">get_open_orders</span><span class="p">()</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>    <span class="n">cancels</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">exchange</span><span class="o">.</span><span class="n">bulk_cancel</span><span class="p">(</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>        <span class="n">cancel_requests</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;coin&quot;</span><span class="p">:</span><span class="n">order</span><span class="p">[</span><span class="s2">&quot;coin&quot;</span><span class="p">],</span> <span class="s2">&quot;oid&quot;</span><span class="p">:</span><span class="n">order</span><span class="p">[</span><span class="s2">&quot;oid&quot;</span><span class="p">]}</span> <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">open_orders</span><span class="p">]</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>    <span class="p">)</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">cancels</span><span class="p">)</span>
 </code></pre></div>
 We got:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>{&#39;status&#39;: &#39;ok&#39;, &#39;response&#39;: {&#39;type&#39;: &#39;cancel&#39;, &#39;data&#39;: {&#39;statuses&#39;: [&#39;success&#39;]}}}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>{&#39;status&#39;: &#39;ok&#39;, &#39;response&#39;: {&#39;type&#39;: &#39;cancel&#39;, &#39;data&#39;: {&#39;statuses&#39;: [&#39;success&#39;]}}}
 </code></pre></div></p>
 <h3 id="local-copy-of-positions">Local Copy of Positions</h3>
 <p>We can maintain a stateful, local copy of the position sizes using websocket subscriptions:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">keep_book_state</span><span class="p">()</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">book</span> <span class="o">=</span> <span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">get_book</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">keep_book_state</span><span class="p">()</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">book</span> <span class="o">=</span> <span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">get_book</span><span class="p">()</span>
 </code></pre></div>
 Any succeeding calls to <code>get_book</code> does not incur network trips and maintains a copy of the account positions.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>defaultdict(&lt;function Hyperliquid.get_book.&lt;locals&gt;.&lt;lambda&gt; at 0x10d4316c0&gt;, {&#39;SOL&#39;: Decimal(&#39;-2070.0&#39;), ...})
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>defaultdict(&lt;function Hyperliquid.get_book.&lt;locals&gt;.&lt;lambda&gt; at 0x10d4316c0&gt;, {&#39;SOL&#39;: Decimal(&#39;-2070.0&#39;), ...})
 </code></pre></div></p>
 <h3 id="stream-l2-order-book-data">Stream L2-Order Book Data</h3>
 <p>The following code first subscribes to the l2-order book data for BTC, asynchronous-waits for 6 seconds and then prints out the data collected in the buffer, followed by unsubscribing:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">fut_l2_subscribe</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;BTC&quot;</span><span class="p">)</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">hyp</span><span class="o">.</span><span class="n">fut_l2_streamed</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;BTC&quot;</span><span class="p">))</span>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">fut_l2_unsubscribe</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;BTC&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">fut_l2_subscribe</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;BTC&quot;</span><span class="p">)</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">hyp</span><span class="o">.</span><span class="n">fut_l2_streamed</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;BTC&quot;</span><span class="p">))</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">fut_l2_unsubscribe</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;BTC&quot;</span><span class="p">)</span>
 </code></pre></div>
 We get:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>deque([{&#39;ts&#39;: 1713625997920, &#39;b&#39;: array([[6.3899e+04, 1.5530e-02],
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>       [6.3898e+04, 3.6000e-01],
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>       [6.3895e+04, 6.0000e-02],
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>       ...
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>       [6.3868e+04, 1.5832e-01]]), &#39;a&#39;: array([[6.39000e+04, 1.59168e+00],
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>       ...
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>       [6.39440e+04, 3.09920e-01]])}, 
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>       {&#39;ts&#39;: 1713625998823, &#39;b&#39;: array([[6.3899e+04, 1.4180e-02],
-<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>       [6.3898e+04, 1.8000e-01],
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>       ...
-<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>       ])}], maxlen=100)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>deque([{&#39;ts&#39;: 1713625997920, &#39;b&#39;: array([[6.3899e+04, 1.5530e-02],
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>       [6.3898e+04, 3.6000e-01],
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>       [6.3895e+04, 6.0000e-02],
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>       ...
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>       [6.3868e+04, 1.5832e-01]]), &#39;a&#39;: array([[6.39000e+04, 1.59168e+00],
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>       ...
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>       [6.39440e+04, 3.09920e-01]])}, 
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>       {&#39;ts&#39;: 1713625998823, &#39;b&#39;: array([[6.3899e+04, 1.4180e-02],
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>       [6.3898e+04, 1.8000e-01],
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>       ...
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>       ])}], maxlen=100)
 </code></pre></div>
 Alternatively, you can get a <code>WebsocketManager</code>
 thread instance with:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">ws_thread</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">init_threaded_ws_manager</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">ws_thread</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">init_threaded_ws_manager</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>&lt;WebsocketManager(Thread-1, started daemon 123145528229888)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>&lt;WebsocketManager(Thread-1, started daemon 123145528229888)
 </code></pre></div>
 and the original behavior as implemented in the official repo will apply. This is not the preferred usage. The thread hangs due to the ping thread that loops forever (suspicion) - this is a non-issue in the asynchronous extension.</p>
 <h2 id="documentation">Documentation</h2>
@@ -2223,7 +2283,7 @@ and the original behavior as implemented in the official repo will apply. This i
 
 
 <h3 id="quantpylib.wrappers.whyperliquid.Hyperliquid.fut_l2_subscribe" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">fut_l2_subscribe</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">stream_buffer</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">fut_l2_subscribe</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">stream_buffer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -2455,7 +2515,7 @@ Should only be called after <code>keep_book_state</code> has been initiated.</p>
 
 
 <h3 id="quantpylib.wrappers.whyperliquid.Hyperliquid.get_perps_data" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">get_perps_data</span><span class="p">()</span></code>
+          <code class="highlight language-python"><span class="n">get_perps_data</span><span class="p">(</span><span class="n">in_decimal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -2503,6 +2563,162 @@ Should only be called after <code>keep_book_state</code> has been initiated.</p>
 <li>"timestamp" <code>int</code>,              Unix timestamp of the data retrieval, milliseconds.</li>
 <li>"exchange" <code>str</code>                The exchange code , "hyp"</li>
 </ul>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="quantpylib.wrappers.whyperliquid.Hyperliquid.get_trade_bars" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_trade_bars</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">granularity</span><span class="p">,</span> <span class="n">granularity_multiplier</span><span class="p">,</span> <span class="n">kline_close</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Retrieve trade bars data.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>ticker</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Ticker symbol for the asset.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>start</code></td>
+          <td>
+                <code><span title="datetime.datetime">datetime</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Start datetime for the data retrieval.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>end</code></td>
+          <td>
+                <code><span title="datetime.datetime">datetime</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>End datetime for the data retrieval.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>granularity</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="quantpylib.standards.Period" href="../../standards/standards/#quantpylib.standards.standards.Period">Period</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Granularity of the data.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>granularity_multiplier</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Multiplier for the granularity.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>exchange</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Exchange name. Defaults to "US".</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>**kwargs</code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional keyword arguments.</p>
+            </div>
+          </td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="pandas.DataFrame">DataFrame</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataFrame containing the trade bars data.</p>
             </div>
           </td>
         </tr>
@@ -2592,7 +2808,7 @@ Should only be called after <code>keep_book_state</code> has been initiated.</p>
 
 
 <h3 id="quantpylib.wrappers.whyperliquid.Hyperliquid.keep_book_state" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">keep_book_state</span><span class="p">()</span></code>
+          <code class="highlight language-python"><span class="n">keep_book_state</span><span class="p">(</span><span class="n">handler</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>

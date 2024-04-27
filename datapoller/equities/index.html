@@ -1838,6 +1838,12 @@
     </tbody>
   </table>
 
+
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span><span class="o">=</span><span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">get_ticker_fundamentals</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;GS&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span><span class="p">)</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -2258,6 +2264,12 @@
     </tbody>
   </table>
 
+
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">get_trade_bars</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;AAPL&quot;</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">periods</span><span class="o">=</span><span class="mi">365</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;yfinance&quot;</span><span class="p">)</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -2334,6 +2346,12 @@
     </tbody>
   </table>
 
+
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">ticks</span><span class="o">=</span><span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">get_trade_ticks</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;META&quot;</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -2399,6 +2417,15 @@
         </tr>
     </tbody>
   </table>
+
+
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">stream_market_data</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;AAPL&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">datapoller</span><span class="o">.</span><span class="n">equities</span><span class="o">.</span><span class="n">stream_buffer</span><span class="p">[</span><span class="s2">&quot;AAPL&quot;</span><span class="p">])</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gp">&gt;&gt;&gt; </span>    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
 
   </div>
 

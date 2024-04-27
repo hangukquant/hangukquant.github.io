@@ -1608,6 +1608,13 @@
     </tbody>
   </table>
 
+
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">=</span><span class="n">datapoller</span><span class="o">.</span><span class="n">currencies</span><span class="o">.</span><span class="n">get_trade_bars</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;EUR_USD&quot;</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span><span class="n">granularity</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;oanda&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">=</span><span class="n">datapoller</span><span class="o">.</span><span class="n">currencies</span><span class="o">.</span><span class="n">get_trade_bars</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;EUR_USD&quot;</span><span class="p">,</span><span class="n">granularity</span><span class="o">=</span><span class="s2">&quot;h&quot;</span><span class="p">,</span><span class="n">granularity_multiplier</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;oanda&quot;</span><span class="p">)</span>
+</code></pre></div>
+
   </div>
 
 </div>
@@ -1696,6 +1703,14 @@
         </tr>
     </tbody>
   </table>
+
+
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">datapoller</span><span class="o">.</span><span class="n">currencies</span><span class="o">.</span><span class="n">stream_market_data</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;EURUSD&quot;</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;eodhd&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gp">&gt;&gt;&gt; </span>   <span class="nb">print</span><span class="p">(</span><span class="n">datapoller</span><span class="o">.</span><span class="n">currencies</span><span class="o">.</span><span class="n">stream_buffer</span><span class="p">[</span><span class="s2">&quot;EURUSD&quot;</span><span class="p">])</span>
+</code></pre></div>
 
   </div>
 

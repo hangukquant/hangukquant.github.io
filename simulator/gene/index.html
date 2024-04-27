@@ -1510,18 +1510,45 @@ and are as follows:
     </thead>
     <tbody>
         <tr>
-          <td><code>trade_range</code></td>
+          <td><code>start</code></td>
           <td>
-                <code>tuple</code>
+                <code><span title="datetime.datetime.datetime">datetime</span></code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Trading date range (start_date, end_date) of tz-aware datetime.datetime objects.
-Example would be <code>trade_range=(datetime(2000,1,1, tzinfo=pytz.utc),datetime.now(pytz.utc))</code></p>
+              <p>Start of backtest simulation. If not tz-aware, assumed UTC. If not given, assume min of OHLC dataset in dfs. </p>
             </div>
           </td>
           <td>
-              <em>required</em>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>end</code></td>
+          <td>
+                <code><span title="datetime.datetime.datetime">datetime</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Start of backtest simulation. If not tz-aware, assumed UTC. If not given, assume max of OHLC dataset in dfs. </p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>dfs</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>inst : OHLCV/other Dataframes used for computations. Default is an empty dictionary.</p>
+            </div>
+          </td>
+          <td>
+                <code>{}</code>
           </td>
         </tr>
         <tr>
@@ -1573,7 +1600,7 @@ Example would be <code>trade_range=(datetime(2000,1,1, tzinfo=pytz.utc),datetime
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Long swap rates for each instrument. Default is None.</p>
+              <p>Long annualized swap/funding rates for each instrument. Positive swaps means long positions incur swap fees. Default is None.</p>
             </div>
           </td>
           <td>
@@ -1587,7 +1614,7 @@ Example would be <code>trade_range=(datetime(2000,1,1, tzinfo=pytz.utc),datetime
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Short swap rates for each instrument. Default is None.</p>
+              <p>Short annualized swap/funding rates for each instrument. Positive swaps means short positions incur swap fees. Default is None.</p>
             </div>
           </td>
           <td>
@@ -1595,17 +1622,18 @@ Example would be <code>trade_range=(datetime(2000,1,1, tzinfo=pytz.utc),datetime
           </td>
         </tr>
         <tr>
-          <td><code>dfs</code></td>
+          <td><code>granularity</code></td>
           <td>
-                <code>dict</code>
+                <code><a class="autorefs autorefs-internal" title="quantpylib.standards.Period" href="../../standards/standards/#quantpylib.standards.standards.Period">Period</a></code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Dataframes used for computations. Default is an empty dictionary.</p>
+              <p>The granularity of each trading signal evaluation. 
+Datapoints of lower granularity than specified are ignored. Last known datapoint of multiple entries in the same granularity interval is taken. Default is `Period.DAILY'</p>
             </div>
           </td>
           <td>
-                <code>{}</code>
+                <code><span title="quantpylib.standards.Period.DAILY">DAILY</span></code>
           </td>
         </tr>
         <tr>
@@ -1637,6 +1665,34 @@ Example would be <code>trade_range=(datetime(2000,1,1, tzinfo=pytz.utc),datetime
           </td>
         </tr>
         <tr>
+          <td><code>weekend_trading</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Indicates if there is weekend trading, such as in cryptocurrency markets. Defaults to False.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>around_the_clock</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Indicates if there is 24H trading, such as in cryptocurrency and fx markets. Defaults to False.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
           <td><code>currency_denomination</code></td>
           <td>
                 <code>str</code>
@@ -1650,15 +1706,28 @@ Example would be <code>trade_range=(datetime(2000,1,1, tzinfo=pytz.utc),datetime
                 <code>&#39;USD&#39;</code>
           </td>
         </tr>
+        <tr>
+          <td><code>starting_capital</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Amount to begins the backtest with. Defaults to 10000.0.</p>
+            </div>
+          </td>
+          <td>
+                <code>10000.0</code>
+          </td>
+        </tr>
     </tbody>
   </table>
+      <p>Notes:
+    execrates, commrates, longswps, shortswps are presented in decimals. <code>execrates = [0.001, 0.005, ...]</code> encodes
+    that 0.1% of notional value transacted is deducted as execution costs for first instrument, second instrument... 
+    commrates specify commisions in the same units (as percentage of notional value), 
+    as for overnight swap rates for both long and short positions.</p>
 
-<details class="notes" open>
-  <summary>Notes</summary>
-  <p>execrates, commrates, longswps, shortswps are presented in decimals. <code>execrates = [0.001, 0.005, ...]</code> encodes
-that 0.1% of notional value transacted is deducted as execution costs. commrates specify commisions in the same 
-units (as percentage of notional value), as for overnight swap rates for both long and short positions.</p>
-</details>
   </div>
 
 </div><h3 class="doc doc-heading">
