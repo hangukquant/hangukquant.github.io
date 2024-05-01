@@ -12,7 +12,7 @@
         <link rel="prev" href="../alpha/">
       
       
-        <link rel="next" href="../operators/">
+        <link rel="next" href="../models/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -696,6 +696,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.simulator.models
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1629,7 +1650,7 @@ and are as follows:
           <td>
             <div class="doc-md-description">
               <p>The granularity of each trading signal evaluation. 
-Datapoints of lower granularity than specified are ignored. Last known datapoint of multiple entries in the same granularity interval is taken. Default is `Period.DAILY'</p>
+Datapoints of lower granularity than specified are ignored. Last known datapoint of multiple entries in the same granularity interval is taken. Default is <code>Period.DAILY</code>.</p>
             </div>
           </td>
           <td>
@@ -2083,8 +2104,8 @@ while functional nodes represent operations on their child nodes.</p>
     </tbody>
   </table>
 
-<details class="note" open>
-  <summary>Note</summary>
+<details class="notes" open>
+  <summary>Notes</summary>
   <p>This is the recommended and most intuitive way of creating a Gene object.</p>
 </details>
   </div>
@@ -2692,6 +2713,15 @@ The different operators and their behavior is documented <a href="../operators/"
 <td>1</td>
 <td>time-series delay by specified number of periods</td>
 <td>delay_1(close)</td>
+</tr>
+<tr>
+<td>forward</td>
+<td>int</td>
+<td>self_idx_op</td>
+<td>No</td>
+<td>1</td>
+<td>time-series lookahead by specified number of periods</td>
+<td>forward_1(close)</td>
 </tr>
 <tr>
 <td>sum</td>

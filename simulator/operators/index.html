@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../gene/">
+        <link rel="prev" href="../models/">
       
       
         <link rel="next" href="../performance/">
@@ -500,6 +500,27 @@
   
   <span class="md-ellipsis">
     quantpylib.simulator.gene
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.simulator.models
   </span>
   
 
@@ -1367,59 +1388,17 @@ Missing arguments applied on last-known basis.</p>
           </td>
         </tr>
         <tr>
-          <td><code>insts</code></td>
+          <td><code>chress</code></td>
           <td>
-                <code>list of str</code>
+                <code>list</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>List of instance names or identifiers. (Unused parameter, kept for function signature matching)</p>
+              <p>singleton list of DataFrames containing time series data. Each DataFrame should have columns corresponding to the instance names provided in 'insts'.</p>
             </div>
           </td>
           <td>
               <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>al</code></td>
-          <td>
-                <code><span title="pandas.DataFrame">DataFrame</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Alignment DataFrame. (Unused parameter, kept for function signature matching)</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>win</code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Window size for rolling operations. (Unused parameter, kept for function signature matching)</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>*chress</code></td>
-          <td>
-                <code><span title="pandas.DataFrame">DataFrame</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>(one) DataFrame containing the time series data. The operation is applied to each row of this DataFrame.</p>
-            </div>
-          </td>
-          <td>
-                <code>()</code>
           </td>
         </tr>
     </tbody>
@@ -1542,31 +1521,17 @@ Missing arguments applied on last-known basis.</p>
           </td>
         </tr>
         <tr>
-          <td><code>win</code></td>
+          <td><code>chress</code></td>
           <td>
-                <code>int</code>
+                <code>list</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Unused parameter to match the function signature of other operations.</p>
+              <p>list of DataFrames or numbers.Number containing time series data. Each DataFrame should have columns corresponding to the instance names provided in 'insts'.</p>
             </div>
           </td>
           <td>
               <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>*chress</code></td>
-          <td>
-                <code>array - like or DataFrame</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Variable number of DataFrames containing time series data. Each DataFrame should have columns corresponding to the instance names provided in 'insts'.</p>
-            </div>
-          </td>
-          <td>
-                <code>()</code>
           </td>
         </tr>
     </tbody>
@@ -1713,17 +1678,17 @@ It must accept a pandas Series as input and return a scalar value.</p>
           </td>
         </tr>
         <tr>
-          <td><code>*chress</code></td>
+          <td><code>chress</code></td>
           <td>
-                <code><span title="pandas.DataFrame">DataFrame</span></code>
+                <code>list</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>(one) Dataframe containing the time series data. Each column corresponds to an instance provided in 'insts'.</p>
+              <p>singleton list of DataFrames containing time series data. Each DataFrame should have columns corresponding to the instance names provided in 'insts'.</p>
             </div>
           </td>
           <td>
-                <code>()</code>
+              <em>required</em>
           </td>
         </tr>
     </tbody>
@@ -1825,59 +1790,17 @@ It must accept a pandas Series as input and return a scalar value.</p>
           </td>
         </tr>
         <tr>
-          <td><code>insts</code></td>
+          <td><code>chress</code></td>
           <td>
-                <code>list of str</code>
+                <code>list</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>List of instance names or identifiers. (Unused parameter, kept for function signature matching)</p>
+              <p>singleton list of DataFrames containing time series data. Each DataFrame should have columns corresponding to the instance names provided in 'insts'.</p>
             </div>
           </td>
           <td>
               <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>al</code></td>
-          <td>
-                <code><span title="pandas.DataFrame">DataFrame</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Alignment DataFrame. (Unused parameter, kept for function signature matching)</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>win</code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Window size for rolling operations. (Unused parameter, kept for function signature matching)</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>*chress</code></td>
-          <td>
-                <code><span title="pandas.DataFrame">DataFrame</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>(one) DataFrame containing the time series data. The operation is applied to this DataFrame.</p>
-            </div>
-          </td>
-          <td>
-                <code>()</code>
           </td>
         </tr>
     </tbody>
@@ -2019,17 +1942,17 @@ Missing arguments applied on last-known basis.</p>
           </td>
         </tr>
         <tr>
-          <td><code>*chress</code></td>
+          <td><code>chress</code></td>
           <td>
-                <code><span title="pandas.DataFrame">DataFrame</span></code>
+                <code>list</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Variable number of DataFrames containing time series data. Each DataFrame should have columns corresponding to the instance names provided in 'insts'.</p>
+              <p>list of DataFrames containing time series data. Each DataFrame should have columns corresponding to the instance names provided in 'insts'.</p>
             </div>
           </td>
           <td>
-                <code>()</code>
+              <em>required</em>
           </td>
         </tr>
     </tbody>
@@ -2161,31 +2084,17 @@ Missing arguments applied on last-known basis.</p>
           </td>
         </tr>
         <tr>
-          <td><code>win</code></td>
+          <td><code>chress</code></td>
           <td>
-                <code>int</code>
+                <code>list</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Unused parameter to match the function signature of other operations.</p>
+              <p>list of DataFrames or numbers.Number containing time series data. Each DataFrame should have columns corresponding to the instance names provided in 'insts'.</p>
             </div>
           </td>
           <td>
               <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>*chress</code></td>
-          <td>
-                <code>array - like or DataFrame</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Variable number of DataFrames containing time series data. Each DataFrame should have columns corresponding to the instance names provided in 'insts'.</p>
-            </div>
-          </td>
-          <td>
-                <code>()</code>
           </td>
         </tr>
     </tbody>

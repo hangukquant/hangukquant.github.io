@@ -630,6 +630,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.simulator.models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../operators/" class="md-nav__link">
         
   
@@ -1498,7 +1519,7 @@ Using the quantpylib.simulator.gene.GeneticAlpha is the simplest and recommended
           <td>
             <div class="doc-md-description">
               <p>The granularity of each trading signal evaluation. 
-Datapoints of lower granularity than specified are ignored. Last known datapoint of multiple entries in the same granularity interval is taken. Default is `Period.DAILY'</p>
+Datapoints of lower granularity than specified are ignored. Last known datapoint of multiple entries in the same granularity interval is taken. Default is <code>Period.DAILY</code>.</p>
             </div>
           </td>
           <td>
@@ -1782,8 +1803,8 @@ that acts as a bit mask for eligible trading universe.</p>
     </tbody>
   </table>
 
-<details class="note" open>
-  <summary>Note</summary>
+<details class="notes" open>
+  <summary>Notes</summary>
   <p>It is not required for the forecasts to be indicative of the number of contracts the strategy should trade.
 The values in the returned array need only be indicative of the relative strength in the signal forecast.
 For instance, <code>[-1, 1, 1.5]</code> means we want to be as short the first instrument as we are long the second instrument,
@@ -1869,8 +1890,8 @@ implemented, the default <code>eligiblesdf</code> is used.</p>
     </tbody>
   </table>
 
-<details class="note" open>
-  <summary>Note</summary>
+<details class="notes" open>
+  <summary>Notes</summary>
   <p>This function is optional to implement. The default implemention is a one-liner returning <code>eligiblesdf</code>.</p>
 </details>
   </div>
