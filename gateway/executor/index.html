@@ -1138,6 +1138,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.gateway.executor.Executor.cancel_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      cancel_order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.gateway.executor.Executor.l2_book_get" class="md-nav__link">
     <span class="md-ellipsis">
       l2_book_get
@@ -1860,6 +1869,86 @@
           </td>
           <td>
               <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="quantpylib.gateway.executor.Executor.cancel_order" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cancel_order</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">exc</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Cancel an order.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>id</code></td>
+          <td>
+                <code>(str, int)</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Order ID to cancel.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>exc</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Alias for the exchange client.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>**kwargs</code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Exchange wrapper specific keyword arguments.</p>
+            </div>
+          </td>
+          <td>
+                <code>{}</code>
           </td>
         </tr>
     </tbody>
