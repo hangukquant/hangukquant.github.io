@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../operators/">
+        <link rel="prev" href="../logger/">
       
       
-        <link rel="next" href="../../throttler/throttler/">
+        <link rel="next" href="../json_formatter/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>quantpylib.simulator.performance - quantpylib</title>
+        <title>quantpylib.logger.utils - quantpylib</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quantpylib.simulator.performance" class="md-skip">
+        <a href="#log-record-attributes" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              quantpylib.simulator.performance
+              quantpylib.logger.utils
             
           </span>
         </div>
@@ -242,7 +242,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../simulator/" class="md-tabs__link">
+        <a href="../../simulator/simulator/" class="md-tabs__link">
           
   
   User Documentation
@@ -408,8 +408,6 @@
                 
   
   
-    
-  
   
   
     
@@ -421,11 +419,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
         
           
           <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
@@ -439,7 +437,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1_1">
             <span class="md-nav__icon md-icon"></span>
             quantpylib.simulator
@@ -453,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simulator/" class="md-nav__link">
+      <a href="../../simulator/simulator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -474,7 +472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../alpha/" class="md-nav__link">
+      <a href="../../simulator/alpha/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -495,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gene/" class="md-nav__link">
+      <a href="../../simulator/gene/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -516,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../models/" class="md-nav__link">
+      <a href="../../simulator/models/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -537,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operators/" class="md-nav__link">
+      <a href="../../simulator/operators/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -555,28 +553,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    quantpylib.simulator.performance
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../simulator/performance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -585,42 +565,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#quantpylib.simulator.performance" class="md-nav__link">
-    <span class="md-ellipsis">
-      performance
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quantpylib.simulator.performance.performance_measures" class="md-nav__link">
-    <span class="md-ellipsis">
-      performance_measures
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1592,8 +1536,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -1603,11 +1549,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_7" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1_7" id="__nav_2_1_7_label" tabindex="0">
@@ -1621,7 +1567,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1_7">
             <span class="md-nav__icon md-icon"></span>
             quantpylib.logger
@@ -1635,7 +1581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logger/logger/" class="md-nav__link">
+      <a href="../logger/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1653,10 +1599,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../logger/utils/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    quantpylib.logger.utils
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1665,6 +1629,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#log-record-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Record Attributes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1677,7 +1668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logger/json_formatter/" class="md-nav__link">
+      <a href="../json_formatter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1698,7 +1689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logger/buffered_file_handlers/" class="md-nav__link">
+      <a href="../buffered_file_handlers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1750,189 +1741,34 @@
                   
 
 
-  <h1>quantpylib.simulator.performance</h1>
+  <h1>quantpylib.logger.utils</h1>
 
-<div class="doc doc-object doc-module">
-
-
-
-<a id="quantpylib.simulator.performance"></a>
-  <div class="doc doc-contents first">
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h2 id="quantpylib.simulator.performance.performance_measures" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">performance_measures</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">periods_in_year</span><span class="o">=</span><span class="mi">252</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">FOLDER_STRUCTURE</span><span class="o">.</span><span class="n">images_dir</span><span class="p">)</span></code>
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Calculate and visualize various performance measures of a trading strategy.</p>
-
-
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>r</code></td>
-          <td>
-                <code><span title="pandas.Series">Series</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Time series of returns.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>w</code></td>
-          <td>
-                <code><span title="pandas.DataFrame">DataFrame</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>DataFrame of weights corresponding to each asset over time, with same index as r.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>periods_in_year</code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Number of time periods in a year for the granularity of return series passed in. Defaults to 252, the number of trading days in a year.</p>
-            </div>
-          </td>
-          <td>
-                <code>252</code>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>plot</code></td>
-          <td>
-                <code>bool</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Whether to generate and save plots. Defaults to True.</p>
-            </div>
-          </td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>path</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Path to save generated plots, if plot=True</p>
-            </div>
-          </td>
-          <td>
-                <code><span title="quantpylib.folders.FOLDER_STRUCTURE.images_dir">images_dir</span></code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><span class="doc-section-title">Returns:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code>dict</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A dictionary containing various performance metrics:</p>
+<h2 id="log-record-attributes">Log Record Attributes</h2>
 <ul>
-<li>"cum_ret": Cumulative returns over time.</li>
-<li>"log_ret": Logarithmic returns.</li>
-<li>"max_dd": Maximum drawdown.</li>
-<li>"1y_roll_dd": One-year rolling drawdown.</li>
-<li>"1y_roll_max_dd": One-year rolling maximum drawdown.</li>
-<li>"sortino": Sortino ratio.</li>
-<li>"sharpe": Sharpe ratio.</li>
-<li>"mean_ret": Mean return per annum.</li>
-<li>"median_ret": Median return per annum.</li>
-<li>"stdev_ret": Standard deviation of returns per annum.</li>
-<li>"var_ret": Variance of returns per annum.</li>
-<li>"skew_ret": Skewness of returns.</li>
-<li>"kurt_exc": Excess kurtosis of returns.</li>
-<li>"cagr": Compound annual growth rate.</li>
-<li>"3y_roll_cagr": Three-year rolling compound annual growth rate.</li>
-<li>"3y_roll_calmar": Three-year rolling Calmar ratio.</li>
-<li>"omega(0)": Omega ratio.</li>
-<li>"ulcer": Ulcer index.</li>
-<li>"VaR95": Value at Risk at 95% confidence level.</li>
-<li>"cVaR95": Conditional Value at Risk at 95% confidence level.</li>
-<li>"gain_to_pain": Gain-to-pain ratio.</li>
-<li>"w_summary": Summary statistics of weights.</li>
-<li>"directionality": Market long bias directionality.</li>
-<li>"parity_distance": Distance from a 1/n equal weight portfolio.</li>
+<li><code>args</code>: The tuple of arguments passed to the logging call.</li>
+<li><code>asctime</code>: The string representation of the time when the <code>LogRecord</code> was created.</li>
+<li><code>created</code>: The time when the <code>LogRecord</code> was created, in seconds since the epoch.</li>
+<li><code>exc_info</code>: Exception tuple (type, value, traceback) if an exception occurred during logging.</li>
+<li><code>exc_text</code>: Textual representation of the exception information.</li>
+<li><code>filename</code>: The name of the file in which the logging call was made.</li>
+<li><code>funcName</code>: The name of the function or method from which the logging call was made.</li>
+<li><code>levelname</code>: The textual representation of the log level (e.g., 'DEBUG', 'INFO').</li>
+<li><code>levelno</code>: The numeric representation of the log level.</li>
+<li><code>lineno</code>: The line number in the source code where the logging call was made.</li>
+<li><code>module</code>: The name of the module in which the logging call was made.</li>
+<li><code>msecs</code>: The millisecond portion of the time when the <code>LogRecord</code> was created.</li>
+<li><code>message</code>: The logged message after merging any user-supplied arguments with the message.</li>
+<li><code>msg</code>: The logged message, before merging with user-supplied arguments.</li>
+<li><code>name</code>: The name of the logger that created the <code>LogRecord</code>.</li>
+<li><code>pathname</code>: The full path of the source file where the logging call was made.</li>
+<li><code>process</code>: The process ID of the process that created the <code>LogRecord</code>.</li>
+<li><code>processName</code>: The name of the process that created the <code>LogRecord</code>.</li>
+<li><code>relativeCreated</code>: The time since the logging module was loaded, in milliseconds.</li>
+<li><code>stack_info</code>: A string representation of the current stack frame.</li>
+<li><code>thread</code>: The thread ID of the thread that created the <code>LogRecord</code>.</li>
+<li><code>threadName</code>: The name of the thread that created the <code>LogRecord</code>.</li>
+<li><code>taskName</code>: The name of the task that created the <code>LogRecord</code>, relevant in asynchronous environments.</li>
 </ul>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-
-  </div>
-
-  </div>
-
-</div>
 
 
 
