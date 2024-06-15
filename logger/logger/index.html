@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.10ba22f1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1632,6 +1632,57 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-python-logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default Python Logger
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default Configurations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-configuring-our-logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Configuring our Logger
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quantpylib.logger.logger" class="md-nav__link">
     <span class="md-ellipsis">
       logger
@@ -1701,11 +1752,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../json_formatter/" class="md-nav__link">
+      <a href="../formatters/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    quantpylib.logger.formatters.json_formatter
+    quantpylib.logger.formatters
   </span>
   
 
@@ -1722,11 +1773,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../buffered_file_handlers/" class="md-nav__link">
+      <a href="../handlers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    quantpylib.logger.handlers.buffered_file_handlers
+    quantpylib.logger.handlers
   </span>
   
 
@@ -1774,7 +1825,9 @@
                   
 
 
-  <h1>quantpylib.logger</h1>
+<h1 id="logger"><a href=".">logger</a></h1>
+
+
 
 <div class="doc doc-object doc-module">
 
@@ -1783,11 +1836,21 @@
 <a id="quantpylib.logger"></a>
   <div class="doc doc-contents first">
   
-      <p><code>quantpylib.logger</code> is a thread-safe logging module for quantpylib featuring custom formatters
+      <p><a href="."><code>quantpylib.logger</code></a> is a thread-safe logging module for quantpylib featuring custom formatters
 and handlers for recording structured log messages and reducing log latency.   </p>
-<p><code>quantpylib.logger.formatters</code> contain custom <code>logging.Formatter</code> classes.
-<code>quantpylib.logger.handlers</code> contain custom <code>logging.Handler</code> classes.
-<code>quantpylib.logger.logger</code> contains a default logger that use these custom formatter/handlers for convenience.</p>
+<p>The logger is designed for easy usage in Python applications that
+require both log analysis and performance requirements. </p>
+<p>In particular, the formatters in <a href="../formatters"><code>quantpylib.logger.formatters</code></a> 
+contain log formatters extending the <code>logging.Formatter</code> classes, 
+designed for structured logging to be used in log aggregation and analysis tools 
+downstreams. The <a href="../handlers"><code>quantpylib.logger.handlers</code></a> contain handlers extending 
+<code>logging.Handler</code> classes, designed for improving write log latencies, such as 
+buffered handlers that reduce I/O operations. These can be used separetely in your own 
+logging setup.</p>
+<p>Alternatively, the <a href="./#quantpylib.logger.logger.Logger"><code>quantpylib.logger.Logger</code></a> object pre-configures a singleton, 
+named logger. It allows the user to be able to log messages to stdout, files or both, 
+with the custom handlers and formatters. We will immediately demonstrate with examples. 
+The documentations follow.</p>
 
   
 
@@ -1807,7 +1870,172 @@ and handlers for recording structured log messages and reducing log latency.   <
 
   </div>
 
-</div>
+</div><h2 id="examples">Examples</h2>
+<p>The examples are really simple to use. Let us start with some imports, taking the <code>logging</code> library and the <code>quantpylib.logging</code>'s <code>Logger</code> and <code>JSONFormatter</code> object. Let's also take
+the ability to parse arguments into our Python script.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">logging</span> 
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">quantpylib.logger.logger</span> <span class="kn">import</span> <span class="n">Logger</span> 
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span> <span class="nn">quantpylib.logger.formatters</span> <span class="kn">import</span> <span class="n">JSONFormatter</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kn">import</span> <span class="nn">argparse</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;--config&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Specify logging config&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+</code></pre></div>
+<p>We want to log different kinds of information about our Python application - let's create a function that generates the logs. We will use the same function for all configurations, and see how the different specifications change logging behavior.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">log</span><span class="p">():</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;debug log&quot;</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;my debug key&quot;</span><span class="p">:</span><span class="s2">&quot;my debug value&quot;</span><span class="p">})</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;info log&quot;</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;my info key&quot;</span><span class="p">:</span><span class="s2">&quot;my info value&quot;</span><span class="p">})</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="c1"># input(&quot;hold&quot;)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;warning log&quot;</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;my warning key&quot;</span><span class="p">:</span><span class="s2">&quot;my warning value&quot;</span><span class="p">})</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;caught zero denominator&quot;</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;my exception key&quot;</span><span class="p">:</span><span class="s2">&quot;my exception value&quot;</span><span class="p">})</span>
+</code></pre></div>
+Let us ignore <code>input('hold')</code> for now, and have it commented out. We will look at that later.
+Let us take a look at what are the configuration options for our 
+<code>Logger</code> object (see <a href="./#quantpylib.logger.logger.Logger">documentation</a>)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span> <span class="nc">Logger</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="c1">#... some stuff</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="bp">cls</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="n">register_handlers</span><span class="o">=</span><span class="p">[],</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="n">stdout_register</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="n">stdout_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> 
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="n">stdout_formatter_cls</span><span class="o">=</span><span class="n">JSONFormatter</span><span class="p">,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="n">stdout_formatter_kwargs</span><span class="o">=</span><span class="p">{},</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="n">file_register</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;app.log&quot;</span><span class="p">,</span> 
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="n">logs_dir</span><span class="o">=</span><span class="s2">&quot;./logs/&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="n">file_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> 
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="n">file_formatter_cls</span><span class="o">=</span><span class="n">JSONFormatter</span><span class="p">,</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        <span class="n">file_formatter_kwargs</span><span class="o">=</span><span class="p">{},</span>        
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="n">file_handler_cls</span><span class="o">=</span><span class="n">BufferedFileHandler</span><span class="p">,</span> 
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>        <span class="n">file_handler_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;buffer_size&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">},</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="p">):</span>
+</code></pre></div>
+The default is to configure the <code>root</code> logger. <code>stdout_register</code> and <code>file_register</code> is both set to <code>True</code>, meaning we log to console and to a file. Both levels are set as <code>logging.INFO</code>, meaning we should only see <code>logging.INFO</code> and higher levels. The remainder of the arguments are quite self intuitive, so let us try different configurations:</p>
+<h3 id="default-python-logger">Default Python Logger</h3>
+<p>Let us begin with no arguments:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">config</span><span class="p">:</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;using default python logger&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="c1">#...</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">log</span><span class="p">()</span>
+</code></pre></div>
+We run
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>example_logger.py
+</code></pre></div>
+and we get
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>using default python logger
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>WARNING:root:warning log
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>ERROR:root:caught zero denominator
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Traceback (most recent call last):
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  File &quot;/Users/admin/Desktop/projects/quantpylib/examples/example_logger.py&quot;, line 16, in log
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    1/0
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    ~^~
+</code></pre></div>
+We get no <code>logging.DEBUG</code>, <code>logging.INFO</code> level messages, and we get a nice, compact message. However, this can be rather difficult to parse in a log ingestion stack.</p>
+<p>Additionally, we see that the <code>extra</code> values in the log records are ignored.</p>
+<h3 id="default-configurations">Default Configurations</h3>
+<p>Let's try the default configs in the <code>Logger</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>    <span class="n">example_configs</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>        <span class="s2">&quot;register_handlers&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>        <span class="s2">&quot;stdout_register&quot;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        <span class="s2">&quot;stdout_level&quot;</span> <span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        <span class="s2">&quot;file_register&quot;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        <span class="s2">&quot;file_level&quot;</span> <span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="p">}</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">config</span><span class="p">:</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">config</span> <span class="o">==</span> <span class="s2">&quot;d&quot;</span><span class="p">:</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;using default quantpylib logger&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>            <span class="n">Logger</span><span class="p">()</span>
+</code></pre></div>
+We run 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python example_logger.py -c d
+</code></pre></div>
+and we get
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2024-06-15T15:48:17.562138+00:00&quot;, &quot;message&quot;: &quot;info log&quot;, &quot;my info key&quot;: &quot;my info value&quot;}
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>{&quot;level&quot;: &quot;WARNING&quot;, &quot;time&quot;: &quot;2024-06-15T15:48:17.562633+00:00&quot;, &quot;message&quot;: &quot;warning log&quot;, &quot;my warning key&quot;: &quot;my warning value&quot;}
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>{&quot;level&quot;: &quot;ERROR&quot;, &quot;time&quot;: &quot;2024-06-15T15:48:17.562706+00:00&quot;, &quot;message&quot;: &quot;caught zero denominator&quot;, &quot;exc_info&quot;: &quot;Traceback (most recent call last):\n  File \&quot;/Users/admin/Desktop/projects/quantpylib/examples/example_logger.py\&quot;, line 16, in log\n    1/0\n    ~^~\nZeroDivisionError: division by zero&quot;, &quot;my exception key&quot;: &quot;my exception value&quot;}
+</code></pre></div>
+We also will see a new <code>./logs/app.log</code> file with the same content. Here, we see that the key-values in the <code>extra</code> parameter are written as part of the logs.</p>
+<h3 id="custom-configuring-our-logger">Custom Configuring our Logger</h3>
+<p>We can of course, configure the logger. Say, we want to print to console
+logs formatted by <code>logging.Formatter</code>, while writing to file logs formatted by <code>JSONFormatter</code>. Furthermore, in the <code>JSONFormatter</code>, I also want to include more information from the <code>logging.LogRecord</code>. I choose <code>funcName</code> and <code>filename</code> from the possible attributes, listed <a href="../utils">here</a>.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">config</span> <span class="o">==</span> <span class="s2">&quot;jf&quot;</span><span class="p">:</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;using quantpylib logger with json formatter&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>        <span class="n">Logger</span><span class="p">(</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>            <span class="n">stdout_formatter_cls</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">,</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>            <span class="n">file_formatter_cls</span><span class="o">=</span><span class="n">JSONFormatter</span><span class="p">,</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>            <span class="n">file_formatter_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;include_attrs&quot;</span><span class="p">:[</span><span class="s2">&quot;funcName&quot;</span><span class="p">,</span><span class="s2">&quot;filename&quot;</span><span class="p">]},</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>            <span class="n">file_handler_cls</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">,</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>            <span class="n">file_handler_kwargs</span><span class="o">=</span><span class="p">{},</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>            <span class="o">**</span><span class="n">example_configs</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>        <span class="p">)</span>
+</code></pre></div>
+and run
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>python example_logger.py -c jf
+</code></pre></div>
+and we get (we used the standard <code>logging.Formatter</code>)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>using quantpylib logger with json formatter
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>info log
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>warning log
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>caught zero denominator
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>Traceback (most recent call last):
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>  File &quot;/Users/admin/Desktop/projects/quantpylib/examples/example_logger.py&quot;, line 16, in log
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    1/0
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    ~^~
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>ZeroDivisionError: division by zero
+</code></pre></div>
+printed to console, and (we used <code>JSONFormatter</code> with <code>funcName</code> and <code>filename</code>)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2024-06-15T16:26:01.515551+00:00&quot;, &quot;message&quot;: &quot;info log&quot;, &quot;filename&quot;: &quot;example_logger.py&quot;, &quot;funcName&quot;: &quot;log&quot;, &quot;my info key&quot;: &quot;my info value&quot;}
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>{&quot;level&quot;: &quot;WARNING&quot;, &quot;time&quot;: &quot;2024-06-15T16:26:02.830514+00:00&quot;, &quot;message&quot;: &quot;warning log&quot;, &quot;filename&quot;: &quot;example_logger.py&quot;, &quot;funcName&quot;: &quot;log&quot;, &quot;my warning key&quot;: &quot;my warning value&quot;}
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>{&quot;level&quot;: &quot;ERROR&quot;, &quot;time&quot;: &quot;2024-06-15T16:26:02.830820+00:00&quot;, &quot;message&quot;: &quot;caught zero denominator&quot;, &quot;exc_info&quot;: &quot;Traceback (most recent call last):\n  File \&quot;/Users/admin/Desktop/projects/quantpylib/examples/example_logger.py\&quot;, line 16, in log\n    1/0\n    ~^~\nZeroDivisionError: division by zero&quot;, &quot;filename&quot;: &quot;example_logger.py&quot;, &quot;funcName&quot;: &quot;log&quot;, &quot;my exception key&quot;: &quot;my exception value&quot;}
+</code></pre></div>
+in the <code>app.log</code> file. So far, the default is the <code>BufferedFileHandler</code>, which is a <code>logging.Filehandler</code> that only flushes log to files when a buffer is full or on application exit. 
+What you would have noticed is that if you now uncomment the <code>input('hold')</code> line and run 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>python example_logger.py -c jf
+</code></pre></div>
+again, you would not see the logs written to file yet, when the execution pauses waiting for input. You can of course, adjust this buffer size.</p>
+<p>We can also used the <code>BufferedRotatingFileHandler</code>, so that we can store logs in different back up files - this of course - extends the <code>logging.handlers.RotatingFileHandler</code>.
+Let us try:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">config</span> <span class="o">==</span> <span class="s2">&quot;brfh&quot;</span><span class="p">:</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;using quantpylib logger with buffered rotating file handler&quot;</span><span class="p">)</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>        <span class="kn">from</span> <span class="nn">quantpylib.logger.handlers</span> <span class="kn">import</span> <span class="n">BufferedRotatingFileHandler</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>        <span class="n">Logger</span><span class="p">(</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>            <span class="n">stdout_formatter_cls</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">,</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>            <span class="n">file_formatter_cls</span><span class="o">=</span><span class="n">JSONFormatter</span><span class="p">,</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>            <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;brfh.log&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>            <span class="n">logs_dir</span><span class="o">=</span><span class="s2">&quot;./logs/&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>            <span class="n">file_handler_cls</span><span class="o">=</span><span class="n">BufferedRotatingFileHandler</span><span class="p">,</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>            <span class="n">file_handler_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;maxBytes&quot;</span><span class="p">:</span><span class="mi">64</span><span class="p">},</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>            <span class="o">**</span><span class="n">example_configs</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>        <span class="p">)</span>
+</code></pre></div>
+Like the parent <code>RotatingFileHandler</code>, we can set the the number of backup files. the maximum byte condition for rotation and so on.
+This now behaves like a combination of <code>BufferedFileHandler</code> we have defined and <code>RotatingFileHandler</code> we extended -
+the only difference is that this rotation is only checked when the
+buffer is flushed, and the rotate condition is checked on the last record inside the buffer state.</p>
+<p>We can run:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>python example_logger.py -c brfh
+</code></pre></div></p>
+<p>and we since we set the <code>maxBytes</code> to only 64 - when we flush the three log messages, we get
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2024-06-15T16:04:58.394926+00:00&quot;, &quot;message&quot;: &quot;info log&quot;, &quot;my info key&quot;: &quot;my info value&quot;}
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>{&quot;level&quot;: &quot;WARNING&quot;, &quot;time&quot;: &quot;2024-06-15T16:05:02.579663+00:00&quot;, &quot;message&quot;: &quot;warning log&quot;, &quot;my warning key&quot;: &quot;my warning value&quot;}
+</code></pre></div>
+and then the last item triggers the rotation, putting those log messages in <code>brfh.log.1</code>, and the last record
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>{&quot;level&quot;: &quot;ERROR&quot;, &quot;time&quot;: &quot;2024-06-15T16:05:02.579820+00:00&quot;, &quot;message&quot;: &quot;caught zero denominator&quot;, &quot;exc_info&quot;: &quot;Traceback (most recent call last):\n  File \&quot;/Users/admin/Desktop/projects/quantpylib/examples/example_logger.py\&quot;, line 16, in log\n    1/0\n    ~^~\nZeroDivisionError: division by zero&quot;, &quot;my exception key&quot;: &quot;my exception value&quot;}
+</code></pre></div>
+in <code>brfh.log</code>.</p>
+<h2 id="documentation">Documentation</h2>
+
 
 <div class="doc doc-object doc-module">
 
@@ -1847,7 +2075,7 @@ It supports various configuration options including log levels, formatters, and 
 
 
 
-  <p><span class="doc-section-title">Attributes:</span></p>
+  <p><strong>Attributes:</strong></p>
   <table>
     <thead>
       <tr>
@@ -1857,7 +2085,7 @@ It supports various configuration options including log levels, formatters, and 
       </tr>
     </thead>
     <tbody>
-        <tr class="doc-section-item">
+        <tr>
           <td><code><span title="quantpylib.logger.logger.Logger._logger">_logger</span></code></td>
           <td>
                 <code><span title="logging.Logger">Logger</span></code>
@@ -1901,7 +2129,7 @@ It supports various configuration options including log levels, formatters, and 
 
 
 
-  <p><span class="doc-section-title">Parameters:</span></p>
+  <p><strong>Parameters:</strong></p>
   <table>
     <thead>
       <tr>
@@ -1912,7 +2140,7 @@ It supports various configuration options including log levels, formatters, and 
       </tr>
     </thead>
     <tbody>
-        <tr class="doc-section-item">
+        <tr>
           <td><code>name</code></td>
           <td>
                 <code>str</code>
@@ -1926,7 +2154,7 @@ It supports various configuration options including log levels, formatters, and 
                 <code>&#39;root&#39;</code>
           </td>
         </tr>
-        <tr class="doc-section-item">
+        <tr>
           <td><code>register_handlers</code></td>
           <td>
                 <code>list</code>
@@ -1940,7 +2168,7 @@ It supports various configuration options including log levels, formatters, and 
                 <code>[]</code>
           </td>
         </tr>
-        <tr class="doc-section-item">
+        <tr>
           <td><code>stdout_register</code></td>
           <td>
                 <code>bool</code>
@@ -1954,7 +2182,7 @@ It supports various configuration options including log levels, formatters, and 
                 <code>True</code>
           </td>
         </tr>
-        <tr class="doc-section-item">
+        <tr>
           <td><code>stdout_level</code></td>
           <td>
                 <code>int</code>
@@ -1968,21 +2196,21 @@ It supports various configuration options including log levels, formatters, and 
                 <code><span title="logging.INFO">INFO</span></code>
           </td>
         </tr>
-        <tr class="doc-section-item">
+        <tr>
           <td><code>stdout_formatter_cls</code></td>
           <td>
                 <code>type</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>The formatter class for the console handler. Defaults to <code>quantpylib.logger.formatters.json_formatter.JSONFormatter</code>.</p>
+              <p>The formatter class for the console handler. Defaults to <code>quantpylib.logger.formatters.JSONFormatter</code>.</p>
             </div>
           </td>
           <td>
-                <code><a class="autorefs autorefs-internal" title="quantpylib.logger.formatters.json_formatter.JSONFormatter" href="../json_formatter/#quantpylib.logger.formatters.json_formatter.JSONFormatter">JSONFormatter</a></code>
+                <code><a class="autorefs autorefs-internal" title="quantpylib.logger.formatters.JSONFormatter" href="../formatters/#quantpylib.logger.formatters.JSONFormatter">JSONFormatter</a></code>
           </td>
         </tr>
-        <tr class="doc-section-item">
+        <tr>
           <td><code>stdout_formatter_kwargs</code></td>
           <td>
                 <code>dict</code>
@@ -1996,7 +2224,7 @@ It supports various configuration options including log levels, formatters, and 
                 <code>{}</code>
           </td>
         </tr>
-        <tr class="doc-section-item">
+        <tr>
           <td><code>file_register</code></td>
           <td>
                 <code>bool</code>
@@ -2010,7 +2238,7 @@ It supports various configuration options including log levels, formatters, and 
                 <code>True</code>
           </td>
         </tr>
-        <tr class="doc-section-item">
+        <tr>
           <td><code>filename</code></td>
           <td>
                 <code>str</code>
@@ -2024,7 +2252,7 @@ It supports various configuration options including log levels, formatters, and 
                 <code>&#39;app.log&#39;</code>
           </td>
         </tr>
-        <tr class="doc-section-item">
+        <tr>
           <td><code>logs_dir</code></td>
           <td>
                 <code>str</code>
@@ -2038,7 +2266,7 @@ It supports various configuration options including log levels, formatters, and 
                 <code>&#39;./logs/&#39;</code>
           </td>
         </tr>
-        <tr class="doc-section-item">
+        <tr>
           <td><code>file_level</code></td>
           <td>
                 <code>int</code>
@@ -2052,21 +2280,21 @@ It supports various configuration options including log levels, formatters, and 
                 <code><span title="logging.INFO">INFO</span></code>
           </td>
         </tr>
-        <tr class="doc-section-item">
+        <tr>
           <td><code>file_formatter_cls</code></td>
           <td>
                 <code>type</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>The formatter class for the file handler. Defaults to <code>quantpylib.logger.formatters.json_formatter.JSONFormatter</code>.</p>
+              <p>The formatter class for the file handler. Defaults to <code>quantpylib.logger.formatters.JSONFormatter</code>.</p>
             </div>
           </td>
           <td>
-                <code><a class="autorefs autorefs-internal" title="quantpylib.logger.formatters.json_formatter.JSONFormatter" href="../json_formatter/#quantpylib.logger.formatters.json_formatter.JSONFormatter">JSONFormatter</a></code>
+                <code><a class="autorefs autorefs-internal" title="quantpylib.logger.formatters.JSONFormatter" href="../formatters/#quantpylib.logger.formatters.JSONFormatter">JSONFormatter</a></code>
           </td>
         </tr>
-        <tr class="doc-section-item">
+        <tr>
           <td><code>file_formatter_kwargs</code></td>
           <td>
                 <code>dict</code>
@@ -2080,21 +2308,21 @@ It supports various configuration options including log levels, formatters, and 
                 <code>{}</code>
           </td>
         </tr>
-        <tr class="doc-section-item">
+        <tr>
           <td><code>file_handler_cls</code></td>
           <td>
                 <code>type</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>The handler class for file logging. Defaults to <code>quantpylib.logger.handlers.buffered_file_handlers.BufferedFileHandler</code>.</p>
+              <p>The handler class for file logging. Defaults to <code>quantpylib.logger.handlers.BufferedFileHandler</code>.</p>
             </div>
           </td>
           <td>
-                <code><a class="autorefs autorefs-internal" title="quantpylib.logger.handlers.buffered_file_handlers.BufferedFileHandler" href="../buffered_file_handlers/#quantpylib.logger.handlers.buffered_file_handlers.BufferedFileHandler">BufferedFileHandler</a></code>
+                <code><a class="autorefs autorefs-internal" title="quantpylib.logger.handlers.BufferedFileHandler" href="../handlers/#quantpylib.logger.handlers.BufferedFileHandler">BufferedFileHandler</a></code>
           </td>
         </tr>
-        <tr class="doc-section-item">
+        <tr>
           <td><code>file_handler_kwargs</code></td>
           <td>
                 <code>dict</code>
@@ -2108,7 +2336,7 @@ It supports various configuration options including log levels, formatters, and 
                 <code>{&#39;buffer_size&#39;: 64}</code>
           </td>
         </tr>
-        <tr class="doc-section-item">
+        <tr>
           <td><code>*args</code></td>
           <td>
           </td>
@@ -2121,7 +2349,7 @@ It supports various configuration options including log levels, formatters, and 
                 <code>()</code>
           </td>
         </tr>
-        <tr class="doc-section-item">
+        <tr>
           <td><code>**kwargs</code></td>
           <td>
           </td>
@@ -2139,7 +2367,7 @@ It supports various configuration options including log levels, formatters, and 
 
 
 
-  <p><span class="doc-section-title">Returns:</span></p>
+  <p><strong>Returns:</strong></p>
   <table>
     <thead>
       <tr>
@@ -2148,7 +2376,7 @@ It supports various configuration options including log levels, formatters, and 
       </tr>
     </thead>
     <tbody>
-        <tr class="doc-section-item">
+        <tr>
           <td>
           </td>
           <td>
@@ -2240,7 +2468,7 @@ It supports various configuration options including log levels, formatters, and 
       
     
     <a href="https://github.com/hangukquant" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
     </a>
   
 </div>
@@ -2258,7 +2486,7 @@ It supports various configuration options including log levels, formatters, and 
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
       
     
   </body>
