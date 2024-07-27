@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../base/">
+        <link rel="prev" href="../throttler/">
       
       
-        <link rel="next" href="../executor/">
+        <link rel="next" href="../aiosonic/">
       
       
       <link rel="icon" href="../../icons/logo.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>quantpylib.gateway.exchange - quantpylib</title>
+        <title>quantpylib.throttler.aiohttp - quantpylib</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quantpylib.gateway.exchange" class="md-skip">
+        <a href="#quantpylib.throttler.aiohttp" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              quantpylib.gateway.exchange
+              quantpylib.throttler.aiohttp
             
           </span>
         </div>
@@ -670,8 +670,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -681,11 +683,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
@@ -699,7 +701,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1_3">
             <span class="md-nav__icon md-icon"></span>
             quantpylib.throttler
@@ -713,7 +715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../throttler/throttler/" class="md-nav__link">
+      <a href="../throttler/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -731,10 +733,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../throttler/aiohttp/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    quantpylib.throttler.aiohttp
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -743,6 +763,60 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quantpylib.throttler.aiohttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      aiohttp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantpylib.throttler.aiohttp.NetworkException" class="md-nav__link">
+    <span class="md-ellipsis">
+      NetworkException
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantpylib.throttler.aiohttp.asession_requests_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      asession_requests_get
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantpylib.throttler.aiohttp.asession_requests_post" class="md-nav__link">
+    <span class="md-ellipsis">
+      asession_requests_post
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -755,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../throttler/aiosonic/" class="md-nav__link">
+      <a href="../aiosonic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -776,7 +850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../throttler/rate_semaphore/" class="md-nav__link">
+      <a href="../rate_semaphore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -797,7 +871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../throttler/decorators/" class="md-nav__link">
+      <a href="../decorators/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1060,8 +1134,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1073,11 +1145,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
         
           
           <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
@@ -1091,7 +1163,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1_5">
             <span class="md-nav__icon md-icon"></span>
             quantpylib.gateway
@@ -1105,7 +1177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gateway/" class="md-nav__link">
+      <a href="../../gateway/gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1126,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../account/" class="md-nav__link">
+      <a href="../../gateway/account/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1147,7 +1219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../base/" class="md-nav__link">
+      <a href="../../gateway/base/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1165,28 +1237,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    quantpylib.gateway.exchange
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../gateway/exchange/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1195,84 +1249,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#quantpylib.gateway.exchange" class="md-nav__link">
-    <span class="md-ellipsis">
-      exchange
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quantpylib.gateway.exchange.Exchange" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exchange
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Exchange">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#quantpylib.gateway.exchange.Exchange.contract_specifications" class="md-nav__link">
-    <span class="md-ellipsis">
-      contract_specifications
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quantpylib.gateway.exchange.Exchange.get_exchange_server_timestamp" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_exchange_server_timestamp
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quantpylib.gateway.exchange.Exchange.get_exchange_tz" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_exchange_tz
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quantpylib.gateway.exchange.Exchange.get_perps_data" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_perps_data
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1285,7 +1261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../executor/" class="md-nav__link">
+      <a href="../../gateway/executor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1306,7 +1282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../master/" class="md-nav__link">
+      <a href="../../gateway/master/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1327,7 +1303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../orders/" class="md-nav__link">
+      <a href="../../gateway/orders/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1348,7 +1324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../positions/" class="md-nav__link">
+      <a href="../../gateway/positions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1369,7 +1345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trades/" class="md-nav__link">
+      <a href="../../gateway/trades/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1390,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../transactions/" class="md-nav__link">
+      <a href="../../gateway/transactions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1411,7 +1387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utils/" class="md-nav__link">
+      <a href="../../gateway/utils/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1922,13 +1898,13 @@
                   
 
 
-  <h1>quantpylib.gateway.exchange</h1>
+  <h1>quantpylib.throttler.aiohttp</h1>
 
 <div class="doc doc-object doc-module">
 
 
 
-<a id="quantpylib.gateway.exchange"></a>
+<a id="quantpylib.throttler.aiohttp"></a>
     <div class="doc doc-contents first">
 
 
@@ -1946,8 +1922,8 @@
 
 
 
-<h2 id="quantpylib.gateway.exchange.Exchange" class="doc doc-heading">
-            <code>Exchange</code>
+<h2 id="quantpylib.throttler.aiohttp.NetworkException" class="doc doc-heading">
+            <code>NetworkException</code>
 
 
 </h2>
@@ -1955,8 +1931,122 @@
 
     <div class="doc doc-contents ">
             <p class="doc doc-class-bases">
-              Bases: <code><a class="autorefs autorefs-internal" title="quantpylib.gateway.base.BaseGateway" href="../base/#quantpylib.gateway.base.BaseGateway">BaseGateway</a></code></p>
+              Bases: <code>Exception</code></p>
 
+
+      <p>An exception class for network errors, capturing the status code, error message, function name, and class name.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>status_code</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The HTTP status code of the error. Defaults to an empty string.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>message</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The error message. Defaults to 'Network error occurred'.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;Network error occurred&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="quantpylib.throttler.aiohttp.NetworkException.status_code">status_code</span></code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The HTTP status code of the error.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="quantpylib.throttler.aiohttp.NetworkException.message">message</span></code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The error message.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="quantpylib.throttler.aiohttp.NetworkException.function_name">function_name</span></code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The name of the function where the error occurred.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="quantpylib.throttler.aiohttp.NetworkException.class_name">class_name</span></code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The name of the class where the error occurred.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="quantpylib.throttler.aiohttp.NetworkException.descriptive_message">descriptive_message</span></code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The complete error message including function and class name.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
 
@@ -1971,368 +2061,6 @@
 
 
 
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.gateway.exchange.Exchange.contract_specifications" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">contract_specifications</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-      <p>Retrieve the contract's trading rules from the exchange.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code>exc</code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Alias for the exchange client.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>**kwargs</code></td>
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Exchange wrapper specific keyword arguments.</p>
-              </div>
-            </td>
-            <td>
-                  <code>{}</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code>dict</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Dictionary containing contract specifications such as price precision,</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>quantity precision and minimum notional order value.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.gateway.exchange.Exchange.get_exchange_server_timestamp" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">get_exchange_server_timestamp</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-      <p>Retrieve the server timestamp from the exchange.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code>exc</code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Alias for the exchange client.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>**kwargs</code></td>
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Exchange wrapper specific keyword arguments.</p>
-              </div>
-            </td>
-            <td>
-                  <code>{}</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The server timestamp from the exchange.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.gateway.exchange.Exchange.get_exchange_tz" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">get_exchange_tz</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-      <p>Get the timezone for a specific exchange.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code>exc</code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Alias for the exchange client.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>**kwargs</code></td>
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Exchange wrapper specific keyword arguments.</p>
-              </div>
-            </td>
-            <td>
-                  <code>{}</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Timezone of the exchange.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.gateway.exchange.Exchange.get_perps_data" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">get_perps_data</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-      <p>Retrieve perpetuals data.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code>exc</code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Alias for the exchange client.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>**kwargs</code></td>
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Exchange wrapper specific keyword arguments.</p>
-              </div>
-            </td>
-            <td>
-                  <code>{}</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code>dict</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>A dictionary containing symbol to perp data with the following perp data structure:</p>
-<ul>
-<li>"baseAsset" <code>str</code> :             The base asset symbol.</li>
-<li>"fr" <code>float</code> :                  Funding rate.</li>
-<li>"frint" <code>float</code>,                Floating point representation of the funding rate.</li>
-<li>"marginAsset" <code>str</code>,            The margin asset symbol.</li>
-<li>"markPrice" <code>float</code>,            The mark price.</li>
-<li>"minQty" <code>Decimal</code>,             The minimum quantity.</li>
-<li>"min_notional" <code>float</code>,         The minimum notional value.</li>
-<li>"next_funding" <code>int</code>,           Unix timestamp of the next funding, milliseconds.</li>
-<li>"pricePrecision" <code>Decimal</code>,     The price precision.</li>
-<li>"quantityPrecision" <code>Decimal</code>,  The quantity precision.</li>
-<li>"quoteAsset" <code>str</code>,             The quote asset symbol.</li>
-<li>"stepSize" <code>Decimal</code>,           The step size.</li>
-<li>"symbol" <code>str</code>,                 The symbol.</li>
-<li>"timestamp" <code>int</code>,              Unix timestamp of the data retrieval, milliseconds.</li>
-<li>"exchange" <code>str</code>                The exchange code , "hyp"</li>
-</ul>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
 
 
   </div>
@@ -2341,6 +2069,294 @@
 
 </div>
 
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="quantpylib.throttler.aiohttp.asession_requests_get" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">asession_requests_get</span><span class="p">(</span><span class="n">urls</span><span class="p">,</span> <span class="n">asemaphore</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">costs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">refunds_in</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Perform asynchronous HTTP GET requests.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>urls</code></td>
+            <td>
+                  <code>list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list of URLs to request.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>asemaphore</code></td>
+            <td>
+                  <code>AsyncRateSemaphore</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>An asynchronous semaphore to limit concurrent requests. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>costs</code></td>
+            <td>
+                  <code>list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list of costs for each request in terms of semaphore credits. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>refunds_in</code></td>
+            <td>
+                  <code>list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list of refund times for each request. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>list</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list of responses, with exceptions if any occurred.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="quantpylib.throttler.aiohttp.NetworkException" href="#quantpylib.throttler.aiohttp.NetworkException">NetworkException</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If a request fails with a non-200 status code.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="quantpylib.throttler.aiohttp.asession_requests_post" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">asession_requests_post</span><span class="p">(</span><span class="n">urls</span><span class="p">,</span> <span class="n">payloads</span><span class="p">,</span> <span class="n">asemaphore</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">costs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">refunds_in</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Perform asynchronous HTTP POST requests.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>urls</code></td>
+            <td>
+                  <code>list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list of URLs to request.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>payloads</code></td>
+            <td>
+                  <code>list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list of payloads to send in the POST requests.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>asemaphore</code></td>
+            <td>
+                  <code>AsyncRateSemaphore</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>An asynchronous semaphore to limit concurrent requests. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>costs</code></td>
+            <td>
+                  <code>list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list of costs for each request in terms of semaphore credits. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>refunds_in</code></td>
+            <td>
+                  <code>list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list of refund times for each request. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>list</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list of responses, with exceptions if any occurred.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="quantpylib.throttler.aiohttp.NetworkException" href="#quantpylib.throttler.aiohttp.NetworkException">NetworkException</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If a request fails with a non-200 status code.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
 
 
 
