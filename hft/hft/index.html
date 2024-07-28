@@ -2131,7 +2131,7 @@ price impact. See <a href="https://github.com/hummingbot/hummingbot/blob/f111d1c
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>self._optimal_spread = self.gamma * vol * time_left_fraction
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>self._optimal_spread += 2 * Decimal(1 + self.gamma / self._kappa).ln() / self.gamma
 </code></pre></div>
-Optimal spread has an additive factor of log(1 + c/kappa), where smaller values of kappa encourages wider maker orders.</p>
+Optimal spread has an additive factor of log(1 + c/kappa), where smaller values of kappa encourages wider maker orders (although I am pretty sure this should be dollar-normalized first).</p>
 <h2 id="hftlob"><a href="../lob/">hft.lob</a></h1>
 <h2 id="hfttrades"><a href="../trades/">hft.trades</a></h1>
 <h2 id="hftfeatures"><a href="../features/">hft.features</a></h1>
