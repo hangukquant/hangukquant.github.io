@@ -658,6 +658,69 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/trades/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.trades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/stats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.stats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1291,6 +1354,24 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.gateway.master.Gateway.cleanup_clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      cleanup_clients
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.gateway.master.Gateway.init_clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      init_clients
+    </span>
+  </a>
   
 </li>
         
@@ -2098,6 +2179,96 @@ matching to the constructor in <code>quantpylib.wrappers.Binance</code> that loo
             <td>
               <div class="doc-md-description">
                 <p>An instance of Transactions for transaction related endpoints.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.gateway.master.Gateway.cleanup_clients" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">cleanup_clients</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Cleanup all exchange clients that have a <code>cleanup</code> method.</p>
+<p>This method iterates through all the exchange clients and calls their <code>cleanup</code> method, if it exists.
+This is useful for performing any necessary cleanup actions, such as closing connections or releasing resources.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>list</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list of results from the <code>cleanup</code> method calls.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.gateway.master.Gateway.init_clients" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">init_clients</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Initialize all exchange clients that have an <code>init_client</code> method.</p>
+<p>This method iterates through all the exchange clients and calls their <code>init_client</code> method, if it exists.
+This is useful for setting up any necessary initializations before using the clients.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>list</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list of results from the <code>init_client</code> method calls.</p>
               </div>
             </td>
           </tr>
