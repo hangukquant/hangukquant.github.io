@@ -258,6 +258,23 @@
   
 
       
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../featured/" class="md-tabs__link">
+        
+  
+    
+  
+  Featured
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -739,27 +756,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quantpylib.hft.features.rolling_ema" class="md-nav__link">
-    <span class="md-ellipsis">
-      rolling_ema
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#quantpylib.hft.features.rolling_vol" class="md-nav__link">
     <span class="md-ellipsis">
       rolling_vol
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quantpylib.hft.features.rolling_zscore" class="md-nav__link">
-    <span class="md-ellipsis">
-      rolling_zscore
     </span>
   </a>
   
@@ -1973,6 +1972,26 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../featured/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Featured
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2008,88 +2027,6 @@
 
 
 
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="quantpylib.hft.features.rolling_ema" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">rolling_ema</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span></code>
-
-</h2>
-
-
-    <div class="doc doc-contents ">
-
-      <p>Calculate the rolling Exponential Moving Average (EMA).</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code>arr</code></td>
-            <td>
-                  <code><span title="numpy.ndarray">ndarray</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The input array.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>n</code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The size of the rolling window.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>np.ndarray: An array of rolling EMAs.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
 
 <div class="doc doc-object doc-function">
 
@@ -2177,88 +2114,6 @@
             <td>
               <div class="doc-md-description">
                 <p>np.ndarray: An array of rolling volatilities.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="quantpylib.hft.features.rolling_zscore" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">rolling_zscore</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span></code>
-
-</h2>
-
-
-    <div class="doc doc-contents ">
-
-      <p>Calculate the rolling Z-score.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code>arr</code></td>
-            <td>
-                  <code><span title="numpy.ndarray">ndarray</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The input array.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>n</code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The size of the rolling window.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>np.ndarray: An array of rolling Z-scores.</p>
               </div>
             </td>
           </tr>
