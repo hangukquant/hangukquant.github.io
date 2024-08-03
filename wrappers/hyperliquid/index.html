@@ -644,6 +644,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../hft/alpha/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.alpha
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../hft/lob/" class="md-nav__link">
         
   
@@ -712,6 +733,27 @@
   
   <span class="md-ellipsis">
     quantpylib.hft.stats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/utils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.utils
   </span>
   
 
@@ -2782,8 +2824,8 @@ And the market-order:
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">all_mids_subscribe</span><span class="p">(</span><span class="n">handler</span><span class="o">=</span><span class="n">print_handler</span><span class="p">)</span>
 </code></pre></div>
 The subscriptions give response like this:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">{</span><span class="s1">&#39;@1&#39;</span><span class="p">:</span> <span class="s1">&#39;22.253&#39;</span><span class="p">,</span> <span class="s1">&#39;@10&#39;</span><span class="p">:</span> <span class="s1">&#39;0.00043966&#39;</span><span class="p">,</span> <span class="s1">&#39;@11&#39;</span><span class="p">:</span> <span class="s1">&#39;0.00054&#39;</span><span class="p">,</span> <span class="s1">&#39;@12&#39;</span><span class="p">:</span> <span class="s1">&#39;0.00060734&#39;</span><span class="p">,</span> <span class="s1">&#39;@13&#39;</span><span class="p">:</span> <span class="s1">&#39;0.012098&#39;</span><span class="p">,</span> <span class="s1">&#39;@14&#39;</span><span class="p">:</span> <span class="s1">&#39;0.00057891&#39;</span><span class="p">,</span> <span class="s1">&#39;@15&#39;</span><span class="p">:</span> <span class="s1">&#39;0. ...</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="s1">&#39;ARK&#39;</span><span class="p">:</span> <span class="s1">&#39;0.361&#39;</span><span class="p">,</span> <span class="s1">&#39;ATOM&#39;</span><span class="p">:</span> <span class="s1">&#39;5.7538&#39;</span><span class="p">,</span> <span class="s1">&#39;AVAX&#39;</span><span class="p">:</span> <span class="s1">&#39;25.343&#39;</span><span class="p">,</span> <span class="s1">&#39;BADGER&#39;</span><span class="p">:</span> <span class="s1">&#39;3.1786&#39;</span><span class="p">,</span> <span class="s1">&#39;BANANA&#39;</span><span class="p">:</span> <span class="s1">&#39;48.7905&#39;</span><span class="p">,</span> <span class="s1">&#39;BCH&#39;</span><span class="p">:</span> <span class="s1">&#39;419.195&#39;</span><span class="p">,</span> <span class="s1">&#39;BIGTIME&#39;</span><span class="p">:</span> <span class="s1">&#39;0.094512&#39;</span><span class="p">,</span> <span class="s1">&#39;BLAST&#39;</span><span class="p">:</span> <span class="s1">&#39;0.013506&#39;</span><span class="p">,</span> <span class="s1">&#39;BLUR&#39;</span><span class="p">:</span> <span class="s1">&#39;0.17726&#39;</span><span class="p">,</span> <span class="s1">&#39;BLZ&#39;</span><span class="p">:</span> <span class="s1">&#39;0.164115&#39;</span><span class="p">,</span> <span class="s1">&#39;BNB&#39;</span><span class="p">:</span> <span class="s1">&#39;569.025&#39;</span><span class="p">,</span> <span class="o">...</span> <span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>{&#39;@1&#39;: &#39;22.253&#39;, &#39;@10&#39;: &#39;0.00043966&#39;, &#39;@11&#39;: &#39;0.00054&#39;, &#39;@12&#39;: &#39;0.00060734&#39;, &#39;@13&#39;: &#39;0.012098&#39;, &#39;@14&#39;: &#39;0.00057891&#39;, &#39;@15&#39;: &#39;0. ...
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>&#39;ARK&#39;: &#39;0.361&#39;, &#39;ATOM&#39;: &#39;5.7538&#39;, &#39;AVAX&#39;: &#39;25.343&#39;, &#39;BADGER&#39;: &#39;3.1786&#39;, &#39;BANANA&#39;: &#39;48.7905&#39;, &#39;BCH&#39;: &#39;419.195&#39;, &#39;BIGTIME&#39;: &#39;0.094512&#39;, &#39;BLAST&#39;: &#39;0.013506&#39;, &#39;BLUR&#39;: &#39;0.17726&#39;, &#39;BLZ&#39;: &#39;0.164115&#39;, &#39;BNB&#39;: &#39;569.025&#39;, ... }
 </code></pre></div>
 but again you can ask for canonical schema:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">all_mids_subscribe</span><span class="p">(</span><span class="n">handler</span><span class="o">=</span><span class="n">print_handler</span><span class="p">,</span><span class="n">as_canonical</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
