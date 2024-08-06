@@ -686,6 +686,30 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#modelling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vamp-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      VAMP-Demo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#limit-order-book" class="md-nav__link">
     <span class="md-ellipsis">
       Limit-Order Book
@@ -2208,20 +2232,14 @@ and we would explicitly pass in a clock-interval
 <a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="p">)</span>
 </code></pre></div>
 This is in seconds, so if we were to refresh every 250ms we can simply do <code>clock_interval=0.25</code>.</p>
-<!-- 
-### Modelling
-Instead of judging the trading problem by terminal wealth, which is certainly affected by a large number of factors - we may be interested in modelling subproblems in market microstructure. Here the `quantpylib.hft.alpha.Model` is of help - which also extends the `Simulator` class as did the `Alpha` backtester. Hence the same logic applies to `compute_*_features` methods - they are pre-processing logic. Here the `Model` class only take in the orderbook and trades data without cash, fees et cetera.
-
-#### VAMP-Demo
-For instance, we may interested in a fair price estimator that deviates from the mid price using orderbook features. One example is that of the Volume-Adjusted Mid Price estimator, brought up in this [paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4351947) on short-term crypto price prediction. 
-
-Here is the definition (with some improvements to notation):
-
-![alt text](../archives/vamp_def.png)
-
-It is purported that the VAMP is a better estimate for short-term price prediction, as opposed to the mid-price itself. Let's use the same dataset (here, the sample size is about 6000 for 1hour of orderbook data, but data size has been reduced to conform to Github LFS restrictions; we encourage you to use your own data archives. The conclusions, however, are fairly typical.)
-
-Here is the data-loading and imports:
+<h3 id="modelling">Modelling</h3>
+<p>Instead of judging the trading problem by terminal wealth, which is certainly affected by a large number of factors - we may be interested in modelling subproblems in market microstructure. Here the <code>quantpylib.hft.alpha.Model</code> is of help - which also extends the <code>Simulator</code> class as did the <code>Alpha</code> backtester. Hence the same logic applies to <code>compute_*_features</code> methods - they are pre-processing logic. Here the <code>Model</code> class only take in the orderbook and trades data without cash, fees et cetera.</p>
+<h4 id="vamp-demo">VAMP-Demo</h4>
+<p>For instance, we may interested in a fair price estimator that deviates from the mid price using orderbook features. One example is that of the Volume-Adjusted Mid Price estimator, brought up in this <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4351947">paper</a> on short-term crypto price prediction. </p>
+<p>Here is the definition (with some improvements to notation):</p>
+<p><img alt="alt text" src="../../archives/vamp_def.png" /></p>
+<p>It is purported that the VAMP is a better estimate for short-term price prediction, as opposed to the mid-price itself. Let's use the same dataset (here, the sample size is about 6000 for 1hour of orderbook data, reduced to conform to Github LFS restrictions; we encourage you to use your own data archives. The conclusions, however, are fairly typical.)</p>
+<p>Here is the data-loading and imports:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">from</span> <span class="nn">quantpylib.utilities.general</span> <span class="kn">import</span> <span class="n">load_pickle</span> 
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="p">(</span>
@@ -2239,7 +2257,7 @@ Here is the data-loading and imports:
 <a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="kn">from</span> <span class="nn">quantpylib.hft.alpha</span> <span class="kn">import</span> <span class="n">Model</span>
 <a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="kn">from</span> <span class="nn">quantpylib.hft.features</span> <span class="kn">import</span> <span class="n">sample_vamp</span>
 </code></pre></div>
-This time, we would like to extend the `Model` class:
+This time, we would like to extend the <code>Model</code> class:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">class</span> <span class="nc">VAMP</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="c1">#def compute_clock_features ...</span>
@@ -2253,9 +2271,8 @@ This time, we would like to extend the `Model` class:
 <a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>    <span class="p">):</span>
 <a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>        <span class="k">pass</span>        
 </code></pre></div>
-Here, instead of pre-processing the order book VAMP features, we will just compute it on the fly. Let us compare four different estimators, mid, and VAMP for notional value at 200, 1000 and 3000 - here the dataset is actually from a 'thinner' book taken from Hyperliquid's spot pair `PURR/USDC`. The notional value should be adjusted w.r.t to the actual exchange volume - a VAMP of 1000 for `BTCUSDT` on Binance would likely just be the mid price itself, since only the bba is involved.
-
-We are going to use `sample_vamp` from `quantpylib.hft.features` - the implementation is rather simple:
+Here, instead of pre-processing the order book VAMP features, we will just compute it on the fly. Let us compare four different estimators, mid, and VAMP for notional value at 200, 1000 and 3000 - here the dataset is actually from a 'thinner' book taken from Hyperliquid's spot pair <code>PURR/USDC</code>. The notional value should be adjusted w.r.t to the actual exchange volume - a VAMP of 1000 for <code>BTCUSDT</code> on Binance would likely just be the mid price itself, since only the bba is involved.</p>
+<p>We are going to use <code>sample_vamp</code> from <code>quantpylib.hft.features</code> - the implementation is rather simple:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">def</span> <span class="nf">volume_weighted_price</span><span class="p">(</span><span class="n">ob_levels</span><span class="p">,</span> <span class="n">notional</span><span class="p">):</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="n">cumvol</span> <span class="o">=</span> <span class="mi">0</span>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="n">wsum</span> <span class="o">=</span> <span class="mi">0</span>
@@ -2273,7 +2290,7 @@ We are going to use `sample_vamp` from `quantpylib.hft.features` - the implement
 <a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>    <span class="n">P_a</span> <span class="o">=</span> <span class="n">volume_weighted_price</span><span class="p">(</span><span class="n">asks</span><span class="p">,</span> <span class="n">notional</span><span class="p">)</span>
 <a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>    <span class="k">return</span> <span class="p">(</span><span class="n">P_b</span> <span class="o">+</span> <span class="n">P_a</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 </code></pre></div>
-Our `event_estimator` should just return a dictionary of valid estimates. We are only making estimates on order book events.
+Our <code>event_estimator</code> should just return a dictionary of valid estimates. We are only making estimates on order book events.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>    <span class="k">def</span> <span class="nf">event_estimator</span><span class="p">(</span>
 <a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>        <span class="bp">self</span><span class="p">,</span><span class="n">ts</span><span class="p">,</span><span class="n">event_type</span><span class="p">,</span><span class="n">event_id</span><span class="p">,</span><span class="n">type_id</span><span class="p">,</span>
 <a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>        <span class="n">trade_buffer</span><span class="p">,</span><span class="n">ob_timestamps</span><span class="p">,</span><span class="n">ob_bids</span><span class="p">,</span><span class="n">ob_asks</span><span class="p">,</span><span class="n">ob_mids</span><span class="p">,</span><span class="n">features</span><span class="p">,</span>
@@ -2303,16 +2320,14 @@ Running it is simple
 <a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="p">)</span>
 <a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="n">alpha</span><span class="o">.</span><span class="n">run_estimator</span><span class="p">()</span>
 </code></pre></div>
-Since our case study involve statistical estimators, in particular fair price estimators, we can use `df_fairprice` to get some useful dataframes and plots.
+Since our case study involve statistical estimators, in particular fair price estimators, we can use <code>df_fairprice</code> to get some useful dataframes and plots.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">pprint</span><span class="p">(</span><span class="n">alpha</span><span class="o">.</span><span class="n">df_fairprices</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </code></pre></div>
-For example, we obtain plots of the difference `price_{t + x} - estimator_t` for different `x` intervals. We can see that at short distances:
-![alt text](../archives/vamp_t1.png)
-
-the `mid` estimator is best and thinnest in spread. That is, the `mid` price is probably a good estimator of the mid price in the next second. This is less clear, say thirty seconds out:
-![alt text](../archives/vamp_t30.png)
-
-In fact the `df_fairprices` method prints out some useful statistics:
+For example, we obtain plots of the difference <code>price_{t + x} - estimator_t</code> for different <code>x</code> intervals. We can see that at short distances:
+<img alt="alt text" src="../../archives/vamp_t1.png" /></p>
+<p>the <code>mid</code> estimator is best and thinnest in spread. That is, the <code>mid</code> price is probably a good estimator of the mid price in the next second. This is less clear, say thirty seconds out:
+<img alt="alt text" src="../../archives/vamp_t30.png" /></p>
+<p>In fact the <code>df_fairprices</code> method prints out some useful statistics:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>({&#39;t1&#39;:
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>                  mid       vamp200      vamp1000      vamp3000
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>MSE     1.263283e-09  1.318690e-09  1.593077e-09  2.173601e-09
@@ -2349,11 +2364,10 @@ In fact the `df_fairprices` method prints out some useful statistics:
 <a id="__codelineno-21-34" name="__codelineno-21-34" href="#__codelineno-21-34"></a>Q1      3.500000e-05  3.500000e-05  3.868875e-05  4.891542e-05
 <a id="__codelineno-21-35" name="__codelineno-21-35" href="#__codelineno-21-35"></a>Median  1.050000e-04  1.050000e-04  1.085200e-04  1.075792e-04}, ...)
 </code></pre></div>
-One second out, the `mid` estimator has the lowest mean-squared error.
-From five seconds out and further, the `vamp*` estimators have lower mean-squared errors due to orderbook imbalance being realized.
-
-Another interesting feature that I have noticed reflected in this dataset and larger datasets, if not somewhat anecdotal, is that as the time interval increases, the notional value of the `vamp` estimator increases up to certain depths before worsening sharply. This is quite intuitive - longer term price movements take into account deeper structural imbalance; but as we traverse into deeper levels, we start picking up more noise and spoof orders. 
-
+One second out, the <code>mid</code> estimator has the lowest mean-squared error.
+From five seconds out and further, the <code>vamp*</code> estimators have lower mean-squared errors due to orderbook imbalance being realized.</p>
+<p>Another interesting feature that I have noticed reflected in this dataset and larger datasets, if not somewhat anecdotal, is that as the time interval increases, the notional value of the <code>vamp</code> estimator increases up to certain depths before worsening sharply. This is quite intuitive - longer term price movements take into account deeper structural imbalance; but as we traverse into deeper levels, we start picking up more noise and spoof orders. </p>
+<!-- 
 #### TI-Demo
 
 Not all estimators are fair price estimators - in the same [paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4351947) - another feature studied was the trade imbalance (TI) estimator. It can be a feature in fair price estimation, but a mathematical model needs to be proposed to make fair price estimates from a TI estimate. The idea is simple;
