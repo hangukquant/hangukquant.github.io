@@ -704,6 +704,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ti-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      TI-Demo
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2367,25 +2376,16 @@ For example, we obtain plots of the difference <code>price_{t + x} - estimator_t
 One second out, the <code>mid</code> estimator has the lowest mean-squared error.
 From five seconds out and further, the <code>vamp*</code> estimators have lower mean-squared errors due to orderbook imbalance being realized.</p>
 <p>Another interesting feature that I have noticed reflected in this dataset and larger datasets, if not somewhat anecdotal, is that as the time interval increases, the notional value of the <code>vamp</code> estimator increases up to certain depths before worsening sharply. This is quite intuitive - longer term price movements take into account deeper structural imbalance; but as we traverse into deeper levels, we start picking up more noise and spoof orders. </p>
-<!-- 
-#### TI-Demo
-
-Not all estimators are fair price estimators - in the same [paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4351947) - another feature studied was the trade imbalance (TI) estimator. It can be a feature in fair price estimation, but a mathematical model needs to be proposed to make fair price estimates from a TI estimate. The idea is simple;
-short term lop-sided trading on the bid or ask side are likely to lead to further price moves in the same direction. Here is the definition from the paper:
-
-![alt text](../archives/ti_alt_def.png)
-
-A positive correlation is assumed between the trade imbalance and mid price changes, to reflect demand for the asset when there is trend of market bids. The gamma weight decay gives more weightage to recent trades.
-
-However, this formula is unsatisfactory for a number of general purposes. First, if there is consensus that information decay exists; then there serves no specific reason as to why such decay should not be applied to higher resolutions within each aggregated interval. This may be a trivial concern for second intervals. A bigger issue is that the trade imbalance would be jumpy, or inestimable in the case of illiquid markets where trades occur at infrequent intervals. For example, one buy two minutes ago, and then one sell a minute later would give trade imbalance figures: -1,1 respectively. One may attend to this by widening the interval at which trades are aggregated - for which then the issue waved trivial earlier is no longer so. Imagine a aggregation interval of five minutes: a buy and sell order in the most recent interval 4.59m ago and another 0.01m ago contain significantly different amount of priced-in 'information' to market participants.
-
-That there should be a decay is almost undisputed in finance. Nature of decay, and whether the decay should be w.r.t to trade arrivals in numbers, time distance or some other axis is philosophical. We propose a generalized estimator:
-
-![alt text](../archives/ti_def.png)
-
-The aformentioned TI formula would be a specific instance of this generalization, where `n = number of trades within x` seconds, and omega is a piecewise constant decay function.
-
-Again, let's load the same dataset:
+<h4 id="ti-demo">TI-Demo</h4>
+<p>Not all estimators are fair price estimators - in the same <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4351947">paper</a> - another feature studied was the trade imbalance (TI) estimator. It can be a feature in fair price estimation, but a mathematical model needs to be proposed to make fair price estimates from a TI estimate. The idea is simple;
+short term lop-sided trading on the bid or ask side are likely to lead to further price moves in the same direction. Here is the definition from the paper:</p>
+<p><img alt="alt text" src="../../archives/ti_alt_def.png" /></p>
+<p>A positive correlation is assumed between the trade imbalance and mid price changes, to reflect demand for the asset when there is trend of market bids. The gamma weight decay gives more weightage to recent trades.</p>
+<p>However, this formula is unsatisfactory for a number of general purposes. First, if there is consensus that information decay exists; then there serves no specific reason as to why such decay should not be applied to higher resolutions within each aggregated interval. This may be a trivial concern for second intervals. A bigger issue is that the trade imbalance would be jumpy, or inestimable in the case of illiquid markets where trades occur at infrequent intervals. For example, one buy two minutes ago, and then one sell a minute later would give trade imbalance figures: -1,1 respectively. One may attend to this by widening the interval at which trades are aggregated - for which then the issue waved trivial earlier is no longer so. Imagine a aggregation interval of five minutes: a buy and sell order in the most recent interval 4.59m ago and another 0.01m ago contain significantly different amount of priced-in 'information' to market participants.</p>
+<p>That there should be a decay is almost undisputed in finance. Nature of decay, and whether the decay should be w.r.t to trade arrivals in numbers, time distance or some other axis is philosophical. We propose a generalized estimator:</p>
+<p><img alt="alt text" src="../../archives/ti_def.png" /></p>
+<p>The aformentioned TI formula would be a specific instance of this generalization, where <code>n = number of trades within x</code> seconds, and omega is a piecewise constant decay function.</p>
+<p>Again, let's load the same dataset:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kn">from</span> <span class="nn">quantpylib.utilities.general</span> <span class="kn">import</span> <span class="n">load_pickle</span> 
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
 <a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="p">(</span>
@@ -2416,14 +2416,14 @@ Again, let's load the same dataset:
 <a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a>    <span class="p">):</span>
 <a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a>        <span class="k">pass</span>
 </code></pre></div>
-This time, the feature is trade-related. So we will pre-process the TI estimates and then make estimates on each `EVENT_TRADE`. We can do this using the `quantpylib.hft.utils`'s `rolling_apply` function that does what the name-suggests, on rolling numpy array samples:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">def</span> <span class="nf">compute_trade_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">trade_buffer</span><span class="p">):</span>  
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>    <span class="n">tis</span> <span class="o">=</span> <span class="n">rolling_apply</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">trade_buffer</span><span class="p">,</span><span class="n">window</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">func</span><span class="o">=</span><span class="n">trade_imbalance</span><span class="p">)</span>
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>    <span class="k">return</span> <span class="p">{</span>
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>        <span class="s2">&quot;TI&quot;</span><span class="p">:</span><span class="n">tis</span>
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>    <span class="p">}</span>
+This time, the feature is trade-related. So we will pre-process the TI estimates and then make estimates on each <code>EVENT_TRADE</code>. We can do this using the <code>quantpylib.hft.utils</code>'s <code>rolling_apply</code> function that does what the name-suggests, on rolling numpy array samples:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>    <span class="k">def</span> <span class="nf">compute_trade_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">trade_buffer</span><span class="p">):</span>  
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>        <span class="n">tis</span> <span class="o">=</span> <span class="n">rolling_apply</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">trade_buffer</span><span class="p">,</span><span class="n">window</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">func</span><span class="o">=</span><span class="n">trade_imbalance</span><span class="p">)</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>        <span class="k">return</span> <span class="p">{</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>            <span class="s2">&quot;TI&quot;</span><span class="p">:</span><span class="n">tis</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>        <span class="p">}</span>
 </code></pre></div>
-The trade-imbalance from `quantpylib.hft.features` has implementation like this:
+The trade-imbalance from <code>quantpylib.hft.features</code> has implementation like this:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">def</span> <span class="nf">trade_imbalance</span><span class="p">(</span>
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>    <span class="n">trades</span><span class="p">,</span> 
 <a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>    <span class="n">decay_function</span><span class="o">=</span><span class="k">lambda</span> <span class="n">sample</span><span class="p">:</span> <span class="n">exponential_weights</span><span class="p">(</span><span class="n">arr</span><span class="o">=</span><span class="n">sample</span><span class="p">,</span><span class="n">unique_values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> 
@@ -2442,7 +2442,7 @@ The trade-imbalance from `quantpylib.hft.features` has implementation like this:
 <a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>    <span class="n">signed_volume</span> <span class="o">=</span> <span class="n">trades</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">trades</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span>
 <a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">weights</span> <span class="o">*</span> <span class="n">signed_volume</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">weights</span> <span class="o">*</span> <span class="n">trades</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">])</span>
 </code></pre></div>
-refer to implementation of `exponential_weights` in the repository code; or use your imagination. We just used the last twenty trade events, but of course this is up to you. Making estimates are simple, we just echo this at the correct event:
+refer to implementation of <code>exponential_weights</code> in the repository code; or use your imagination. We just used the last twenty trade events, but of course this is up to you. Making estimates are simple, we just echo this at the correct event:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>    <span class="k">def</span> <span class="nf">event_estimator</span><span class="p">(</span>
 <a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>        <span class="bp">self</span><span class="p">,</span><span class="n">ts</span><span class="p">,</span><span class="n">event_type</span><span class="p">,</span><span class="n">event_id</span><span class="p">,</span><span class="n">type_id</span><span class="p">,</span>
 <a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>        <span class="n">trade_buffer</span><span class="p">,</span><span class="n">ob_timestamps</span><span class="p">,</span><span class="n">ob_bids</span><span class="p">,</span><span class="n">ob_asks</span><span class="p">,</span><span class="n">ob_mids</span><span class="p">,</span><span class="n">features</span><span class="p">,</span>
@@ -2480,11 +2480,9 @@ which looks like this:
 <a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>1722095938015  0.821895  0.200735  0.200730  0.200715  0.200470  0.200865  0.200730
 <a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>1722095939023  0.696006  0.200730  0.200730  0.200675  0.200465  0.200900  0.200730
 </code></pre></div>
-for each TI estimate at each trade event, we have preloaded a dataframe with the instantaneous mid price, and mid prices up to sixty seconds out.
-
-Let's propose a fair price model using this TI figures. The model we choose should be determined by the average holding period - obviously if we are buying and selling out the position within one-second, the price in sixty seconds is less relevant.
-
-We shall try a least-squares, zero-intercept simple regression model, with the help of our regression library `quantpylib.simulator.models.GeneticRegression`.
+for each TI estimate at each trade event, we have preloaded a dataframe with the instantaneous mid price, and mid prices up to sixty seconds out.</p>
+<p>Let's propose a fair price model using this TI figures. The model we choose should be determined by the average holding period - obviously if we are buying and selling out the position within one-second, the price in sixty seconds is less relevant.</p>
+<p>We shall try a least-squares, zero-intercept simple regression model, with the help of our regression library <code>quantpylib.simulator.models.GeneticRegression</code>.
 This allows us to do things like
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kn">from</span> <span class="nn">quantpylib.simulator.models</span> <span class="kn">import</span> <span class="n">GeneticRegression</span>
 <a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="n">regmodel</span> <span class="o">=</span> <span class="n">GeneticRegression</span><span class="p">(</span>
@@ -2496,11 +2494,9 @@ This allows us to do things like
 <a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="n">regmodel</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
 </code></pre></div>
-We get a bunch of useful plots - here is one:
-
-![alt text](../archives/ti_reg1.png)
-
-with summary
+We get a bunch of useful plots - here is one:</p>
+<p><img alt="alt text" src="../../archives/ti_reg1.png" /></p>
+<p>with summary
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>                                 OLS Regression Results
 <a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>=======================================================================================
 <a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>Dep. Variable:                     b0   R-squared (uncentered):                   0.051
@@ -2524,26 +2520,19 @@ with summary
 <a id="__codelineno-30-21" name="__codelineno-30-21" href="#__codelineno-30-21"></a>==============================================================================
 </code></pre></div>
 Statistically significant it says. Perhaps we would like to zoom out more and see some aggregated features. 
-The `GeneticRegression.ols` allows us to bin data into blocks, and then aggregate 
+The <code>GeneticRegression.ols</code> allows us to bin data into blocks, and then aggregate 
 the axis values. We will take defaults:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kn">from</span> <span class="nn">quantpylib.simulator.models</span> <span class="kn">import</span> <span class="n">Bin</span>
 <a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="n">regmodel</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">bin_block</span><span class="o">=</span><span class="s2">&quot;b1&quot;</span><span class="p">,</span><span class="n">binned_by</span><span class="o">=</span><span class="n">Bin</span><span class="o">.</span><span class="n">WIDTH</span><span class="p">)</span>
 <a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="n">regmodel</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </code></pre></div>
-and we see:
-
-![alt text](../archives/ti_reg2.png)
-
-Here the sample size is 825. Let's do the regression on some 448228 trade data samples (collect your own data boys and girls), and then binned, regressed and plotted:
-
-![alt text](../archives/ti_reg3.png)
-
-When more data samples are collected, here the trend is obvious. However, we can see that the residuals are non-random. The suggested relationships appears to be curvilinear. Perhaps a higher order polynomial (cubic?). We stop here, fit your own data! The tools have been provided. On the same 448228 size dataset, we try a longer prediction `div(minus(t30,t0),t0) ~ TI` and get 
-
-![alt text](../archives/ti_reg4.png)
-
-the result is similar. -->
-
+and we see:</p>
+<p><img alt="alt text" src="../../archives/ti_reg2.png" /></p>
+<p>Here the sample size is 825. Let's do the regression on some 448228 trade data samples (collect your own data boys and girls), and then binned, regressed and plotted:</p>
+<p><img alt="alt text" src="../../archives/ti_reg3.png" /></p>
+<p>When more data samples are collected, here the trend is obvious. However, we can see that the residuals are non-random. The suggested relationships appears to be curvilinear. Perhaps a higher order polynomial (cubic?). We stop here, fit your own data! The tools have been provided. On the same 448228 size dataset, we try a longer prediction <code>div(minus(t30,t0),t0) ~ TI</code> and get </p>
+<p><img alt="alt text" src="../../archives/ti_reg4.png" /></p>
+<p>the result is similar.</p>
 <h3 id="limit-order-book">Limit-Order Book</h3>
 <p>You may want to use the orderbook with your own data stream.
 Here is an example of how you can do it (speudo-code)
