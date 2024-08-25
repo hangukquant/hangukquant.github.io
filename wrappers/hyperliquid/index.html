@@ -1621,6 +1621,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../bybit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.bybit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../eodhd/" class="md-nav__link">
         
   
@@ -2816,7 +2837,7 @@ And the market-order:
 </code></pre></div></p>
 <p>Of course you can cancel the orders (by ticker and id, all for some ticker, or all tickers):
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">cancel_open_orders</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;SOL&quot;</span><span class="p">,</span><span class="n">is_canonical</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">cancel_order</span><span class="p">(</span><span class="s2">&quot;JEFF/USDC&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mi">1234</span><span class="p">,</span> <span class="n">is_canonical</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">cancel_order</span><span class="p">(</span><span class="s2">&quot;JEFF/USDC&quot;</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="mi">1234</span><span class="p">,</span> <span class="n">is_canonical</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div></p>
 <h3 id="data">Data</h3>
 <p>You can of course retrieve data. You can get all mids as snapshot or as subscription:
@@ -3093,7 +3114,7 @@ A host of other endpoints such as user-funding,transactions, funding rates, tran
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">hyp_key</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3115,7 +3136,7 @@ A host of other endpoints such as user-funding,transactions, funding rates, tran
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>address</code></td>
+            <td><code>key</code></td>
             <td>
                   <code>str</code>
             </td>
@@ -3129,7 +3150,7 @@ A host of other endpoints such as user-funding,transactions, funding rates, tran
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>hyp_key</code></td>
+            <td><code>secret</code></td>
             <td>
                   <code>str</code>
             </td>
@@ -3564,7 +3585,7 @@ A host of other endpoints such as user-funding,transactions, funding rates, tran
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.cancel_order" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">cancel_order</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">is_canonical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">cancel_order</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">is_canonical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -3604,7 +3625,7 @@ A host of other endpoints such as user-funding,transactions, funding rates, tran
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>id</code></td>
+            <td><code>oid</code></td>
             <td>
                   <code>int</code>
             </td>
@@ -3614,7 +3635,21 @@ A host of other endpoints such as user-funding,transactions, funding rates, tran
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>cloid</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Client Order ID to cancel.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -3878,7 +3913,9 @@ A host of other endpoints such as user-funding,transactions, funding rates, tran
 - SYMBOL_PRICE_PRECISION.
 - SYMBOL_QUOTE_PRECISION.
 - SYMBOL_QUANTITY_PRECISION.
-- SYMBOL_MIN_NOTIONAL</p>
+- SYMBOL_MIN_NOTIONAL
+- SYMBOL_BASE_ASSET
+- SYMBOL_QUOTE_ASSET</p>
               </div>
             </td>
           </tr>

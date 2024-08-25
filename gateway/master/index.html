@@ -1723,6 +1723,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../wrappers/bybit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.bybit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../wrappers/eodhd/" class="md-nav__link">
         
   
@@ -2084,7 +2105,7 @@
 
 
 <h3 id="quantpylib.gateway.master.Gateway.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">config_keys</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;binance&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;alias&#39;</span><span class="p">:</span> <span class="s1">&#39;binance&#39;</span><span class="p">,</span> <span class="s1">&#39;api_key&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;BIN_PUBLIC&#39;</span><span class="p">),</span> <span class="s1">&#39;api_secret&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;BIN_KEY&#39;</span><span class="p">)},</span> <span class="s1">&#39;hyperliquid&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;alias&#39;</span><span class="p">:</span> <span class="s1">&#39;hyperliquid&#39;</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;HYP_PUBLIC&#39;</span><span class="p">),</span> <span class="s1">&#39;hyp_key&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;HYP_KEY&#39;</span><span class="p">)},</span> <span class="s1">&#39;bybit&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;api_key&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;BYBIT_KEY&#39;</span><span class="p">),</span> <span class="s1">&#39;api_secret&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;BYBIT_SECRET&#39;</span><span class="p">)}})</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">config_keys</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;binance&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;alias&#39;</span><span class="p">:</span> <span class="s1">&#39;binance&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;secret&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="s1">&#39;hyperliquid&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;alias&#39;</span><span class="p">:</span> <span class="s1">&#39;hyperliquid&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;secret&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="s1">&#39;bybit&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;secret&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}})</span></code>
 
 </h3>
 
@@ -2130,7 +2151,7 @@ matching to the constructor in <code>quantpylib.wrappers.Binance</code> that loo
               </div>
             </td>
             <td>
-                  <code>{&#39;binance&#39;: {&#39;alias&#39;: &#39;binance&#39;, &#39;api_key&#39;: <span title="os.getenv">getenv</span>(&#39;BIN_PUBLIC&#39;), &#39;api_secret&#39;: <span title="os.getenv">getenv</span>(&#39;BIN_KEY&#39;)}, &#39;hyperliquid&#39;: {&#39;alias&#39;: &#39;hyperliquid&#39;, &#39;address&#39;: <span title="os.getenv">getenv</span>(&#39;HYP_PUBLIC&#39;), &#39;hyp_key&#39;: <span title="os.getenv">getenv</span>(&#39;HYP_KEY&#39;)}, &#39;bybit&#39;: {&#39;api_key&#39;: <span title="os.getenv">getenv</span>(&#39;BYBIT_KEY&#39;), &#39;api_secret&#39;: <span title="os.getenv">getenv</span>(&#39;BYBIT_SECRET&#39;)}}</code>
+                  <code>{&#39;binance&#39;: {&#39;alias&#39;: &#39;binance&#39;, &#39;key&#39;: None, &#39;secret&#39;: None}, &#39;hyperliquid&#39;: {&#39;alias&#39;: &#39;hyperliquid&#39;, &#39;key&#39;: None, &#39;secret&#39;: None}, &#39;bybit&#39;: {&#39;key&#39;: None, &#39;secret&#39;: None}}</code>
             </td>
           </tr>
       </tbody>

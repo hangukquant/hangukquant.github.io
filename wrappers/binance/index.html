@@ -1621,6 +1621,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../bybit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.bybit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../eodhd/" class="md-nav__link">
         
   
@@ -2593,7 +2614,7 @@
 
 
 <h3 id="quantpylib.wrappers.binance.Binance.get_trade_bars" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">get_trade_bars</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">granularity</span><span class="p">,</span> <span class="n">granularity_multiplier</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">get_trade_bars</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">granularity</span><span class="p">,</span> <span class="n">granularity_multiplier</span><span class="p">,</span> <span class="n">kline_close</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -2635,7 +2656,7 @@
           <tr class="doc-section-item">
             <td><code>start</code></td>
             <td>
-                  <code>datetime</code>
+                  <code><span title="datetime.datetime">datetime</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -2649,7 +2670,7 @@
           <tr class="doc-section-item">
             <td><code>end</code></td>
             <td>
-                  <code>datetime</code>
+                  <code><span title="datetime.datetime">datetime</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -3005,7 +3026,7 @@
 
 
 <h3 id="quantpylib.wrappers.binance.Binance.limit_order" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">limit_order</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">price_match</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tif</span><span class="o">=</span><span class="n">markets</span><span class="o">.</span><span class="n">TIME_IN_FORCE_GTC</span><span class="p">,</span> <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">limit_order</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">price_match</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tif</span><span class="o">=</span><span class="n">markets</span><span class="o">.</span><span class="n">TIME_IN_FORCE_GTC</span><span class="p">,</span> <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
