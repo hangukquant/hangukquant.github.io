@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../alpha/">
+        <link rel="prev" href="../feed/">
       
       
         <link rel="next" href="../trades/">
@@ -664,6 +664,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../feed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.feed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -731,6 +752,15 @@
   <a href="#quantpylib.hft.lob.LOB.__init__" class="md-nav__link">
     <span class="md-ellipsis">
       __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.lob.LOB.as_dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      as_dict
     </span>
   </a>
   
@@ -1582,48 +1612,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gateway/trades/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.gateway.trades
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../gateway/transactions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.gateway.transactions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../gateway/utils/" class="md-nav__link">
         
   
@@ -1872,48 +1860,6 @@
   
   <span class="md-ellipsis">
     quantpylib.wrappers.binance
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../wrappers/phemex/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.wrappers.phemex
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../wrappers/ccxt/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.wrappers.ccxt
   </span>
   
 
@@ -2296,6 +2242,45 @@
             </td>
             <td>
                   <code>100</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.lob.LOB.as_dict" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">as_dict</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Represent the current state of the order book as a dictionary.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>dict</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The current timestamp, bids, and asks.</p>
+              </div>
             </td>
           </tr>
       </tbody>

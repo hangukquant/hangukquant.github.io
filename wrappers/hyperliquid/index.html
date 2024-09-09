@@ -665,6 +665,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../hft/feed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.feed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../hft/lob/" class="md-nav__link">
         
   
@@ -1376,48 +1397,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gateway/trades/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.gateway.trades
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../gateway/transactions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.gateway.transactions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../gateway/utils/" class="md-nav__link">
         
   
@@ -1668,48 +1647,6 @@
   
   <span class="md-ellipsis">
     quantpylib.wrappers.binance
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../phemex/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.wrappers.phemex
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ccxt/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.wrappers.ccxt
   </span>
   
 
@@ -2033,6 +1970,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.get_all_mids" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_all_mids
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.get_canonical_name" class="md-nav__link">
     <span class="md-ellipsis">
       get_canonical_name
@@ -2042,9 +1988,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.get_funding_rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_funding_rates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.get_lot_precision" class="md-nav__link">
     <span class="md-ellipsis">
       get_lot_precision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.get_nonce" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_nonce
     </span>
   </a>
   
@@ -2213,15 +2177,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.order_get_by_id" class="md-nav__link">
-    <span class="md-ellipsis">
-      order_get_by_id
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.order_market" class="md-nav__link">
     <span class="md-ellipsis">
       order_market
@@ -2234,6 +2189,15 @@
   <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.order_modify" class="md-nav__link">
     <span class="md-ellipsis">
       order_modify
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.order_query" class="md-nav__link">
+    <span class="md-ellipsis">
+      order_query
     </span>
   </a>
   
@@ -2414,6 +2378,15 @@
   <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.positions_peek" class="md-nav__link">
     <span class="md-ellipsis">
       positions_peek
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.rand_cloid" class="md-nav__link">
+    <span class="md-ellipsis">
+      rand_cloid
     </span>
   </a>
   
@@ -2751,8 +2724,8 @@ concurrency. The websocket manager handles reconnections and resubsriptions unde
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="n">hyp</span> <span class="o">=</span> <span class="n">Hyperliquid</span><span class="p">(</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        <span class="n">address</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;HYP_DEMO&quot;</span><span class="p">),</span> <span class="c1">#should be your vault address, if trading for a vault</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        <span class="n">hyp_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;HYP_KEY&quot;</span><span class="p">),</span> <span class="c1">#secret key</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        <span class="n">key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;HYP_DEMO&quot;</span><span class="p">),</span> <span class="c1">#should be your vault address, if trading for a vault</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        <span class="n">secret</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;HYP_KEY&quot;</span><span class="p">),</span> <span class="c1">#secret key</span>
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="p">)</span>
 <a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">init_client</span><span class="p">()</span>
 <a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="c1">#...examples go here</span>
@@ -3142,7 +3115,7 @@ A host of other endpoints such as user-funding,transactions, funding rates, tran
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The on-chain address in 42-character hexadecimal format.</p>
+                <p>The public or vault address.</p>
               </div>
             </td>
             <td>
@@ -3156,7 +3129,7 @@ A host of other endpoints such as user-funding,transactions, funding rates, tran
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The Hyperliquid API key. Defaults to None.</p>
+                <p>The secret key.</p>
               </div>
             </td>
             <td>
@@ -3185,7 +3158,7 @@ A host of other endpoints such as user-funding,transactions, funding rates, tran
 
     <div class="doc doc-contents ">
 
-      <p>Retrieve balance details of the user, such as equity, margin and pnl.</p>
+      <p>Retrieve balance details of the user, such as equity, margin (total, maintenance) and pnl.</p>
 
 
     <p><span class="doc-section-title">Returns:</span></p>
@@ -3428,6 +3401,34 @@ A host of other endpoints such as user-funding,transactions, funding rates, tran
             </td>
           </tr>
           <tr class="doc-section-item">
+            <td><code>standardize_schema</code></td>
+            <td>
+                  <code>(bool, True)</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Processes the incoming message to standard schema.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>as_canonical</code></td>
+            <td>
+                  <code>(bool, False)</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, the mid prices are returned with canonical names.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
             <td><code>**kwargs</code></td>
             <td>
             </td>
@@ -3472,7 +3473,7 @@ A host of other endpoints such as user-funding,transactions, funding rates, tran
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.cancel_open_orders" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">cancel_open_orders</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">peek</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_canonical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">cancel_open_orders</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">is_canonical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -3509,20 +3510,6 @@ A host of other endpoints such as user-funding,transactions, funding rates, tran
             </td>
             <td>
                   <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>peek</code></td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If True, uses <code>orders_peek</code> to get local copy of open orders without state update. Defaults to False.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -3909,9 +3896,8 @@ A host of other endpoints such as user-funding,transactions, funding rates, tran
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A dictionary containing contract specifications for each asset. The keys are asset names, and the values are dictionaries with the following keys:
+                <p>A dictionary containing contract specifications for each asset with key-values:
 - SYMBOL_PRICE_PRECISION.
-- SYMBOL_QUOTE_PRECISION.
 - SYMBOL_QUANTITY_PRECISION.
 - SYMBOL_MIN_NOTIONAL
 - SYMBOL_BASE_ASSET
@@ -3938,7 +3924,7 @@ A host of other endpoints such as user-funding,transactions, funding rates, tran
     <div class="doc doc-contents ">
 
       <p>Retrieves the accredited name for a given canonical name.
-For perpeutals, this is an identity mapping. For spot, (for instance)
+For perpetuals, this is an identity mapping. For spot, (for instance)
 JEFF/USDC maps to @4.</p>
 
 
@@ -3999,6 +3985,102 @@ JEFF/USDC maps to @4.</p>
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.get_all_mids" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_all_mids</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Retrieve the mid-price for a specific ticker or all available tickers.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>ticker</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The symbol of the specific contract for which to retrieve the mid-price. 
+                If not provided, mid-prices for all contracts will be returned. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>**kwargs</code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional keyword arguments.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>Decimal</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The mid-price of the specified ticker if <code>ticker</code> is provided.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+<td><code>dict</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A dictionary with contract symbols as keys and their corresponding mid-prices (Decimal) as values 
+if <code>ticker</code> is not provided.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.get_canonical_name" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_canonical_name</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">return_unmapped</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
@@ -4008,7 +4090,7 @@ JEFF/USDC maps to @4.</p>
     <div class="doc doc-contents ">
 
       <p>Retrieves the canonical name for a given ticker.
-For perpeutals, this is an identity mapping. For spot, (for instance)
+For perpetuals, this is an identity mapping. For spot, (for instance)
 @4 maps to JEFF/USDC.</p>
 
 
@@ -4044,7 +4126,7 @@ For perpeutals, this is an identity mapping. For spot, (for instance)
             </td>
             <td>
               <div class="doc-md-description">
-                <p>If True, returns the name back to the caller.</p>
+                <p>If True, returns the name back to the caller if no mapping is found.</p>
               </div>
             </td>
             <td>
@@ -4070,6 +4152,120 @@ For perpeutals, this is an identity mapping. For spot, (for instance)
             <td>
               <div class="doc-md-description">
                 <p>The canonical name associated with the ticker.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.get_funding_rates" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_funding_rates</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Retrieve funding rates data.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>ticker</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Ticker symbol for the asset.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>start</code></td>
+            <td>
+                  <code><span title="datetime.datetime">datetime</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Start datetime for the data retrieval.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>end</code></td>
+            <td>
+                  <code><span title="datetime.datetime">datetime</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>End datetime for the data retrieval.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>**kwargs</code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional keyword arguments.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>DataFrame containing the funding rates data.</p>
               </div>
             </td>
           </tr>
@@ -4165,6 +4361,46 @@ For perpeutals, this is an identity mapping. For spot, (for instance)
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.get_nonce" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_nonce</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Get a unique nonce value using a nonce buffer to ensure no overlaps 
+between exchange requests.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>int</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A unique nonce value.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.get_perps_data" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_perps_data</span><span class="p">(</span><span class="n">in_decimal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
@@ -4199,7 +4435,7 @@ For perpeutals, this is an identity mapping. For spot, (for instance)
 <ul>
 <li>"baseAsset" <code>str</code> :             The base asset symbol.</li>
 <li>"fr" <code>float</code> :                  Funding rate.</li>
-<li>"frint" <code>float</code>,                Floating point representation of the funding rate.</li>
+<li>"frint" <code>int</code>,                  Funding rate interval.</li>
 <li>"marginAsset" <code>str</code>,            The margin asset symbol.</li>
 <li>"markPrice" <code>float</code>,            The mark price.</li>
 <li>"minQty" <code>Decimal</code>,             The minimum quantity.</li>
@@ -4478,7 +4714,7 @@ are less of price precision and 5 significant figures.</p>
     <div class="doc doc-contents ">
 
       <p>Initializes the exchange client with important metadata for mapping tickers to asset ids, 
-contract precision and mapping.</p>
+contract precision and mapping. Should be called upon object initialization.</p>
 
     </div>
 
@@ -4527,14 +4763,73 @@ contract precision and mapping.</p>
                 <em>required</em>
             </td>
           </tr>
+          <tr class="doc-section-item">
+            <td><code>nsigfig</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of significant figures requested. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>depth</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Depth of the order-book representation, if <code>as_dict</code> is <code>False</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>depth_cum</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Flag indicating whether to return cumulative depth or not.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
       </tbody>
     </table>
 
 
-<details class="notes" open>
-  <summary>Notes</summary>
-  <p>https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint#l2-book-snapshot</p>
-</details>
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>dict</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A dictionary containing the L2 snapshot information.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
     </div>
 
 </div>
@@ -4774,7 +5069,7 @@ contract precision and mapping.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Subscribe to L2 Order Book.</p>
+      <p>Subscribe to L2 Order Book stream.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4861,7 +5156,7 @@ contract precision and mapping.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Retrieve the list of perpetuals with open subscription.</p>
+      <p>Retrieve the list of open l2 book subscriptions.</p>
 
     </div>
 
@@ -5066,7 +5361,7 @@ contract precision and mapping.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The positive or negative quantity of contracts to long or short.</p>
+                <p>The signed quantity of contracts to long or short.</p>
               </div>
             </td>
             <td>
@@ -5263,7 +5558,7 @@ contract precision and mapping.</p>
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.market_order" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">market_order</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">slippage_tolerance</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">is_canonical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">market_order</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">is_canonical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">slippage_tolerance</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -5309,7 +5604,7 @@ contract precision and mapping.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The positive or negative quantity of contracts to buy (long) or sell (short).</p>
+                <p>The signed quantity of contracts to long or short.</p>
               </div>
             </td>
             <td>
@@ -5403,7 +5698,7 @@ contract precision and mapping.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The result of the order placement. This typically includes a confirmation of the placed order, or an error message if the order could not be placed.</p>
+                <p>The result of the order placement.</p>
               </div>
             </td>
           </tr>
@@ -5674,7 +5969,7 @@ contract precision and mapping.</p>
           <tr class="doc-section-item">
             <td><code>price</code></td>
             <td>
-                  <code>float</code>
+                  <code>float or <span title="decimal.Decimal">Decimal</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5988,69 +6283,6 @@ contract precision and mapping.</p>
               <div class="doc-md-description">
                 <p>A list of dictionaries containing details of all filled orders within the specified time range.</p>
               </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.order_get_by_id" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">order_get_by_id</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-      <p>Get order details using order ID.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code>id</code></td>
-            <td>
-                  <code>(str, int)</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Order ID in exchange</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>**kwargs</code></td>
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Exchange wrapper specific keyword arguments.</p>
-              </div>
-            </td>
-            <td>
-                  <code>{}</code>
             </td>
           </tr>
       </tbody>
@@ -6449,6 +6681,69 @@ contract precision and mapping.</p>
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.order_query" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">order_query</span><span class="p">(</span><span class="n">oid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">as_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Get order details using order ID.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>id</code></td>
+            <td>
+                  <code>(str, int)</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Order ID in exchange</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>**kwargs</code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange wrapper specific keyword arguments.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.order_status" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">order_status</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span></code>
 
@@ -6478,11 +6773,11 @@ contract precision and mapping.</p>
           <tr class="doc-section-item">
             <td><code>id</code></td>
             <td>
-                  <code>str</code>
+                  <code>int or str</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The unique identifier of the order.</p>
+                <p>Unique identifier as order ID or client order ID.</p>
               </div>
             </td>
             <td>
@@ -6909,9 +7204,11 @@ contract precision and mapping.</p>
                 <p>A dictionary containing details of all open orders. Each key is the order ID (<code>oid</code>), with value dict:
 - markets.TICKER: The asset's ticker symbol, either in standard or canonical form.
 - markets.ORDER_ID: The unique identifier of the order.
+- markets.ORDER_CLOID: The client order ID.
 - markets.LIMIT_PRICE: The limit price of the order.
-- markets.ORDER_ORIGINAL: The original size of the order.
-- markets.ORDER_TOFILL: The remaining size of the order yet to be filled.
+- markets.ORDER_AMOUNT: The original size of the order.
+- markets.ORDER_FILLED_SIZE: The remaining size of the order yet to be filled.
+- markets.ORDER_STATUS: The status of the order.
 - markets.TIMESTAMP: The timestamp when the order was created.</p>
               </div>
             </td>
@@ -6933,7 +7230,7 @@ https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.orders_mirror" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">orders_mirror</span><span class="p">(</span><span class="n">as_canonical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">on_update</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">orders_mirror</span><span class="p">(</span><span class="n">as_canonical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">on_update</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">as_list</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -6959,6 +7256,20 @@ https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint
       </thead>
       <tbody>
           <tr class="doc-section-item">
+            <td><code>as_canonical</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, the method returns tickers in their canonical form. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
             <td><code>on_update</code></td>
             <td>
                   <code>coroutine</code>
@@ -6970,6 +7281,20 @@ https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint
             </td>
             <td>
                   <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>as_list</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If <code>True</code>, pass state as list, otherwise as <code>quantpylib.standards.Orders</code> object into handlers.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -7154,7 +7479,7 @@ https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.orders_peek" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">orders_peek</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">orders_peek</span><span class="p">(</span><span class="n">as_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 </h3>
 
@@ -7175,6 +7500,20 @@ https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint
         </tr>
       </thead>
       <tbody>
+          <tr class="doc-section-item">
+            <td><code>as_dict</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If <code>True</code>, pass state as dictionary, otherwise as <code>quantpylib.standards.Orders</code> object.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
           <tr class="doc-section-item">
             <td><code>**kwargs</code></td>
             <td>
@@ -7554,7 +7893,7 @@ https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.positions_mirror" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">positions_mirror</span><span class="p">(</span><span class="n">is_perpetuals</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">on_update</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">positions_mirror</span><span class="p">(</span><span class="n">is_perpetuals</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">on_update</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">as_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -7580,17 +7919,45 @@ https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint
       </thead>
       <tbody>
           <tr class="doc-section-item">
+            <td><code>is_perpetuals</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, retrieves positions for perpetual contracts. If False, retrieves spot balances. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
             <td><code>on_update</code></td>
             <td>
                   <code>coroutine</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A coroutine handler for positions dictionary on fill or mark-to-market.</p>
+                <p>A coroutine handler for positions dictionary on fill.</p>
               </div>
             </td>
             <td>
                   <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>as_dict</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, the method returns positions as a dictionary, otherwise as a <code>quantpylib.standards.Positions</code> object. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -7617,7 +7984,7 @@ https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.positions_peek" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">positions_peek</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">positions_peek</span><span class="p">(</span><span class="n">as_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 </h3>
 
@@ -7639,6 +8006,20 @@ https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint
       </thead>
       <tbody>
           <tr class="doc-section-item">
+            <td><code>as_dict</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, the method returns positions as a dictionary, otherwise as a <code>quantpylib.standards.Positions</code> object. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
             <td><code>**kwargs</code></td>
             <td>
             </td>
@@ -7649,6 +8030,116 @@ https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint
             </td>
             <td>
                   <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.rand_cloid" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">rand_cloid</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">include_prefix</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Generate a random string (cloid) consisting of hexadecimal characters, optionally with a prefix.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>start</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A string to prepend to the generated random string. Defaults to ''.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>end</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A string to append to the generated random string. Defaults to ''.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>include_prefix</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, includes the '0x' prefix at the beginning of the string. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>**kwargs</code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional keyword arguments for future extensibility.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>str</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A random hexadecimal string with a total length of 32 characters, 
+including the optional 'start' and 'end' strings, and an optional '0x' prefix.</p>
+              </div>
             </td>
           </tr>
       </tbody>
@@ -8131,7 +8622,7 @@ https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint
 
     <div class="doc doc-contents ">
 
-      <p>Subscribe to trade data.</p>
+      <p>Subscribe to ticker trades.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>

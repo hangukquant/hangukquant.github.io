@@ -665,6 +665,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../hft/feed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.feed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../hft/lob/" class="md-nav__link">
         
   
@@ -1118,6 +1139,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#quantpylib.datapoller.crypto.Crypto.get_funding_rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_funding_rates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.datapoller.crypto.Crypto.get_ticker_fundamentals" class="md-nav__link">
     <span class="md-ellipsis">
       get_ticker_fundamentals
@@ -1501,48 +1531,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gateway/trades/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.gateway.trades
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../gateway/transactions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.gateway.transactions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../gateway/utils/" class="md-nav__link">
         
   
@@ -1791,48 +1779,6 @@
   
   <span class="md-ellipsis">
     quantpylib.wrappers.binance
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../wrappers/phemex/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.wrappers.phemex
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../wrappers/ccxt/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.wrappers.ccxt
   </span>
   
 
@@ -2123,6 +2069,82 @@
 
 
 
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.datapoller.crypto.Crypto.get_funding_rates" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_funding_rates</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Retrieve funding rate data for cryptocurrencies. @ts_poller</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>**kwargs</code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Data-source specific keyword arguments for endpoint specification.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Trade bar data for the specified cryptocurrency from the selected data source.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">=</span><span class="n">datapoller</span><span class="o">.</span><span class="n">crypto</span><span class="o">.</span><span class="n">get_funding_rates</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;ETH&quot;</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;hyperliquid&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+    </div>
+
+</div>
 
 <div class="doc doc-object doc-function">
 

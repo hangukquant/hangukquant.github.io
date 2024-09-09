@@ -665,6 +665,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../hft/feed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.feed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../hft/lob/" class="md-nav__link">
         
   
@@ -1483,48 +1504,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../trades/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.gateway.trades
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../transactions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.gateway.transactions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../utils/" class="md-nav__link">
         
   
@@ -1789,48 +1768,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wrappers/phemex/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.wrappers.phemex
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../wrappers/ccxt/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.wrappers.ccxt
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../wrappers/oanda/" class="md-nav__link">
         
   
@@ -2066,28 +2003,27 @@
 <a id="quantpylib.gateway"></a>
     <div class="doc doc-contents first">
 
-      <p><code>quantpylib.gateway</code> is a quant module used for multi-exchage integration and account management.</p>
+      <p><code>quantpylib.gateway</code> is a quant module used for multi-exchange integration and account management.</p>
 <p>The clients are categorized into their gateway classes, with current support for:</p>
 <div class="highlight"><pre><span></span><code>- account
 - exchange
 - executor
 - orders
 - positions
-- trades
-- transactions
 </code></pre></div>
 <p>The exchange clients supported are:</p>
 <div class="highlight"><pre><span></span><code>- binance
+- bybit
 - hyperliquid
 </code></pre></div>
 <p>In general, a trader may have requirements for multi-exchange account management
 and broker integrations. Each exchange has its own authentication flow, order schema
-and account management - the gateway abstracts these concerns to provide a seamless interface
-for exchange integration.</p>
+and account management - the gateway abstracts these concerns to provide a seamless,
+common interface for exchange integration.</p>
 <p>Each gateway is derived from the base <code>quantpylib.gateway.base.BaseGateway</code> class and implements a set of methods,
-and routs the requests to the specified exchange client and endpoints through the argument <code>"exc"</code>. The supported exchange clients are written as wrappers 
-on the <a href="../../wrappers/wrappers"><code>quantpylib.wrappers</code></a> module, and their supported endpoints share the same function name
-as in the gateways.
+and routs the requests to the specified exchange client and endpoints through the argument <code>"exc"</code>. 
+The supported exchange clients are written as wrappers on the <a href="../../wrappers/wrappers"><code>quantpylib.wrappers</code></a> module, 
+and their supported endpoints share the same function name as in the gateways.
 The different gateways are accessible via the master gateway class, given in <code>quantpylib.gateway.master.Gateway</code> object instance.
 For instance, if we would like to get position data using the <code>quantpylib.gateway.positions.Positions.positions_get</code>,
 we can do so by creating a <code>obj = Gateway(...)</code> instance, and calling <code>obj.positions.positions_get(...,exc="binance")</code>.
@@ -2242,8 +2178,8 @@ Or maybe we just want mid-prices
 </code></pre></div></p>
 <h3 id="orders">Orders</h3>
 <p>We have order endpoints too. We can get order details using their ID:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">orders</span><span class="o">.</span><span class="n">order_get_by_id</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">12345</span><span class="p">,</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;hyperliquid&#39;</span><span class="p">))</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">orders</span><span class="o">.</span><span class="n">order_get_by_id</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;PENDLEUSDT&quot;</span><span class="p">,</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;binance&#39;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">orders</span><span class="o">.</span><span class="n">order_query</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">12345</span><span class="p">,</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;hyperliquid&#39;</span><span class="p">))</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">orders</span><span class="o">.</span><span class="n">order_query</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;PENDLEUSDT&quot;</span><span class="p">,</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;binance&#39;</span><span class="p">))</span>
 </code></pre></div></p>
 <p>We want a snapshot of the orders page on the exchange:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">orders</span><span class="o">.</span><span class="n">orders_get</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;hyperliquid&#39;</span><span class="p">))</span>
@@ -2288,10 +2224,6 @@ Or keep a local copy and peek:
 <a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">positions_mirror</span><span class="p">(</span><span class="n">on_update</span><span class="o">=</span><span class="n">handler</span><span class="p">,</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;hyperliquid&#39;</span><span class="p">)</span>
 <a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">gateway</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">positions_peek</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;hyperliquid&#39;</span><span class="p">))</span>
-</code></pre></div>
-Note that since the local copy must maintain consistency, and it contains PnL information, the <code>on_update</code>'s <code>handler</code> is called every time the mark-to-market value of positions change - not when there are changes in the positions held:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>{&#39;SOL&#39;: {&#39;ticker&#39;: &#39;SOL&#39;, &#39;amount&#39;: Decimal(&#39;33.0&#39;), ...&#39;unrealized_pnl&#39;: Decimal(&#39;1292.08530&#39;)}}
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>{&#39;SOL&#39;: {&#39;ticker&#39;: &#39;SOL&#39;, &#39;amount&#39;: Decimal(&#39;33.0&#39;), ...&#39;unrealized_pnl&#39;: Decimal(&#39;1291.42530&#39;)}}
 </code></pre></div></p>
 
 

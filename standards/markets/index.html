@@ -665,6 +665,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../hft/feed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.feed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../hft/lob/" class="md-nav__link">
         
   
@@ -1376,48 +1397,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gateway/trades/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.gateway.trades
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../gateway/transactions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.gateway.transactions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../gateway/utils/" class="md-nav__link">
         
   
@@ -1813,48 +1792,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wrappers/phemex/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.wrappers.phemex
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../wrappers/ccxt/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    quantpylib.wrappers.ccxt
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../wrappers/oanda/" class="md-nav__link">
         
   
@@ -2091,6 +2028,8 @@
 <a id="quantpylib.standards.markets"></a>
     <div class="doc doc-contents first">
 
+      <p>The (standard) data types recommended for each information type.</p>
+
 
 
   <div class="doc doc-children">
@@ -2139,9 +2078,8 @@ fields in transaction records, account details, order types, and more.</p>
 <li><code>LIMIT_PRICE</code> (float): "limit_price"</li>
 <li><code>ORDER_ID</code> (str): "order_id"</li>
 <li><code>ORDER_TAG</code> (str): "order_tag"</li>
-<li><code>ORDER_FILLED</code> (Decimal): "amount_filled"</li>
 <li><code>ORDER_TOFILL</code> (Decimal): "amount_left"</li>
-<li><code>ORDER_ORIGINAL</code> (Decimal): "amount_total"</li>
+<li><code>ORDER_AMOUNT</code> (Decimal): "amount_total"</li>
 </ul>
 <h3 id="order-types">Order Types</h3>
 <ul>
@@ -2150,7 +2088,6 @@ fields in transaction records, account details, order types, and more.</p>
 <li><code>ORDER_TYPE_LIMIT</code> (str): "limit"</li>
 <li><code>ORDER_TYPE_STOP_MARKET</code> (str): "stop_market"</li>
 <li><code>ORDER_TYPE_STOP_LIMIT</code> (str): "stop_limit"</li>
-<li><code>ORDER_TYPE_SCALE</code> (str): "scale"</li>
 <li><code>ORDER_TYPE_TWAP</code> (str): "twap"</li>
 </ul>
 <h3 id="price-match-types">Price Match Types</h3>
