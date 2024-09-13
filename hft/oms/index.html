@@ -962,6 +962,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.hft.oms.OMS.rand_cloid" class="md-nav__link">
+    <span class="md-ellipsis">
+      rand_cloid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.hft.oms.OMS.rounded_lots" class="md-nav__link">
     <span class="md-ellipsis">
       rounded_lots
@@ -2324,7 +2333,7 @@
 
 
 <h3 id="quantpylib.hft.oms.OMS.cancel_order" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">cancel_order</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">cancel_order</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -2351,7 +2360,7 @@ for given ticker.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>exchange</code></td>
+            <td><code>exc</code></td>
             <td>
                   <code>str</code>
             </td>
@@ -2417,7 +2426,7 @@ for given ticker.</p>
 
 
 <h3 id="quantpylib.hft.oms.OMS.cloid_query" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">cloid_query</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="n">cloid</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">cloid_query</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">cloid</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2439,7 +2448,7 @@ for given ticker.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>exchange</code></td>
+            <td><code>exc</code></td>
             <td>
                   <code>str</code>
             </td>
@@ -2741,7 +2750,7 @@ for given ticker.</p>
 
 
 <h3 id="quantpylib.hft.oms.OMS.contract_specs" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">contract_specs</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">contract_specs</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2763,7 +2772,7 @@ for given ticker.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>exchange</code></td>
+            <td><code>exc</code></td>
             <td>
                   <code>str</code>
             </td>
@@ -2801,7 +2810,7 @@ for given ticker.</p>
 
 
 <h3 id="quantpylib.hft.oms.OMS.get_position" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">get_position</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">get_position</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2823,7 +2832,7 @@ for given ticker.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>exchange</code></td>
+            <td><code>exc</code></td>
             <td>
                   <code>str</code>
             </td>
@@ -2907,7 +2916,7 @@ To be called after the OMS has been created.</p>
 
 
 <h3 id="quantpylib.hft.oms.OMS.lagged_price" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">lagged_price</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">lagged_price</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2929,7 +2938,7 @@ To be called after the OMS has been created.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>exchange</code></td>
+            <td><code>exc</code></td>
             <td>
                   <code>str</code>
             </td>
@@ -3031,7 +3040,7 @@ Updates the orders page maintained by the OMS with a PENDING status.</p>
 
 
 <h3 id="quantpylib.hft.oms.OMS.lot_precision" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">lot_precision</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">lot_precision</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3053,7 +3062,7 @@ Updates the orders page maintained by the OMS with a PENDING status.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>exchange</code></td>
+            <td><code>exc</code></td>
             <td>
                   <code>str</code>
             </td>
@@ -3155,7 +3164,7 @@ Updates the orders page maintained by the OMS with a PENDING status.</p>
 
 
 <h3 id="quantpylib.hft.oms.OMS.min_notional" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">min_notional</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">min_notional</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3177,7 +3186,7 @@ Updates the orders page maintained by the OMS with a PENDING status.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>exchange</code></td>
+            <td><code>exc</code></td>
             <td>
                   <code>str</code>
             </td>
@@ -3215,7 +3224,7 @@ Updates the orders page maintained by the OMS with a PENDING status.</p>
 
 
 <h3 id="quantpylib.hft.oms.OMS.oid_query" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">oid_query</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="n">oid</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">oid_query</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">oid</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3237,7 +3246,7 @@ Updates the orders page maintained by the OMS with a PENDING status.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>exchange</code></td>
+            <td><code>exc</code></td>
             <td>
                   <code>str</code>
             </td>
@@ -3293,7 +3302,7 @@ and size differences are submitted to a hedge balance that waits for future arri
 
 
 <h3 id="quantpylib.hft.oms.OMS.orders_get" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">orders_get</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">orders_get</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -3319,7 +3328,7 @@ and size differences are submitted to a hedge balance that waits for future arri
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>exchange</code></td>
+            <td><code>exc</code></td>
             <td>
                   <code>str</code>
             </td>
@@ -3364,7 +3373,7 @@ and size differences are submitted to a hedge balance that waits for future arri
 
 
 <h3 id="quantpylib.hft.oms.OMS.orders_mirror" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">orders_mirror</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="n">on_update</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">on_delta</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">orders_mirror</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">on_update</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">on_delta</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -3390,7 +3399,7 @@ and size differences are submitted to a hedge balance that waits for future arri
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>exchange</code></td>
+            <td><code>exc</code></td>
             <td>
                   <code>str</code>
             </td>
@@ -3442,7 +3451,7 @@ and size differences are submitted to a hedge balance that waits for future arri
 
 
 <h3 id="quantpylib.hft.oms.OMS.orders_peek" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">orders_peek</span><span class="p">(</span><span class="n">exchange</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">orders_peek</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3459,7 +3468,7 @@ and size differences are submitted to a hedge balance that waits for future arri
 
 
 <h3 id="quantpylib.hft.oms.OMS.positions_get" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">positions_get</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">positions_get</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -3485,7 +3494,7 @@ and size differences are submitted to a hedge balance that waits for future arri
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>exchange</code></td>
+            <td><code>exc</code></td>
             <td>
                   <code>str</code>
             </td>
@@ -3552,7 +3561,7 @@ and size differences are submitted to a hedge balance that waits for future arri
 
 
 <h3 id="quantpylib.hft.oms.OMS.positions_mirror" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">positions_mirror</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="n">on_update</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">on_delta</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">positions_mirror</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">on_update</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">on_delta</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -3578,7 +3587,7 @@ and size differences are submitted to a hedge balance that waits for future arri
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>exchange</code></td>
+            <td><code>exc</code></td>
             <td>
                   <code>str</code>
             </td>
@@ -3630,7 +3639,7 @@ and size differences are submitted to a hedge balance that waits for future arri
 
 
 <h3 id="quantpylib.hft.oms.OMS.positions_peek" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">positions_peek</span><span class="p">(</span><span class="n">exchange</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">positions_peek</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3647,7 +3656,7 @@ and size differences are submitted to a hedge balance that waits for future arri
 
 
 <h3 id="quantpylib.hft.oms.OMS.price_precision" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">price_precision</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">price_precision</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3669,7 +3678,7 @@ and size differences are submitted to a hedge balance that waits for future arri
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>exchange</code></td>
+            <td><code>exc</code></td>
             <td>
                   <code>str</code>
             </td>
@@ -3706,8 +3715,67 @@ and size differences are submitted to a hedge balance that waits for future arri
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.hft.oms.OMS.rand_cloid" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">rand_cloid</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Generate a client order id.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>exc</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>**kwargs</code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange wrapper specific keyword arguments.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="quantpylib.hft.oms.OMS.rounded_lots" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">rounded_lots</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">rounded_lots</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3729,7 +3797,7 @@ and size differences are submitted to a hedge balance that waits for future arri
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>exchange</code></td>
+            <td><code>exc</code></td>
             <td>
                   <code>str</code>
             </td>
