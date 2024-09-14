@@ -879,6 +879,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#quantpylib.hft.utils.simple_weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      simple_weights
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2345,6 +2354,88 @@
             <td>
               <div class="doc-md-description">
                 <p>np.ndarray: An array of rolling Z-scores.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="quantpylib.hft.utils.simple_weights" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">simple_weights</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Generates simple weights for an array.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>arr</code></td>
+            <td>
+                  <code><span title="numpy.ndarray">ndarray</span> or list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The input array.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>normalize</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, the weights are normalized to sum to 1.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>np.ndarray: An array of simple weights.</p>
               </div>
             </td>
           </tr>
