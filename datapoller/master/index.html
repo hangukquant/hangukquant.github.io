@@ -725,6 +725,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../hft/mocks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.mocks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../hft/lob/" class="md-nav__link">
         
   
@@ -2173,7 +2194,7 @@
 
 
 <h3 id="quantpylib.datapoller.master.DataPoller.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">config_keys</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;yfinance&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;alias&#39;</span><span class="p">:</span> <span class="s1">&#39;yfinance&#39;</span><span class="p">},</span> <span class="s1">&#39;eodhd&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;alias&#39;</span><span class="p">:</span> <span class="s1">&#39;eodhd&#39;</span><span class="p">,</span> <span class="s1">&#39;eod_key&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;EOD_KEY&#39;</span><span class="p">)},</span> <span class="s1">&#39;binance&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;alias&#39;</span><span class="p">:</span> <span class="s1">&#39;binance&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;secret&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="s1">&#39;hyperliquid&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;alias&#39;</span><span class="p">:</span> <span class="s1">&#39;hyperliquid&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;secret&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="s1">&#39;bybit&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;secret&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="s1">&#39;oanda&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;alias&#39;</span><span class="p">:</span> <span class="s1">&#39;oanda&#39;</span><span class="p">,</span> <span class="s1">&#39;account_id&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;OANDA_ACC&#39;</span><span class="p">),</span> <span class="s1">&#39;secret&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;OANDA_KEY&#39;</span><span class="p">),</span> <span class="s1">&#39;env&#39;</span><span class="p">:</span> <span class="s1">&#39;practice&#39;</span><span class="p">}})</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">config_keys</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;binance&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;secret&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="s1">&#39;hyperliquid&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;alias&#39;</span><span class="p">:</span> <span class="s1">&#39;hyperliquid&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;secret&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="s1">&#39;bybit&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;secret&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="s1">&#39;yfinance&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;eodhd&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;oanda&#39;</span><span class="p">:</span> <span class="p">{}})</span></code>
 
 </h3>
 
@@ -2219,7 +2240,7 @@ matching to the constructor in <code>quantpylib.wrappers.Binance</code> that loo
               </div>
             </td>
             <td>
-                  <code>{&#39;yfinance&#39;: {&#39;alias&#39;: &#39;yfinance&#39;}, &#39;eodhd&#39;: {&#39;alias&#39;: &#39;eodhd&#39;, &#39;eod_key&#39;: <span title="os.getenv">getenv</span>(&#39;EOD_KEY&#39;)}, &#39;binance&#39;: {&#39;alias&#39;: &#39;binance&#39;, &#39;key&#39;: None, &#39;secret&#39;: None}, &#39;hyperliquid&#39;: {&#39;alias&#39;: &#39;hyperliquid&#39;, &#39;key&#39;: None, &#39;secret&#39;: None}, &#39;bybit&#39;: {&#39;key&#39;: None, &#39;secret&#39;: None}, &#39;oanda&#39;: {&#39;alias&#39;: &#39;oanda&#39;, &#39;account_id&#39;: <span title="os.getenv">getenv</span>(&#39;OANDA_ACC&#39;), &#39;secret&#39;: <span title="os.getenv">getenv</span>(&#39;OANDA_KEY&#39;), &#39;env&#39;: &#39;practice&#39;}}</code>
+                  <code>{&#39;binance&#39;: {&#39;key&#39;: None, &#39;secret&#39;: None}, &#39;hyperliquid&#39;: {&#39;alias&#39;: &#39;hyperliquid&#39;, &#39;key&#39;: None, &#39;secret&#39;: None}, &#39;bybit&#39;: {&#39;key&#39;: None, &#39;secret&#39;: None}, &#39;yfinance&#39;: {}, &#39;eodhd&#39;: {}, &#39;oanda&#39;: {}}</code>
             </td>
           </tr>
       </tbody>

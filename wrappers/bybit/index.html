@@ -725,6 +725,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../hft/mocks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.mocks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../hft/lob/" class="md-nav__link">
         
   
@@ -2671,7 +2692,7 @@
 
 
 <h3 id="quantpylib.wrappers.bybit.Bybit.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">key_self_generated</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">key_self_generated</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3301,7 +3322,7 @@ the <code>order_updates_unsubscribe</code> method.</p>
 
 
 <h3 id="quantpylib.wrappers.bybit.Bybit.contract_specifications" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">contract_specifications</span><span class="p">(</span><span class="n">include_prelists</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">contract_type</span><span class="o">=</span><span class="s1">&#39;LinearPerpetual&#39;</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">contract_specifications</span><span class="p">(</span><span class="n">include_prelists</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">contract_type</span><span class="o">=</span><span class="s1">&#39;LinearPerpetual&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -3364,7 +3385,7 @@ the <code>order_updates_unsubscribe</code> method.</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>{}</code>
             </td>
           </tr>
       </tbody>
@@ -6573,7 +6594,7 @@ if <code>ticker</code> is not provided.</p>
 
 
 <h3 id="quantpylib.wrappers.bybit.Bybit.orders_peek" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">orders_peek</span><span class="p">()</span></code>
+            <code class="highlight language-python"><span class="n">orders_peek</span><span class="p">(</span><span class="n">as_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 </h3>
 
@@ -6605,7 +6626,7 @@ if <code>ticker</code> is not provided.</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>True</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -6618,7 +6639,7 @@ if <code>ticker</code> is not provided.</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>{}</code>
             </td>
           </tr>
       </tbody>
