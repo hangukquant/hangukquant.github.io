@@ -755,6 +755,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.hft.oms.OMS.add_clock_callback" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_clock_callback
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.hft.oms.OMS.cancel_order" class="md-nav__link">
     <span class="md-ellipsis">
       cancel_order
@@ -1019,6 +1028,15 @@
   <a href="#quantpylib.hft.oms.OMS.rounded_lots" class="md-nav__link">
     <span class="md-ellipsis">
       rounded_lots
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.oms.OMS.rounded_price" class="md-nav__link">
+    <span class="md-ellipsis">
+      rounded_price
     </span>
   </a>
   
@@ -2496,6 +2514,86 @@
             </td>
             <td>
                   <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.oms.OMS.add_clock_callback" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_clock_callback</span><span class="p">(</span><span class="n">callback</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;CLOCK&#39;</span><span class="p">,</span> <span class="n">interval_ms</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Add a callback to the event loop that is triggered every interval_ms.
+Can be used for clock-based trading agents. Callback is shutdown when 
+OMS is cleaned up.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>callback</code></td>
+            <td>
+                  <code>coroutine</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The callback to trigger.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>name</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The name of the callback. Defaults to 'CLOCK'.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;CLOCK&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>interval_ms</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The interval in milliseconds. Defaults to 500.</p>
+              </div>
+            </td>
+            <td>
+                  <code>500</code>
             </td>
           </tr>
       </tbody>
@@ -4071,6 +4169,80 @@ and size differences are submitted to a hedge balance that waits for future arri
             <td>
               <div class="doc-md-description">
                 <p>The amount to round.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.oms.OMS.rounded_price" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">rounded_price</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Round a price to the price precision for a given exchange and ticker.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>exc</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>ticker</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>price</code></td>
+            <td>
+                  <code><span title="decimal.Decimal">Decimal</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The price to round.</p>
               </div>
             </td>
             <td>

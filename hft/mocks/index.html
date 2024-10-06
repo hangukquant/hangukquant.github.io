@@ -820,6 +820,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#quantpylib.hft.mocks.MockOMS" class="md-nav__link">
+    <span class="md-ellipsis">
+      MockOMS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MockOMS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.mocks.MockOMS.add_clock_callback" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_clock_callback
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.mocks.MockOMS.get_positions_value" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_positions_value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.mocks.MockOMS.lagged_price" class="md-nav__link">
+    <span class="md-ellipsis">
+      lagged_price
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quantpylib.hft.mocks.ReplayEvents" class="md-nav__link">
     <span class="md-ellipsis">
       ReplayEvents
@@ -869,6 +911,60 @@
   <a href="#quantpylib.hft.mocks.Replayer.add_to_queue" class="md-nav__link">
     <span class="md-ellipsis">
       add_to_queue
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.mocks.Replayer.df_actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      df_actions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.mocks.Replayer.df_exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      df_exchange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.mocks.Replayer.df_fills" class="md-nav__link">
+    <span class="md-ellipsis">
+      df_fills
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.mocks.Replayer.df_markouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      df_markouts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.mocks.Replayer.df_portfolio" class="md-nav__link">
+    <span class="md-ellipsis">
+      df_portfolio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.mocks.Replayer.df_prices" class="md-nav__link">
+    <span class="md-ellipsis">
+      df_prices
     </span>
   </a>
   
@@ -2253,6 +2349,9 @@
 
   <h1>quantpylib.hft.mocks</h1>
 
+<p>The mocks module contains classes that replicate the <code>quantpylib.hft.feed.Feed</code> and <code>quantpylib.hft.oms.OMS</code> trading agents, as well as the <code>Replayer</code> class that drives these mock classes. The <code>Replayer</code> has auxiliary statistical and graphical utility functions.</p>
+
+
 <div class="doc doc-object doc-module">
 
 
@@ -2547,6 +2646,199 @@
 
 
 
+<h2 id="quantpylib.hft.mocks.MockOMS" class="doc doc-heading">
+            <code>MockOMS</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="quantpylib.hft.oms.OMS" href="../oms/#quantpylib.hft.oms.OMS">OMS</a></code></p>
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.mocks.MockOMS.add_clock_callback" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_clock_callback</span><span class="p">(</span><span class="n">callback</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;CLOCK&#39;</span><span class="p">,</span> <span class="n">interval_ms</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Add a callback to the event queue that is triggered every interval_ms.
+Can be used for clock-based trading agents.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>callback</code></td>
+            <td>
+                  <code>coroutine</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The callback to trigger.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>name</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The name of the callback. Defaults to 'CLOCK'.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;CLOCK&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>interval_ms</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The interval in milliseconds. Defaults to 500.</p>
+              </div>
+            </td>
+            <td>
+                  <code>500</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.mocks.MockOMS.get_positions_value" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_positions_value</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Get the net signed value of all open positions for an exchange at replay time.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.mocks.MockOMS.lagged_price" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">lagged_price</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Get the price for a given exchange and ticker at current replay time.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>exc</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>ticker</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
 <h2 id="quantpylib.hft.mocks.ReplayEvents" class="doc doc-heading">
             <code>ReplayEvents</code>
 
@@ -2611,14 +2903,17 @@
 
 
 <h3 id="quantpylib.hft.mocks.Replayer.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">l2_data</span><span class="p">,</span> <span class="n">trade_data</span><span class="p">,</span> <span class="n">gateway</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">latencies</span><span class="o">=</span><span class="p">{</span><span class="n">Latencies</span><span class="o">.</span><span class="n">NULL</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PUBLIC</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PRIVATE</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PUBLIC</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PRIVATE</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PUBLIC</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PRIVATE</span><span class="p">:</span> <span class="mi">50</span><span class="p">},</span> <span class="n">exchange_latencies</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">l2_data</span><span class="p">,</span> <span class="n">trade_data</span><span class="p">,</span> <span class="n">maker_fees</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">taker_fees</span><span class="o">=</span><span class="mf">0.0003</span><span class="p">,</span> <span class="n">gateway</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">latencies</span><span class="o">=</span><span class="p">{</span><span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PUBLIC</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PRIVATE</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PUBLIC</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PRIVATE</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PUBLIC</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PRIVATE</span><span class="p">:</span> <span class="mi">50</span><span class="p">},</span> <span class="n">exchange_fees</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exchange_latencies</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stamp_cycle</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span></code>
 
 </h3>
 
 
     <div class="doc doc-contents ">
 
-      <p>A replayer for backtesting.</p>
+      <p>A replayer for backtesting. This class replays orderboook depth data, trade data 
+and provides a mock feed and oms classes to replay agent-based communications between 
+the trading logic and the exchange. Simulates data feed, order submissions, matching, 
+latencies and more.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -2661,9 +2956,37 @@
             </td>
           </tr>
           <tr class="doc-section-item">
+            <td><code>maker_fees</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The maker fees. Defaults to 0.0001.</p>
+              </div>
+            </td>
+            <td>
+                  <code>0.0001</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>taker_fees</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The taker fees. Defaults to 0.0003.</p>
+              </div>
+            </td>
+            <td>
+                  <code>0.0003</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
             <td><code>gateway</code></td>
             <td>
-                  <code>Gateway</code>
+                  <code>`quantpylib.gateway.master.Gateway`</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -2681,7 +3004,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The exchanges. Defaults to None.</p>
+                <p>The list of exchanges. Defaults to keys inside the <code>l2_data</code> dict.</p>
               </div>
             </td>
             <td>
@@ -2695,11 +3018,26 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Latency mapping in ms for each Latecy type.</p>
+                <p>Latency mapping in ms for each message channel. Defaults to <code>50</code> for all private and <code>100</code> for public communications.
+Keys are <code>Latencies.REQ_PUBLIC</code>, <code>Latencies.REQ_PRIVATE</code>, <code>Latencies.ACK_PUBLIC</code>, <code>Latencies.ACK_PRIVATE</code>, <code>Latencies.FEED_PUBLIC</code>, <code>Latencies.FEED_PRIVATE</code>. </p>
               </div>
             </td>
             <td>
-                  <code>{<span title="quantpylib.hft.mocks.Latencies.NULL">NULL</span>: 0, <span title="quantpylib.hft.mocks.Latencies.REQ_PUBLIC">REQ_PUBLIC</span>: 100, <span title="quantpylib.hft.mocks.Latencies.REQ_PRIVATE">REQ_PRIVATE</span>: 50, <span title="quantpylib.hft.mocks.Latencies.ACK_PUBLIC">ACK_PUBLIC</span>: 100, <span title="quantpylib.hft.mocks.Latencies.ACK_PRIVATE">ACK_PRIVATE</span>: 50, <span title="quantpylib.hft.mocks.Latencies.FEED_PUBLIC">FEED_PUBLIC</span>: 100, <span title="quantpylib.hft.mocks.Latencies.FEED_PRIVATE">FEED_PRIVATE</span>: 50}</code>
+                  <code>{<span title="quantpylib.hft.mocks.Latencies.REQ_PUBLIC">REQ_PUBLIC</span>: 100, <span title="quantpylib.hft.mocks.Latencies.REQ_PRIVATE">REQ_PRIVATE</span>: 50, <span title="quantpylib.hft.mocks.Latencies.ACK_PUBLIC">ACK_PUBLIC</span>: 100, <span title="quantpylib.hft.mocks.Latencies.ACK_PRIVATE">ACK_PRIVATE</span>: 50, <span title="quantpylib.hft.mocks.Latencies.FEED_PUBLIC">FEED_PUBLIC</span>: 100, <span title="quantpylib.hft.mocks.Latencies.FEED_PRIVATE">FEED_PRIVATE</span>: 50}</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>exchange_fees</code></td>
+            <td>
+                  <code>dict</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange fees specify fees <code>dict</code> by exchange. Defaults to <code>maker_fees</code> and <code>taker_fees</code> for each exchange.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -2714,6 +3052,20 @@
             </td>
             <td>
                   <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>stamp_cycle</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The internval in ms used for stamping backtest statistics such as portfolio equity, inventory. Defaults to 500.</p>
+              </div>
+            </td>
+            <td>
+                  <code>5000</code>
             </td>
           </tr>
       </tbody>
@@ -2794,7 +3146,7 @@
 
     <div class="doc doc-contents ">
 
-      <p>Add events to the replayer.</p>
+      <p>Add events to the replayer queue.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -2871,7 +3223,8 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The latency for event arrival. Defaults to Latencies.NULL.</p>
+                <p>The latency for event arrival added to the timestamps of event occurence. 
+Defaults to Latencies.NULL, zero latency.</p>
               </div>
             </td>
             <td>
@@ -2973,11 +3326,399 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The latency for event arrival. Defaults to Latencies.NULL.</p>
+                <p>The latency for event arrival added to the timestamps of event occurence. 
+Defaults to Latencies.NULL, zero latency.</p>
               </div>
             </td>
             <td>
                   <code><span title="quantpylib.hft.mocks.Latencies.NULL">NULL</span></code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.mocks.Replayer.df_actions" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">df_actions</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Get a dataframe of all order fills, with columns <code>ts,price,size,dir,is_maker,exc,ticker</code>.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.mocks.Replayer.df_exchange" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">df_exchange</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Get the equity and inventory breakdown for an exchange.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>exc</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>plot</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Plot the pnl and inventory breakdown. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.mocks.Replayer.df_fills" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">df_fills</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">exc</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Get fills for a ticker and exchange.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>ticker</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>exc</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>plot</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Plot the fills. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>ax</code></td>
+            <td>
+                  <code><span title="matplotlib.axes.Axes">Axes</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The axes to plot on. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.mocks.Replayer.df_markouts" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">df_markouts</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Get markouts for a ticker and exchange.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>ticker</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker. Defaults to None. If None, all tickers are aggregated.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>exc</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange. Defaults to None. If None, all exchanges are aggregated.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>plot</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Plot the percentage markouts from next tick to 30 seconds out. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.mocks.Replayer.df_portfolio" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">df_portfolio</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Get the portfolio pnl breakdown by exchange.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>plot</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Plot the portfolio pnl breakdown. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.mocks.Replayer.df_prices" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">df_prices</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">exc</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">with_fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Get tick prices for a ticker and exchange.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>ticker</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>exc</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>plot</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Plot the prices. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>ax</code></td>
+            <td>
+                  <code><span title="matplotlib.axes.Axes">Axes</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The axes to plot on. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>with_fill</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Plot fills on the price plot. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
             </td>
           </tr>
       </tbody>
@@ -2998,7 +3739,7 @@
 
     <div class="doc doc-contents ">
 
-      <p>Get a <code>MockFeed</code> instance that can be used like a <code>qauntpylib.hft.feed.Feed</code> instance.</p>
+      <p>Get a <code>MockFeed</code> instance that can be used like a <code>quantpylib.hft.feed.Feed</code> instance.</p>
 
     </div>
 
@@ -3015,7 +3756,7 @@
 
     <div class="doc doc-contents ">
 
-      <p>Get the mid price known at replay time.</p>
+      <p>Get the mid price known at current replay time.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -3075,7 +3816,7 @@
 
     <div class="doc doc-contents ">
 
-      <p>Get a <code>MockOMS</code> instance that can be used like a <code>qauntpylib.hft.oms.OMS</code> instance.</p>
+      <p>Get a <code>MockOMS</code> instance that can be used like a <code>quantpylib.hft.oms.OMS</code> instance.</p>
 
     </div>
 
@@ -3113,7 +3854,7 @@
 
     <div class="doc doc-contents ">
 
-      <p>Get millisecond timestamp of the replayer is at.</p>
+      <p>Get millisecond timestamp of the replayer is at during <code>play</code>.</p>
 
     </div>
 
