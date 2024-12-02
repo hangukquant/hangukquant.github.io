@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../operators/">
+        <link rel="prev" href="../aiosonic/">
       
       
-        <link rel="next" href="../../hft/hft/">
+        <link rel="next" href="../rate_semaphore/">
       
       
       <link rel="icon" href="../../icons/logo.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>quantpylib.simulator.performance - quantpylib</title>
+        <title>quantpylib.throttler.httpx - quantpylib</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quantpylib.simulator.performance" class="md-skip">
+        <a href="#quantpylib.throttler.aiosonic" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              quantpylib.simulator.performance
+              quantpylib.throttler.httpx
             
           </span>
         </div>
@@ -241,7 +241,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../simulator/" class="md-tabs__link">
+        <a href="../../simulator/simulator/" class="md-tabs__link">
           
   
   User Documentation
@@ -424,8 +424,6 @@
                 
   
   
-    
-  
   
   
     
@@ -437,11 +435,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
         
           
           <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
@@ -455,7 +453,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1_1">
             <span class="md-nav__icon md-icon"></span>
             quantpylib.simulator
@@ -469,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simulator/" class="md-nav__link">
+      <a href="../../simulator/simulator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -490,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../alpha/" class="md-nav__link">
+      <a href="../../simulator/alpha/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -511,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gene/" class="md-nav__link">
+      <a href="../../simulator/gene/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -532,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../models/" class="md-nav__link">
+      <a href="../../simulator/models/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -553,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operators/" class="md-nav__link">
+      <a href="../../simulator/operators/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -571,28 +569,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    quantpylib.simulator.performance
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../simulator/performance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -601,42 +581,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#quantpylib.simulator.performance" class="md-nav__link">
-    <span class="md-ellipsis">
-      performance
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quantpylib.simulator.performance.performance_measures" class="md-nav__link">
-    <span class="md-ellipsis">
-      performance_measures
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -912,8 +856,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -923,11 +869,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
@@ -941,7 +887,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1_3">
             <span class="md-nav__icon md-icon"></span>
             quantpylib.throttler
@@ -955,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../throttler/throttler/" class="md-nav__link">
+      <a href="../throttler/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -976,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../throttler/aiohttp/" class="md-nav__link">
+      <a href="../aiohttp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -997,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../throttler/aiosonic/" class="md-nav__link">
+      <a href="../aiosonic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1015,10 +961,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../throttler/httpx/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    quantpylib.throttler.httpx
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1027,6 +991,75 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quantpylib.throttler.aiosonic" class="md-nav__link">
+    <span class="md-ellipsis">
+      aiosonic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantpylib.throttler.aiosonic.HTTPClient" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTPClient
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTPClient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.throttler.aiosonic.HTTPClient.cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      cleanup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.throttler.aiosonic.HTTPClient.handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      handler
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.throttler.aiosonic.HTTPClient.request" class="md-nav__link">
+    <span class="md-ellipsis">
+      request
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1039,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../throttler/rate_semaphore/" class="md-nav__link">
+      <a href="../rate_semaphore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1060,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../throttler/decorators/" class="md-nav__link">
+      <a href="../decorators/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2176,14 +2209,86 @@
                   
 
 
-  <h1>quantpylib.simulator.performance</h1>
+  <h1>quantpylib.throttler.httpx</h1>
 
 <div class="doc doc-object doc-module">
 
 
 
-<a id="quantpylib.simulator.performance"></a>
+<a id="quantpylib.throttler.aiosonic"></a>
     <div class="doc doc-contents first">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="quantpylib.throttler.aiosonic.HTTPClient" class="doc doc-heading">
+            <code>HTTPClient</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+      <p>An asynchronous HTTP aiosonic client for fast network requests and (de)serialization 
+of data packets. Automatic retries and error handling.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>base_url</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The base URL for all requests. Defaults to an empty string.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>json_decoder</code></td>
+            <td>
+                  <code>callable</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The JSON decoder function to use. Defaults to <code>orjson.loads</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="orjson.loads">loads</span></code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
 
 
 
@@ -2200,15 +2305,62 @@
 <div class="doc doc-object doc-function">
 
 
-<h2 id="quantpylib.simulator.performance.performance_measures" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">performance_measures</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">periods_in_year</span><span class="o">=</span><span class="mi">252</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;./output&#39;</span><span class="p">)</span></code>
+<h3 id="quantpylib.throttler.aiosonic.HTTPClient.cleanup" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">cleanup</span><span class="p">()</span></code>
 
-</h2>
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
 
 
     <div class="doc doc-contents ">
 
-      <p>Calculate and visualize various performance measures of a trading strategy.</p>
+      <p>Clean up the HTTP client session, ensuring proper resource deallocation.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>None</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.throttler.aiosonic.HTTPClient.handler" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">handler</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">cargs</span><span class="o">=</span><span class="p">{})</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Handle the HTTP response, returning the JSON-decoded content or raising an HTTPException on error.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -2223,73 +2375,17 @@
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>r</code></td>
+            <td><code>response</code></td>
             <td>
-                  <code><span title="pandas.Series">Series</span></code>
+                  <code><span title="aiosonic.HTTPResponse">HTTPResponse</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Time series of returns.</p>
+                <p>The HTTP response object to handle.</p>
               </div>
             </td>
             <td>
                 <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>w</code></td>
-            <td>
-                  <code><span title="pandas.DataFrame">DataFrame</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>DataFrame of weights corresponding to each asset over time, with same index as r.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>periods_in_year</code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of time periods in a year for the granularity of return series passed in. Defaults to 252, the number of trading days in a year.</p>
-              </div>
-            </td>
-            <td>
-                  <code>252</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>plot</code></td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to generate and save plots. Defaults to True.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>path</code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Path to save generated plots, if plot=True</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;./output&#39;</code>
             </td>
           </tr>
       </tbody>
@@ -2300,6 +2396,28 @@
     <table>
       <thead>
         <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>dict</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The JSON-decoded response if the status code is less than 400.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
           <th>Type</th>
           <th>Description</th>
         </tr>
@@ -2307,37 +2425,11 @@
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code>dict</code>
+                  <code><span title="quantpylib.throttler.exceptions.HTTPException">HTTPException</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A dictionary containing various performance metrics:</p>
-<ul>
-<li>"cum_ret": Cumulative returns over time.</li>
-<li>"log_ret": Logarithmic returns.</li>
-<li>"max_dd": Maximum drawdown.</li>
-<li>"1y_roll_dd": One-year rolling drawdown.</li>
-<li>"1y_roll_max_dd": One-year rolling maximum drawdown.</li>
-<li>"sortino": Sortino ratio.</li>
-<li>"sharpe": Sharpe ratio.</li>
-<li>"mean_ret": Mean return per annum.</li>
-<li>"median_ret": Median return per annum.</li>
-<li>"stdev_ret": Standard deviation of returns per annum.</li>
-<li>"var_ret": Variance of returns per annum.</li>
-<li>"skew_ret": Skewness of returns.</li>
-<li>"kurt_exc": Excess kurtosis of returns.</li>
-<li>"cagr": Compound annual growth rate.</li>
-<li>"3y_roll_cagr": Three-year rolling compound annual growth rate.</li>
-<li>"3y_roll_calmar": Three-year rolling Calmar ratio.</li>
-<li>"omega(0)": Omega ratio.</li>
-<li>"ulcer": Ulcer index.</li>
-<li>"VaR95": Value at Risk at 95% confidence level.</li>
-<li>"cVaR95": Conditional Value at Risk at 95% confidence level.</li>
-<li>"gain_to_pain": Gain-to-pain ratio.</li>
-<li>"w_summary": Summary statistics of weights.</li>
-<li>"directionality": Market long bias directionality.</li>
-<li>"parity_distance": Distance from a 1/n equal weight portfolio.</li>
-</ul>
+                <p>If the response status code is 400 or higher.</p>
               </div>
             </td>
           </tr>
@@ -2347,6 +2439,208 @@
     </div>
 
 </div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.throttler.aiosonic.HTTPClient.request" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">request</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;content-type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">},</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_exceptions</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Make an HTTP request and handle retries on failure.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>url</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The full URL for the request. If not provided, <code>base_url</code> + <code>endpoint</code> is used. Defaults to an empty string.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>endpoint</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The endpoint to append to the base URL. Defaults to an empty string.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>method</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The HTTP method to use. Defaults to 'GET'.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;GET&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>headers</code></td>
+            <td>
+                  <code>dict</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The headers to include in the request. Defaults to {"content-type": "application/json"}.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{&#39;content-type&#39;: &#39;application/json&#39;}</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>params</code></td>
+            <td>
+                  <code>dict</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The URL parameters to include in the request. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>data</code></td>
+            <td>
+                  <code>dict or str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The data to include in the request body. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>return_exceptions</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to return exceptions instead of raising them. Defaults to False. No retries if True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>retries</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The number of retries if the request fails. Defaults to 2.</p>
+              </div>
+            </td>
+            <td>
+                  <code>2</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>dict</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The parsed JSON response if the request is successful.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="quantpylib.throttler.exceptions.HTTPException">HTTPException</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the response status code is 400 or higher.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
 
 
 

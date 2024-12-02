@@ -962,6 +962,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../throttler/httpx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.throttler.httpx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../throttler/rate_semaphore/" class="md-nav__link">
         
   
@@ -1775,6 +1796,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.standards.portfolio.Orders.get_total_ask_amount" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_total_ask_amount
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.standards.portfolio.Orders.get_total_bid_amount" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_total_bid_amount
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.standards.portfolio.Orders.oid_query" class="md-nav__link">
     <span class="md-ellipsis">
       oid_query
@@ -1916,6 +1955,15 @@
   <a href="#quantpylib.standards.portfolio.Positions.get_ticker_amount" class="md-nav__link">
     <span class="md-ellipsis">
       get_ticker_amount
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.standards.portfolio.Positions.get_ticker_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_ticker_position
     </span>
   </a>
   
@@ -2088,6 +2136,27 @@
   
   <span class="md-ellipsis">
     quantpylib.wrappers.paradex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wrappers/woox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.woox
   </span>
   
 
@@ -3069,7 +3138,7 @@
 
 
 <h3 id="quantpylib.standards.portfolio.Orders.get_ask_orders" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">get_ask_orders</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">get_ask_orders</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">include_pending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3115,7 +3184,7 @@
 
 
 <h3 id="quantpylib.standards.portfolio.Orders.get_bid_orders" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">get_bid_orders</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">get_bid_orders</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">include_pending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3169,6 +3238,98 @@
     <div class="doc doc-contents ">
 
       <p>Get the snapshot of alive orders.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.standards.portfolio.Orders.get_total_ask_amount" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_total_ask_amount</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">include_pending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Get the total ask amount for a ticker.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>ticker</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker symbol.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.standards.portfolio.Orders.get_total_bid_amount" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_total_bid_amount</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">include_pending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Get the total bid amount for a ticker.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>ticker</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker symbol.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
     </div>
 
@@ -3763,6 +3924,52 @@
     <div class="doc doc-contents ">
 
       <p>Get the signed size of a position.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>ticker</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker symbol.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.standards.portfolio.Positions.get_ticker_position" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_ticker_position</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Get the position object of a ticker.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
