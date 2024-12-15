@@ -854,6 +854,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.hft.lob.LOB.cumulative_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      cumulative_size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.hft.lob.LOB.get_asks_buffer" class="md-nav__link">
     <span class="md-ellipsis">
       get_asks_buffer
@@ -938,6 +947,15 @@
   <a href="#quantpylib.hft.lob.LOB.load_numpy_arr" class="md-nav__link">
     <span class="md-ellipsis">
       load_numpy_arr
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.lob.LOB.taker_impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      taker_impact
     </span>
   </a>
   
@@ -2020,6 +2038,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../wrappers/polymarket/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.polymarket
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../wrappers/eodhd/" class="md-nav__link">
         
   
@@ -2613,6 +2652,23 @@
     <div class="doc doc-contents ">
 
       <p>Clear all historical data buffers.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.lob.LOB.cumulative_size" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">cumulative_size</span><span class="p">(</span><span class="nb">dir</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Returns the size and volume that can be executed given a limit price instantaneously.</p>
 
     </div>
 
@@ -3241,6 +3297,23 @@ are instantiated exactly equal to the length of arrays passed in.</p>
           </tr>
       </tbody>
     </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.lob.LOB.taker_impact" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">taker_impact</span><span class="p">(</span><span class="nb">dir</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Returns the price of size being executed on the orderbook instantaenously.</p>
 
     </div>
 
