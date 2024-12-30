@@ -761,6 +761,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.hft.feed.Feed.flush_archives" class="md-nav__link">
+    <span class="md-ellipsis">
+      flush_archives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.hft.feed.Feed.get_feed" class="md-nav__link">
     <span class="md-ellipsis">
       get_feed
@@ -782,6 +791,51 @@
   <a href="#quantpylib.hft.feed.Feed.get_feed_ids" class="md-nav__link">
     <span class="md-ellipsis">
       get_feed_ids
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.feed.Feed.load_lob_archive" class="md-nav__link">
+    <span class="md-ellipsis">
+      load_lob_archive
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.feed.Feed.load_lob_archives" class="md-nav__link">
+    <span class="md-ellipsis">
+      load_lob_archives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.feed.Feed.load_trade_archive" class="md-nav__link">
+    <span class="md-ellipsis">
+      load_trade_archive
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.feed.Feed.load_trade_archives" class="md-nav__link">
+    <span class="md-ellipsis">
+      load_trade_archives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.feed.Feed.run_archive_scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      run_archive_scheduler
     </span>
   </a>
   
@@ -2345,7 +2399,7 @@
 
 
 <h3 id="quantpylib.hft.feed.Feed.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">gateway</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">gateway</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">archiver</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2688,6 +2742,86 @@
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.hft.feed.Feed.flush_archives" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">flush_archives</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;./archives/&#39;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">postfix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Flush the archives to disk with filename <code>{path}/{exchange}/{feed_cls}/{feed_type}/{prefix}{ticker}{_metadata}{postfix}.parquet</code></p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>path</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The path to the archives. Defaults to './archives/'.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;./archives/&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>prefix</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The prefix for the archive filename. Defaults to ''.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>postfix</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The postfix for the archive filename. Defaults to ''.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="quantpylib.hft.feed.Feed.get_feed" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_feed</span><span class="p">(</span><span class="n">feed_id</span><span class="p">)</span></code>
 
@@ -2738,6 +2872,10 @@
 
 <h3 id="quantpylib.hft.feed.Feed.get_feed_id" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_feed_id</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">feed_cls</span><span class="p">,</span> <span class="n">feed_type</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
 
 </h3>
 
@@ -2830,6 +2968,656 @@
 
 </div>
 
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.feed.Feed.load_lob_archive" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">load_lob_archive</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;./archives/&#39;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">postfix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Load parquet lob archives from disk. Loads the file from <code>{path}/{exchange}/{feed_cls}/{feed_type}/{prefix}{ticker}{postfix}.parquet</code>.
+An example would be <code>./archives/binance/perp/l2book/BTCUSDT_depth20.parquet</code>.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>depth</code>
+            </td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The depth of the order book archive.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>feed_cls</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The asset class. Defaults to FeedCls.PERPETUAL.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="quantpylib.hft.feed.FeedCls.PERPETUAL">PERPETUAL</span></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>path</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The path to the archives. Defaults to './archives/'.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;./archives/&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>prefix</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The prefix for the archive. Defaults to ''.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>postfix</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The postfix for the archive. Defaults to ''.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>raw</code>
+            </td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to return the raw loaded parquet dataframe or processed archive <code>[{ts,b,a}]</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.feed.Feed.load_lob_archives" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">load_lob_archives</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;./archives/&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">14</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">),</span> <span class="n">only_paths</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Load parquet lob archives that have been saved by the scheduler.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>depth</code>
+            </td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The depth of the order book archive.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>feed_cls</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The asset class. Defaults to FeedCls.PERPETUAL.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="quantpylib.hft.feed.FeedCls.PERPETUAL">PERPETUAL</span></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>path</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The path to the archives. Defaults to './archives/'.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;./archives/&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>start</code>
+            </td>
+            <td>
+                  <code>str or <span title="datetime.datetime">datetime</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The start date. Can take str format <code>%Y-%m-%d:%H</code> .Defaults to <code>datetime.now(pytz.utc) - timedelta(days=14)</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="datetime.datetime.now">now</span>(<span title="pytz.utc">utc</span>) - <span title="datetime.timedelta">timedelta</span>(days=14)</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>end</code>
+            </td>
+            <td>
+                  <code>str or <span title="datetime.datetime">datetime</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The end date. Can take str format <code>%Y-%m-%d:%H</code>. Defaults to <code>datetime.now(pytz.utc)</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="datetime.datetime.now">now</span>(<span title="pytz.utc">utc</span>)</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>only_paths</code>
+            </td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to return only the paths to the archives. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.feed.Feed.load_trade_archive" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">load_trade_archive</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;./archives/&#39;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">postfix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Load parquet trade archives from disk. Loads the file from <code>{path}/{exchange}/{feed_cls}/{feed_type}/{prefix}{ticker}{postfix}.parquet</code>.
+An example would be <code>./archives/binance/perp/trades/BTCUSDT.parquet</code>.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>feed_cls</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The asset class. Defaults to FeedCls.PERPETUAL.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="quantpylib.hft.feed.FeedCls.PERPETUAL">PERPETUAL</span></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>path</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The path to the archives. Defaults to './archives/'.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;./archives/&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>prefix</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The prefix for the archive. Defaults to ''.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>postfix</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The postfix for the archive. Defaults to ''.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>raw</code>
+            </td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to return the raw loaded parquet or processed archive <code>[[ts,price,size,dir]]</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.feed.Feed.load_trade_archives" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">load_trade_archives</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;./archives/&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">14</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">),</span> <span class="n">only_paths</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Load parquet trade archives that have been saved by the scheduler.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>feed_cls</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The asset class. Defaults to FeedCls.PERPETUAL.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="quantpylib.hft.feed.FeedCls.PERPETUAL">PERPETUAL</span></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>path</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The path to the archives. Defaults to './archives/'.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;./archives/&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>start</code>
+            </td>
+            <td>
+                  <code>str or <span title="datetime.datetime">datetime</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The start date. Can take str format <code>%Y-%m-%d:%H</code> .Defaults to <code>datetime.now(pytz.utc) - timedelta(days=14)</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="datetime.datetime.now">now</span>(<span title="pytz.utc">utc</span>) - <span title="datetime.timedelta">timedelta</span>(days=14)</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>end</code>
+            </td>
+            <td>
+                  <code>str or <span title="datetime.datetime">datetime</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The end date. Can take str format <code>%Y-%m-%d:%H</code>. Defaults to <code>datetime.now(pytz.utc)</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="datetime.datetime.now">now</span>(<span title="pytz.utc">utc</span>)</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>only_paths</code>
+            </td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to return only the paths to the archives. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.feed.Feed.run_archive_scheduler" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">run_archive_scheduler</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Run the archive scheduler which saves data with the following rules.
+1: Store data in an archive buffer.
+2: At the end of every hour, flush the buffer to disk.
+3: The files are stored in <code>./archives/{exchange}/{feed_cls}/{feed_type}/{yy}/{mm}/{ticker}{_metadata}_{ddhh}.parquet</code>.</p>
+
+    </div>
+
+</div>
+
 
 
   </div>
@@ -2906,17 +3694,6 @@
             <td>
               <div class="doc-md-description">
                 <p>Options.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="quantpylib.hft.feed.FeedCls.SWAPS">SWAPS</span></code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Swaps.</p>
               </div>
             </td>
           </tr>
