@@ -2725,6 +2725,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../scripts/tick_archival/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tick Archival
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../scripts/trend_following/" class="md-nav__link">
         
   
@@ -5639,7 +5660,7 @@ not available in WooX - it calls the <code>get_all_marks</code> endpoint instead
 
 
 <h3 id="quantpylib.wrappers.woox.Woox.trades_subscribe" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">trades_subscribe</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">handler</span><span class="p">,</span> <span class="n">standardize_schema</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">trades_subscribe</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">handler</span><span class="p">,</span> <span class="n">standardize_schema</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">woo_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -5706,6 +5727,22 @@ not available in WooX - it calls the <code>get_all_marks</code> endpoint instead
             <td>
               <div class="doc-md-description">
                 <p>Processes the incoming message to <code>(ts,price,sz,dir)</code></p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>woo_only</code>
+            </td>
+            <td>
+                  <code>(bool, True)</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If <code>True</code>, only subscribe to trades executed on WooX.</p>
               </div>
             </td>
             <td>

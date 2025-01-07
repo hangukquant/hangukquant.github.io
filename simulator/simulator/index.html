@@ -2203,6 +2203,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../scripts/tick_archival/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tick Archival
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../scripts/trend_following/" class="md-nav__link">
         
   
@@ -2386,7 +2407,7 @@ historical OHLCV data from <code>yfinance</code>. We would like to test for a pe
 <a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>        <span class="n">forecast</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">alphadf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dt</span><span class="p">]</span>
 <a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>        <span class="k">return</span> <span class="n">forecast</span>
 </code></pre></div>
-<p>We notice that the alpha forecast is an array of values consisting of elements of <code>[-1,0,1]</code>, representing short, neutral and long positions respectively. It should be noted that this alpha forecast is not restricted any set of discrete values, or magnitude - only the relative scale of the forecasts w.r.t other values in the array matter. Our <a href="../alpha/#alpha"><code>Alpha</code></a> backtesting engine automatically adjusts for the position sizing cross sectionally and across time through a combination of forecast size, instrument volatility and strategy volatility, using volatility targeting as risk control. The volatility targeted may be set by a (optional) parameter <code>portfolio_vol</code> to an instance of the <a href="../alpha/#alpha"><code>Alpha</code></a> class in the constructor. Now, we can call the <code>async</code> <a href="../alpha/#quantpylib.simulator.alpha.BaseAlpha.run_simulation"><code>run_simulation</code></a> method to get backtest results.</p>
+<p>We notice that the alpha forecast is an array of values consisting of elements of <code>[-1,0,1]</code>, representing short, neutral and long positions respectively. It should be noted that this alpha forecast is not restricted to any set of discrete values, or magnitude - only the relative scale of the forecasts w.r.t other values in the array matter. Our <a href="../alpha/#alpha"><code>Alpha</code></a> backtesting engine automatically adjusts for the position sizing cross sectionally and across time through a combination of forecast size, instrument volatility and strategy volatility, using volatility targeting as risk control. The volatility targeted may be set by a (optional) parameter <code>portfolio_vol</code> to an instance of the <a href="../alpha/#alpha"><code>Alpha</code></a> class in the constructor. Now, we can call the <code>async</code> <a href="../alpha/#quantpylib.simulator.alpha.BaseAlpha.run_simulation"><code>run_simulation</code></a> method to get backtest results.</p>
 <p>The <a href="../alpha/#alpha"><code>Alpha</code></a> class takes in <a href="../alpha/#quantpylib.simulator.alpha.BaseAlpha.__init__">some parameters</a> for our backtest strategy, including backtest date ranges, tickers and ticker data. Let's try to run our strategy now:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">example1</span><span class="o">=</span><span class="s2">&quot;ls_10/90(mult(div(minus(low,close),minus(high,low)),div(open,close)))</span>

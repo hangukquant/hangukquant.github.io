@@ -935,24 +935,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#quantpylib.hft.lob.LOB.load_buffer" class="md-nav__link">
-    <span class="md-ellipsis">
-      load_buffer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quantpylib.hft.lob.LOB.load_numpy_arr" class="md-nav__link">
-    <span class="md-ellipsis">
-      load_numpy_arr
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#quantpylib.hft.lob.LOB.taker_impact" class="md-nav__link">
     <span class="md-ellipsis">
       taker_impact
@@ -2338,6 +2320,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../scripts/tick_archival/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tick Archival
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../scripts/trend_following/" class="md-nav__link">
         
   
@@ -3091,251 +3094,6 @@ Excludes zero differences.</p>
             <td>
               <div class="doc-md-description">
                 <p>The calculated volatility.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.hft.lob.LOB.load_buffer" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">load_buffer</span><span class="p">(</span><span class="n">timestamps_buffer</span><span class="p">,</span> <span class="n">bids_buffer</span><span class="p">,</span> <span class="n">asks_buffer</span><span class="p">,</span> <span class="n">mids_buffer</span><span class="p">)</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Load a Limit Order Book (LOB) from existing buffers.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>timestamps_buffer</code>
-            </td>
-            <td>
-                  <code><span title="numpy_ringbuffer.RingBuffer">RingBuffer</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Buffer containing timestamps.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>bids_buffer</code>
-            </td>
-            <td>
-                  <code><span title="numpy_ringbuffer.RingBuffer">RingBuffer</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Buffer containing bid arrays.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>asks_buffer</code>
-            </td>
-            <td>
-                  <code><span title="numpy_ringbuffer.RingBuffer">RingBuffer</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Buffer containing ask arrays.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>mids_buffer</code>
-            </td>
-            <td>
-                  <code><span title="numpy_ringbuffer.RingBuffer">RingBuffer</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Buffer containing mid prices.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>LOB</code></td>            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The loaded Limit Order Book.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.hft.lob.LOB.load_numpy_arr" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">load_numpy_arr</span><span class="p">(</span><span class="n">timestamps_array</span><span class="p">,</span> <span class="n">bids_array</span><span class="p">,</span> <span class="n">asks_array</span><span class="p">,</span> <span class="n">mids_array</span><span class="p">)</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Load a Limit Order Book (LOB) from existing numpy arrays. Buffer attributes 
-are instantiated exactly equal to the length of arrays passed in.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>timestamps_array</code>
-            </td>
-            <td>
-                  <code><span title="numpy.ndarray">ndarray</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Array containing timestamps.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>bids_array</code>
-            </td>
-            <td>
-                  <code><span title="numpy.ndarray">ndarray</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Array containing bid arrays.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>asks_array</code>
-            </td>
-            <td>
-                  <code><span title="numpy.ndarray">ndarray</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Array containing ask arrays.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>mids_array</code>
-            </td>
-            <td>
-                  <code><span title="numpy.ndarray">ndarray</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Array containing mid prices.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>LOB</code></td>            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The loaded Limit Order Book.</p>
               </div>
             </td>
           </tr>

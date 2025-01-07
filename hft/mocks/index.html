@@ -926,6 +926,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.hft.mocks.Replayer.df_counterparty_pnl" class="md-nav__link">
+    <span class="md-ellipsis">
+      df_counterparty_pnl
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.hft.mocks.Replayer.df_exchange" class="md-nav__link">
     <span class="md-ellipsis">
       df_exchange
@@ -2395,6 +2404,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../scripts/tick_archival/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tick Archival
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../scripts/trend_following/" class="md-nav__link">
         
   
@@ -3045,7 +3075,7 @@ Can be used for clock-based trading agents.</p>
 
 
 <h3 id="quantpylib.hft.mocks.Replayer.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">l2_data</span><span class="p">,</span> <span class="n">trade_data</span><span class="p">,</span> <span class="n">maker_fees</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">taker_fees</span><span class="o">=</span><span class="mf">0.0003</span><span class="p">,</span> <span class="n">gateway</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">latencies</span><span class="o">=</span><span class="p">{</span><span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PUBLIC</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PRIVATE</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PUBLIC</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PRIVATE</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PUBLIC</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PRIVATE</span><span class="p">:</span> <span class="mi">50</span><span class="p">},</span> <span class="n">exchange_fees</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exchange_latencies</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stamp_cycle</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">l2_data</span><span class="p">,</span> <span class="n">trade_data</span><span class="p">,</span> <span class="n">maker_fees</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">taker_fees</span><span class="o">=</span><span class="mf">0.0003</span><span class="p">,</span> <span class="n">gateway</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">latencies</span><span class="o">=</span><span class="p">{</span><span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PUBLIC</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PRIVATE</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PUBLIC</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PRIVATE</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PUBLIC</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PRIVATE</span><span class="p">:</span> <span class="mi">50</span><span class="p">},</span> <span class="n">exchange_fees</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exchange_latencies</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stamp_cycle</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3223,11 +3253,11 @@ Keys are <code>Latencies.REQ_PUBLIC</code>, <code>Latencies.REQ_PRIVATE</code>, 
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The internval in ms used for stamping backtest statistics such as portfolio equity, inventory. Defaults to 500.</p>
+                <p>The interval in ms used for stamping backtest statistics such as portfolio equity, inventory. Defaults to 1000.</p>
               </div>
             </td>
             <td>
-                  <code>5000</code>
+                  <code>1000</code>
             </td>
           </tr>
       </tbody>
@@ -3476,7 +3506,7 @@ Defaults to Latencies.NULL, zero latency.</p>
                 <code>msg</code>
             </td>
             <td>
-                  <code><span title="typing.Any">Any</span></code>
+                  <code>Any</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -3531,7 +3561,7 @@ Defaults to Latencies.NULL, zero latency.</p>
 
 
 <h3 id="quantpylib.hft.mocks.Replayer.df_actions" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">df_actions</span><span class="p">()</span></code>
+            <code class="highlight language-python"><span class="n">df_actions</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3547,8 +3577,27 @@ Defaults to Latencies.NULL, zero latency.</p>
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.hft.mocks.Replayer.df_counterparty_pnl" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">df_counterparty_pnl</span><span class="p">(</span><span class="n">exc_tickers</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get the normalized counterparty pnl comparison for mapping between exchange and list of tickers.
+This simulates being the maker to all market orders that are traded on the exchange's market
+with zero fees.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="quantpylib.hft.mocks.Replayer.df_exchange" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">df_exchange</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">df_exchange</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3612,7 +3661,7 @@ Defaults to Latencies.NULL, zero latency.</p>
 
 
 <h3 id="quantpylib.hft.mocks.Replayer.df_fills" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">df_fills</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">exc</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">df_fills</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">exc</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3708,7 +3757,7 @@ Defaults to Latencies.NULL, zero latency.</p>
 
 
 <h3 id="quantpylib.hft.mocks.Replayer.df_markouts" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">df_markouts</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">df_markouts</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">intervals</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">151</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span></code>
 
 </h3>
 
@@ -3788,7 +3837,7 @@ Defaults to Latencies.NULL, zero latency.</p>
 
 
 <h3 id="quantpylib.hft.mocks.Replayer.df_portfolio" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">df_portfolio</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">df_portfolio</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3836,7 +3885,7 @@ Defaults to Latencies.NULL, zero latency.</p>
 
 
 <h3 id="quantpylib.hft.mocks.Replayer.df_prices" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">df_prices</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">exc</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">with_fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">df_prices</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">exc</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">with_fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">with_inventory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">share_index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 

@@ -883,24 +883,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#quantpylib.hft.trades.Trades.load_buffer" class="md-nav__link">
-    <span class="md-ellipsis">
-      load_buffer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quantpylib.hft.trades.Trades.load_numpy_arr" class="md-nav__link">
-    <span class="md-ellipsis">
-      load_numpy_arr
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2239,6 +2221,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../scripts/tick_archival/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tick Archival
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../scripts/trend_following/" class="md-nav__link">
         
   
@@ -2659,154 +2662,6 @@ ts,price,size,dir or with the 4-tuple (ts,price,size,dir).</p>
             </td>
             <td>
                   <code>None</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.hft.trades.Trades.load_buffer" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">load_buffer</span><span class="p">(</span><span class="n">trade_buffer</span><span class="p">)</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Load a Trades object from an existing buffer.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>trade_buffer</code>
-            </td>
-            <td>
-                  <code><span title="numpy_ringbuffer.RingBuffer">RingBuffer</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>An existing buffer containing trade logs.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>Trades</code></td>            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The loaded Trades object.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.hft.trades.Trades.load_numpy_arr" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">load_numpy_arr</span><span class="p">(</span><span class="n">trades_array</span><span class="p">)</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Load a Trades object from existing numpy arrays.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>trades_array</code>
-            </td>
-            <td>
-                  <code><span title="numpy.ndarray">ndarray</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Array containing trade logs with each row containing </p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>Trades</code></td>            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The loaded Trades object.</p>
-              </div>
             </td>
           </tr>
       </tbody>

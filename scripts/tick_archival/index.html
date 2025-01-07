@@ -1,0 +1,2567 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../market_making/">
+      
+      
+        <link rel="next" href="../trend_following/">
+      
+      
+      <link rel="icon" href="../../icons/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Tick Archival - quantpylib</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="lime">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-archival" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="quantpylib" class="md-header__button md-logo" aria-label="quantpylib" data-md-component="logo">
+      
+  <img src="../../icons/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            quantpylib
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tick Archival
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../simulator/simulator/" class="md-tabs__link">
+          
+  
+  User Documentation
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../market_making/" class="md-tabs__link">
+          
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="quantpylib" class="md-nav__button md-logo" aria-label="quantpylib" data-md-component="logo">
+      
+  <img src="../../icons/logo.png" alt="logo">
+
+    </a>
+    quantpylib
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            User Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    quantpylib
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            quantpylib
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    quantpylib.simulator
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            quantpylib.simulator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulator/simulator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.simulator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulator/alpha/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.simulator.alpha
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulator/gene/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.simulator.gene
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulator/models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.simulator.models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulator/operators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.simulator.operators
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulator/performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.simulator.performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    quantpylib.hft
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            quantpylib.hft
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/hft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/feed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.feed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/oms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.oms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/alpha/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.alpha
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/mocks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.mocks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/lob/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.lob
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/trades/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.trades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/stats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.stats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/utils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.utils
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    quantpylib.throttler
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            quantpylib.throttler
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../throttler/throttler/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.throttler
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../throttler/aiohttp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.throttler.aiohttp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../throttler/aiosonic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.throttler.aiosonic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../throttler/httpx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.throttler.httpx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../throttler/rate_semaphore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.throttler.rate_semaphore
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../throttler/decorators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.throttler.decorators
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_4" id="__nav_2_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            quantpylib.datapoller
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapoller/datapoller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapoller/master/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.master
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapoller/utils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.utils
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapoller/base/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.base
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapoller/crypto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.crypto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapoller/currencies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.currencies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapoller/equities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.equities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapoller/exchange/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.exchange
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapoller/metadata/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.datapoller.metadata
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    quantpylib.gateway
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            quantpylib.gateway
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gateway/gateway/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.gateway
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gateway/account/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.gateway.account
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gateway/base/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.gateway.base
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gateway/exchange/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.gateway.exchange
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gateway/executor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.gateway.executor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gateway/master/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.gateway.master
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gateway/orders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.gateway.orders
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gateway/positions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.gateway.positions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gateway/utils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.gateway.utils
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_6" id="__nav_2_1_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    quantpylib.standards
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            quantpylib.standards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/standards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.standards
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/intervals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.standards.intervals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/markets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.standards.markets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/portfolio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.standards.portfolio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_7" id="__nav_2_1_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_7">
+            <span class="md-nav__icon md-icon"></span>
+            quantpylib.wrappers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wrappers/wrappers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wrappers/binance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.binance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wrappers/bybit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.bybit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wrappers/hyperliquid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.hyperliquid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wrappers/paradex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.paradex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wrappers/woox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.woox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wrappers/polymarket/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.polymarket
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wrappers/eodhd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.eodhd
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wrappers/oanda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.oanda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wrappers/yfinance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.yfinance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_8" id="__nav_2_1_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    quantpylib.logger
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_8">
+            <span class="md-nav__icon md-icon"></span>
+            quantpylib.logger
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logger/logger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.logger
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logger/utils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.logger.utils
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logger/formatters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.logger.formatters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logger/handlers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quantpylib.logger.handlers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../market_making/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Market Maker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tick Archival
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Tick Archival
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-archival" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Archival
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Backup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-restoration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Restoration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trend_following/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trend Follower
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Tick Archival</h1>
+
+<p>This tutorial shows how to perform multi-exchange, multi-symbol tick data archival and restoration for maintaing your own historical database for research using <code>quantpylib</code>'s gateway connectors and data feeds. </p>
+<p>The sample scripts are placed inside <code>./scripts</code> folder in the <code>quantpylib</code> repo. This example works with exchanges implementing the <code>quantpylib.gateway.master.Gateway</code> endpoints, such as <code>binance</code>, <code>hyperliquid</code>,<code>bybit</code>,<code>paradex</code>,<code>woox</code>...the list goes on.</p>
+<p>The demonstration for using the archive-scheduler in the <code>quantpylib.hft.feed</code> class was presented in <a href="../../hft/hft/#data-archival">this section</a>, as well as the specifications of this scheduler. The documentation for the <code>Feed</code> class is <a href="../../hft/feed">here</a>.</p>
+<p>This demonstration builds on top of the examples presented to add the backup and restoration parts of the data management lifecycle. The code is self-explanatory and simple to follow, so we will go right into it.</p>
+<h2 id="data-archival">Data Archival</h2>
+<p>The needed imports:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">os</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">asyncio</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span> <span class="nn">logging</span> 
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">load_dotenv</span><span class="p">()</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kn">from</span> <span class="nn">quantpylib.hft.feed</span> <span class="kn">import</span> <span class="n">Feed</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="kn">from</span> <span class="nn">quantpylib.gateway.master</span> <span class="kn">import</span> <span class="n">Gateway</span> 
+</code></pre></div></p>
+<p>Data we wish to archive:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">archive</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="s2">&quot;binance&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">,</span> <span class="s2">&quot;ETHUSDT&quot;</span><span class="p">,</span> <span class="s2">&quot;SOLUSDT&quot;</span><span class="p">,</span> <span class="s2">&quot;DYDXUSDT&quot;</span><span class="p">],</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="s2">&quot;hyperliquid&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;BTC&quot;</span><span class="p">,</span> <span class="s2">&quot;ETH&quot;</span><span class="p">,</span> <span class="s2">&quot;SOL&quot;</span><span class="p">],</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="s2">&quot;bybit&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">,</span> <span class="s2">&quot;ETHUSDT&quot;</span><span class="p">,</span> <span class="s2">&quot;SOLUSDT&quot;</span><span class="p">],</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">keys</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="s1">&#39;binance&#39;</span><span class="p">:{},</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="s1">&#39;hyperliquid&#39;</span><span class="p">:{},</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="s1">&#39;bybit&#39;</span><span class="p">:{},</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+</code></pre></div></p>
+<p>The intializations of the classes and setting scheduler mode, as discussed in <a href="../../hft/hft/#data-archival">examples</a>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span> 
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="c1">#&gt; subscribe to data feeds here</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">pass</span> 
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="c1">#using our custom logger</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="kn">from</span> <span class="nn">quantpylib.logger</span> <span class="kn">import</span> <span class="n">Logger</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">Logger</span><span class="p">(</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;archival.log&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="n">logs_dir</span><span class="o">=</span><span class="s2">&quot;./logs/&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="n">register_handlers</span><span class="o">=</span><span class="p">[],</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="n">stdout_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        <span class="n">file_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="n">file_formatter_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;include_attrs&quot;</span><span class="p">:[</span><span class="s2">&quot;filename&quot;</span><span class="p">,</span><span class="s2">&quot;funcName&quot;</span><span class="p">]},</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="p">)</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div>
+and so we subscribe to the data feeds:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span> 
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">exchanges</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">archive</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">gateway</span> <span class="o">=</span> <span class="n">Gateway</span><span class="p">(</span><span class="n">config_keys</span><span class="o">=</span><span class="n">keys</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">init_clients</span><span class="p">()</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">feed</span> <span class="o">=</span> <span class="n">Feed</span><span class="p">(</span><span class="n">gateway</span><span class="o">=</span><span class="n">gateway</span><span class="p">,</span><span class="n">exchanges</span><span class="o">=</span><span class="n">exchanges</span><span class="p">,</span><span class="n">archiver</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">run_archive_scheduler</span><span class="p">()</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">l2_feeds</span> <span class="o">=</span> <span class="p">{</span><span class="n">exchange</span> <span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">exchange</span> <span class="ow">in</span> <span class="n">exchanges</span><span class="p">}</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="k">for</span> <span class="n">exc</span> <span class="ow">in</span> <span class="n">exchanges</span><span class="p">:</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        <span class="n">l2_feeds</span><span class="p">[</span><span class="n">exc</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>            <span class="n">feed</span><span class="o">.</span><span class="n">add_l2_book_feed</span><span class="p">(</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>                <span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>                <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>                <span class="n">depth</span><span class="o">=</span><span class="mi">20</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>            <span class="p">)</span> <span class="k">for</span> <span class="n">ticker</span> <span class="ow">in</span> <span class="n">archive</span><span class="p">[</span><span class="n">exc</span><span class="p">]</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        <span class="p">])</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    <span class="n">pprint</span><span class="p">(</span><span class="n">l2_feeds</span><span class="p">)</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    <span class="n">trade_feeds</span> <span class="o">=</span> <span class="p">{</span><span class="n">exchange</span> <span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">exchange</span> <span class="ow">in</span> <span class="n">exchanges</span><span class="p">}</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>    <span class="k">for</span> <span class="n">exc</span> <span class="ow">in</span> <span class="n">exchanges</span><span class="p">:</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>        <span class="n">trade_feeds</span><span class="p">[</span><span class="n">exc</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>            <span class="n">feed</span><span class="o">.</span><span class="n">add_trades_feed</span><span class="p">(</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>                <span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>                <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>            <span class="p">)</span> <span class="k">for</span> <span class="n">ticker</span> <span class="ow">in</span> <span class="n">archive</span><span class="p">[</span><span class="n">exc</span><span class="p">]</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>        <span class="p">])</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>    <span class="n">pprint</span><span class="p">(</span><span class="n">trade_feeds</span><span class="p">)</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1e9</span><span class="p">)</span> <span class="c1">#run forever</span>
+</code></pre></div>
+The logger and print information shows us our socket messages and feed ids:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T18:42:16.222522+00:00&quot;, &quot;message&quot;: &quot;{&#39;type&#39;: &#39;l2Book&#39;, &#39;coin&#39;: &#39;BTC&#39;} subscribe&quot;, &quot;exchange&quot;: &quot;hyperliquid&quot;}
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T18:42:16.222672+00:00&quot;, &quot;message&quot;: &quot;{&#39;type&#39;: &#39;l2Book&#39;, &#39;coin&#39;: &#39;ETH&#39;} subscribe&quot;, &quot;exchange&quot;: &quot;hyperliquid&quot;}
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>... blah blah
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T18:42:16.466152+00:00&quot;, &quot;message&quot;: &quot;{&#39;type&#39;: &#39;l2Book&#39;, &#39;symbol&#39;: &#39;SOLUSDT&#39;} connected&quot;, &quot;exchange&quot;: &quot;binance&quot;}
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T18:42:16.521773+00:00&quot;, &quot;message&quot;: &quot;{&#39;type&#39;: &#39;l2Book&#39;, &#39;symbol&#39;: &#39;DYDXUSDT&#39;} connected&quot;, &quot;exchange&quot;: &quot;binance&quot;}
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>... blah blah
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T18:42:16.521903+00:00&quot;, &quot;message&quot;: &quot;orderbook.50.BTCUSDT subscribe&quot;, &quot;exchange&quot;: &quot;bybit&quot;}
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>... blah blah
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>&gt;&gt;l2book
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>{&#39;binance&#39;: [&#39;binance/perp/l2book/BTCUSDT_depth20&#39;,
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>             &#39;binance/perp/l2book/ETHUSDT_depth20&#39;,
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>             &#39;binance/perp/l2book/SOLUSDT_depth20&#39;,
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>             &#39;binance/perp/l2book/DYDXUSDT_depth20&#39;],
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a> &#39;bybit&#39;: [&#39;bybit/perp/l2book/BTCUSDT_depth20&#39;,
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>           &#39;bybit/perp/l2book/ETHUSDT_depth20&#39;,
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>           &#39;bybit/perp/l2book/SOLUSDT_depth20&#39;],
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a> &#39;hyperliquid&#39;: [&#39;hyperliquid/perp/l2book/BTC_depth20&#39;,
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>                 &#39;hyperliquid/perp/l2book/ETH_depth20&#39;,
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>                 &#39;hyperliquid/perp/l2book/SOL_depth20&#39;]}
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T18:42:16.573811+00:00&quot;, &quot;message&quot;: &quot;{&#39;type&#39;: &#39;trades&#39;, &#39;coin&#39;: &#39;BTC&#39;} subscribe&quot;, &quot;exchange&quot;: &quot;hyperliquid&quot;}
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>... blah blah
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>&gt;&gt;trades
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>{&#39;binance&#39;: [&#39;binance/perp/trades/BTCUSDT&#39;,
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>             &#39;binance/perp/trades/ETHUSDT&#39;,
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>             &#39;binance/perp/trades/SOLUSDT&#39;,
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>             &#39;binance/perp/trades/DYDXUSDT&#39;],
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a> &#39;bybit&#39;: [&#39;bybit/perp/trades/BTCUSDT&#39;,
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>           &#39;bybit/perp/trades/ETHUSDT&#39;,
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>           &#39;bybit/perp/trades/SOLUSDT&#39;],
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a> &#39;hyperliquid&#39;: [&#39;hyperliquid/perp/trades/BTC&#39;,
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>                 &#39;hyperliquid/perp/trades/ETH&#39;,
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>                 &#39;hyperliquid/perp/trades/SOL&#39;]}
+</code></pre></div>
+And at the turn of every hour, we will see logging information from our archivers the data written to disk:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T18:59:59.944775+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/binance/perp/l2book/2025/01/SOLUSDT_depth20_0618.parquet records: 2067 size: 151 KB&quot;}
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T18:59:59.956748+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/binance/perp/l2book/2025/01/DYDXUSDT_depth20_0618.parquet records: 1915 size: 194 KB&quot;}
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T18:59:59.969286+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/binance/perp/l2book/2025/01/ETHUSDT_depth20_0618.parquet records: 2040 size: 301 KB&quot;}
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T18:59:59.979822+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/binance/perp/l2book/2025/01/BTCUSDT_depth20_0618.parquet records: 2018 size: 225 KB&quot;}
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T18:59:59.989928+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/hyperliquid/perp/l2book/2025/01/ETH_depth20_0618.parquet records: 1855 size: 351 KB&quot;}
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T18:59:59.999185+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/hyperliquid/perp/l2book/2025/01/BTC_depth20_0618.parquet records: 1855 size: 330 KB&quot;}
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:00:00.008760+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/hyperliquid/perp/l2book/2025/01/SOL_depth20_0618.parquet records: 1855 size: 264 KB&quot;}
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:00:00.115225+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/bybit/perp/l2book/2025/01/ETHUSDT_depth20_0618.parquet records: 37493 size: 1750 KB&quot;}
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:00:00.219891+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/bybit/perp/l2book/2025/01/BTCUSDT_depth20_0618.parquet records: 38033 size: 1733 KB&quot;}
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:00:00.337505+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/bybit/perp/l2book/2025/01/SOLUSDT_depth20_0618.parquet records: 44103 size: 1539 KB&quot;}
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:00:00.443742+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/binance/perp/trades/2025/01/BTCUSDT_0618.parquet records: 16956 size: 117 KB&quot;}
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:00:00.448196+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/binance/perp/trades/2025/01/ETHUSDT_0618.parquet records: 13317 size: 105 KB&quot;}
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:00:00.449853+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/binance/perp/trades/2025/01/SOLUSDT_0618.parquet records: 2585 size: 23 KB&quot;}
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:00:00.451086+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/binance/perp/trades/2025/01/DYDXUSDT_0618.parquet records: 716 size: 10 KB&quot;}
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:00:00.452716+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/hyperliquid/perp/trades/2025/01/ETH_0618.parquet records: 1806 size: 19 KB&quot;}
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:00:00.453973+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/hyperliquid/perp/trades/2025/01/BTC_0618.parquet records: 1839 size: 20 KB&quot;}
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:00:00.454900+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/hyperliquid/perp/trades/2025/01/SOL_0618.parquet records: 558 size: 7 KB&quot;}
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:00:00.458417+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/bybit/perp/trades/2025/01/ETHUSDT_0618.parquet records: 11528 size: 61 KB&quot;}
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:00:00.463980+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/bybit/perp/trades/2025/01/BTCUSDT_0618.parquet records: 17574 size: 95 KB&quot;}
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:00:00.466282+00:00&quot;, &quot;message&quot;: &quot;WRITE archives/bybit/perp/trades/2025/01/SOLUSDT_0618.parquet records: 6645 size: 30 KB&quot;}
+</code></pre></div></p>
+<h2 id="data-backup">Data Backup</h2>
+<p>Our data would be in the local disk. However, as we stream for days, weeks and months at a time - the size of storing high-frequency data becomes large. We would like to backup our files to a cloud datastore such as AWS S3 or Backblaze B2 buckets. We will demonstrate with <a href="https://www.backblaze.com/">Backblaze</a>. Signing up and creating a data bucket on their UI takes a matter of minutes. Obtain your keys, and put them in the <code>.env</code> files.</p>
+<p><code>quantpylib.utilties.general</code> features a <code>backup_folder</code> method that walks a local path directory and checks local files against the file paths in your bucket. If it does not exist, it will make a copy of that in your data bucket.</p>
+<p>With this:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">backup_archives</span><span class="p">():</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="kn">from</span> <span class="nn">quantpylib.utilities.general</span> <span class="kn">import</span> <span class="n">get_boto_client</span><span class="p">,</span> <span class="n">backup_folder</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;BACKUP ARCHIVES&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        <span class="n">local</span> <span class="o">=</span> <span class="s2">&quot;./archives&quot;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        <span class="n">bucket</span> <span class="o">=</span> <span class="s2">&quot;backblaze-archives&quot;</span> <span class="c1">#your bucket name</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        <span class="n">s3</span> <span class="o">=</span> <span class="n">get_boto_client</span><span class="p">(</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>            <span class="n">endpoint_url</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;BACKBLAZE_ENDPOINT&quot;</span><span class="p">),</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>            <span class="n">aws_access_key_id</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;BACKBLAZE_ID&quot;</span><span class="p">),</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>            <span class="n">aws_secret_access_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;BACKBLAZE_KEY&quot;</span><span class="p">),</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>        <span class="p">)</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>        <span class="n">backup_folder</span><span class="p">(</span><span class="n">s3</span><span class="o">=</span><span class="n">s3</span><span class="p">,</span><span class="n">local</span><span class="o">=</span><span class="n">local</span><span class="p">,</span><span class="n">bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">)</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="k">except</span><span class="p">:</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>        <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s1">&#39;backup error&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>        <span class="k">return</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">backup_archives</span><span class="p">())</span>
+</code></pre></div>
+the local <code>./archives</code> folder is mirrored onto the Backblaze bucket:
+<img alt="alt text" src="../../archives/backblaze.png" />
+with log information:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:01.808975+00:00&quot;, &quot;message&quot;: &quot;BACKUP ARCHIVES&quot;}
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.784779+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;hyperliquid/perp/trades/2025/01/BTC_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.784882+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;hyperliquid/perp/trades/2025/01/SOL_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.784947+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;hyperliquid/perp/trades/2025/01/ETH_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.785062+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;hyperliquid/perp/l2book/2025/01/BTC_depth20_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.785122+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;hyperliquid/perp/l2book/2025/01/ETH_depth20_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.785173+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;hyperliquid/perp/l2book/2025/01/SOL_depth20_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.785307+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;bybit/perp/trades/2025/01/BTCUSDT_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.785370+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;bybit/perp/trades/2025/01/SOLUSDT_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.785468+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;bybit/perp/trades/2025/01/ETHUSDT_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.785631+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;bybit/perp/l2book/2025/01/SOLUSDT_depth20_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.785718+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;bybit/perp/l2book/2025/01/ETHUSDT_depth20_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.785784+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;bybit/perp/l2book/2025/01/BTCUSDT_depth20_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.785952+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;binance/perp/trades/2025/01/BTCUSDT_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.786010+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;binance/perp/trades/2025/01/SOLUSDT_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.786066+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;binance/perp/trades/2025/01/ETHUSDT_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.786122+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;binance/perp/trades/2025/01/DYDXUSDT_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.786231+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;binance/perp/l2book/2025/01/SOLUSDT_depth20_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.786282+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;binance/perp/l2book/2025/01/DYDXUSDT_depth20_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.786335+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;binance/perp/l2book/2025/01/ETHUSDT_depth20_0618.parquet&gt;&quot;}
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T19:04:04.786387+00:00&quot;, &quot;message&quot;: &quot;File exists&lt;NO&gt; upload&lt;binance/perp/l2book/2025/01/BTCUSDT_depth20_0618.parquet&gt;&quot;}
+</code></pre></div></p>
+<h2 id="data-restoration">Data Restoration</h2>
+<p>Suppose we have changed our workstation, and the local archives are empty. We would like to retrieve/restore data from our backblaze archive into local disk for tick-data modelling, research or backtesting. This is also incredibly easy - we just decide which ticker, exchange and date-range. The <code>Feed</code> class can generate file paths to search for, and <code>quantpylib.utilties.general</code> features a <code>restore_folder</code> method:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">restore_archives</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span><span class="n">ticker</span><span class="p">,</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">,</span><span class="n">depth</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="kn">from</span> <span class="nn">quantpylib.utilities.general</span> <span class="kn">import</span> <span class="n">get_boto_client</span><span class="p">,</span> <span class="n">restore_folder</span>    
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;RESTORE ARCHIVES&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="n">local</span> <span class="o">=</span> <span class="s2">&quot;./archives&quot;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        <span class="n">local</span> <span class="o">=</span> <span class="s2">&quot;./archives&quot;</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        <span class="n">bucket</span> <span class="o">=</span> <span class="s2">&quot;backblaze-archives&quot;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>        <span class="n">s3</span> <span class="o">=</span> <span class="n">get_boto_client</span><span class="p">(</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>            <span class="n">endpoint_url</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;BACKBLAZE_ENDPOINT&quot;</span><span class="p">),</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>            <span class="n">aws_access_key_id</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;BACKBLAZE_ID&quot;</span><span class="p">),</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>            <span class="n">aws_secret_access_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;BACKBLAZE_KEY&quot;</span><span class="p">),</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>        <span class="p">)</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>        <span class="n">lob_archives</span> <span class="o">=</span> <span class="n">Feed</span><span class="o">.</span><span class="n">load_lob_archives</span><span class="p">(</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>            <span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>            <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>            <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>            <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>            <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>            <span class="n">path</span><span class="o">=</span><span class="n">local</span><span class="p">,</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>            <span class="n">only_paths</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>        <span class="p">)</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>        <span class="n">trade_archives</span> <span class="o">=</span> <span class="n">Feed</span><span class="o">.</span><span class="n">load_trade_archives</span><span class="p">(</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>            <span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>            <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>            <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>            <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>            <span class="n">path</span><span class="o">=</span><span class="n">local</span><span class="p">,</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>            <span class="n">only_paths</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>        <span class="p">)</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>        <span class="n">search_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">archive_file</span><span class="p">,</span> <span class="n">local</span><span class="p">)</span> <span class="k">for</span> <span class="n">archive_file</span> <span class="ow">in</span> <span class="n">lob_archives</span> <span class="o">+</span> <span class="n">trade_archives</span><span class="p">]</span>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>        <span class="n">pprint</span><span class="p">(</span><span class="n">search_files</span><span class="p">)</span>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>        <span class="n">restore_folder</span><span class="p">(</span><span class="n">s3</span><span class="o">=</span><span class="n">s3</span><span class="p">,</span><span class="n">local</span><span class="o">=</span><span class="n">local</span><span class="p">,</span><span class="n">bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">,</span><span class="n">match_files</span><span class="o">=</span><span class="n">search_files</span><span class="p">)</span>
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>    <span class="k">except</span><span class="p">:</span>
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>        <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s1">&#39;restore error&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>        <span class="k">return</span>
+</code></pre></div>
+and we can specify date ranges using <code>YYYY-MM-DD:HH</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="n">restore_archives</span><span class="p">(</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>        <span class="n">exc</span><span class="o">=</span><span class="s1">&#39;binance&#39;</span><span class="p">,</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>        <span class="n">ticker</span><span class="o">=</span><span class="s1">&#39;BTCUSDT&#39;</span><span class="p">,</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2025-01-05:22&#39;</span><span class="p">,</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2025-01-06:02&#39;</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="p">)</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">)</span>
+</code></pre></div>
+and the following files (if present) would be loaded from your cloud archive into the local <code>./archives</code> folder:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>{&quot;level&quot;: &quot;INFO&quot;, &quot;time&quot;: &quot;2025-01-06T18:56:25.905379+00:00&quot;, &quot;message&quot;: &quot;RESTORE ARCHIVES&quot;}
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>[&#39;binance/perp/l2book/2025/01/BTCUSDT_depth20_0522.parquet&#39;,
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a> &#39;binance/perp/l2book/2025/01/BTCUSDT_depth20_0523.parquet&#39;,
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a> &#39;binance/perp/l2book/2025/01/BTCUSDT_depth20_0600.parquet&#39;,
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a> &#39;binance/perp/l2book/2025/01/BTCUSDT_depth20_0601.parquet&#39;,
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a> &#39;binance/perp/l2book/2025/01/BTCUSDT_depth20_0602.parquet&#39;,
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a> &#39;binance/perp/trades/2025/01/BTCUSDT_0522.parquet&#39;,
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a> &#39;binance/perp/trades/2025/01/BTCUSDT_0523.parquet&#39;,
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a> &#39;binance/perp/trades/2025/01/BTCUSDT_0600.parquet&#39;,
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a> &#39;binance/perp/trades/2025/01/BTCUSDT_0601.parquet&#39;,
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a> &#39;binance/perp/trades/2025/01/BTCUSDT_0602.parquet&#39;]
+</code></pre></div>
+Once the data has beed loaded to disk, the same code with flag <code>only_paths=False</code> loads the actual data from disk into memory:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">lob_archives</span> <span class="o">=</span> <span class="n">Feed</span><span class="o">.</span><span class="n">load_lob_archives</span><span class="p">(</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="n">path</span><span class="o">=</span><span class="n">local</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="p">)</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="n">trade_archives</span> <span class="o">=</span> <span class="n">Feed</span><span class="o">.</span><span class="n">load_trade_archives</span><span class="p">(</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    <span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>    <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>    <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>    <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>    <span class="n">path</span><span class="o">=</span><span class="n">local</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="p">)</span>
+</code></pre></div></p>
+<p>Has it ever been easier?</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://hangukquant.com"  target="_blank" rel="noopener">Quanta Global Pte. Ltd. 202328387H - All Rights Reserved.</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/hangukquant" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>
