@@ -883,6 +883,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.trades.Trades.sample_len" class="md-nav__link">
+    <span class="md-ellipsis">
+      sample_len
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2595,7 +2604,7 @@ ts,price,size,dir or with the 4-tuple (ts,price,size,dir).</p>
 
 
 <h3 id="quantpylib.hft.trades.Trades.get_imbalance" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">get_imbalance</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">decay_function</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">get_imbalance</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">min_n</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">decay_function</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2645,7 +2654,7 @@ ts,price,size,dir or with the 4-tuple (ts,price,size,dir).</p>
               </div>
             </td>
             <td>
-                  <code>0.0</code>
+                  <code>0</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -2657,11 +2666,50 @@ ts,price,size,dir or with the 4-tuple (ts,price,size,dir).</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The decay function to apply to the samples. Defaults to exponential decay.</p>
+                <p>The decay function to apply to the samples. Defaults to simple weighting.</p>
               </div>
             </td>
             <td>
                   <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.trades.Trades.sample_len" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sample_len</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get the length of the samples.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>int</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The length of the samples.</p>
+              </div>
             </td>
           </tr>
       </tbody>
