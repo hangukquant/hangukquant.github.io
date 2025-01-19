@@ -2889,7 +2889,7 @@ and we get:
 <a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>35009  1736488798942  vamp100k  189.794743  binance  SOLUSDT  vamp
 <a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>35010  1736488799447  vamp100k  189.787968  binance  SOLUSDT  vamp
 </code></pre></div>
-Often the thing we are interested is how the value of these random variables relate to future price changes. We can pass to the replayer a dataframe with <code>ts</code> column to get our answer:
+Often the thing we are interested is how the value of these random variables relate to future prices. We can pass to the replayer a dataframe with <code>ts</code> column to get our answer (works with multiple tickers and multiple exchanges):
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">forward_prices</span> <span class="o">=</span> <span class="n">replayer</span><span class="o">.</span><span class="n">augment_forward_prices</span><span class="p">(</span><span class="n">declarations</span><span class="p">)</span>
 </code></pre></div>
 for
@@ -2906,7 +2906,7 @@ for
 <a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>34424  1736488498701  vamp100k  189.715000  binance  ...  189.565  189.605  189.565  189.785
 <a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>34425  1736488499204  vamp100k  189.712113  binance  ...  189.565  189.605  189.565  189.785
 </code></pre></div>
-With this dataframe, we are free to build any statistical model with the regression variables. Let us perform a least-squares regression for future price changes against the vamp-to-mid ratio. Although we don't have to normalize by price (only a single market and short timeframe is considered) - we shall do so. Using the <code>GeneticRegression</code>:
+With this dataframe, we are free to build any statistical model with the regression variables. Let us perform a least-squares regression for future price changes against the vamp-to-mid ratio. Although we don't have to normalize by price (only a single market and short timeframe is considered) - we shall do so. Using the <a href="../../simulator/simulator/#regression-analysis"><code>GeneticRegression</code></a>:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kn">from</span> <span class="nn">quantpylib.simulator.models</span> <span class="kn">import</span> <span class="n">GeneticRegression</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="n">model</span> <span class="o">=</span> <span class="n">GeneticRegression</span><span class="p">(</span>
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    <span class="n">formula</span><span class="o">=</span><span class="s1">&#39;div(minus(t60,t0),t0) ~ div(minus(value,t0),t0)&#39;</span><span class="p">,</span>
