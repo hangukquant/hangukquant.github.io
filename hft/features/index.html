@@ -865,15 +865,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quantpylib.hft.features.impact_price" class="md-nav__link">
-    <span class="md-ellipsis">
-      impact_price
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#quantpylib.hft.features.rolling_vol" class="md-nav__link">
     <span class="md-ellipsis">
       rolling_vol
@@ -886,15 +877,6 @@
   <a href="#quantpylib.hft.features.trade_imbalance" class="md-nav__link">
     <span class="md-ellipsis">
       trade_imbalance
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quantpylib.hft.features.vamp" class="md-nav__link">
-    <span class="md-ellipsis">
-      vamp
     </span>
   </a>
   
@@ -2645,92 +2627,6 @@
 <div class="doc doc-object doc-function">
 
 
-<h2 id="quantpylib.hft.features.impact_price" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">impact_price</span><span class="p">(</span><span class="n">ob</span><span class="p">,</span> <span class="n">notional</span><span class="p">)</span></code>
-
-</h2>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Calculate the volume-weighted price for a given notional amount.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>ob</code>
-            </td>
-            <td>
-                  <code><span title="numpy.ndarray">ndarray</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The order book levels as an array of [price, volume].</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>notional</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The notional amount.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>float</code></td>            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The volume-weighted price.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
 <h2 id="quantpylib.hft.features.rolling_vol" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">rolling_vol</span><span class="p">(</span><span class="n">mids</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">exp</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
@@ -2885,140 +2781,6 @@
             </td>
             <td>
                   <code>lambda sample: <a class="autorefs autorefs-internal" title="quantpylib.hft.utils.exponential_weights" href="../utils/#quantpylib.hft.utils.exponential_weights">exponential_weights</a>(arr=sample, unique_values=True, normalize=True)</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="quantpylib.hft.features.vamp" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">vamp</span><span class="p">(</span><span class="n">bids</span><span class="p">,</span> <span class="n">asks</span><span class="p">,</span> <span class="n">notional</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bid_notional</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ask_notional</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-</h2>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Calculate the Volume Adjusted Mid Price (VAMP). </p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>bids</code>
-            </td>
-            <td>
-                  <code><span title="numpy.ndarray">ndarray</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Array of bid levels as [price, volume].</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>asks</code>
-            </td>
-            <td>
-                  <code><span title="numpy.ndarray">ndarray</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Array of ask levels as [price, volume].</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>notional</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The notional amount for both sides of the orderbook (each). Defaults to None.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>bid_notional</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The notional amount for bids. Defaults to <code>notional</code> if not provided.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>ask_notional</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The notional amount for asks. Defaults to <code>notional</code> if not provided.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>float</code></td>            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The calculated VAMP.</p>
-              </div>
             </td>
           </tr>
       </tbody>
