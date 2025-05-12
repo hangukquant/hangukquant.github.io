@@ -855,6 +855,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.hft.feed.Feed.add_sampling_bars_feed" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_sampling_bars_feed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.hft.feed.Feed.add_trades_feed" class="md-nav__link">
     <span class="md-ellipsis">
       add_trades_feed
@@ -1030,6 +1039,29 @@
   
   <span class="md-ellipsis">
     quantpylib.hft.mocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.bars
     
   </span>
   
@@ -3163,7 +3195,7 @@
 
 
 <h3 id="quantpylib.hft.feed.Feed.add_l2_book_feed" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">add_l2_book_feed</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">apply_shadow_depth</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">add_l2_book_feed</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="n">apply_shadow_depth</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">implied_orderbook</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">implied_orderbook_updates_buffer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -3270,6 +3302,22 @@
           </tr>
           <tr class="doc-section-item">
             <td>
+                <code>feed_cls</code>
+            </td>
+            <td>
+                  <code><span title="type">type</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The class of the feed. Defaults to FeedCls.PERPETUAL.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="quantpylib.hft.feed.FeedCls.PERPETUAL">PERPETUAL</span></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
                 <code>apply_shadow_depth</code>
             </td>
             <td>
@@ -3286,6 +3334,139 @@
           </tr>
           <tr class="doc-section-item">
             <td>
+                <code>implied_orderbook</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to allow trade feed to update the orderbook between delta updates. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>implied_orderbook_updates_buffer</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether orderbook states due to trade arrivals are stored in buffer. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.feed.Feed.add_sampling_bars_feed" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_sampling_bars_feed</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="n">bar_cls</span><span class="o">=</span><span class="n">bars</span><span class="o">.</span><span class="n">TimeBars</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Add a sampling bars feed.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>handler</code>
+            </td>
+            <td>
+                  <code><span title="coroutine">coroutine</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The handler to add. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>buffer</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The buffer size. Defaults to 100.</p>
+              </div>
+            </td>
+            <td>
+                  <code>100</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
                 <code>feed_cls</code>
             </td>
             <td>
@@ -3298,6 +3479,22 @@
             </td>
             <td>
                   <code><span title="quantpylib.hft.feed.FeedCls.PERPETUAL">PERPETUAL</span></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>bar_cls</code>
+            </td>
+            <td>
+                  <code><span title="type">type</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The class of the bar. Defaults to bars.TimeBars.</p>
+              </div>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="TimeBars (quantpylib.hft.bars.TimeBars)" href="../bars/#quantpylib.hft.bars.TimeBars">TimeBars</a></code>
             </td>
           </tr>
       </tbody>

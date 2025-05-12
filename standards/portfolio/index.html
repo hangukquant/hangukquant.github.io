@@ -830,6 +830,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../hft/bars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.bars
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../hft/lob/" class="md-nav__link">
         
   
@@ -3855,7 +3878,8 @@
 
     <div class="doc doc-contents ">
 
-        <p>Get the ask orders for a ticker sorted with head of list being closest to top of book</p>
+        <p>Get the ask orders for a specified ticker, sorted with the head of the list being 
+closest to the top of the book.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -3878,11 +3902,77 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The ticker symbol.</p>
+                <p>The ticker symbol for which to retrieve ask orders.</p>
               </div>
             </td>
             <td>
                 <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>sort</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to sort the orders by price in ascending order. 
+Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>include_pending</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to include orders with a pending status. 
+Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>copy</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to return a deep copy of the orders. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>as_dict</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to return the orders as dictionaries. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
             </td>
           </tr>
       </tbody>
@@ -3904,7 +3994,8 @@
 
     <div class="doc doc-contents ">
 
-        <p>Get the bid orders for a ticker sorted with head of list being closest to top of book</p>
+        <p>Get the bid orders for a specified ticker, sorted with the head of the list being 
+closest to top of the book.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -3927,11 +4018,77 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The ticker symbol.</p>
+                <p>The ticker symbol for which to retrieve bid orders.</p>
               </div>
             </td>
             <td>
                 <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>sort</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to sort the orders by price in descending order. 
+Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>include_pending</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to include orders with a pending status. 
+Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>copy</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to return a deep copy of the orders. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>as_dict</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to return the orders as dictionaries. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
             </td>
           </tr>
       </tbody>

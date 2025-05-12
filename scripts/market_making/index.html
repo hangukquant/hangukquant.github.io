@@ -816,6 +816,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../hft/bars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.bars
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../hft/lob/" class="md-nav__link">
         
   
@@ -2821,7 +2844,7 @@
   <h1>Market Maker</h1>
 
 <p>This tutorial shows how to do market making (backtests and live) on different exchanges using <code>quantpylib</code>'s gateway connectors, data feeds and order management system.</p>
-<p>The sample scripts are placed inside <code>./scripts</code> folder in the <code>quantpylib</code> repo. This example works with exchanges implementing the <code>quantpylib.gateway.master.Gateway</code> endpoints, such as <code>binance</code>, <code>hyperliquid</code>, <code>bybit</code> <code>paradex</code> and <code>woox</code>.</p>
+<p>The sample scripts are placed inside <code>./scripts</code> folder in the <code>quantpylib</code> repo. This example works with exchanges implementing the <code>quantpylib.gateway.master.Gateway</code> endpoints, such as <code>binance</code>, <code>hyperliquid</code>, <code>bybit</code>, <code>paradex</code> and <code>woox</code>.</p>
 <p>Let us first consider the data and portfolio states required for a market-making operation. Typically, a market-maker needs to be able to track their portfolio states: order states (pending/open/cancelled/rejected), open positions, account equity/balance and so on.</p>
 <p>Of course, tick data feeds are also required. This tick data feed includes but are not limited to orderbook ticks of the market we intend to quote, trade ticks of said market, as well as correlated assets - leader assets (<code>AAPL</code>,<code>BTC</code>) and so on.</p>
 <p>In general, a market maker action triggers include but are not limited to internal clock cycles, trade arrival, orderbook delta updates and a number of variable proprietary logic. We may choose to act on these data immediately upon arrival (a on-tick behavior) or store it in some shared state that is later used to compute optimal market quotes. We will explore all of these options. </p>
