@@ -3082,14 +3082,14 @@ The <code>GeneticRegression</code> enables this in multiple steps:</p>
 
 
 <h3 id="quantpylib.simulator.models.GeneticRegression.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">&#39;forward_1(logret_1()) ~ div(logret_25(),volatility_25())&#39;</span><span class="p">,</span> <span class="n">intercept</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dfs</span><span class="o">=</span><span class="p">{},</span> <span class="n">instruments</span><span class="o">=</span><span class="p">[],</span> <span class="n">granularity</span><span class="o">=</span><span class="n">Period</span><span class="o">.</span><span class="n">DAILY</span><span class="p">,</span> <span class="n">build</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">&#39;forward_1(logret_1()) ~ div(logret_25(),volatility_25())&#39;</span><span class="p">,</span> <span class="n">intercept</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dfs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">instruments</span><span class="o">=</span><span class="p">[],</span> <span class="n">granularity</span><span class="o">=</span><span class="n">Period</span><span class="o">.</span><span class="n">DAILY</span><span class="p">,</span> <span class="n">build</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 </h3>
 
 
     <div class="doc doc-contents ">
 
-        <p>Initializes a GeneticRegression object.</p>
+        <p>Initializes a <code>GeneticRegression</code> object.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -3124,30 +3124,30 @@ language.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>start</code>
+                <code>intercept</code>
             </td>
             <td>
-                  <code><span title="datetime.datetime">datetime</span></code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Start period for regression analysis. If not tz-aware, assumed UTC. If not given, assume min of dataset in dfs. </p>
+                <p>Whether to include an intercept in the regression model. Default is True.</p>
               </div>
             </td>
             <td>
-                  <code>None</code>
+                  <code>True</code>
             </td>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>end</code>
+                <code>df</code>
             </td>
             <td>
-                  <code><span title="datetime.datetime">datetime</span></code>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>End period for regression analysis. If not tz-aware, assumed UTC. If not given, assume max of dataset in dfs. </p>
+                <p>Dataframe containing data used in the regression equation. Used when we only have one subject.           </p>
               </div>
             </td>
             <td>
@@ -3163,11 +3163,43 @@ language.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>inst : OHLCV/other Dataframes used for computations. Default is an empty dictionary.</p>
+                <p>inst : OHLCV/other Dataframes used for computations in the regression equation. Used when we have multiple subjects.</p>
               </div>
             </td>
             <td>
-                  <code>{}</code>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>start</code>
+            </td>
+            <td>
+                  <code><span title="datetime.datetime">datetime</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Start period for regression analysis. If not tz-aware, assumed UTC. If not given, assume min of dataset in <code>dfs</code>. Used when <code>dfs</code> is provided.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>end</code>
+            </td>
+            <td>
+                  <code><span title="datetime.datetime">datetime</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>End period for regression analysis. If not tz-aware, assumed UTC. If not given, assume max of dataset in <code>dfs</code>. Used when <code>dfs</code> is provided.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -3179,7 +3211,7 @@ language.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>List of instruments used in the regression analysis.</p>
+                <p>List of instruments used in the regression analysis, and have dataframes in <code>dfs</code>. Used when <code>dfs</code> is provided.</p>
               </div>
             </td>
             <td>
@@ -3196,7 +3228,8 @@ language.</p>
             <td>
               <div class="doc-md-description">
                 <p>The granularity of the regression analysis.
-Datapoints of lower granularity than specified are ignored. Last known datapoint of multiple entries in the same granularity interval is taken. Default is <code>Period.DAILY</code>.</p>
+Datapoints of lower granularity than specified are ignored. Last known datapoint of multiple entries in the same granularity interval is taken. 
+Default is <code>Period.DAILY</code>. Used when <code>dfs</code> is provided.</p>
               </div>
             </td>
             <td>

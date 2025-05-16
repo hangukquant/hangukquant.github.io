@@ -959,9 +959,36 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.hft.oms.OMS.get_base_asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_base_asset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.oms.OMS.get_funding_info" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_funding_info
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.hft.oms.OMS.get_position" class="md-nav__link">
     <span class="md-ellipsis">
       get_position
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.oms.OMS.get_quote_asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_quote_asset
     </span>
   </a>
   
@@ -3236,7 +3263,7 @@
 
 
 <h3 id="quantpylib.hft.oms.OMS.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">gateway</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orders_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orders_mirrored_positions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pending_timeout</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">refresh_orders_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">refresh_positions_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">gateway</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orders_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positions_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pending_timeout</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">refresh_orders_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">refresh_positions_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3283,6 +3310,38 @@
             <td>
               <div class="doc-md-description">
                 <p>The list of exchanges to subscribe to. If None, use the clients in the gateway.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>orders_mirrored_exchanges</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The list of exchanges to mirror orders. If None, defaults to gateway exchanges.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>positions_mirrored_exchanges</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The list of exchanges to mirror positions. If None, defaults to gateway exchanges.</p>
               </div>
             </td>
             <td>
@@ -4046,6 +4105,138 @@ for given ticker.</p>
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.hft.oms.OMS.get_base_asset" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_base_asset</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get the base asset for a given exchange and ticker. For example,
+the base asset for BTCUSDT is BTC.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.oms.OMS.get_funding_info" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_funding_info</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get the funding information for a given exchange and ticker.
+Only available when <code>init(include_funding=True)</code> was called.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="quantpylib.hft.oms.OMS.get_position" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_position</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
 
@@ -4055,6 +4246,72 @@ for given ticker.</p>
     <div class="doc doc-contents ">
 
         <p>Get the position for a given exchange and ticker. Uses socket.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.oms.OMS.get_quote_asset" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_quote_asset</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get the quote asset for a given exchange and ticker. For example,
+the quote asset for BTCUSDT is USDT.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
