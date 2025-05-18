@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../logger/handlers/">
+        <link rel="prev" href="../../scripts/trend_following/">
       
       
-        <link rel="next" href="../../scripts/market_making/">
+        <link rel="next" href="../scientific_programming/">
       
       
       <link rel="icon" href="../../icons/logo.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>pricing - quantpylib</title>
+        <title>High Frequency Trading - quantpylib</title>
       
     
     
@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#feature-resampling" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -102,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              pricing
+              High Frequency Trading
             
           </span>
         </div>
@@ -260,13 +265,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../pricing/pricing/" class="md-tabs__link">
           
   
   
@@ -302,11 +305,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../learn/high_frequency_trading/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -2384,31 +2389,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -2421,7 +2421,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Pricing
@@ -2432,17 +2432,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../pricing/pricing/" class="md-nav__link">
         
   
   
@@ -2453,7 +2446,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -2589,26 +2581,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -2621,7 +2618,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Learn
@@ -2632,10 +2629,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../learn/high_frequency_trading/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    High Frequency Trading
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2646,6 +2663,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#feature-resampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Resampling
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2658,7 +2702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../learn/scientific_programming/" class="md-nav__link">
+      <a href="../scientific_programming/" class="md-nav__link">
         
   
   
@@ -2681,7 +2725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../learn/portfolio_management/" class="md-nav__link">
+      <a href="../portfolio_management/" class="md-nav__link">
         
   
   
@@ -2793,47 +2837,293 @@
 
 
 
-  <h1>pricing</h1>
+  <h1>High Frequency Trading</h1>
 
-<p>One-time payment for access to the quantpylib Github repository and fierce updates. </p>
-<p>Your one-stop shop for quant research and trading infrastructure:</p>
-<div style="
-  max-width: 340px;
-  margin: 40px auto;
-  padding: 20px;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-">
+<h2 id="feature-resampling">Feature Resampling</h2>
+<p>Tick data feeds are often aggregated into candlestick bars. Classical candlesticks are sampled with respect to time, but this choice is fairly arbitrary — for one, we know that markets do not trade at a uniform speed (<a href="https://pages.nes.ru/aobizhaeva/Kyle_Obizhaeva_Invariance.pdf">Kyle &amp; Obizhaeva</a>, <a href="https://www.amazon.com/Advances-Financial-Machine-Learning-Marcos/dp/1119482089">de Prado</a>). For instance, market open and closing hours tend to be more liquid. Time bars oversample information during periods of low activity, and vice versa. Consequently, time sampling often exhibit poor statistical properties.</p>
+<p>Sampling as a function of other variables, such as number of transactions (<a href="https://users.math.yale.edu/~bbm3/web_pdfs/050onthedistribution.pdf">Mandelbrot, 1963</a>), allows us to achieve samples closer to i.i.d. Gaussian distributions, making them more amenable to statistical modeling and interpretation.</p>
+<p>Typical information included in aggregated bars include
+<strong>t (start), open, high, low, close, volume, n (number of ticks), vwap, T (end)</strong>.</p>
+<p>Let <span class="arithmatex">\( t_n \)</span> be the current timestamp, then <strong>time bars</strong> are sampled when <span class="arithmatex">\(t_n &gt; T\)</span>, where <span class="arithmatex">\( T = t + \tau \)</span>, a fixed interval length. We shall explore some alternative sampling methods.</p>
+<ul>
+<li><strong>Tick Bars</strong>
+Set a constant tick count <span class="arithmatex">\(c\)</span>. Roll the bar when:
+<span class="arithmatex">\(
+n &gt; c
+\)</span>.</li>
+<li><strong>Volume Bars / Dollar Bars</strong>
+Analogous to tick bars, but triggered when total <strong>volume</strong> or <strong>dollar value</strong> exceeds a threshold.</li>
+</ul>
+<p>Let a trade be defined by its timestamp, price, size, and direction, then</p>
+<div class="arithmatex">\[
+\text{trade} = (\text{ts}, \text{price}, \text{size}, \text{dir})
+\]</div>
+<p>and for some <span class="arithmatex">\( \delta \)</span> threshold, the samples are taken when</p>
+<ul>
+<li><strong>Signed Tick Bars</strong>:</li>
+</ul>
+<div class="arithmatex">\[
+\left |\sum_{i=1}^n \text{dir}_i \right | &gt; \delta
+\]</div>
+<ul>
+<li><strong>Signed Volume Bars</strong>:</li>
+</ul>
+<div class="arithmatex">\[
+\left| \sum_{i=1}^n \text{dir}_i \cdot \text{size}_i \right| &gt; \delta
+\]</div>
+<ul>
+<li><strong>Signed Dollar Bars</strong>:</li>
+</ul>
+<div class="arithmatex">\[
+\left| \sum_{i=1}^n \text{dir}_i \cdot \text{size}_i \cdot \text{price}_i \right| &gt; \delta
+\]</div>
+<p><strong>Probabilistic Bars</strong></p>
+<p>So far, the bars are somewhat <strong>static</strong>, but we would like to perform sampling with frequency proprotional to the <strong>arrival of information</strong>. This new paradigm of information sampling works on a dynamic frequency with respect to deviation from some expected thresholds;</p>
+<p>Define:</p>
+<ul>
+<li><span class="arithmatex">\( n_{\text{ticks}} \)</span>: target number of ticks per bar</li>
+<li><span class="arithmatex">\( \lambda \in [0,1] \)</span>: decay factor</li>
+</ul>
+<p>Let:</p>
+<ul>
+<li>Tick imbalance:</li>
+</ul>
+<div class="arithmatex">\[
+\theta_T = \sum_{t=1}^{T} \text{dir}_t
+\]</div>
+<ul>
+<li>Average tick imbalance:</li>
+</ul>
+<div class="arithmatex">\[
+b_t = \frac{\theta_T}{T} \in [-1,1].
+\]</div>
+<p>with expected value (exponential online estimate):</p>
+<div class="arithmatex">\[
+\mathbb{E}[b_t]^{(k+1)} = \lambda \cdot |b_t| + (1 - \lambda) \cdot \mathbb{E}[b_t]^{(k)}
+\]</div>
+<p>Then roll when:</p>
+<div class="arithmatex">\[
+| \theta_T | \geq n_{\text{ticks}} \cdot \mathbb{E}[b_t]
+\]</div>
+<p><strong>Some Results</strong>
+A small numerical test is proposed to observe if BTC trade ticks exhibit mean-reversionary
+effects to vwap levels. Volume is often considered to be a metric of informed traders with asymmetric information crossing the bid-ask spread. It is reasonable to suspect that prices with higher volumes act as <strong>anchors</strong>.
+We test this relation using a simple regression relationship between time-series bar samples:</p>
+<div class="arithmatex">\[
+c_{t + 1} / c_{t} \sim (c_t - vwap_t) / c_t
+\]</div>
+<p>The trials are repeated for (i) classical time bars, and (ii) probabilistic bars. Data archival, restoration, tick data replay and regression analysis are all performed using quantpylib's features 
+and Binance websocket data. See tick data management tutorial <a href="https://quantpylib.hangukquant.com/scripts/tick_archival/">here</a>. Documentation is <a href="https://quantpylib.hangukquant.com/hft/hft/">here</a> for the hft module.
+The code for regression trials and subscribing to the custom bar feeds is presented.</p>
+<details>
+<summary> Code for Feature Resampling and Regression </summary>
 
-  <img src="/archives/logo.png" alt="quantpylib" style="width: 100%; border-radius: 12px; margin-bottom: 16px;" /> 
-
-  <div style="font-size: 20px; font-weight: 500; color: #555;">quantpylib</div>
-  <div style="font-size: 28px; font-weight: 700; margin: 8px 0;">US$365</div>
-
-  <a href="https://buy.stripe.com/bIYdS92jq7K7c005ky" target="_blank" style="
-    display: inline-block;
-    margin-top: 12px;
-    background-color: #0a66ff;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 12px 32px;
-    border-radius: 8px;
-    text-decoration: none;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-  ">Buy</a>
-
-  <div style="margin-top: 18px; font-size: 13px; color: #888;">Supported payment methods:</div>
-  <div style="margin-top: 8px;">
-    <!-- <img src="https://img.icons8.com/color/32/american-express.png" style="margin: 0 4px;" /> -->
-    <img src="https://img.icons8.com/color/32/mastercard-logo.png" style="margin: 0 4px;" />
-    <img src="https://img.icons8.com/color/32/visa.png" style="margin: 0 4px;" />
-    <img src="https://img.icons8.com/color/32/google-pay-india.png" style="margin: 0 4px;" />
-  </div>
-
-</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pytz</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>  
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dateutil.relativedelta</span><span class="w"> </span><span class="kn">import</span> <span class="n">relativedelta</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kn">import</span><span class="w"> </span><span class="nn">quantpylib.hft.bars</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">bars</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft.feed</span><span class="w"> </span><span class="kn">import</span> <span class="n">Feed</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.gateway.master</span><span class="w"> </span><span class="kn">import</span> <span class="n">Gateway</span> 
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">show</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">exc</span> <span class="o">=</span> <span class="s1">&#39;binance&#39;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">tickers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;BTCUSDT&#39;</span><span class="p">]</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">stream_data</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="s1">&#39;binance&#39;</span><span class="p">:</span> <span class="n">tickers</span><span class="p">,</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">}</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="n">run</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="n">time</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="n">replayer</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft.mocks</span><span class="w"> </span><span class="kn">import</span> <span class="n">Replayer</span><span class="p">,</span><span class="n">Latencies</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="n">hours</span> <span class="o">=</span> <span class="mi">10</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="n">start</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="n">hours</span><span class="p">)</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="n">start</span> <span class="o">=</span> <span class="n">start</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">:%H&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="n">end</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">:%H&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="n">LATENCY</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="n">latencies</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>    <span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PUBLIC</span><span class="p">:</span><span class="n">LATENCY</span><span class="p">,</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>    <span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PRIVATE</span><span class="p">:</span><span class="n">LATENCY</span><span class="p">,</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>    <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PUBLIC</span><span class="p">:</span><span class="n">LATENCY</span><span class="p">,</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>    <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PRIVATE</span><span class="p">:</span><span class="n">LATENCY</span><span class="p">,</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>    <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PUBLIC</span><span class="p">:</span><span class="n">LATENCY</span><span class="p">,</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>    <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PRIVATE</span><span class="p">:</span><span class="n">LATENCY</span><span class="p">,</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="p">}</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="n">replayer_configs</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>    <span class="s2">&quot;latencies&quot;</span><span class="p">:</span><span class="n">latencies</span><span class="p">,</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="p">}</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="n">gateway</span> <span class="o">=</span> <span class="n">Gateway</span><span class="p">(</span><span class="n">config_keys</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;binance&quot;</span><span class="p">:</span> <span class="p">{}})</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">handler</span><span class="p">(</span><span class="n">bar</span><span class="p">):</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">play_data</span><span class="p">(</span><span class="n">replayer</span><span class="p">,</span><span class="n">oms</span><span class="p">,</span><span class="n">feed</span><span class="p">,</span><span class="n">ticker</span><span class="p">):</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>    <span class="n">trade_feed_id</span> <span class="o">=</span> <span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">add_trades_feed</span><span class="p">(</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>        <span class="n">exc</span><span class="o">=</span><span class="s1">&#39;binance&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>        <span class="n">ticker</span><span class="o">=</span><span class="s1">&#39;BTCUSDT&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>        <span class="n">buffer</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>    <span class="p">)</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>    <span class="n">time_bars</span> <span class="o">=</span> <span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">add_sampling_bars_feed</span><span class="p">(</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>        <span class="n">exc</span><span class="o">=</span><span class="s1">&#39;binance&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>        <span class="n">ticker</span><span class="o">=</span><span class="s1">&#39;BTCUSDT&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>        <span class="n">handler</span><span class="o">=</span><span class="n">handler</span><span class="p">,</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>        <span class="n">buffer</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>        <span class="n">bar_cls</span><span class="o">=</span><span class="n">bars</span><span class="o">.</span><span class="n">TimeBars</span><span class="p">,</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>        <span class="n">granularity</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>        <span class="n">granularity_multiplier</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>    <span class="p">)</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>
+<a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>    <span class="n">probabilistic_bars</span> <span class="o">=</span> <span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">add_sampling_bars_feed</span><span class="p">(</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>        <span class="n">exc</span><span class="o">=</span><span class="s1">&#39;binance&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>        <span class="n">ticker</span><span class="o">=</span><span class="s1">&#39;BTCUSDT&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>        <span class="n">handler</span><span class="o">=</span><span class="n">handler</span><span class="p">,</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>        <span class="n">buffer</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>        <span class="n">bar_cls</span><span class="o">=</span><span class="n">bars</span><span class="o">.</span><span class="n">ProbabilisticSignedTickBars</span><span class="p">,</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>        <span class="n">n_ticks</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>    <span class="p">)</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a>    <span class="k">return</span> <span class="n">time_bars</span><span class="p">,</span><span class="n">probabilistic_bars</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a>
+<a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">hft</span><span class="p">(</span><span class="n">replayer</span><span class="p">,</span><span class="n">oms</span><span class="p">,</span><span class="n">feed</span><span class="p">):</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>    <span class="n">bar_feeds</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a>        <span class="n">play_data</span><span class="p">(</span><span class="n">replayer</span><span class="o">=</span><span class="n">replayer</span><span class="p">,</span><span class="n">oms</span><span class="o">=</span><span class="n">oms</span><span class="p">,</span><span class="n">feed</span><span class="o">=</span><span class="n">feed</span><span class="p">,</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">)</span> 
+<a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>        <span class="k">for</span> <span class="n">ticker</span> <span class="ow">in</span> <span class="n">tickers</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>    <span class="p">])</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a>    <span class="k">await</span> <span class="n">run</span><span class="p">()</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a>    <span class="k">for</span> <span class="n">_type</span><span class="p">,</span><span class="n">_bar_feed</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="s1">&#39;probabilistic&#39;</span><span class="p">],</span><span class="n">bar_feeds</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+<a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a>        <span class="n">bar_feed</span> <span class="o">=</span> <span class="n">feed</span><span class="o">.</span><span class="n">get_feed</span><span class="p">(</span><span class="n">_bar_feed</span><span class="p">)</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a>        <span class="n">bars</span> <span class="o">=</span> <span class="n">bar_feed</span><span class="o">.</span><span class="n">as_df</span><span class="p">()</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a>
+<a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a>        <span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.simulator.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">GeneticRegression</span>
+<a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a>        <span class="n">configs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;df&quot;</span><span class="p">:</span><span class="n">bars</span><span class="p">}</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a>
+<a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a>        <span class="n">model</span> <span class="o">=</span> <span class="n">GeneticRegression</span><span class="p">(</span>
+<a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a>            <span class="n">formula</span><span class="o">=</span><span class="s2">&quot;div(forward_1(c),c) ~ div(minus(c,vwap),c)&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a>            <span class="n">df</span><span class="o">=</span><span class="n">bars</span>
+<a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a>        <span class="p">)</span>
+<a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a>        <span class="n">res</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">ols</span><span class="p">()</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a>        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a>
+<a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">sim_prepare</span><span class="p">():</span>
+<a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a>    <span class="n">trade_data</span> <span class="o">=</span> <span class="p">{</span><span class="n">exchange</span><span class="p">:{}</span> <span class="k">for</span> <span class="n">exchange</span> <span class="ow">in</span> <span class="n">stream_data</span><span class="p">}</span>
+<a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a>
+<a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a>    <span class="k">for</span> <span class="n">exchange</span><span class="p">,</span><span class="n">tickers</span> <span class="ow">in</span> <span class="n">stream_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a>        <span class="n">trade_archives</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102" href="#__codelineno-0-102"></a>            <span class="n">Feed</span><span class="o">.</span><span class="n">load_trade_archives</span><span class="p">(</span>
+<a id="__codelineno-0-103" name="__codelineno-0-103" href="#__codelineno-0-103"></a>                <span class="n">exc</span><span class="o">=</span><span class="n">exchange</span><span class="p">,</span>
+<a id="__codelineno-0-104" name="__codelineno-0-104" href="#__codelineno-0-104"></a>                <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
+<a id="__codelineno-0-105" name="__codelineno-0-105" href="#__codelineno-0-105"></a>                <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span>
+<a id="__codelineno-0-106" name="__codelineno-0-106" href="#__codelineno-0-106"></a>                <span class="n">end</span><span class="o">=</span><span class="n">end</span>
+<a id="__codelineno-0-107" name="__codelineno-0-107" href="#__codelineno-0-107"></a>            <span class="p">)</span> <span class="k">for</span> <span class="n">ticker</span> <span class="ow">in</span> <span class="n">tickers</span>
+<a id="__codelineno-0-108" name="__codelineno-0-108" href="#__codelineno-0-108"></a>        <span class="p">]</span>
+<a id="__codelineno-0-109" name="__codelineno-0-109" href="#__codelineno-0-109"></a>
+<a id="__codelineno-0-110" name="__codelineno-0-110" href="#__codelineno-0-110"></a>        <span class="n">trade_data</span><span class="p">[</span><span class="n">exchange</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a>            <span class="n">ticker</span><span class="p">:</span><span class="n">trade_archive</span> 
+<a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a>            <span class="k">for</span> <span class="n">ticker</span><span class="p">,</span><span class="n">trade_archive</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tickers</span><span class="p">,</span><span class="n">trade_archives</span><span class="p">)</span>
+<a id="__codelineno-0-113" name="__codelineno-0-113" href="#__codelineno-0-113"></a>        <span class="p">}</span>
+<a id="__codelineno-0-114" name="__codelineno-0-114" href="#__codelineno-0-114"></a>
+<a id="__codelineno-0-115" name="__codelineno-0-115" href="#__codelineno-0-115"></a>    <span class="k">global</span> <span class="n">replayer</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">time</span>
+<a id="__codelineno-0-116" name="__codelineno-0-116" href="#__codelineno-0-116"></a>    <span class="n">replayer</span> <span class="o">=</span> <span class="n">Replayer</span><span class="p">(</span>
+<a id="__codelineno-0-117" name="__codelineno-0-117" href="#__codelineno-0-117"></a>        <span class="n">l2_data</span><span class="o">=</span><span class="p">{},</span>
+<a id="__codelineno-0-118" name="__codelineno-0-118" href="#__codelineno-0-118"></a>        <span class="n">trade_data</span><span class="o">=</span><span class="n">trade_data</span><span class="p">,</span>
+<a id="__codelineno-0-119" name="__codelineno-0-119" href="#__codelineno-0-119"></a>        <span class="n">gateway</span><span class="o">=</span><span class="n">gateway</span><span class="p">,</span>
+<a id="__codelineno-0-120" name="__codelineno-0-120" href="#__codelineno-0-120"></a>        <span class="o">**</span><span class="n">replayer_configs</span>
+<a id="__codelineno-0-121" name="__codelineno-0-121" href="#__codelineno-0-121"></a>    <span class="p">)</span>
+<a id="__codelineno-0-122" name="__codelineno-0-122" href="#__codelineno-0-122"></a>    <span class="n">oms</span> <span class="o">=</span> <span class="n">replayer</span><span class="o">.</span><span class="n">get_oms</span><span class="p">()</span>
+<a id="__codelineno-0-123" name="__codelineno-0-123" href="#__codelineno-0-123"></a>    <span class="n">feed</span> <span class="o">=</span> <span class="n">replayer</span><span class="o">.</span><span class="n">get_feed</span><span class="p">()</span>
+<a id="__codelineno-0-124" name="__codelineno-0-124" href="#__codelineno-0-124"></a>    <span class="n">run</span> <span class="o">=</span> <span class="k">lambda</span> <span class="p">:</span> <span class="n">replayer</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+<a id="__codelineno-0-125" name="__codelineno-0-125" href="#__codelineno-0-125"></a>    <span class="n">time</span> <span class="o">=</span> <span class="k">lambda</span> <span class="p">:</span> <span class="n">replayer</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<a id="__codelineno-0-126" name="__codelineno-0-126" href="#__codelineno-0-126"></a>    <span class="k">return</span> <span class="n">oms</span><span class="p">,</span> <span class="n">feed</span>
+<a id="__codelineno-0-127" name="__codelineno-0-127" href="#__codelineno-0-127"></a>
+<a id="__codelineno-0-128" name="__codelineno-0-128" href="#__codelineno-0-128"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-0-129" name="__codelineno-0-129" href="#__codelineno-0-129"></a>    <span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">init_clients</span><span class="p">()</span> 
+<a id="__codelineno-0-130" name="__codelineno-0-130" href="#__codelineno-0-130"></a>    <span class="n">oms</span><span class="p">,</span><span class="n">feed</span> <span class="o">=</span> <span class="k">await</span> <span class="n">sim_prepare</span><span class="p">()</span>    
+<a id="__codelineno-0-131" name="__codelineno-0-131" href="#__codelineno-0-131"></a>    <span class="k">await</span> <span class="n">oms</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<a id="__codelineno-0-132" name="__codelineno-0-132" href="#__codelineno-0-132"></a>    <span class="k">await</span> <span class="n">hft</span><span class="p">(</span><span class="n">replayer</span><span class="p">,</span><span class="n">oms</span><span class="p">,</span><span class="n">feed</span><span class="p">)</span>
+<a id="__codelineno-0-133" name="__codelineno-0-133" href="#__codelineno-0-133"></a>    <span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">cleanup_clients</span><span class="p">()</span>
+<a id="__codelineno-0-134" name="__codelineno-0-134" href="#__codelineno-0-134"></a>
+<a id="__codelineno-0-135" name="__codelineno-0-135" href="#__codelineno-0-135"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a id="__codelineno-0-136" name="__codelineno-0-136" href="#__codelineno-0-136"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div>
+</details>
+<p>The sampled bars are retrieved as in <code>bar_feed.as_df()</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>                t         o         h         l         c        v       n           vwap             T
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>0    1.747516e+12  103330.7  103376.4  103286.5  103286.5  102.308  1389.0  103340.333948  1.747516e+12
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>1    1.747516e+12  103286.6  103350.0  103248.8  103349.9   93.656  1317.0  103297.011811  1.747516e+12
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>2    1.747516e+12  103350.0  103458.6  103280.1  103280.1  280.711  2457.0  103403.270401  1.747516e+12
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>3    1.747516e+12  103280.1  103301.2  103262.4  103301.2   74.626  1001.0  103276.858821  1.747516e+12
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>4    1.747516e+12  103301.2  103390.2  103301.1  103356.7  105.848   884.0  103353.044096  1.747516e+12
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>..            ...       ...       ...       ...       ...      ...     ...            ...           ...
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>196  1.747551e+12  103417.6  103431.9  103350.4  103359.1  112.305  1143.0  103395.879483  1.747551e+12
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>197  1.747551e+12  103359.2  103382.8  103350.7  103350.8   57.124   942.0  103366.522973  1.747551e+12
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>198  1.747551e+12  103350.8  103353.8  103320.0  103353.7   82.479   838.0  103339.882634  1.747551e+12
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>199  1.747551e+12  103353.7  103386.8  103353.7  103370.6   61.202   714.0  103366.291206  1.747551e+12
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>200  1.747551e+12  103370.7  103429.4  103353.8  103414.4  144.935  1389.0  103390.268834  1.747552e+12
+</code></pre></div></p>
+<p>We obtained the following results for time-based sampling (not significant) and probabilisitic sampling (significant)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>                            OLS Regression Results                            
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>==============================================================================
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Dep. Variable:                     b0   R-squared:                       0.000
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Model:                            OLS   Adj. R-squared:                 -0.005
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Method:                 Least Squares   F-statistic:                   0.02410
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Date:                Tue, 13 May 2025   Prob (F-statistic):              0.877
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Time:                        21:34:09   Log-Likelihood:                 1170.6
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>No. Observations:                 201   AIC:                            -2337.
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Df Residuals:                     199   BIC:                            -2331.
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>Df Model:                           1                                         
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Covariance Type:            nonrobust                                         
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>==============================================================================
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>------------------------------------------------------------------------------
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>Intercept      1.0001   5.08e-05   1.97e+04      0.000       1.000       1.000
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>b1            -0.0209      0.135     -0.155      0.877      -0.286       0.244
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>==============================================================================
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>Omnibus:                       11.897   Durbin-Watson:                   1.867
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>Prob(Omnibus):                  0.003   Jarque-Bera (JB):               19.713
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>Skew:                           0.315   Prob(JB):                     5.24e-05
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>Kurtosis:                       4.399   Cond. No.                     2.65e+03
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>==============================================================================
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>                            OLS Regression Results                            
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>==============================================================================
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>Dep. Variable:                     b0   R-squared:                       0.059
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>Model:                            OLS   Adj. R-squared:                  0.053
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>Method:                 Least Squares   F-statistic:                     9.050
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>Date:                Tue, 13 May 2025   Prob (F-statistic):            0.00310
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>Time:                        21:34:28   Log-Likelihood:                 809.41
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>No. Observations:                 146   AIC:                            -1615.
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>Df Residuals:                     144   BIC:                            -1609.
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>Df Model:                           1                                         
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>Covariance Type:            nonrobust                                         
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>==============================================================================
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>------------------------------------------------------------------------------
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>Intercept      1.0001   7.89e-05   1.27e+04      0.000       1.000       1.000
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>b1            -0.3461      0.115     -3.008      0.003      -0.573      -0.119
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>==============================================================================
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>Omnibus:                        3.589   Durbin-Watson:                   2.021
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>Prob(Omnibus):                  0.166   Jarque-Bera (JB):                3.380
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>Skew:                          -0.215   Prob(JB):                        0.184
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>Kurtosis:                       3.608   Cond. No.                     1.46e+03
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>==============================================================================
+</code></pre></div>
+and regression plots respectively
+<img alt="alt text" src="../../archives/regression_time_sampling.png" /> 
+<img alt="alt text" src="../../archives/regression_prob_sampling.png" /></p>
+<p>Clearly, the numerical experiments reveal some interesting dynamics between sampling behaviour and 
+the presence of mean-reversion effects. Not as clearly, it is important to keep in mind these are time-varying effects, and most perhaps regime dependent.</p>
 
 
 
