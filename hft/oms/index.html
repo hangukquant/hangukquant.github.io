@@ -1193,6 +1193,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.hft.oms.OMS.rounded_ceil_price" class="md-nav__link">
+    <span class="md-ellipsis">
+      rounded_ceil_price
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.oms.OMS.rounded_floor_price" class="md-nav__link">
+    <span class="md-ellipsis">
+      rounded_floor_price
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.hft.oms.OMS.rounded_lots" class="md-nav__link">
     <span class="md-ellipsis">
       rounded_lots
@@ -2558,6 +2576,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../wrappers/lighter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.lighter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../wrappers/paradex/" class="md-nav__link">
         
   
@@ -3341,7 +3382,7 @@
 
 
 <h3 id="quantpylib.hft.oms.OMS.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">gateway</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orders_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positions_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pending_timeout</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">refresh_orders_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">refresh_positions_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">gateway</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orders_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positions_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pending_timeout</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">refresh_orders_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">refresh_positions_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">orders_cls_init</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -5471,6 +5512,168 @@ and size differences are submitted to a hedge balance that waits for future arri
             </td>
             <td>
                   <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.oms.OMS.rounded_ceil_price" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">rounded_ceil_price</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Round a price up to the price precision for a given exchange and ticker.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>price</code>
+            </td>
+            <td>
+                  <code><span title="decimal.Decimal">Decimal</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The price to round.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.oms.OMS.rounded_floor_price" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">rounded_floor_price</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Round a price down to the price precision for a given exchange and ticker.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>price</code>
+            </td>
+            <td>
+                  <code><span title="decimal.Decimal">Decimal</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The price to round.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
             </td>
           </tr>
       </tbody>

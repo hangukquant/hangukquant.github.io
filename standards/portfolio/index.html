@@ -2513,6 +2513,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../wrappers/lighter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.lighter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../wrappers/paradex/" class="md-nav__link">
         
   
@@ -3662,7 +3685,7 @@
 
 
 <h3 id="quantpylib.standards.portfolio.Orders.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">orders</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delta_handlers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default_args</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">orders</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delta_handlers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy_to_handlers</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 </h3>
 
@@ -5167,7 +5190,7 @@ Defaults to True.</p>
 
 
 <h3 id="quantpylib.standards.portfolio.Positions.update_position" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">update_position</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_amount</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">entry</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_entry</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">update_position</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_amount</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">entry</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_entry</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">trigger_handlers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -5270,6 +5293,22 @@ Defaults to True.</p>
             </td>
             <td>
                   <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>trigger_handlers</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If False, mutate state silently without firing delta handlers. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
             </td>
           </tr>
       </tbody>

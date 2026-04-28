@@ -12,7 +12,7 @@
         <link rel="prev" href="../databento/">
       
       
-        <link rel="next" href="../paradex/">
+        <link rel="next" href="../lighter/">
       
       
       <link rel="icon" href="../../icons/logo.png">
@@ -3893,6 +3893,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../lighter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.lighter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../paradex/" class="md-nav__link">
         
   
@@ -5264,182 +5287,181 @@ Each subscribe method has a corresponding unsubscribe method with matching param
 <a id="__codelineno-40-312" name="__codelineno-40-312" href="#__codelineno-40-312"></a>    <span class="c1"># for _ in range(4):</span>
 <a id="__codelineno-40-313" name="__codelineno-40-313" href="#__codelineno-40-313"></a>    <span class="c1">#     await asyncio.sleep(1)</span>
 <a id="__codelineno-40-314" name="__codelineno-40-314" href="#__codelineno-40-314"></a>    <span class="c1">#     print(f&quot;mid: {ob.get_mid()}&quot;)</span>
-<a id="__codelineno-40-315" name="__codelineno-40-315" href="#__codelineno-40-315"></a>    <span class="c1"># await hyp.l2_book_unsubscribe(ticker=ticker)</span>
-<a id="__codelineno-40-316" name="__codelineno-40-316" href="#__codelineno-40-316"></a>
-<a id="__codelineno-40-317" name="__codelineno-40-317" href="#__codelineno-40-317"></a>    <span class="c1"># await hyp.l2_book_subscribe(ticker=ticker, handler=print_handler)</span>
-<a id="__codelineno-40-318" name="__codelineno-40-318" href="#__codelineno-40-318"></a>    <span class="c1"># await asyncio.sleep(4)</span>
-<a id="__codelineno-40-319" name="__codelineno-40-319" href="#__codelineno-40-319"></a>    <span class="c1"># await hyp.l2_book_unsubscribe(ticker=ticker)</span>
-<a id="__codelineno-40-320" name="__codelineno-40-320" href="#__codelineno-40-320"></a>
-<a id="__codelineno-40-321" name="__codelineno-40-321" href="#__codelineno-40-321"></a>    <span class="c1"># await hyp.trades_subscribe(ticker=ticker, handler=print_handler)</span>
-<a id="__codelineno-40-322" name="__codelineno-40-322" href="#__codelineno-40-322"></a>    <span class="c1"># await asyncio.sleep(4)</span>
-<a id="__codelineno-40-323" name="__codelineno-40-323" href="#__codelineno-40-323"></a>    <span class="c1"># await hyp.trades_unsubscribe(ticker=ticker)</span>
-<a id="__codelineno-40-324" name="__codelineno-40-324" href="#__codelineno-40-324"></a>
-<a id="__codelineno-40-325" name="__codelineno-40-325" href="#__codelineno-40-325"></a>    <span class="c1"># await hyp.all_mids_subscribe(handler=print_handler)</span>
-<a id="__codelineno-40-326" name="__codelineno-40-326" href="#__codelineno-40-326"></a>    <span class="c1"># await asyncio.sleep(4)</span>
-<a id="__codelineno-40-327" name="__codelineno-40-327" href="#__codelineno-40-327"></a>    <span class="c1"># await hyp.all_mids_unsubscribe()</span>
-<a id="__codelineno-40-328" name="__codelineno-40-328" href="#__codelineno-40-328"></a>
-<a id="__codelineno-40-329" name="__codelineno-40-329" href="#__codelineno-40-329"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39;orders&#39;&#39;&#39;</span>
-<a id="__codelineno-40-330" name="__codelineno-40-330" href="#__codelineno-40-330"></a>    <span class="c1"># pprint(await hyp.order_query(oid=1234))</span>
-<a id="__codelineno-40-331" name="__codelineno-40-331" href="#__codelineno-40-331"></a>    <span class="c1"># pprint(await hyp.orders_get())</span>
-<a id="__codelineno-40-332" name="__codelineno-40-332" href="#__codelineno-40-332"></a>    <span class="c1"># orders = await hyp.orders_mirror(on_update=print_handler)</span>
-<a id="__codelineno-40-333" name="__codelineno-40-333" href="#__codelineno-40-333"></a>    <span class="c1"># pprint(hyp.orders_peek())</span>
-<a id="__codelineno-40-334" name="__codelineno-40-334" href="#__codelineno-40-334"></a>    <span class="c1"># await hyp.order_updates_subscribe(handler=print_handler)</span>
-<a id="__codelineno-40-335" name="__codelineno-40-335" href="#__codelineno-40-335"></a>    <span class="c1"># await asyncio.sleep(4)</span>
-<a id="__codelineno-40-336" name="__codelineno-40-336" href="#__codelineno-40-336"></a>    <span class="c1"># await hyp.order_updates_unsubscribe()</span>
-<a id="__codelineno-40-337" name="__codelineno-40-337" href="#__codelineno-40-337"></a>
-<a id="__codelineno-40-338" name="__codelineno-40-338" href="#__codelineno-40-338"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39;positions&#39;&#39;&#39;</span>
-<a id="__codelineno-40-339" name="__codelineno-40-339" href="#__codelineno-40-339"></a>    <span class="c1"># pprint(await hyp.positions_get())</span>
-<a id="__codelineno-40-340" name="__codelineno-40-340" href="#__codelineno-40-340"></a>    <span class="c1"># pprint(await hyp.positions_get(is_perpetuals=False))</span>
-<a id="__codelineno-40-341" name="__codelineno-40-341" href="#__codelineno-40-341"></a>    <span class="c1"># pos = await hyp.positions_mirror(as_dict=False, on_update=print_handler)</span>
-<a id="__codelineno-40-342" name="__codelineno-40-342" href="#__codelineno-40-342"></a>    <span class="c1"># print(pos)</span>
-<a id="__codelineno-40-343" name="__codelineno-40-343" href="#__codelineno-40-343"></a>    <span class="c1"># pos = hyp.positions_peek() </span>
-<a id="__codelineno-40-344" name="__codelineno-40-344" href="#__codelineno-40-344"></a>
-<a id="__codelineno-40-345" name="__codelineno-40-345" href="#__codelineno-40-345"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39;datapoller&#39;&#39;&#39;</span>
-<a id="__codelineno-40-346" name="__codelineno-40-346" href="#__codelineno-40-346"></a>    <span class="c1"># df = await hyp.get_trade_bars(</span>
-<a id="__codelineno-40-347" name="__codelineno-40-347" href="#__codelineno-40-347"></a>    <span class="c1">#     ticker=&quot;BTC&quot;,</span>
-<a id="__codelineno-40-348" name="__codelineno-40-348" href="#__codelineno-40-348"></a>    <span class="c1">#     start=datetime(2025,12,14),</span>
-<a id="__codelineno-40-349" name="__codelineno-40-349" href="#__codelineno-40-349"></a>    <span class="c1">#     end=datetime.now(),</span>
-<a id="__codelineno-40-350" name="__codelineno-40-350" href="#__codelineno-40-350"></a>    <span class="c1">#     granularity=Period.DAILY,</span>
-<a id="__codelineno-40-351" name="__codelineno-40-351" href="#__codelineno-40-351"></a>    <span class="c1">#     granularity_multiplier=1</span>
-<a id="__codelineno-40-352" name="__codelineno-40-352" href="#__codelineno-40-352"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-353" name="__codelineno-40-353" href="#__codelineno-40-353"></a>    <span class="c1"># print(df)</span>
-<a id="__codelineno-40-354" name="__codelineno-40-354" href="#__codelineno-40-354"></a>
-<a id="__codelineno-40-355" name="__codelineno-40-355" href="#__codelineno-40-355"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">socket_examples</span><span class="p">():</span>
-<a id="__codelineno-40-356" name="__codelineno-40-356" href="#__codelineno-40-356"></a>    <span class="n">aws</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">aws_manager</span>
-<a id="__codelineno-40-357" name="__codelineno-40-357" href="#__codelineno-40-357"></a>    <span class="n">ticker</span> <span class="o">=</span> <span class="s2">&quot;HYPE&quot;</span>
-<a id="__codelineno-40-358" name="__codelineno-40-358" href="#__codelineno-40-358"></a>    <span class="n">dex</span> <span class="o">=</span> <span class="s2">&quot;xyz&quot;</span>
-<a id="__codelineno-40-359" name="__codelineno-40-359" href="#__codelineno-40-359"></a>    <span class="n">interval</span> <span class="o">=</span> <span class="s2">&quot;1m&quot;</span>
-<a id="__codelineno-40-360" name="__codelineno-40-360" href="#__codelineno-40-360"></a>
-<a id="__codelineno-40-361" name="__codelineno-40-361" href="#__codelineno-40-361"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">stream_for</span><span class="p">(</span><span class="n">sub</span><span class="p">,</span><span class="n">unsub</span><span class="p">,</span><span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
-<a id="__codelineno-40-362" name="__codelineno-40-362" href="#__codelineno-40-362"></a>        <span class="k">await</span> <span class="n">sub</span>
-<a id="__codelineno-40-363" name="__codelineno-40-363" href="#__codelineno-40-363"></a>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
-<a id="__codelineno-40-364" name="__codelineno-40-364" href="#__codelineno-40-364"></a>        <span class="k">await</span> <span class="n">unsub</span>
-<a id="__codelineno-40-365" name="__codelineno-40-365" href="#__codelineno-40-365"></a>
-<a id="__codelineno-40-366" name="__codelineno-40-366" href="#__codelineno-40-366"></a>    <span class="k">await</span> <span class="n">stream_for</span><span class="p">(</span>
-<a id="__codelineno-40-367" name="__codelineno-40-367" href="#__codelineno-40-367"></a>        <span class="n">aws</span><span class="o">.</span><span class="n">all_mids_subscribe</span><span class="p">(</span><span class="n">handler</span><span class="o">=</span><span class="n">print_handler</span><span class="p">),</span>
-<a id="__codelineno-40-368" name="__codelineno-40-368" href="#__codelineno-40-368"></a>        <span class="n">aws</span><span class="o">.</span><span class="n">all_mids_unsubscribe</span><span class="p">()</span>
-<a id="__codelineno-40-369" name="__codelineno-40-369" href="#__codelineno-40-369"></a>    <span class="p">)</span>
-<a id="__codelineno-40-370" name="__codelineno-40-370" href="#__codelineno-40-370"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-371" name="__codelineno-40-371" href="#__codelineno-40-371"></a>    <span class="c1">#     aws.all_mids_subscribe(handler=print_handler,dex=dex),</span>
-<a id="__codelineno-40-372" name="__codelineno-40-372" href="#__codelineno-40-372"></a>    <span class="c1">#     aws.all_mids_unsubscribe(dex=dex)</span>
-<a id="__codelineno-40-373" name="__codelineno-40-373" href="#__codelineno-40-373"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-374" name="__codelineno-40-374" href="#__codelineno-40-374"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-375" name="__codelineno-40-375" href="#__codelineno-40-375"></a>    <span class="c1">#     aws.notification_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-376" name="__codelineno-40-376" href="#__codelineno-40-376"></a>    <span class="c1">#     aws.notification_unsubscribe()</span>
-<a id="__codelineno-40-377" name="__codelineno-40-377" href="#__codelineno-40-377"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-378" name="__codelineno-40-378" href="#__codelineno-40-378"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-379" name="__codelineno-40-379" href="#__codelineno-40-379"></a>    <span class="c1">#     aws.webdata_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-380" name="__codelineno-40-380" href="#__codelineno-40-380"></a>    <span class="c1">#     aws.webdata_unsubscribe()</span>
-<a id="__codelineno-40-381" name="__codelineno-40-381" href="#__codelineno-40-381"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-382" name="__codelineno-40-382" href="#__codelineno-40-382"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-383" name="__codelineno-40-383" href="#__codelineno-40-383"></a>    <span class="c1">#     aws.twap_states_subscribe(handler=print_handler,dex=dex),</span>
-<a id="__codelineno-40-384" name="__codelineno-40-384" href="#__codelineno-40-384"></a>    <span class="c1">#     aws.twap_states_unsubscribe(dex=dex)</span>
-<a id="__codelineno-40-385" name="__codelineno-40-385" href="#__codelineno-40-385"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-386" name="__codelineno-40-386" href="#__codelineno-40-386"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-387" name="__codelineno-40-387" href="#__codelineno-40-387"></a>    <span class="c1">#     aws.clearinghouse_state_subscribe(handler=print_handler,dex=dex),</span>
-<a id="__codelineno-40-388" name="__codelineno-40-388" href="#__codelineno-40-388"></a>    <span class="c1">#     aws.clearinghouse_state_unsubscribe(dex=dex)</span>
-<a id="__codelineno-40-389" name="__codelineno-40-389" href="#__codelineno-40-389"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-390" name="__codelineno-40-390" href="#__codelineno-40-390"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-391" name="__codelineno-40-391" href="#__codelineno-40-391"></a>    <span class="c1">#     aws.open_orders_subscribe(handler=print_handler,dex=dex),</span>
-<a id="__codelineno-40-392" name="__codelineno-40-392" href="#__codelineno-40-392"></a>    <span class="c1">#     aws.open_orders_unsubscribe(dex=dex)</span>
-<a id="__codelineno-40-393" name="__codelineno-40-393" href="#__codelineno-40-393"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-394" name="__codelineno-40-394" href="#__codelineno-40-394"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-395" name="__codelineno-40-395" href="#__codelineno-40-395"></a>    <span class="c1">#     aws.candle_subscribe(coin=ticker,interval=interval,handler=print_handler),</span>
-<a id="__codelineno-40-396" name="__codelineno-40-396" href="#__codelineno-40-396"></a>    <span class="c1">#     aws.candle_unsubscribe(coin=ticker,interval=interval)</span>
-<a id="__codelineno-40-397" name="__codelineno-40-397" href="#__codelineno-40-397"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-398" name="__codelineno-40-398" href="#__codelineno-40-398"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-399" name="__codelineno-40-399" href="#__codelineno-40-399"></a>    <span class="c1">#     aws.l2_book_subscribe(ticker=ticker,handler=print_handler),</span>
-<a id="__codelineno-40-400" name="__codelineno-40-400" href="#__codelineno-40-400"></a>    <span class="c1">#     aws.l2_book_unsubscribe(ticker=ticker)</span>
-<a id="__codelineno-40-401" name="__codelineno-40-401" href="#__codelineno-40-401"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-402" name="__codelineno-40-402" href="#__codelineno-40-402"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-403" name="__codelineno-40-403" href="#__codelineno-40-403"></a>    <span class="c1">#     aws.l2_book_subscribe(ticker=ticker,handler=print_handler,nSigFigs=5,mantissa=2),</span>
-<a id="__codelineno-40-404" name="__codelineno-40-404" href="#__codelineno-40-404"></a>    <span class="c1">#     aws.l2_book_unsubscribe(ticker=ticker,nSigFigs=5,mantissa=2)</span>
-<a id="__codelineno-40-405" name="__codelineno-40-405" href="#__codelineno-40-405"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-406" name="__codelineno-40-406" href="#__codelineno-40-406"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-407" name="__codelineno-40-407" href="#__codelineno-40-407"></a>    <span class="c1">#     aws.trades_subscribe(ticker=ticker,handler=print_handler),</span>
-<a id="__codelineno-40-408" name="__codelineno-40-408" href="#__codelineno-40-408"></a>    <span class="c1">#     aws.trades_unsubscribe(ticker=ticker)</span>
-<a id="__codelineno-40-409" name="__codelineno-40-409" href="#__codelineno-40-409"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-410" name="__codelineno-40-410" href="#__codelineno-40-410"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-411" name="__codelineno-40-411" href="#__codelineno-40-411"></a>    <span class="c1">#     aws.order_updates_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-412" name="__codelineno-40-412" href="#__codelineno-40-412"></a>    <span class="c1">#     aws.order_updates_unsubscribe()</span>
-<a id="__codelineno-40-413" name="__codelineno-40-413" href="#__codelineno-40-413"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-414" name="__codelineno-40-414" href="#__codelineno-40-414"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-415" name="__codelineno-40-415" href="#__codelineno-40-415"></a>    <span class="c1">#     aws.user_events_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-416" name="__codelineno-40-416" href="#__codelineno-40-416"></a>    <span class="c1">#     aws.user_events_unsubscribe()</span>
-<a id="__codelineno-40-417" name="__codelineno-40-417" href="#__codelineno-40-417"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-418" name="__codelineno-40-418" href="#__codelineno-40-418"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-419" name="__codelineno-40-419" href="#__codelineno-40-419"></a>    <span class="c1">#    aws.account_fill_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-420" name="__codelineno-40-420" href="#__codelineno-40-420"></a>    <span class="c1">#     aws.account_fill_unsubscribe()</span>
-<a id="__codelineno-40-421" name="__codelineno-40-421" href="#__codelineno-40-421"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-422" name="__codelineno-40-422" href="#__codelineno-40-422"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-423" name="__codelineno-40-423" href="#__codelineno-40-423"></a>    <span class="c1">#     aws.account_fill_subscribe(handler=print_handler,aggregateByTime=True),</span>
-<a id="__codelineno-40-424" name="__codelineno-40-424" href="#__codelineno-40-424"></a>    <span class="c1">#     aws.account_fill_unsubscribe(aggregateByTime=True)</span>
-<a id="__codelineno-40-425" name="__codelineno-40-425" href="#__codelineno-40-425"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-426" name="__codelineno-40-426" href="#__codelineno-40-426"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-427" name="__codelineno-40-427" href="#__codelineno-40-427"></a>    <span class="c1">#     aws.user_fundings_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-428" name="__codelineno-40-428" href="#__codelineno-40-428"></a>    <span class="c1">#     aws.user_fundings_unsubscribe()</span>
-<a id="__codelineno-40-429" name="__codelineno-40-429" href="#__codelineno-40-429"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-430" name="__codelineno-40-430" href="#__codelineno-40-430"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-431" name="__codelineno-40-431" href="#__codelineno-40-431"></a>    <span class="c1">#     aws.user_ledger_updates_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-432" name="__codelineno-40-432" href="#__codelineno-40-432"></a>    <span class="c1">#     aws.user_ledger_updates_unsubscribe()</span>
-<a id="__codelineno-40-433" name="__codelineno-40-433" href="#__codelineno-40-433"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-434" name="__codelineno-40-434" href="#__codelineno-40-434"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-435" name="__codelineno-40-435" href="#__codelineno-40-435"></a>    <span class="c1">#     aws.active_asset_ctx_subscribe(coin=ticker,handler=print_handler),</span>
-<a id="__codelineno-40-436" name="__codelineno-40-436" href="#__codelineno-40-436"></a>    <span class="c1">#     aws.active_asset_ctx_unsubscribe(coin=ticker)</span>
-<a id="__codelineno-40-437" name="__codelineno-40-437" href="#__codelineno-40-437"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-438" name="__codelineno-40-438" href="#__codelineno-40-438"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-439" name="__codelineno-40-439" href="#__codelineno-40-439"></a>    <span class="c1">#     aws.active_asset_data_subscribe(coin=ticker,handler=print_handler),</span>
-<a id="__codelineno-40-440" name="__codelineno-40-440" href="#__codelineno-40-440"></a>    <span class="c1">#     aws.active_asset_data_unsubscribe(coin=ticker)</span>
-<a id="__codelineno-40-441" name="__codelineno-40-441" href="#__codelineno-40-441"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-442" name="__codelineno-40-442" href="#__codelineno-40-442"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-443" name="__codelineno-40-443" href="#__codelineno-40-443"></a>    <span class="c1">#     aws.user_twap_slice_fills_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-444" name="__codelineno-40-444" href="#__codelineno-40-444"></a>    <span class="c1">#     aws.user_twap_slice_fills_unsubscribe()</span>
-<a id="__codelineno-40-445" name="__codelineno-40-445" href="#__codelineno-40-445"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-446" name="__codelineno-40-446" href="#__codelineno-40-446"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-447" name="__codelineno-40-447" href="#__codelineno-40-447"></a>    <span class="c1">#     aws.user_twap_history_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-448" name="__codelineno-40-448" href="#__codelineno-40-448"></a>    <span class="c1">#     aws.user_twap_history_unsubscribe()</span>
-<a id="__codelineno-40-449" name="__codelineno-40-449" href="#__codelineno-40-449"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-450" name="__codelineno-40-450" href="#__codelineno-40-450"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-451" name="__codelineno-40-451" href="#__codelineno-40-451"></a>    <span class="c1">#     aws.bbo_subscribe(coin=ticker,handler=print_handler),</span>
-<a id="__codelineno-40-452" name="__codelineno-40-452" href="#__codelineno-40-452"></a>    <span class="c1">#     aws.bbo_unsubscribe(coin=ticker)</span>
-<a id="__codelineno-40-453" name="__codelineno-40-453" href="#__codelineno-40-453"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-454" name="__codelineno-40-454" href="#__codelineno-40-454"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-455" name="__codelineno-40-455" href="#__codelineno-40-455"></a>    <span class="c1">#     aws.spot_state_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-456" name="__codelineno-40-456" href="#__codelineno-40-456"></a>    <span class="c1">#     aws.spot_state_unsubscribe()</span>
-<a id="__codelineno-40-457" name="__codelineno-40-457" href="#__codelineno-40-457"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-458" name="__codelineno-40-458" href="#__codelineno-40-458"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-459" name="__codelineno-40-459" href="#__codelineno-40-459"></a>    <span class="c1">#     aws.spot_state_subscribe(handler=print_handler,isPortfolioMargin=True),</span>
-<a id="__codelineno-40-460" name="__codelineno-40-460" href="#__codelineno-40-460"></a>    <span class="c1">#     aws.spot_state_unsubscribe(isPortfolioMargin=True)</span>
-<a id="__codelineno-40-461" name="__codelineno-40-461" href="#__codelineno-40-461"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-462" name="__codelineno-40-462" href="#__codelineno-40-462"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-463" name="__codelineno-40-463" href="#__codelineno-40-463"></a>    <span class="c1">#     aws.all_dexs_clearinghouse_state_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-464" name="__codelineno-40-464" href="#__codelineno-40-464"></a>    <span class="c1">#     aws.all_dexs_clearinghouse_state_unsubscribe()</span>
-<a id="__codelineno-40-465" name="__codelineno-40-465" href="#__codelineno-40-465"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-466" name="__codelineno-40-466" href="#__codelineno-40-466"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-467" name="__codelineno-40-467" href="#__codelineno-40-467"></a>    <span class="c1">#     aws.all_dexs_asset_ctxs_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-468" name="__codelineno-40-468" href="#__codelineno-40-468"></a>    <span class="c1">#     aws.all_dexs_asset_ctxs_unsubscribe()</span>
-<a id="__codelineno-40-469" name="__codelineno-40-469" href="#__codelineno-40-469"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-470" name="__codelineno-40-470" href="#__codelineno-40-470"></a>
-<a id="__codelineno-40-471" name="__codelineno-40-471" href="#__codelineno-40-471"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-<a id="__codelineno-40-472" name="__codelineno-40-472" href="#__codelineno-40-472"></a>    <span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">init_client</span><span class="p">()</span>
-<a id="__codelineno-40-473" name="__codelineno-40-473" href="#__codelineno-40-473"></a>    <span class="k">try</span><span class="p">:</span>
-<a id="__codelineno-40-474" name="__codelineno-40-474" href="#__codelineno-40-474"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39;uncomment examples to run</span>
-<a id="__codelineno-40-475" name="__codelineno-40-475" href="#__codelineno-40-475"></a><span class="sd">        NOTE: that some code may trigger exchange actions such as live orders</span>
-<a id="__codelineno-40-476" name="__codelineno-40-476" href="#__codelineno-40-476"></a><span class="sd">        &#39;&#39;&#39;</span>
-<a id="__codelineno-40-477" name="__codelineno-40-477" href="#__codelineno-40-477"></a>
-<a id="__codelineno-40-478" name="__codelineno-40-478" href="#__codelineno-40-478"></a>        <span class="c1">#await exchange_sdk_examnples()</span>
-<a id="__codelineno-40-479" name="__codelineno-40-479" href="#__codelineno-40-479"></a>        <span class="c1">#await info_sdk_examples()</span>
-<a id="__codelineno-40-480" name="__codelineno-40-480" href="#__codelineno-40-480"></a>        <span class="c1">#await gateway_examples()</span>
-<a id="__codelineno-40-481" name="__codelineno-40-481" href="#__codelineno-40-481"></a>        <span class="k">await</span> <span class="n">socket_examples</span><span class="p">()</span>
-<a id="__codelineno-40-482" name="__codelineno-40-482" href="#__codelineno-40-482"></a>
-<a id="__codelineno-40-483" name="__codelineno-40-483" href="#__codelineno-40-483"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<a id="__codelineno-40-484" name="__codelineno-40-484" href="#__codelineno-40-484"></a>        <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Error in SDK examples: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-<a id="__codelineno-40-485" name="__codelineno-40-485" href="#__codelineno-40-485"></a>
-<a id="__codelineno-40-486" name="__codelineno-40-486" href="#__codelineno-40-486"></a>    <span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
-<a id="__codelineno-40-487" name="__codelineno-40-487" href="#__codelineno-40-487"></a>
-<a id="__codelineno-40-488" name="__codelineno-40-488" href="#__codelineno-40-488"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<a id="__codelineno-40-489" name="__codelineno-40-489" href="#__codelineno-40-489"></a>    <span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
-<a id="__codelineno-40-490" name="__codelineno-40-490" href="#__codelineno-40-490"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+<a id="__codelineno-40-315" name="__codelineno-40-315" href="#__codelineno-40-315"></a>
+<a id="__codelineno-40-316" name="__codelineno-40-316" href="#__codelineno-40-316"></a>    <span class="c1"># await hyp.l2_book_subscribe(ticker=ticker, handler=print_handler)</span>
+<a id="__codelineno-40-317" name="__codelineno-40-317" href="#__codelineno-40-317"></a>    <span class="c1"># await asyncio.sleep(4)</span>
+<a id="__codelineno-40-318" name="__codelineno-40-318" href="#__codelineno-40-318"></a>    <span class="c1"># await hyp.l2_book_unsubscribe(ticker=ticker)</span>
+<a id="__codelineno-40-319" name="__codelineno-40-319" href="#__codelineno-40-319"></a>
+<a id="__codelineno-40-320" name="__codelineno-40-320" href="#__codelineno-40-320"></a>    <span class="c1"># await hyp.trades_subscribe(ticker=ticker, handler=print_handler)</span>
+<a id="__codelineno-40-321" name="__codelineno-40-321" href="#__codelineno-40-321"></a>    <span class="c1"># await asyncio.sleep(4)</span>
+<a id="__codelineno-40-322" name="__codelineno-40-322" href="#__codelineno-40-322"></a>    <span class="c1"># await hyp.trades_unsubscribe(ticker=ticker)</span>
+<a id="__codelineno-40-323" name="__codelineno-40-323" href="#__codelineno-40-323"></a>
+<a id="__codelineno-40-324" name="__codelineno-40-324" href="#__codelineno-40-324"></a>    <span class="c1"># await hyp.all_mids_subscribe(handler=print_handler)</span>
+<a id="__codelineno-40-325" name="__codelineno-40-325" href="#__codelineno-40-325"></a>    <span class="c1"># await asyncio.sleep(4)</span>
+<a id="__codelineno-40-326" name="__codelineno-40-326" href="#__codelineno-40-326"></a>    <span class="c1"># await hyp.all_mids_unsubscribe()</span>
+<a id="__codelineno-40-327" name="__codelineno-40-327" href="#__codelineno-40-327"></a>
+<a id="__codelineno-40-328" name="__codelineno-40-328" href="#__codelineno-40-328"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39;orders&#39;&#39;&#39;</span>
+<a id="__codelineno-40-329" name="__codelineno-40-329" href="#__codelineno-40-329"></a>    <span class="c1"># pprint(await hyp.order_query(oid=1234))</span>
+<a id="__codelineno-40-330" name="__codelineno-40-330" href="#__codelineno-40-330"></a>    <span class="c1"># pprint(await hyp.orders_get())</span>
+<a id="__codelineno-40-331" name="__codelineno-40-331" href="#__codelineno-40-331"></a>    <span class="c1"># orders = await hyp.orders_mirror(on_update=print_handler)</span>
+<a id="__codelineno-40-332" name="__codelineno-40-332" href="#__codelineno-40-332"></a>    <span class="c1"># pprint(hyp.orders_peek())</span>
+<a id="__codelineno-40-333" name="__codelineno-40-333" href="#__codelineno-40-333"></a>    <span class="c1"># await hyp.order_updates_subscribe(handler=print_handler)</span>
+<a id="__codelineno-40-334" name="__codelineno-40-334" href="#__codelineno-40-334"></a>    <span class="c1"># await asyncio.sleep(4)</span>
+<a id="__codelineno-40-335" name="__codelineno-40-335" href="#__codelineno-40-335"></a>    <span class="c1"># await hyp.order_updates_unsubscribe()</span>
+<a id="__codelineno-40-336" name="__codelineno-40-336" href="#__codelineno-40-336"></a>
+<a id="__codelineno-40-337" name="__codelineno-40-337" href="#__codelineno-40-337"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39;positions&#39;&#39;&#39;</span>
+<a id="__codelineno-40-338" name="__codelineno-40-338" href="#__codelineno-40-338"></a>    <span class="c1"># pprint(await hyp.positions_get())</span>
+<a id="__codelineno-40-339" name="__codelineno-40-339" href="#__codelineno-40-339"></a>    <span class="c1"># pprint(await hyp.positions_get(is_perpetuals=False))</span>
+<a id="__codelineno-40-340" name="__codelineno-40-340" href="#__codelineno-40-340"></a>    <span class="c1"># pos = await hyp.positions_mirror(as_dict=False, on_update=print_handler)</span>
+<a id="__codelineno-40-341" name="__codelineno-40-341" href="#__codelineno-40-341"></a>    <span class="c1"># print(pos)</span>
+<a id="__codelineno-40-342" name="__codelineno-40-342" href="#__codelineno-40-342"></a>    <span class="c1"># pos = hyp.positions_peek() </span>
+<a id="__codelineno-40-343" name="__codelineno-40-343" href="#__codelineno-40-343"></a>
+<a id="__codelineno-40-344" name="__codelineno-40-344" href="#__codelineno-40-344"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39;datapoller&#39;&#39;&#39;</span>
+<a id="__codelineno-40-345" name="__codelineno-40-345" href="#__codelineno-40-345"></a>    <span class="c1"># df = await hyp.get_trade_bars(</span>
+<a id="__codelineno-40-346" name="__codelineno-40-346" href="#__codelineno-40-346"></a>    <span class="c1">#     ticker=&quot;BTC&quot;,</span>
+<a id="__codelineno-40-347" name="__codelineno-40-347" href="#__codelineno-40-347"></a>    <span class="c1">#     start=datetime(2025,12,14),</span>
+<a id="__codelineno-40-348" name="__codelineno-40-348" href="#__codelineno-40-348"></a>    <span class="c1">#     end=datetime.now(),</span>
+<a id="__codelineno-40-349" name="__codelineno-40-349" href="#__codelineno-40-349"></a>    <span class="c1">#     granularity=Period.DAILY,</span>
+<a id="__codelineno-40-350" name="__codelineno-40-350" href="#__codelineno-40-350"></a>    <span class="c1">#     granularity_multiplier=1</span>
+<a id="__codelineno-40-351" name="__codelineno-40-351" href="#__codelineno-40-351"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-352" name="__codelineno-40-352" href="#__codelineno-40-352"></a>    <span class="c1"># print(df)</span>
+<a id="__codelineno-40-353" name="__codelineno-40-353" href="#__codelineno-40-353"></a>
+<a id="__codelineno-40-354" name="__codelineno-40-354" href="#__codelineno-40-354"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">socket_examples</span><span class="p">():</span>
+<a id="__codelineno-40-355" name="__codelineno-40-355" href="#__codelineno-40-355"></a>    <span class="n">aws</span> <span class="o">=</span> <span class="n">hyp</span><span class="o">.</span><span class="n">aws_manager</span>
+<a id="__codelineno-40-356" name="__codelineno-40-356" href="#__codelineno-40-356"></a>    <span class="n">ticker</span> <span class="o">=</span> <span class="s2">&quot;HYPE&quot;</span>
+<a id="__codelineno-40-357" name="__codelineno-40-357" href="#__codelineno-40-357"></a>    <span class="n">dex</span> <span class="o">=</span> <span class="s2">&quot;xyz&quot;</span>
+<a id="__codelineno-40-358" name="__codelineno-40-358" href="#__codelineno-40-358"></a>    <span class="n">interval</span> <span class="o">=</span> <span class="s2">&quot;1m&quot;</span>
+<a id="__codelineno-40-359" name="__codelineno-40-359" href="#__codelineno-40-359"></a>
+<a id="__codelineno-40-360" name="__codelineno-40-360" href="#__codelineno-40-360"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">stream_for</span><span class="p">(</span><span class="n">sub</span><span class="p">,</span><span class="n">unsub</span><span class="p">,</span><span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<a id="__codelineno-40-361" name="__codelineno-40-361" href="#__codelineno-40-361"></a>        <span class="k">await</span> <span class="n">sub</span>
+<a id="__codelineno-40-362" name="__codelineno-40-362" href="#__codelineno-40-362"></a>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
+<a id="__codelineno-40-363" name="__codelineno-40-363" href="#__codelineno-40-363"></a>        <span class="k">await</span> <span class="n">unsub</span>
+<a id="__codelineno-40-364" name="__codelineno-40-364" href="#__codelineno-40-364"></a>
+<a id="__codelineno-40-365" name="__codelineno-40-365" href="#__codelineno-40-365"></a>    <span class="k">await</span> <span class="n">stream_for</span><span class="p">(</span>
+<a id="__codelineno-40-366" name="__codelineno-40-366" href="#__codelineno-40-366"></a>        <span class="n">aws</span><span class="o">.</span><span class="n">all_mids_subscribe</span><span class="p">(</span><span class="n">handler</span><span class="o">=</span><span class="n">print_handler</span><span class="p">),</span>
+<a id="__codelineno-40-367" name="__codelineno-40-367" href="#__codelineno-40-367"></a>        <span class="n">aws</span><span class="o">.</span><span class="n">all_mids_unsubscribe</span><span class="p">()</span>
+<a id="__codelineno-40-368" name="__codelineno-40-368" href="#__codelineno-40-368"></a>    <span class="p">)</span>
+<a id="__codelineno-40-369" name="__codelineno-40-369" href="#__codelineno-40-369"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-370" name="__codelineno-40-370" href="#__codelineno-40-370"></a>    <span class="c1">#     aws.all_mids_subscribe(handler=print_handler,dex=dex),</span>
+<a id="__codelineno-40-371" name="__codelineno-40-371" href="#__codelineno-40-371"></a>    <span class="c1">#     aws.all_mids_unsubscribe(dex=dex)</span>
+<a id="__codelineno-40-372" name="__codelineno-40-372" href="#__codelineno-40-372"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-373" name="__codelineno-40-373" href="#__codelineno-40-373"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-374" name="__codelineno-40-374" href="#__codelineno-40-374"></a>    <span class="c1">#     aws.notification_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-375" name="__codelineno-40-375" href="#__codelineno-40-375"></a>    <span class="c1">#     aws.notification_unsubscribe()</span>
+<a id="__codelineno-40-376" name="__codelineno-40-376" href="#__codelineno-40-376"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-377" name="__codelineno-40-377" href="#__codelineno-40-377"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-378" name="__codelineno-40-378" href="#__codelineno-40-378"></a>    <span class="c1">#     aws.webdata_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-379" name="__codelineno-40-379" href="#__codelineno-40-379"></a>    <span class="c1">#     aws.webdata_unsubscribe()</span>
+<a id="__codelineno-40-380" name="__codelineno-40-380" href="#__codelineno-40-380"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-381" name="__codelineno-40-381" href="#__codelineno-40-381"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-382" name="__codelineno-40-382" href="#__codelineno-40-382"></a>    <span class="c1">#     aws.twap_states_subscribe(handler=print_handler,dex=dex),</span>
+<a id="__codelineno-40-383" name="__codelineno-40-383" href="#__codelineno-40-383"></a>    <span class="c1">#     aws.twap_states_unsubscribe(dex=dex)</span>
+<a id="__codelineno-40-384" name="__codelineno-40-384" href="#__codelineno-40-384"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-385" name="__codelineno-40-385" href="#__codelineno-40-385"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-386" name="__codelineno-40-386" href="#__codelineno-40-386"></a>    <span class="c1">#     aws.clearinghouse_state_subscribe(handler=print_handler,dex=dex),</span>
+<a id="__codelineno-40-387" name="__codelineno-40-387" href="#__codelineno-40-387"></a>    <span class="c1">#     aws.clearinghouse_state_unsubscribe(dex=dex)</span>
+<a id="__codelineno-40-388" name="__codelineno-40-388" href="#__codelineno-40-388"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-389" name="__codelineno-40-389" href="#__codelineno-40-389"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-390" name="__codelineno-40-390" href="#__codelineno-40-390"></a>    <span class="c1">#     aws.open_orders_subscribe(handler=print_handler,dex=dex),</span>
+<a id="__codelineno-40-391" name="__codelineno-40-391" href="#__codelineno-40-391"></a>    <span class="c1">#     aws.open_orders_unsubscribe(dex=dex)</span>
+<a id="__codelineno-40-392" name="__codelineno-40-392" href="#__codelineno-40-392"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-393" name="__codelineno-40-393" href="#__codelineno-40-393"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-394" name="__codelineno-40-394" href="#__codelineno-40-394"></a>    <span class="c1">#     aws.candle_subscribe(coin=ticker,interval=interval,handler=print_handler),</span>
+<a id="__codelineno-40-395" name="__codelineno-40-395" href="#__codelineno-40-395"></a>    <span class="c1">#     aws.candle_unsubscribe(coin=ticker,interval=interval)</span>
+<a id="__codelineno-40-396" name="__codelineno-40-396" href="#__codelineno-40-396"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-397" name="__codelineno-40-397" href="#__codelineno-40-397"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-398" name="__codelineno-40-398" href="#__codelineno-40-398"></a>    <span class="c1">#     aws.l2_book_subscribe(ticker=ticker,handler=print_handler),</span>
+<a id="__codelineno-40-399" name="__codelineno-40-399" href="#__codelineno-40-399"></a>    <span class="c1">#     aws.l2_book_unsubscribe(ticker=ticker)</span>
+<a id="__codelineno-40-400" name="__codelineno-40-400" href="#__codelineno-40-400"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-401" name="__codelineno-40-401" href="#__codelineno-40-401"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-402" name="__codelineno-40-402" href="#__codelineno-40-402"></a>    <span class="c1">#     aws.l2_book_subscribe(ticker=ticker,handler=print_handler,nSigFigs=5,mantissa=2),</span>
+<a id="__codelineno-40-403" name="__codelineno-40-403" href="#__codelineno-40-403"></a>    <span class="c1">#     aws.l2_book_unsubscribe(ticker=ticker,nSigFigs=5,mantissa=2)</span>
+<a id="__codelineno-40-404" name="__codelineno-40-404" href="#__codelineno-40-404"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-405" name="__codelineno-40-405" href="#__codelineno-40-405"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-406" name="__codelineno-40-406" href="#__codelineno-40-406"></a>    <span class="c1">#     aws.trades_subscribe(ticker=ticker,handler=print_handler),</span>
+<a id="__codelineno-40-407" name="__codelineno-40-407" href="#__codelineno-40-407"></a>    <span class="c1">#     aws.trades_unsubscribe(ticker=ticker)</span>
+<a id="__codelineno-40-408" name="__codelineno-40-408" href="#__codelineno-40-408"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-409" name="__codelineno-40-409" href="#__codelineno-40-409"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-410" name="__codelineno-40-410" href="#__codelineno-40-410"></a>    <span class="c1">#     aws.order_updates_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-411" name="__codelineno-40-411" href="#__codelineno-40-411"></a>    <span class="c1">#     aws.order_updates_unsubscribe()</span>
+<a id="__codelineno-40-412" name="__codelineno-40-412" href="#__codelineno-40-412"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-413" name="__codelineno-40-413" href="#__codelineno-40-413"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-414" name="__codelineno-40-414" href="#__codelineno-40-414"></a>    <span class="c1">#     aws.user_events_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-415" name="__codelineno-40-415" href="#__codelineno-40-415"></a>    <span class="c1">#     aws.user_events_unsubscribe()</span>
+<a id="__codelineno-40-416" name="__codelineno-40-416" href="#__codelineno-40-416"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-417" name="__codelineno-40-417" href="#__codelineno-40-417"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-418" name="__codelineno-40-418" href="#__codelineno-40-418"></a>    <span class="c1">#    aws.account_fill_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-419" name="__codelineno-40-419" href="#__codelineno-40-419"></a>    <span class="c1">#     aws.account_fill_unsubscribe()</span>
+<a id="__codelineno-40-420" name="__codelineno-40-420" href="#__codelineno-40-420"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-421" name="__codelineno-40-421" href="#__codelineno-40-421"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-422" name="__codelineno-40-422" href="#__codelineno-40-422"></a>    <span class="c1">#     aws.account_fill_subscribe(handler=print_handler,aggregateByTime=True),</span>
+<a id="__codelineno-40-423" name="__codelineno-40-423" href="#__codelineno-40-423"></a>    <span class="c1">#     aws.account_fill_unsubscribe(aggregateByTime=True)</span>
+<a id="__codelineno-40-424" name="__codelineno-40-424" href="#__codelineno-40-424"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-425" name="__codelineno-40-425" href="#__codelineno-40-425"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-426" name="__codelineno-40-426" href="#__codelineno-40-426"></a>    <span class="c1">#     aws.user_fundings_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-427" name="__codelineno-40-427" href="#__codelineno-40-427"></a>    <span class="c1">#     aws.user_fundings_unsubscribe()</span>
+<a id="__codelineno-40-428" name="__codelineno-40-428" href="#__codelineno-40-428"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-429" name="__codelineno-40-429" href="#__codelineno-40-429"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-430" name="__codelineno-40-430" href="#__codelineno-40-430"></a>    <span class="c1">#     aws.user_ledger_updates_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-431" name="__codelineno-40-431" href="#__codelineno-40-431"></a>    <span class="c1">#     aws.user_ledger_updates_unsubscribe()</span>
+<a id="__codelineno-40-432" name="__codelineno-40-432" href="#__codelineno-40-432"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-433" name="__codelineno-40-433" href="#__codelineno-40-433"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-434" name="__codelineno-40-434" href="#__codelineno-40-434"></a>    <span class="c1">#     aws.active_asset_ctx_subscribe(coin=ticker,handler=print_handler),</span>
+<a id="__codelineno-40-435" name="__codelineno-40-435" href="#__codelineno-40-435"></a>    <span class="c1">#     aws.active_asset_ctx_unsubscribe(coin=ticker)</span>
+<a id="__codelineno-40-436" name="__codelineno-40-436" href="#__codelineno-40-436"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-437" name="__codelineno-40-437" href="#__codelineno-40-437"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-438" name="__codelineno-40-438" href="#__codelineno-40-438"></a>    <span class="c1">#     aws.active_asset_data_subscribe(coin=ticker,handler=print_handler),</span>
+<a id="__codelineno-40-439" name="__codelineno-40-439" href="#__codelineno-40-439"></a>    <span class="c1">#     aws.active_asset_data_unsubscribe(coin=ticker)</span>
+<a id="__codelineno-40-440" name="__codelineno-40-440" href="#__codelineno-40-440"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-441" name="__codelineno-40-441" href="#__codelineno-40-441"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-442" name="__codelineno-40-442" href="#__codelineno-40-442"></a>    <span class="c1">#     aws.user_twap_slice_fills_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-443" name="__codelineno-40-443" href="#__codelineno-40-443"></a>    <span class="c1">#     aws.user_twap_slice_fills_unsubscribe()</span>
+<a id="__codelineno-40-444" name="__codelineno-40-444" href="#__codelineno-40-444"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-445" name="__codelineno-40-445" href="#__codelineno-40-445"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-446" name="__codelineno-40-446" href="#__codelineno-40-446"></a>    <span class="c1">#     aws.user_twap_history_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-447" name="__codelineno-40-447" href="#__codelineno-40-447"></a>    <span class="c1">#     aws.user_twap_history_unsubscribe()</span>
+<a id="__codelineno-40-448" name="__codelineno-40-448" href="#__codelineno-40-448"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-449" name="__codelineno-40-449" href="#__codelineno-40-449"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-450" name="__codelineno-40-450" href="#__codelineno-40-450"></a>    <span class="c1">#     aws.bbo_subscribe(coin=ticker,handler=print_handler),</span>
+<a id="__codelineno-40-451" name="__codelineno-40-451" href="#__codelineno-40-451"></a>    <span class="c1">#     aws.bbo_unsubscribe(coin=ticker)</span>
+<a id="__codelineno-40-452" name="__codelineno-40-452" href="#__codelineno-40-452"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-453" name="__codelineno-40-453" href="#__codelineno-40-453"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-454" name="__codelineno-40-454" href="#__codelineno-40-454"></a>    <span class="c1">#     aws.spot_state_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-455" name="__codelineno-40-455" href="#__codelineno-40-455"></a>    <span class="c1">#     aws.spot_state_unsubscribe()</span>
+<a id="__codelineno-40-456" name="__codelineno-40-456" href="#__codelineno-40-456"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-457" name="__codelineno-40-457" href="#__codelineno-40-457"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-458" name="__codelineno-40-458" href="#__codelineno-40-458"></a>    <span class="c1">#     aws.spot_state_subscribe(handler=print_handler,isPortfolioMargin=True),</span>
+<a id="__codelineno-40-459" name="__codelineno-40-459" href="#__codelineno-40-459"></a>    <span class="c1">#     aws.spot_state_unsubscribe(isPortfolioMargin=True)</span>
+<a id="__codelineno-40-460" name="__codelineno-40-460" href="#__codelineno-40-460"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-461" name="__codelineno-40-461" href="#__codelineno-40-461"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-462" name="__codelineno-40-462" href="#__codelineno-40-462"></a>    <span class="c1">#     aws.all_dexs_clearinghouse_state_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-463" name="__codelineno-40-463" href="#__codelineno-40-463"></a>    <span class="c1">#     aws.all_dexs_clearinghouse_state_unsubscribe()</span>
+<a id="__codelineno-40-464" name="__codelineno-40-464" href="#__codelineno-40-464"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-465" name="__codelineno-40-465" href="#__codelineno-40-465"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-466" name="__codelineno-40-466" href="#__codelineno-40-466"></a>    <span class="c1">#     aws.all_dexs_asset_ctxs_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-467" name="__codelineno-40-467" href="#__codelineno-40-467"></a>    <span class="c1">#     aws.all_dexs_asset_ctxs_unsubscribe()</span>
+<a id="__codelineno-40-468" name="__codelineno-40-468" href="#__codelineno-40-468"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-469" name="__codelineno-40-469" href="#__codelineno-40-469"></a>
+<a id="__codelineno-40-470" name="__codelineno-40-470" href="#__codelineno-40-470"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-40-471" name="__codelineno-40-471" href="#__codelineno-40-471"></a>    <span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">init_client</span><span class="p">()</span>
+<a id="__codelineno-40-472" name="__codelineno-40-472" href="#__codelineno-40-472"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-40-473" name="__codelineno-40-473" href="#__codelineno-40-473"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39;uncomment examples to run</span>
+<a id="__codelineno-40-474" name="__codelineno-40-474" href="#__codelineno-40-474"></a><span class="sd">        NOTE: that some code may trigger exchange actions such as live orders</span>
+<a id="__codelineno-40-475" name="__codelineno-40-475" href="#__codelineno-40-475"></a><span class="sd">        &#39;&#39;&#39;</span>
+<a id="__codelineno-40-476" name="__codelineno-40-476" href="#__codelineno-40-476"></a>
+<a id="__codelineno-40-477" name="__codelineno-40-477" href="#__codelineno-40-477"></a>        <span class="c1">#await exchange_sdk_examnples()</span>
+<a id="__codelineno-40-478" name="__codelineno-40-478" href="#__codelineno-40-478"></a>        <span class="c1">#await info_sdk_examples()</span>
+<a id="__codelineno-40-479" name="__codelineno-40-479" href="#__codelineno-40-479"></a>        <span class="c1">#await gateway_examples()</span>
+<a id="__codelineno-40-480" name="__codelineno-40-480" href="#__codelineno-40-480"></a>        <span class="k">await</span> <span class="n">socket_examples</span><span class="p">()</span>
+<a id="__codelineno-40-481" name="__codelineno-40-481" href="#__codelineno-40-481"></a>
+<a id="__codelineno-40-482" name="__codelineno-40-482" href="#__codelineno-40-482"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-40-483" name="__codelineno-40-483" href="#__codelineno-40-483"></a>        <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Error in SDK examples: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<a id="__codelineno-40-484" name="__codelineno-40-484" href="#__codelineno-40-484"></a>
+<a id="__codelineno-40-485" name="__codelineno-40-485" href="#__codelineno-40-485"></a>    <span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+<a id="__codelineno-40-486" name="__codelineno-40-486" href="#__codelineno-40-486"></a>
+<a id="__codelineno-40-487" name="__codelineno-40-487" href="#__codelineno-40-487"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-40-488" name="__codelineno-40-488" href="#__codelineno-40-488"></a>    <span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<a id="__codelineno-40-489" name="__codelineno-40-489" href="#__codelineno-40-489"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div>
 <h2 id="documentation">Documentation</h2>
 
@@ -8157,7 +8179,7 @@ Each subscribe method has a corresponding unsubscribe method with matching param
 
     <div class="doc doc-contents ">
 
-        <p>Cleans up open sessions with HPL server</p>
+        <p>Cleans up open sessions with Hyperliquid server</p>
 
 
     </div>
