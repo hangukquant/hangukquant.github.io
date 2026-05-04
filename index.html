@@ -467,6 +467,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#running-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Benchmarks
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2953,25 +2962,39 @@ Sharing and distribution of any material taken herein is not allowed without exp
 <h2 id="installation">Installation</h2>
 <p>To install this library, users need to obtain access with the <a href="/pricing/pricing">repo pass</a> or leave 
 your Github username on our <a href="https://hangukquant.substack.com/p/hangukquant-community-github-repo">post</a> for annual members of the HangukQuant blog.</p>
-<p>You can use <code>quantpylib</code> in your local Python environment after cloning our repository and running bash script:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>chmod +x install.sh
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>./install.sh
+<p>You can use <code>quantpylib</code> in your local Python environment after cloning our repository and installing it in editable mode:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python3 -m pip install -e .
 </code></pre></div>
-in the working directory with the <code>setup.py</code> Python script.</p>
+from the repository root.</p>
+<p>Install optional dependencies for tests, benchmarks, or both with extras:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python3 -m pip install -e &quot;.[tests]&quot;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>python3 -m pip install -e &quot;.[benchmarks]&quot;
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>python3 -m pip install -e &quot;.[tests,benchmarks]&quot;
+</code></pre></div></p>
+<p>Linux builds require a C++20 compiler and standard library. On Amazon Linux, install GCC 14 and point the build to it before running pip:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo dnf install -y gcc14 gcc14-c++
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>export CC=/usr/bin/gcc14-gcc
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>export CXX=/usr/bin/gcc14-g++
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>python3 -m pip install -e .
+</code></pre></div></p>
 <h2 id="user-documentation-and-examples">User Documentation and Examples</h2>
 <p>You can jump into <a href="https://hangukquant.github.io/simulator/simulator/">our examples here</a>,
 or go through official documentation hosted <a href="https://hangukquant.github.io">here</a>.</p>
 <h2 id="running-tests">Running Tests</h2>
-<p>Our test suites can be run using the <code>pytest</code> framework. To run all tests, run 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python3 -m pip install pytest
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>python3 -m pytest quantpylib/tests 
+<p>Our test suites can be run using the <code>pytest</code> framework. To install test dependencies and run all tests, run 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python3 -m pip install -e &quot;.[tests]&quot;
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>python3 -m pytest
 </code></pre></div>
 For more verbose test information, run
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python3 -m pytest quantpylib/tests -vs 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python3 -m pytest -vs 
 </code></pre></div>
 You can choose specific modules or scripts to test by specifying the path to the test suite
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python3 -m pytest quantpylib/tests/simulator
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>python3 -m pytest quantpylib/tests/simulator/test_operators.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python3 -m pytest quantpylib/tests/simulator
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>python3 -m pytest quantpylib/tests/simulator/test_operators.py
+</code></pre></div></p>
+<h2 id="running-benchmarks">Running Benchmarks</h2>
+<p>Benchmark dependencies are installed through the <code>benchmarks</code> extra:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python3 -m pip install -e &quot;.[benchmarks]&quot;
 </code></pre></div>
 Contributors who modify the codebase should run all tests and verify the tests pass before submitting a Pull Request.</p>
 

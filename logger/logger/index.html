@@ -2394,6 +2394,165 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#quantpylib.logger.BufferedFileHandler" class="md-nav__link">
+    <span class="md-ellipsis">
+      BufferedFileHandler
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BufferedFileHandler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.logger.BufferedFileHandler.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.logger.BufferedFileHandler.emit" class="md-nav__link">
+    <span class="md-ellipsis">
+      emit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.logger.BufferedFileHandler.flush_buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      flush_buffer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantpylib.logger.BufferedRotatingFileHandler" class="md-nav__link">
+    <span class="md-ellipsis">
+      BufferedRotatingFileHandler
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BufferedRotatingFileHandler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.logger.BufferedRotatingFileHandler.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.logger.BufferedRotatingFileHandler.emit" class="md-nav__link">
+    <span class="md-ellipsis">
+      emit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.logger.BufferedRotatingFileHandler.flush_buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      flush_buffer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantpylib.logger.JSONFormatter" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSONFormatter
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSONFormatter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.logger.JSONFormatter.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.logger.JSONFormatter.format" class="md-nav__link">
+    <span class="md-ellipsis">
+      format
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantpylib.logger.Logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logger
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logger">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.logger.Logger.__new__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __new__
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantpylib.logger.get_exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_exception
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantpylib.logger.get_stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_stack
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -3054,6 +3213,1422 @@ The documentations follow.</p>
 
 
 
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="quantpylib.logger.BufferedFileHandler" class="doc doc-heading">
+            <code>BufferedFileHandler</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="logging.FileHandler">FileHandler</span></code></p>
+
+
+        <p>A logging handler that buffers log messages and writes them to a file when the buffer is full or on exit.</p>
+<p>This handler extends <code>logging.FileHandler</code> to provide buffered writing. Log messages are stored in a buffer
+and are written to the file only when the buffer reaches a specified size or the program exits.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>filename</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The name of the file to write log messages to.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>mode</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The mode in which the file is opened. Defaults to 'a' (append).</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;a&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>encoding</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The encoding to use for the file. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>delay</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, file opening is deferred until the first call to <code>emit()</code>. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>errors</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>How encoding errors are to be handled. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>buffer_size</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The number of log messages to buffer before writing to the file. Defaults to 64.</p>
+              </div>
+            </td>
+            <td>
+                  <code>64</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.logger.BufferedFileHandler.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">buffer_size</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initializes the BufferedFileHandler with the specified parameters.</p>
+<p>Registers an atexit function to flush the buffer when the program exits.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>filename</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The name of the file to write log messages to.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>mode</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The mode in which the file is opened. Defaults to 'a' (append).</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;a&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>encoding</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The encoding to use for the file. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>delay</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, file opening is deferred until the first call to <code>emit()</code>. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>errors</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>How encoding errors are to be handled. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>buffer_size</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The number of log messages to buffer before writing to the file. Defaults to 64.</p>
+              </div>
+            </td>
+            <td>
+                  <code>64</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.logger.BufferedFileHandler.emit" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">emit</span><span class="p">(</span><span class="n">record</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Adds a log record to the buffer and writes to the file if the buffer is full.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>record</code>
+            </td>
+            <td>
+                  <code><span title="logging.LogRecord">LogRecord</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The log record to add to the buffer.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.logger.BufferedFileHandler.flush_buffer" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">flush_buffer</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Writes the contents of the buffer to the file and clears the buffer.</p>
+<p>This method is thread-safe.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="quantpylib.logger.BufferedRotatingFileHandler" class="doc doc-heading">
+            <code>BufferedRotatingFileHandler</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="logging.handlers.RotatingFileHandler">RotatingFileHandler</span></code></p>
+
+
+        <p>A rotating file handler with buffered writing.</p>
+<p>This handler extends <code>RotatingFileHandler</code> to buffer log messages and write them to the file
+only when the buffer reaches a specified size. The file is rotated when it reaches a certain size.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>filename</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The name of the file to write log messages to.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>mode</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The mode in which the file is opened. Defaults to 'a' (append).</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;a&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>maxBytes</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The maximum size of the file before it is rotated. Defaults to 1GB.</p>
+              </div>
+            </td>
+            <td>
+                  <code>1 * 1024 * 1024 * 1024</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>backupCount</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The number of backup files to keep. Defaults to 5.</p>
+              </div>
+            </td>
+            <td>
+                  <code>5</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>encoding</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The encoding to use for the file. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>delay</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, file opening is deferred until the first call to <code>emit()</code>. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>errors</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>How encoding errors are to be handled. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>buffer_size</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The number of log messages to buffer before writing to the file. Defaults to 64.</p>
+              </div>
+            </td>
+            <td>
+                  <code>64</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.logger.BufferedRotatingFileHandler.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">maxBytes</span><span class="o">=</span><span class="mi">1</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">,</span> <span class="n">backupCount</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">buffer_size</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initializes the BufferedRotatingFileHandler with the specified parameters.</p>
+<p>Registers an atexit function to flush the buffer when the program exits.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>filename</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The name of the file to write log messages to.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>mode</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The mode in which the file is opened. Defaults to 'a' (append).</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;a&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>maxBytes</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The maximum size of the file before it is rotated. Defaults to 1GB.</p>
+              </div>
+            </td>
+            <td>
+                  <code>1 * 1024 * 1024 * 1024</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>backupCount</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The number of backup files to keep. Defaults to 5.</p>
+              </div>
+            </td>
+            <td>
+                  <code>5</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>encoding</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The encoding to use for the file. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>delay</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, file opening is deferred until the first call to <code>emit()</code>. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>errors</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>How encoding errors are to be handled. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>buffer_size</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The number of log messages to buffer before writing to the file. Defaults to 64.</p>
+              </div>
+            </td>
+            <td>
+                  <code>64</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.logger.BufferedRotatingFileHandler.emit" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">emit</span><span class="p">(</span><span class="n">record</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Adds a log record to the buffer and writes to the file if the buffer is full.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>record</code>
+            </td>
+            <td>
+                  <code><span title="logging.LogRecord">LogRecord</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The log record to add to the buffer.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.logger.BufferedRotatingFileHandler.flush_buffer" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">flush_buffer</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Writes the contents of the buffer to the file and clears the buffer.</p>
+<p>This method is thread-safe. Only the last log record in the buffer state is used to check for rotate condition.</p>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="IOError">IOError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the file cannot be written to.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="quantpylib.logger.JSONFormatter" class="doc doc-heading">
+            <code>JSONFormatter</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="logging.Formatter">Formatter</span></code></p>
+
+
+        <p>A custom JSON formatter for logging.</p>
+<p>This formatter converts log records to JSON format.
+It includes level, time, and message by default and can optionally include additional attributes.
+Key-value pairs in the <code>extra</code> variable of logs are included in the JSON log.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>include_attrs</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of additional attributes to include in the log record.
+Valid entries in the list can be found in <a href="../utils"><code>quantpylib.logger.utils</code></a>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>[]</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.logger.JSONFormatter.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">include_attrs</span><span class="o">=</span><span class="p">[])</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initializes the JSONFormatter.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>include_attrs</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of additional attributes to include in the log record.
+                  Defaults to an empty list. Valid entries in the list can be found in <a href="../utils"><code>quantpylib.logger.utils</code></a>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>[]</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.logger.JSONFormatter.format" class="doc doc-heading">
+            <code class="highlight language-python"><span class="nb">format</span><span class="p">(</span><span class="n">record</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Formats a log record and converts it to a JSON string.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>record</code>
+            </td>
+            <td>
+                  <code><span title="logging.LogRecord">LogRecord</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The log record to format.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>str</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The JSON-formatted log record as a string.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="quantpylib.logger.Logger" class="doc doc-heading">
+            <code>Logger</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>A configurable named logger class that sets up logging for the application.</p>
+<p>This logger allows for the registration of custom handlers and configuration of console (stdout) and file handlers.
+It supports various configuration options including log levels, formatters, and buffer sizes for file handling.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="quantpylib.logger.Logger._loggers">_loggers</span></code></td>
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Named logger instances configured through this wrapper.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.logger.Logger.__new__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__new__</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;perf&#39;</span><span class="p">,</span> <span class="n">perf_core</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">register_handlers</span><span class="o">=</span><span class="p">[],</span> <span class="n">stdout_register</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stdout_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">,</span> <span class="n">stdout_formatter_cls</span><span class="o">=</span><span class="n">JSONFormatter</span><span class="p">,</span> <span class="n">stdout_formatter_kwargs</span><span class="o">=</span><span class="p">{},</span> <span class="n">file_register</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;app.log&#39;</span><span class="p">,</span> <span class="n">logs_dir</span><span class="o">=</span><span class="s1">&#39;./logs/&#39;</span><span class="p">,</span> <span class="n">file_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">,</span> <span class="n">file_formatter_cls</span><span class="o">=</span><span class="n">JSONFormatter</span><span class="p">,</span> <span class="n">file_formatter_kwargs</span><span class="o">=</span><span class="p">{},</span> <span class="n">file_handler_cls</span><span class="o">=</span><span class="n">BufferedFileHandler</span><span class="p">,</span> <span class="n">file_handler_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;buffer_size&#39;</span><span class="p">:</span> <span class="mi">64</span><span class="p">},</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Creates and configures the logger instance.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The name of the logger. Defaults to 'perf' for the cplogger backend.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;perf&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>register_handlers</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list of additional logging handlers to register. Defaults to an empty list.</p>
+              </div>
+            </td>
+            <td>
+                  <code>[]</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>stdout_register</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to register a console (stdout) handler. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>stdout_level</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The logging level for the console handler. Defaults to logging.INFO.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="logging.WARNING">WARNING</span></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>stdout_formatter_cls</code>
+            </td>
+            <td>
+                  <code><span title="type">type</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The formatter class for the console handler. Defaults to <code>quantpylib.logger.formatters.JSONFormatter</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="JSONFormatter (quantpylib.logger.formatters.JSONFormatter)" href="../formatters/#quantpylib.logger.formatters.JSONFormatter">JSONFormatter</a></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>stdout_formatter_kwargs</code>
+            </td>
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Keyword arguments for the console handler formatter. Defaults to an empty dict.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>file_register</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to register a file handler. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>filename</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The name of the log file. Defaults to "app.log".</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;app.log&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>logs_dir</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The directory where log files are stored. Defaults to "./logs/".</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;./logs/&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>file_level</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The logging level for the file handler. Defaults to logging.INFO.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="logging.WARNING">WARNING</span></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>file_formatter_cls</code>
+            </td>
+            <td>
+                  <code><span title="type">type</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The formatter class for the file handler. Defaults to <code>quantpylib.logger.formatters.JSONFormatter</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="JSONFormatter (quantpylib.logger.formatters.JSONFormatter)" href="../formatters/#quantpylib.logger.formatters.JSONFormatter">JSONFormatter</a></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>file_formatter_kwargs</code>
+            </td>
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Keyword arguments for the file handler formatter. Defaults to an empty dict.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>file_handler_cls</code>
+            </td>
+            <td>
+                  <code><span title="type">type</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The handler class for file logging. Defaults to <code>quantpylib.logger.handlers.BufferedFileHandler</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="BufferedFileHandler (quantpylib.logger.handlers.BufferedFileHandler)" href="../handlers/#quantpylib.logger.handlers.BufferedFileHandler">BufferedFileHandler</a></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>file_handler_kwargs</code>
+            </td>
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Keyword arguments for the file handler. Defaults to {"buffer_size": 64}.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{&#39;buffer_size&#39;: 64}</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>*args</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional positional arguments passed to the logging configuration.</p>
+              </div>
+            </td>
+            <td>
+                  <code>()</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional keyword arguments passed to the logging configuration.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>logging.Logger: The configured singleton logger instance.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="quantpylib.logger.get_exception" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_exception</span><span class="p">(</span><span class="n">exc_info</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">formatter</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Format an exception tuple using stdlib logging semantics.</p>
+<p>If exc_info is omitted, the current exception from sys.exc_info() is used.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="quantpylib.logger.get_stack" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_stack</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">formatter</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Capture and format the caller's current stack using stdlib logging semantics.</p>
+
+
+    </div>
+
+</div>
 
 
 
@@ -3266,7 +4841,7 @@ in <code>brfh.log</code>.</p>
     <div class="doc doc-contents ">
 
 
-        <p>A configurable singleton logger class that sets up logging for the application.</p>
+        <p>A configurable named logger class that sets up logging for the application.</p>
 <p>This logger allows for the registration of custom handlers and configuration of console (stdout) and file handlers.
 It supports various configuration options including log levels, formatters, and buffer sizes for file handling.</p>
 
@@ -3282,13 +4857,13 @@ It supports various configuration options including log levels, formatters, and 
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code><span title="quantpylib.logger.logger.Logger._logger">_logger</span></code></td>
+            <td><code><span title="quantpylib.logger.logger.Logger._loggers">_loggers</span></code></td>
             <td>
-                  <code><span title="logging.Logger">Logger</span></code>
+                  <code><span title="dict">dict</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The singleton logger instance.</p>
+                <p>Named logger instances configured through this wrapper.</p>
               </div>
             </td>
           </tr>
@@ -3318,7 +4893,7 @@ It supports various configuration options including log levels, formatters, and 
 
 
 <h3 id="quantpylib.logger.logger.Logger.__new__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__new__</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">,</span> <span class="n">register_handlers</span><span class="o">=</span><span class="p">[],</span> <span class="n">stdout_register</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stdout_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">,</span> <span class="n">stdout_formatter_cls</span><span class="o">=</span><span class="n">JSONFormatter</span><span class="p">,</span> <span class="n">stdout_formatter_kwargs</span><span class="o">=</span><span class="p">{},</span> <span class="n">file_register</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;app.log&#39;</span><span class="p">,</span> <span class="n">logs_dir</span><span class="o">=</span><span class="s1">&#39;./logs/&#39;</span><span class="p">,</span> <span class="n">file_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">,</span> <span class="n">file_formatter_cls</span><span class="o">=</span><span class="n">JSONFormatter</span><span class="p">,</span> <span class="n">file_formatter_kwargs</span><span class="o">=</span><span class="p">{},</span> <span class="n">file_handler_cls</span><span class="o">=</span><span class="n">BufferedFileHandler</span><span class="p">,</span> <span class="n">file_handler_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;buffer_size&#39;</span><span class="p">:</span> <span class="mi">64</span><span class="p">},</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__new__</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;perf&#39;</span><span class="p">,</span> <span class="n">perf_core</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">register_handlers</span><span class="o">=</span><span class="p">[],</span> <span class="n">stdout_register</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stdout_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">,</span> <span class="n">stdout_formatter_cls</span><span class="o">=</span><span class="n">JSONFormatter</span><span class="p">,</span> <span class="n">stdout_formatter_kwargs</span><span class="o">=</span><span class="p">{},</span> <span class="n">file_register</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;app.log&#39;</span><span class="p">,</span> <span class="n">logs_dir</span><span class="o">=</span><span class="s1">&#39;./logs/&#39;</span><span class="p">,</span> <span class="n">file_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">,</span> <span class="n">file_formatter_cls</span><span class="o">=</span><span class="n">JSONFormatter</span><span class="p">,</span> <span class="n">file_formatter_kwargs</span><span class="o">=</span><span class="p">{},</span> <span class="n">file_handler_cls</span><span class="o">=</span><span class="n">BufferedFileHandler</span><span class="p">,</span> <span class="n">file_handler_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;buffer_size&#39;</span><span class="p">:</span> <span class="mi">64</span><span class="p">},</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3348,11 +4923,11 @@ It supports various configuration options including log levels, formatters, and 
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The name of the logger. Defaults to 'root'.</p>
+                <p>The name of the logger. Defaults to 'perf' for the cplogger backend.</p>
               </div>
             </td>
             <td>
-                  <code>&#39;root&#39;</code>
+                  <code>&#39;perf&#39;</code>
             </td>
           </tr>
           <tr class="doc-section-item">
