@@ -2993,7 +2993,7 @@
 <p><a href="../oms/"><code>quantpylib.hft.oms</code></a> is our order management system for positions, orders tracking and trade execution + management.</p>
 <p><a href="../lob/"><code>quantpylib.hft.lob</code></a> is our internal limit-order book representation, and is designed to store orderbook states and buffers. There are utility functions to keep accurate representations of the internal state for both book snapshots and incremental updates. A host of other utility functions related to orderbook modelling can be found.</p>
 <p><a href="../trades/"><code>quantpylib.hft.trades</code></a> is our internal trade buffer. There are utility functions to compute useful information and statistics from the data stored in the buffer.</p>
-<p><a href="./statistics.md"><code>quantpylib.hft.statistics</code></a> is a statistics library for hft modelling - in addition it should work seamlessly with the data structures in the <code>quantpylib.hft.lob.LOB</code> and <code>quantpylib.hft.trades.Trades</code> object instances.</p>
+<p><a href="../stats/"><code>quantpylib.hft.statistics</code></a> is a statistics library for hft modelling - in addition it should work seamlessly with the data structures in the <code>quantpylib.hft.lob.LOB</code> and <code>quantpylib.hft.trades.Trades</code> object instances.</p>
 <h2 id="examples">Examples</h2>
 <h3 id="data-feed">Data Feed</h3>
 <p>Obtaining data feeds are extremely simple with <a href="../feed/"><code>quantpylib.hft.feed.Feed</code></a> objects. Simply - create a gateway object with the correct keys
@@ -4088,7 +4088,7 @@ Here is an example of how you can do it (speudo-code)
 <a id="__codelineno-78-25" name="__codelineno-78-25" href="#__codelineno-78-25"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
 <a id="__codelineno-78-26" name="__codelineno-78-26" href="#__codelineno-78-26"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div>
-This maps to the <code>l2_book_mirror</code> method in <a href="../../wrappers/hyperliquid/#quantpylib.wrappers.hyperliquid.Hyperliquid.l2_book_mirror"><code>quantpylib.wrappers.hyperliquid</code></a> wrapper, and <code>as_dict=False</code> specifices we want a <a href=".. /lob/#quantpylib.hft.lob.LOB"><code>quantpylib.hft.lob.LOB</code></a> object.</p>
+This maps to the <code>l2_book_mirror</code> method in <a href="../../wrappers/hyperliquid/#quantpylib.wrappers.hyperliquid.Hyperliquid.l2_book_mirror"><code>quantpylib.wrappers.hyperliquid</code></a> wrapper, and <code>as_dict=False</code> specifices we want a <a href="../lob/#quantpylib.hft.lob.LOB"><code>quantpylib.hft.lob.LOB</code></a> object.</p>
 <p>We can now use the utility functions of the orderbook class. While we are sleeping, the <code>ob_handler</code> prints out...
 <div class="highlight"><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>182.04500000000002 0.010000000000019327
 <a id="__codelineno-79-2" name="__codelineno-79-2" href="#__codelineno-79-2"></a>182.04500000000002 0.010000000000019327
