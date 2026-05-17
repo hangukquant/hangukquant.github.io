@@ -12,7 +12,7 @@
         <link rel="prev" href="../../standards/portfolio/">
       
       
-        <link rel="next" href="../binance/">
+        <link rel="next" href="../asterdex/">
       
       
       <link rel="icon" href="../../icons/logo.png">
@@ -2038,6 +2038,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../asterdex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.asterdex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../binance/" class="md-nav__link">
         
   
@@ -2877,6 +2900,10 @@
 
 <p><code>quantpylib.wrappers</code> contain our SDKs for data vendors and exchange integrations. They may be used in silo, or as clients to <code>quantpylib.datapoller.master.Datapoller</code> and <code>quantpylib.gateway.master.Gateway</code> objects,
 which are further used in both OMS and data feeds used for live trading, backtesting and account management.</p>
+<p>Some provider integrations require optional connector packages. Install the
+documented extra for those workflows before instantiating the wrapper, such as
+<code>python3 -m pip install -e ".[asterdex]"</code> for
+<a href="../asterdex/"><code>quantpylib.wrappers.asterdex</code></a>.</p>
 
 
 

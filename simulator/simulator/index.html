@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#examples" class="md-skip">
+        <a href="#simulator" class="md-skip">
           Skip to content
         </a>
       
@@ -557,6 +557,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -588,6 +590,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -653,6 +657,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulator-api-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulator API Pages
+    </span>
+  </a>
   
 </li>
       
@@ -2133,6 +2146,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../wrappers/asterdex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.asterdex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../wrappers/binance/" class="md-nav__link">
         
   
@@ -2968,8 +3004,7 @@
 
 
 
-<h1 id="simulator"><a href=".">simulator</a></h1>
-
+<h1 id="simulator">Simulator</h1>
 <p>This page describes how you may use our <code>quantpylib.simulator</code> module and the functionalities exposed by our APIs. This module provides comprehensive backtesting functionality and statistical tools to analyse your own trading strategies. The core backtesting engine is made available via the <a href="../alpha/"><code>quantpylib.simulator.alpha</code></a> module's <a href="../alpha/#alpha"><code>Alpha</code></a> class, which leverages in-house statistical packages such as monte-carlo permutation hypothesis tests and performance metrics computation.
 This feature is further enhanced by our evaluator-parser in the <a href="../gene/"><code>quantpylib.simulator.gene</code></a> module's <a href="../gene/#gene"><code>Gene</code></a> class, which is leveraged by the <a href="../gene/#geneticalpha"><code>GeneticAlpha</code></a> class to bring simple, efficient, accurate and no-code 'batteries-included' backtesting functionality.</p>
 <p>A high-level walkthrough of the individual quant packages are presented in this page. Comprehensive documentation may be found in the respective pages. To follow along, make sure you have installed the necessary <a href="../../#installation">dependencies</a>.
@@ -3436,11 +3471,14 @@ and we get much more interpretive plots:
 <img alt="alt text" src="../../archives/example_lev2.png" /></p>
 <p>and all regression studies suggest that momentum exists in cryptocurrency returns over daily timescales. Of course, since the data has been transformed, the interpretation of the regression results and analysis needs to be adjusted in relation to the binning and aggregation techniques employed.</p>
 <p>The library also supports methods to study multivariable regression, as in the <code>statsmodels</code> package, as well as convenience methods to obtain diagnostics for common issues such as multicollinearity concerns with statistics like condition number and variance-inflation-factors.</p>
-<h2 id="simulatoralpha"><a href="../alpha/">simulator.alpha</a></h1>
-<h2 id="simulatorgene"><a href="../gene/">simulator.gene</a></h1>
-<h2 id="simulatormodels"><a href="../models/">simulator.models</a></h1>
-<h2 id="simulatoroperators"><a href="../operators/">simulator.operators</a></h1>
-<h2 id="simulatorperformance"><a href="../performance/">simulator.performance</a></h1>
+<h2 id="simulator-api-pages">Simulator API Pages</h2>
+<ul>
+<li><a href="../alpha/">simulator.alpha</a></li>
+<li><a href="../gene/">simulator.gene</a></li>
+<li><a href="../models/">simulator.models</a></li>
+<li><a href="../operators/">simulator.operators</a></li>
+<li><a href="../performance/">simulator.performance</a></li>
+</ul>
 
 
 

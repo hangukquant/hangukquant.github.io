@@ -863,6 +863,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Reference
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2151,6 +2160,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../wrappers/asterdex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.asterdex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../wrappers/binance/" class="md-nav__link">
         
   
@@ -2988,12 +3020,12 @@
 
   <h1>quantpylib.hft</h1>
 
-<p><a href="."><code>quantpylib.hft</code></a> is our core module designed for hft-trading purposes, including modelling, analysis and simulation of high-frequency data.</p>
+<p><a href="./"><code>quantpylib.hft</code></a> is our core module designed for hft-trading purposes, including modelling, analysis and simulation of high-frequency data.</p>
 <p><a href="../feed/"><code>quantpylib.hft.feed</code></a> is our data feeder for public information and market data such as order book and trade feeds, custom candlesticks.</p>
 <p><a href="../oms/"><code>quantpylib.hft.oms</code></a> is our order management system for positions, orders tracking and trade execution + management.</p>
 <p><a href="../lob/"><code>quantpylib.hft.lob</code></a> is our internal limit-order book representation, and is designed to store orderbook states and buffers. There are utility functions to keep accurate representations of the internal state for both book snapshots and incremental updates. A host of other utility functions related to orderbook modelling can be found.</p>
 <p><a href="../trades/"><code>quantpylib.hft.trades</code></a> is our internal trade buffer. There are utility functions to compute useful information and statistics from the data stored in the buffer.</p>
-<p><a href="./statistics.md"><code>quantpylib.hft.statistics</code></a> is a statistics library for hft modelling - in addition it should work seamlessly with the data structures in the <code>quantpylib.hft.lob.LOB</code> and <code>quantpylib.hft.trades.Trades</code> object instances.</p>
+<p><a href="../stats/"><code>quantpylib.hft.stats</code></a> is a statistics library for hft modelling - in addition it should work seamlessly with the data structures in the <code>quantpylib.hft.lob.LOB</code> and <code>quantpylib.hft.trades.Trades</code> object instances.</p>
 <h2 id="examples">Examples</h2>
 <h3 id="data-feed">Data Feed</h3>
 <p>Obtaining data feeds are extremely simple with <a href="../feed/"><code>quantpylib.hft.feed.Feed</code></a> objects. Simply - create a gateway object with the correct keys
@@ -3727,7 +3759,7 @@ We also get the positions delta and snapshots on hyperliquid:
 </code></pre></div>
 Note that the orders are sent even if it is a partial-fill with matching size - we don't have to wait for the entire maker order to be complete.</p>
 <h3 id="market-making">Market-Making</h3>
-<p>Please refer to the <a href="../../scripts/market_making">market-making tutorial</a> using the <code>Feed</code> and <code>OMS</code> object to write cross-exchange, cross environment (live, backtest and modelling) code for high-frequency data.</p>
+<p>Please refer to the <a href="../../scripts/market_making/">market-making tutorial</a> using the <code>Feed</code> and <code>OMS</code> object to write cross-exchange, cross environment (live, backtest and modelling) code for high-frequency data.</p>
 <!-- ### Modelling
 Instead of judging the trading problem by terminal wealth, which is certainly affected by a large number of factors - we may be interested in modelling subproblems in market microstructure. Here the `quantpylib.hft.alpha.Model` is of help - which also extends the `Simulator` class as did the `Alpha` backtester. Hence the same logic applies to `compute_*_features` methods - they are pre-processing logic. Here the `Model` class only take in the orderbook and trades data without cash, fees et cetera.
 
@@ -4088,7 +4120,7 @@ Here is an example of how you can do it (speudo-code)
 <a id="__codelineno-78-25" name="__codelineno-78-25" href="#__codelineno-78-25"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
 <a id="__codelineno-78-26" name="__codelineno-78-26" href="#__codelineno-78-26"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div>
-This maps to the <code>l2_book_mirror</code> method in <a href="../../wrappers/hyperliquid/#quantpylib.wrappers.hyperliquid.Hyperliquid.l2_book_mirror"><code>quantpylib.wrappers.hyperliquid</code></a> wrapper, and <code>as_dict=False</code> specifices we want a <a href=".. /lob/#quantpylib.hft.lob.LOB"><code>quantpylib.hft.lob.LOB</code></a> object.</p>
+This maps to the <code>l2_book_mirror</code> method in <a href="../../wrappers/hyperliquid/#quantpylib.wrappers.hyperliquid.Hyperliquid.l2_book_mirror"><code>quantpylib.wrappers.hyperliquid</code></a> wrapper, and <code>as_dict=False</code> specifices we want a <a href="../lob/"><code>quantpylib.hft.lob.LOB</code></a> object.</p>
 <p>We can now use the utility functions of the orderbook class. While we are sleeping, the <code>ob_handler</code> prints out...
 <div class="highlight"><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>182.04500000000002 0.010000000000019327
 <a id="__codelineno-79-2" name="__codelineno-79-2" href="#__codelineno-79-2"></a>182.04500000000002 0.010000000000019327
@@ -4208,10 +4240,13 @@ price impact. See <a href="https://github.com/hummingbot/hummingbot/blob/f111d1c
 <a id="__codelineno-85-2" name="__codelineno-85-2" href="#__codelineno-85-2"></a>self._optimal_spread += 2 * Decimal(1 + self.gamma / self._kappa).ln() / self.gamma
 </code></pre></div>
 Optimal spread has an additive factor of log(1 + c/kappa), where smaller values of kappa encourages wider maker orders (although I am pretty sure this should be dollar-normalized first).</p>
-<h2 id="hftlob"><a href="../lob/">hft.lob</a></h1>
-<h2 id="hfttrades"><a href="../trades/">hft.trades</a></h1>
-<h2 id="hftfeatures"><a href="../features/">hft.features</a></h1>
-<h2 id="hftstats"><a href="../stats/">hft.stats</a></h1>
+<h2 id="api-reference">API Reference</h2>
+<ul>
+<li><a href="../lob/">hft.lob</a></li>
+<li><a href="../trades/">hft.trades</a></li>
+<li><a href="../features/">hft.features</a></li>
+<li><a href="../stats/">hft.stats</a></li>
+</ul>
 
 
 

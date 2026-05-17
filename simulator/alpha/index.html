@@ -2151,6 +2151,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../wrappers/asterdex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.asterdex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../wrappers/binance/" class="md-nav__link">
         
   
@@ -2998,18 +3021,17 @@ Using the quantpylib.simulator.gene.GeneticAlpha is the simplest and recommended
 </summary>
 
 <h2 id="alpha">Alpha</h2>
-<h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    __init__
-    </code>
-</h3>
 
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.alpha.BaseAlpha.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dfs</span><span class="o">=</span><span class="p">{},</span> <span class="n">instruments</span><span class="o">=</span><span class="p">[],</span> <span class="n">execrates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">commrates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">longswps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shortswps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">funding_rates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">granularity</span><span class="o">=</span><span class="n">Period</span><span class="o">.</span><span class="n">DAILY</span><span class="p">,</span> <span class="n">positional_inertia</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">portfolio_vol</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">weekend_trading</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">around_the_clock</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">currency_denomination</span><span class="o">=</span><span class="s1">&#39;USD&#39;</span><span class="p">,</span> <span class="n">starting_capital</span><span class="o">=</span><span class="mf">10000.0</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.alpha.BaseAlpha.__init__"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
 
@@ -3299,22 +3321,21 @@ Minimally, dfs should contain key-value pair of (ticker:pd.DataFrame) with OHLCV
 </code></pre></div>
 </summary>
 
-<h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    compute_signals
-    </code>
-    <span class="doc doc-labels">
-        <small class="doc doc-label doc-label-async"><code>async, abstract</code>
-        </small>
-    </span>
-</h3>
 
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.alpha.Alpha.compute_signals" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">compute_signals</span><span class="p">(</span><span class="n">index</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.alpha.Alpha.compute_signals"></a>
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Abstract function that should be implemented in child-class extending the <code>Alpha</code> class.
@@ -3355,22 +3376,17 @@ This is where users can manipulate the dataframes in <code>dfs</code> dict passe
 
     </div>
 
-</div><h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    compute_forecasts
-    </code>
-    <span class="doc doc-labels">
-        <small class="doc doc-label doc-label-async"><code>abstract</code>
-        </small>
-    </span>
-</h3>
-
+</div>
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.alpha.Alpha.compute_forecasts" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">compute_forecasts</span><span class="p">(</span><span class="n">portfolio_i</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">eligibles_row</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.alpha.Alpha.compute_forecasts"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Abstract function that should be implemented in child-class extending the <code>Alpha</code> class.
@@ -3475,18 +3491,17 @@ targeting at the instrument and strategy level. <code>np.nan</code>, <code>np.in
 
     </div>
 
-</div><h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    instantiate_eligibilities_and_strat_variables
-    </code>
-</h3>
-
+</div>
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.alpha.BaseAlpha.instantiate_eligibilities_and_strat_variables" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">instantiate_eligibilities_and_strat_variables</span><span class="p">(</span><span class="n">eligiblesdf</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.alpha.BaseAlpha.instantiate_eligibilities_and_strat_variables"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>This is where the child class can instantiate object attributes that can be used in the <code>compute_forecasts</code>
@@ -3558,22 +3573,21 @@ implemented, the default <code>eligiblesdf</code> is used.</p>
     </div>
 
 </div><p>The remaining functions are not abstract and no further implementation is required or warranted.</p>
-<h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    run_simulation
-    </code>
-    <span class="doc doc-labels">
-        <small class="doc doc-label doc-label-async"><code>async</code>
-        </small>
-    </span>
-</h3>
 
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.alpha.BaseAlpha.run_simulation" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">run_simulation</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.alpha.BaseAlpha.run_simulation"></a>
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Runs the entire backtest. Should only be called after concrete implementation of <code>compute_signals</code> and <code>compute_forecasts</code>.</p>
@@ -3635,18 +3649,17 @@ portfolio weights, portfolio leverage, nominal exposusure, execution costs, comm
 
     </div>
 
-</div><h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    get_performance_measures
-    </code>
-</h3>
-
+</div>
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.alpha.BaseAlpha.get_performance_measures" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_performance_measures</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;/output/images&#39;</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.alpha.BaseAlpha.get_performance_measures"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Computes the performance metrics for the trading strategy.</p>
@@ -3703,22 +3716,21 @@ portfolio weights, portfolio leverage, nominal exposusure, execution costs, comm
 
     </div>
 
-</div><h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    hypothesis_tests
-    </code>
-    <span class="doc doc-labels">
-        <small class="doc doc-label doc-label-async"><code>async</code>
-        </small>
-    </span>
-</h3>
-
+</div>
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.alpha.BaseAlpha.hypothesis_tests" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">hypothesis_tests</span><span class="p">(</span><span class="n">num_decision_shuffles</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">num_data_shuffles</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.alpha.BaseAlpha.hypothesis_tests"></a>
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Conducts monte carlo permutation p-value hypothesis tests on the performance of the 

@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quantpylib.throttler.aiosonic" class="md-skip">
+        <a href="#quantpylib.throttler.httpx" class="md-skip">
           Skip to content
         </a>
       
@@ -1136,16 +1136,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quantpylib.throttler.aiosonic" class="md-nav__link">
+  <a href="#quantpylib.throttler.httpx" class="md-nav__link">
     <span class="md-ellipsis">
-      aiosonic
+      httpx
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#quantpylib.throttler.aiosonic.HTTPClient" class="md-nav__link">
+  <a href="#quantpylib.throttler.httpx.HTTPClient" class="md-nav__link">
     <span class="md-ellipsis">
       HTTPClient
     </span>
@@ -1155,25 +1155,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#quantpylib.throttler.aiosonic.HTTPClient.cleanup" class="md-nav__link">
-    <span class="md-ellipsis">
-      cleanup
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quantpylib.throttler.aiosonic.HTTPClient.handler" class="md-nav__link">
-    <span class="md-ellipsis">
-      handler
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quantpylib.throttler.aiosonic.HTTPClient.request" class="md-nav__link">
+  <a href="#quantpylib.throttler.httpx.HTTPClient.request" class="md-nav__link">
     <span class="md-ellipsis">
       request
     </span>
@@ -2124,6 +2106,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../wrappers/asterdex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.asterdex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../wrappers/binance/" class="md-nav__link">
         
   
@@ -2965,7 +2970,7 @@
 
 
 
-<a id="quantpylib.throttler.aiosonic"></a>
+<a id="quantpylib.throttler.httpx"></a>
     <div class="doc doc-contents first">
 
 
@@ -2989,7 +2994,7 @@
 
 
 
-<h2 id="quantpylib.throttler.aiosonic.HTTPClient" class="doc doc-heading">
+<h2 id="quantpylib.throttler.httpx.HTTPClient" class="doc doc-heading">
             <code>HTTPClient</code>
 
 
@@ -2999,7 +3004,7 @@
     <div class="doc doc-contents ">
 
 
-        <p>An asynchronous HTTP aiosonic client for fast network requests and (de)serialization 
+        <p>An asynchronous HTTP httpx client for fast network requests and (de)serialization 
 of data packets. Automatic retries and error handling.</p>
 
 
@@ -3071,150 +3076,8 @@ of data packets. Automatic retries and error handling.</p>
 <div class="doc doc-object doc-function">
 
 
-<h3 id="quantpylib.throttler.aiosonic.HTTPClient.cleanup" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">cleanup</span><span class="p">()</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Clean up the HTTP client session, ensuring proper resource deallocation.</p>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>None</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.throttler.aiosonic.HTTPClient.handler" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">handler</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">cargs</span><span class="o">=</span><span class="p">{})</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Handle the HTTP response, returning the JSON-decoded content or raising an HTTPException on error.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>response</code>
-            </td>
-            <td>
-                  <code><span title="aiosonic.HTTPResponse">HTTPResponse</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The HTTP response object to handle.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>dict</code></td>            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The JSON-decoded response if the status code is less than 400.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="quantpylib.throttler.exceptions.HTTPException">HTTPException</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If the response status code is 400 or higher.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.throttler.aiosonic.HTTPClient.request" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">request</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;content-type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">},</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_exceptions</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">aiohttp_fallback</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></code>
+<h3 id="quantpylib.throttler.httpx.HTTPClient.request" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">request</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;content-type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">},</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_exceptions</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -3321,14 +3184,30 @@ of data packets. Automatic retries and error handling.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>data</code>
+                <code>json</code>
             </td>
             <td>
-                  <code><span title="dict">dict</span> or <span title="str">str</span></code>
+                  <code><span title="dict">dict</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The data to include in the request body. Defaults to None.</p>
+                <p>The json key-values to include in the request body. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>data</code>
+            </td>
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Form-encoded body (application/x-www-form-urlencoded). Mutually exclusive with <code>json</code>. Defaults to None.</p>
               </div>
             </td>
             <td>

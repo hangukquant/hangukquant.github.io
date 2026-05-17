@@ -2127,6 +2127,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../wrappers/asterdex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.asterdex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../wrappers/binance/" class="md-nav__link">
         
   
@@ -2969,19 +2992,17 @@ how they operate on the arguments provided depend on the class of operators the 
 <p>For example, we may be interested in using as our trading signal the sum of <code>facebook_sentiment</code> and <code>twitter_sentiment</code>, where the former is sampled everyday 
 and latter is sampled only weekly. The formula <code>plus(facebook_sentiment,twitter_sentiment)</code> can have different interpretations depending on how we want to align data for which one or both of the arguments is <code>nan</code>.</p>
 <p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong>last-known basis</strong>: this phrase can be construed as forward filling DataFrames and applying the relevant operation.</p>
-<h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    all_idx_op(op, chress, **kwargs)
-    </code>
-</h3>
-
 
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.operators.all_idx_op" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">all_idx_op</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">chress</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.operators.all_idx_op"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Apply a specified operation to each row of the provided DataFrame.
@@ -3076,19 +3097,17 @@ Missing arguments applied on last-known basis.</p>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="n">pd</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_frame_equal</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">expected_result</span><span class="p">)</span>
 </code></pre></div></p>
-<h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    intersect_idx_op(op, insts, aligner, chress, **kwargs)
-    </code>
-</h3>
-
 
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.operators.intersect_idx_op" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">intersect_idx_op</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">insts</span><span class="p">,</span> <span class="n">aligner</span><span class="p">,</span> <span class="n">chress</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.operators.intersect_idx_op"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Perform a intersection operation on index labels and apply a given operation across multiple arrays or pandas DataFrames.</p>
@@ -3222,19 +3241,17 @@ Missing arguments applied on last-known basis.</p>
 <a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">expected_result</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 <a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    <span class="n">pd</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_frame_equal</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">expected_result</span><span class="p">)</span>
 </code></pre></div></p>
-<h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    self_idx_op(op, insts, aligner, win, chress, **kwargs)
-    </code>
-</h3>
-
 
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.operators.self_idx_op" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">self_idx_op</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">insts</span><span class="p">,</span> <span class="n">aligner</span><span class="p">,</span> <span class="n">win</span><span class="p">,</span> <span class="n">chress</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.operators.self_idx_op"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Apply a specified operation to each instance in the provided time series data, using a rolling window.
@@ -3385,19 +3402,17 @@ It must accept a pandas Series as input and return a scalar value.</p>
 <a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">expected_result</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 <a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    <span class="n">pd</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_frame_equal</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">expected_result</span><span class="p">)</span>
 </code></pre></div></p>
-<h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    self_idx_op2(op, chress, **kwargs)
-    </code>
-</h3>
-
 
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.operators.self_idx_op2" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">self_idx_op2</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">chress</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.operators.self_idx_op2"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Apply a specified unary transformation to the provided time series data.</p>
@@ -3494,19 +3509,17 @@ It must accept a pandas Series as input and return a scalar value.</p>
 <a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 <a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    <span class="n">pd</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_frame_equal</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">expected_result</span><span class="p">)</span>
 </code></pre></div></p>
-<h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    slow_idx_op(op, insts, aligner, win, chress, **kwargs)
-    </code>
-</h3>
-
 
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.operators.slow_idx_op" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">slow_idx_op</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">insts</span><span class="p">,</span> <span class="n">aligner</span><span class="p">,</span> <span class="n">win</span><span class="p">,</span> <span class="n">chress</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.operators.slow_idx_op"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Apply a specified operation to aligned time series data, potentially handling unequal indices.
@@ -3658,19 +3671,17 @@ Missing arguments applied on last-known basis.</p>
 <a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">expected_result</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 <a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    <span class="n">pd</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_frame_equal</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">expected_result</span><span class="p">)</span>
 </code></pre></div></p>
-<h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    union_idx_op(op, insts, aligner, chress, **kwargs)
-    </code>
-</h3>
-
 
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.operators.union_idx_op" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">union_idx_op</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">insts</span><span class="p">,</span> <span class="n">aligner</span><span class="p">,</span> <span class="n">chress</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.operators.union_idx_op"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Perform a union operation on index labels and apply a given operation across multiple arrays or pandas DataFrames.

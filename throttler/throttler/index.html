@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#examples" class="md-skip">
+        <a href="#throttler" class="md-skip">
           Skip to content
         </a>
       
@@ -1027,6 +1027,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1058,6 +1060,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1143,6 +1147,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Notes on Behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entry-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entry Behavior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exit-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exit Behavior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exception Behavior
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1156,6 +1193,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Reference
+    </span>
+  </a>
   
 </li>
       
@@ -2166,6 +2212,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../wrappers/asterdex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.asterdex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../wrappers/binance/" class="md-nav__link">
         
   
@@ -3001,8 +3070,7 @@
 
 
 
-<h1 id="throttler"><a href=".">throttler</a></h1>
-
+<h1 id="throttler">throttler</h1>
 <p>This page describes how you may use our <code>quantpylib.throttler</code> module and the functionalities exposed by our APIs. This module contains classes meant for synchronizing, throttling and handling tasks such as network requests efficiently.</p>
 <p><a href="../aiosonic"><code>quantpylib.throttler.aiosonic</code></a> features a HTTP client written on top of <a href="https://aiosonic.readthedocs.io/en/latest/examples.html"><code>aiosonic</code></a> and <a href="https://github.com/ijl/orjson"><code>orjson</code></a>, acting as an asynchronous HTTP library optimizing the speed of HTTP requests and handling of data packets.</p>
 <p><a href="../rate_semaphore"><code>quantpylib.throttler.rate_semaphore</code></a> features both synchronous and asynchronous support for rate-limiting access to function calls via a credit-based semaphore synchronization tool. A simple but common use would be to maximise throughput of API requests to an external server that places rate-limits on the number of API requests per minute/hour with request credits charged against a resource pool. This is made available through the <a href="../rate_semaphore/#quantpylib.throttler.rate_semaphore.RateSemaphore"><code>RateSemaphore</code></a> and <a href="../rate_semaphore/#quantpylib.throttler.rate_semaphore.AsyncRateSemaphore"><code>AsyncRateSemaphore</code></a> classes - and can be seen as an extension of the synchronization 
@@ -3440,40 +3508,28 @@ The printed log statements are hence presented without commentary, but may be ra
 <a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>2024-03-28 19:17:56.129683:: TXN {&#39;fn&#39;: &#39;_agetTick&#39;, &#39;args&#39;: (3, 3), &#39;kwargs&#39;: {}} exits CreditSemaphore, schedule refund in 10...
 </code></pre></div></p>
 <h3 id="notes-on-behavior">Notes on Behavior</h3>
-<ul>
-<li>
-<p><h4> Entry Behavior </h4>  </p>
+<h4 id="entry-behavior">Entry Behavior</h4>
 <ol>
 <li><a href="../rate_semaphore/#quantpylib.throttler.rate_semaphore.AsyncRateSemaphore"><code>AsyncRateSemaphore</code></a> acquires the semaphore if there are enough resources, but if <code>greedy_entry=False</code>, then the submitted transaction will wait behind the earlier pending transactions regardless of the resource pool availability. Otherwise, any submitted transaction that can run immediately will run without consideration for existing waiters.</li>
 <li><a href="../rate_semaphore/#quantpylib.throttler.rate_semaphore.RateSemaphore"><code>RateSemaphore</code></a>
-acquires the semaphore immediately if there are enough resources, and 
-otherwise waits. The order in which blocked threads are awakened should not be relied on and is OS-scheduler dependent.</li>
+   acquires the semaphore immediately if there are enough resources, and
+   otherwise waits. The order in which blocked threads are awakened should not be relied on and is OS-scheduler dependent.</li>
 </ol>
-</li>
-<li>
-<p><h4> Exit Behavior </h4> 
-Requests submitted to both semaphore types exit from their respective <code>transact</code> method
+<h4 id="exit-behavior">Exit Behavior</h4>
+<p>Requests submitted to both semaphore types exit from their respective <code>transact</code> method
 without waiting for the credits to be refunded. The credits are scheduled to be refunded separately on a thread (for synchronous implementations) or the event loop (for asynchronous implementations). When the credit is refunded </p>
 <ol>
-<li>
-<p><a href="../rate_semaphore/#quantpylib.throttler.rate_semaphore.AsyncRateSemaphore"><code>AsyncRateSemaphore</code></a> wakes up pending transactions that are able to execute on the state of the resource pool. If <code>greedy_exit=False</code>, then the number of pending transactions woken up will respect the FIFO order until the resource pool is insufficient for the earliest transaction. Otherwise, when credits are refunded with &gt;=2 waiting transactions with arrival time <code>txn A</code> &lt; <code>txn B</code>. If the semaphore has not enough credits to execute <code>txn A</code>, it can first run <code>txn B</code>. This helps to maximise throughput.</p>
-</li>
-<li>
-<p><a href="../rate_semaphore/#quantpylib.throttler.rate_semaphore.RateSemaphore"><code>RateSemaphore</code></a>
-wakes up pending transactions that are able to execute on the state of the resource pool.
-The order in which blocked threads are awakened should not be relied on and is OS-scheduler dependent.</p>
-</li>
+<li><a href="../rate_semaphore/#quantpylib.throttler.rate_semaphore.AsyncRateSemaphore"><code>AsyncRateSemaphore</code></a> wakes up pending transactions that are able to execute on the state of the resource pool. If <code>greedy_exit=False</code>, then the number of pending transactions woken up will respect the FIFO order until the resource pool is insufficient for the earliest transaction. Otherwise, when credits are refunded with &gt;=2 waiting transactions with arrival time <code>txn A</code> &lt; <code>txn B</code>. If the semaphore has not enough credits to execute <code>txn A</code>, it can first run <code>txn B</code>. This helps to maximise throughput.</li>
+<li><a href="../rate_semaphore/#quantpylib.throttler.rate_semaphore.RateSemaphore"><code>RateSemaphore</code></a>
+   wakes up pending transactions that are able to execute on the state of the resource pool.
+   The order in which blocked threads are awakened should not be relied on and is OS-scheduler dependent.</li>
 </ol>
-</li>
-<li>
-<p><h4> Exception Behavior </h4> 
-Failed transactions (raised Exceptions) consume and refund credit in the same way as successful transactions.</p>
-</li>
-</ul>
-<summary>
-Note that non-greedy entry and greedy exit can cause resource-expensive transactions to sit behind cheaper transactions which are constantly being submitted to the semaphore at a fast rate, preventing the expensive transaction from acquiring the semaphore.
-</summary>
-
+<h4 id="exception-behavior">Exception Behavior</h4>
+<p>Failed transactions (raised Exceptions) consume and refund credit in the same way as successful transactions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Non-greedy entry and greedy exit can cause resource-expensive transactions to sit behind cheaper transactions which are constantly being submitted to the semaphore at a fast rate, preventing the expensive transaction from acquiring the semaphore.</p>
+</div>
 <h3 id="best-practices">Best Practices</h3>
 <ul>
 <li>
@@ -3484,8 +3540,11 @@ Note that non-greedy entry and greedy exit can cause resource-expensive transact
 it does not know when the code actually performs the credit-costing request. The <code>transact</code> functions should be closest to the costful logic as possible. It should not perform heavy compute or multiple requests so that the credits can refunded as quickly as possible for other transactions. </p>
 </li>
 </ul>
-<h2 id="throttlerratesemaphore"><a href="../rate_semaphore/">throttler.rate_semaphore</a></h1>
-<h2 id="throttlerratedecorator"><a href="../decorators/">throttler.decorators</a></h1>
+<h2 id="api-reference">API Reference</h2>
+<ul>
+<li><a href="../rate_semaphore/">throttler.rate_semaphore</a></li>
+<li><a href="../decorators/">throttler.decorators</a></li>
+</ul>
 
 
 

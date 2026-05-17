@@ -2229,6 +2229,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../wrappers/asterdex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.asterdex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../wrappers/binance/" class="md-nav__link">
         
   
@@ -3079,8 +3102,12 @@ extends the <a href="../alpha/#alpha"><code>Alpha</code></a>   class to implemen
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.gene.GeneticAlpha.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">genome</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.gene.GeneticAlpha.__init__"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
 
@@ -3134,15 +3161,18 @@ extends the <a href="../alpha/#alpha"><code>Alpha</code></a>   class to implemen
     </div>
 
 </div><p>Parameters in <code>**kwargs</code> are required and passed into <a href="../alpha/#alpha"><code>quantpylib.simulator.alpha.Alpha</code></a> 
-and are as follows:
-</p>
+and are as follows:</p>
 
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.alpha.BaseAlpha.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dfs</span><span class="o">=</span><span class="p">{},</span> <span class="n">instruments</span><span class="o">=</span><span class="p">[],</span> <span class="n">execrates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">commrates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">longswps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shortswps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">funding_rates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">granularity</span><span class="o">=</span><span class="n">Period</span><span class="o">.</span><span class="n">DAILY</span><span class="p">,</span> <span class="n">positional_inertia</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">portfolio_vol</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">weekend_trading</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">around_the_clock</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">currency_denomination</span><span class="o">=</span><span class="s1">&#39;USD&#39;</span><span class="p">,</span> <span class="n">starting_capital</span><span class="o">=</span><span class="mf">10000.0</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.alpha.BaseAlpha.__init__"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
 
@@ -3410,22 +3440,21 @@ Datapoints of lower granularity than specified are ignored. Last known datapoint
 
     </div>
 
-</div><h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    run_simulation
-    </code>
-    <span class="doc doc-labels">
-        <small class="doc doc-label doc-label-async"><code>async</code>
-        </small>
-    </span>
-</h3>
-
+</div>
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.gene.GeneticAlpha.run_simulation" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">run_simulation</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.gene.GeneticAlpha.run_simulation"></a>
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Runs the entire backtest. </p>
@@ -3487,18 +3516,17 @@ portfolio weights, portfolio leverage, nominal exposusure, execution costs, comm
 
     </div>
 
-</div><h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    get_performance_measures
-    </code>
-</h3>
-
+</div>
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.alpha.BaseAlpha.get_performance_measures" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_performance_measures</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;/output/images&#39;</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.alpha.BaseAlpha.get_performance_measures"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Computes the performance metrics for the trading strategy.</p>
@@ -3555,22 +3583,21 @@ portfolio weights, portfolio leverage, nominal exposusure, execution costs, comm
 
     </div>
 
-</div><h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    hypothesis_tests
-    </code>
-    <span class="doc doc-labels">
-        <small class="doc doc-label doc-label-async"><code>async</code>
-        </small>
-    </span>
-</h3>
-
+</div>
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.alpha.BaseAlpha.hypothesis_tests" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">hypothesis_tests</span><span class="p">(</span><span class="n">num_decision_shuffles</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">num_data_shuffles</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.alpha.BaseAlpha.hypothesis_tests"></a>
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Conducts monte carlo permutation p-value hypothesis tests on the performance of the 
@@ -3661,39 +3688,37 @@ trading strategy represented by the object instance.</p>
 where each node can either be a terminal (leaf) node or a functional
 node. Terminal nodes represent data points or constants,
 while functional nodes represent operations on their child nodes.</p>
-<h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    str_to_gene
-    </code>
-    <span class="doc doc-labels">
-        <small class="doc doc-label doc-label-async"><code>staticmethod</code>
-        </small>
-    </span>
-</h3>
 
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.gene.Gene.str_to_gene" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">str_to_gene</span><span class="p">(</span><span class="n">strgene</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.gene.Gene.str_to_gene"></a>
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+</h3>
+
+
     <div class="doc doc-contents first">
 
 
     </div>
 
-</div><h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    __init__
-    </code>
-</h3>
-
+</div>
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.gene.Gene.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">prim</span><span class="p">,</span> <span class="n">is_terminal</span><span class="p">,</span> <span class="n">space</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[])</span></code>
 
-<a id="quantpylib.simulator.gene.Gene.__init__"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Initializes a Gene object.</p>
@@ -3800,18 +3825,17 @@ while functional nodes represent operations on their child nodes.</p>
     </div>
 
 </div><p>The list of <code>prim</code> primitives supported by our library, their behavior and their interpretations can be found <a href="#list-of-primitives">here.</a></p>
-<h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    evaluate_node
-    </code>
-</h3>
 
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.gene.Gene.evaluate_node" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">evaluate_node</span><span class="p">(</span><span class="n">insts</span><span class="p">,</span> <span class="n">dfs</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.gene.Gene.evaluate_node"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Recursively evaluates a node in the formulaic alpha expression. When called on the root node in the 
@@ -3941,18 +3965,18 @@ pd.Series objects provided should have timezone aware DatetimeIndex properties.
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
 </code></pre></div>
 </summary>
-<h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    make_dot
-    </code>
-</h3>
+
 
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.gene.Gene.make_dot" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">make_dot</span><span class="p">()</span></code>
 
-<a id="quantpylib.simulator.gene.Gene.make_dot"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Generate a DOT language representation of the tree structure rooted at this node.</p>
@@ -3992,18 +4016,17 @@ graphviz or other tools that support the DOT language.</p>
 
     </div>
 
-</div><h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    height
-    </code>
-</h3>
-
+</div>
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.gene.Gene.height" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">height</span><span class="p">()</span></code>
 
-<a id="quantpylib.simulator.gene.Gene.height"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Return the maximium distance from current node to any leaf node that is a descendant.</p>
@@ -4011,18 +4034,17 @@ graphviz or other tools that support the DOT language.</p>
 
     </div>
 
-</div><h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    depth
-    </code>
-</h3>
-
+</div>
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.gene.Gene.depth" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">depth</span><span class="p">()</span></code>
 
-<a id="quantpylib.simulator.gene.Gene.depth"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Return the distance from current node to the root node.</p>
@@ -4030,18 +4052,17 @@ graphviz or other tools that support the DOT language.</p>
 
     </div>
 
-</div><h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    size
-    </code>
-</h3>
-
+</div>
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.gene.Gene.size" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">size</span><span class="p">()</span></code>
 
-<a id="quantpylib.simulator.gene.Gene.size"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Return the number of nodes in the graphical representation of the formulaic alpha.</p>
@@ -4049,18 +4070,17 @@ graphviz or other tools that support the DOT language.</p>
 
     </div>
 
-</div><h3 class="doc doc-heading">
-    <code class="highlight language-python">
-    pre_ord_apply
-    </code>
-</h3>
-
+</div>
 
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.simulator.gene.Gene.pre_ord_apply" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">pre_ord_apply</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-<a id="quantpylib.simulator.gene.Gene.pre_ord_apply"></a>
+</h3>
+
+
     <div class="doc doc-contents first">
 
         <p>Apply a function to each node in the tree using pre-order traversal.</p>
