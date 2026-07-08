@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../exchange/">
+        <link rel="prev" href="../materializers/">
       
       
-        <link rel="next" href="../../gateway/gateway/">
+        <link rel="next" href="../l0/">
       
       
       <link rel="icon" href="../../icons/logo.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>quantpylib.datapoller.metadata - quantpylib</title>
+        <title>quantpylib.hft.orderbook - quantpylib</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quantpylib.datapoller.metadata" class="md-skip">
+        <a href="#native-order-book" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              quantpylib.datapoller.metadata
+              quantpylib.hft.orderbook
             
           </span>
         </div>
@@ -692,8 +692,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -704,11 +706,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
@@ -724,7 +726,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1_2">
             <span class="md-nav__icon md-icon"></span>
             quantpylib.hft
@@ -738,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hft/hft/" class="md-nav__link">
+      <a href="../hft/" class="md-nav__link">
         
   
   
@@ -761,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hft/feed/" class="md-nav__link">
+      <a href="../feed/" class="md-nav__link">
         
   
   
@@ -784,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hft/archival/" class="md-nav__link">
+      <a href="../archival/" class="md-nav__link">
         
   
   
@@ -807,7 +809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hft/materializers/" class="md-nav__link">
+      <a href="../materializers/" class="md-nav__link">
         
   
   
@@ -827,10 +829,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../hft/orderbook/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.orderbook
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -841,6 +865,362 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Reference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBook" class="md-nav__link">
+    <span class="md-ellipsis">
+      OrderBook
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.Side" class="md-nav__link">
+    <span class="md-ellipsis">
+      Side
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap" class="md-nav__link">
+    <span class="md-ellipsis">
+      OrderBookMap
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OrderBookMap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.add_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.apply_mbp_level" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_mbp_level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.best_ask" class="md-nav__link">
+    <span class="md-ellipsis">
+      best_ask
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.best_bid" class="md-nav__link">
+    <span class="md-ellipsis">
+      best_bid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.cancel_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      cancel_order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      clear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.get_asks" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_asks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.get_bids" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_bids
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.get_top_asks" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_top_asks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.get_top_bids" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_top_bids
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.has_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      has_order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      mid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.modify_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      modify_order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.order" class="md-nav__link">
+    <span class="md-ellipsis">
+      order
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookVec" class="md-nav__link">
+    <span class="md-ellipsis">
+      OrderBookVec
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OrderBookVec">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookVec.add_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookVec.apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookVec.apply_mbp_level" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_mbp_level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookVec.best_ask" class="md-nav__link">
+    <span class="md-ellipsis">
+      best_ask
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookVec.best_bid" class="md-nav__link">
+    <span class="md-ellipsis">
+      best_bid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookVec.cancel_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      cancel_order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookVec.clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      clear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookVec.get_asks" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_asks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookVec.get_bids" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_bids
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookVec.get_top_asks" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_top_asks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookVec.get_top_bids" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_top_bids
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookVec.has_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      has_order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookVec.mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      mid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookVec.modify_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      modify_order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookVec.order" class="md-nav__link">
+    <span class="md-ellipsis">
+      order
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -853,7 +1233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hft/l0/" class="md-nav__link">
+      <a href="../l0/" class="md-nav__link">
         
   
   
@@ -876,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hft/oms/" class="md-nav__link">
+      <a href="../oms/" class="md-nav__link">
         
   
   
@@ -899,7 +1279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hft/mocks/" class="md-nav__link">
+      <a href="../mocks/" class="md-nav__link">
         
   
   
@@ -922,7 +1302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hft/bars/" class="md-nav__link">
+      <a href="../bars/" class="md-nav__link">
         
   
   
@@ -945,7 +1325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hft/lob/" class="md-nav__link">
+      <a href="../lob/" class="md-nav__link">
         
   
   
@@ -968,7 +1348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hft/trades/" class="md-nav__link">
+      <a href="../trades/" class="md-nav__link">
         
   
   
@@ -991,7 +1371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hft/features/" class="md-nav__link">
+      <a href="../features/" class="md-nav__link">
         
   
   
@@ -1014,7 +1394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hft/stats/" class="md-nav__link">
+      <a href="../stats/" class="md-nav__link">
         
   
   
@@ -1037,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hft/utils/" class="md-nav__link">
+      <a href="../utils/" class="md-nav__link">
         
   
   
@@ -1397,8 +1777,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1411,11 +1789,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
         
           
           <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
@@ -1431,7 +1809,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1_5">
             <span class="md-nav__icon md-icon"></span>
             quantpylib.datapoller
@@ -1445,7 +1823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datapoller/" class="md-nav__link">
+      <a href="../../datapoller/datapoller/" class="md-nav__link">
         
   
   
@@ -1468,7 +1846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../master/" class="md-nav__link">
+      <a href="../../datapoller/master/" class="md-nav__link">
         
   
   
@@ -1491,7 +1869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utils/" class="md-nav__link">
+      <a href="../../datapoller/utils/" class="md-nav__link">
         
   
   
@@ -1514,7 +1892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../base/" class="md-nav__link">
+      <a href="../../datapoller/base/" class="md-nav__link">
         
   
   
@@ -1537,7 +1915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../crypto/" class="md-nav__link">
+      <a href="../../datapoller/crypto/" class="md-nav__link">
         
   
   
@@ -1560,7 +1938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../currencies/" class="md-nav__link">
+      <a href="../../datapoller/currencies/" class="md-nav__link">
         
   
   
@@ -1583,7 +1961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../equities/" class="md-nav__link">
+      <a href="../../datapoller/equities/" class="md-nav__link">
         
   
   
@@ -1606,7 +1984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exchange/" class="md-nav__link">
+      <a href="../../datapoller/exchange/" class="md-nav__link">
         
   
   
@@ -1626,30 +2004,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    quantpylib.datapoller.metadata
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../datapoller/metadata/" class="md-nav__link">
         
   
   
@@ -1660,57 +2018,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#quantpylib.datapoller.metadata" class="md-nav__link">
-    <span class="md-ellipsis">
-      metadata
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quantpylib.datapoller.metadata.Metadata" class="md-nav__link">
-    <span class="md-ellipsis">
-      Metadata
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Metadata">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#quantpylib.datapoller.metadata.Metadata.query_engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      query_engine
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3056,14 +3363,135 @@
 
 
 
-  <h1>quantpylib.datapoller.metadata</h1>
+<h1 id="native-order-book">Native Order Book</h1>
+<p><code>quantpylib.hft.orderbook</code> exposes the native order-book implementation.
+It applies
+<a class="autorefs autorefs-internal" title="BookUpdate" href="../../standards/models/#quantpylib.standards.models.BookUpdate">quantpylib.standards.models.BookUpdate</a>
+events and keeps live bid/ask state in fast, native cpp implementation and exposed via <code>nanobind</code>
+to Python.</p>
+<p>Prices and sizes are fixed-point <code>int64</code> values.
+<code>PRICE_SCALE</code> and <code>SIZE_SCALE</code> are both
+<code>1_000_000_000</code>, so decoded values are <code>stored_int / 1_000_000_000</code>.
+Level arrays are
+returned as NumPy <code>int64</code> arrays with shape <code>(n, 2)</code>, where each row is
+<code>[price, size]</code>. Bid levels are returned best bid first; ask levels are
+returned best ask first.</p>
+<h2 id="implementations">Implementations</h2>
+<p><code>OrderBook</code> is the default public alias for <code>OrderBookMap</code>.
+<code>OrderBookMap</code> and <code>OrderBookVec</code> expose the same Python API:</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Storage model</th>
+<th>Typical use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OrderBook</code></td>
+<td>Alias for <code>OrderBookMap</code></td>
+<td>Default materialized order-book state.</td>
+</tr>
+<tr>
+<td><code>OrderBookMap</code></td>
+<td>Native ordered-map using <code>std::map</code></td>
+<td>General-purpose order-book materialization.</td>
+</tr>
+<tr>
+<td><code>OrderBookVec</code></td>
+<td>Native vector using <code>std:vector</code></td>
+<td>Reverse-vector-backed materialization.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="api-reference">API Reference</h2>
 
-<div class="doc doc-object doc-module">
+
+<div class="doc doc-object doc-class">
 
 
 
-<a id="quantpylib.datapoller.metadata"></a>
+<h2 id="quantpylib.hft.orderbook.OrderBook" class="doc doc-heading">
+            <code>OrderBook</code>
+
+
+</h2>
+
+
     <div class="doc doc-contents first">
+
+
+        <p>Default native order book.</p>
+<p><code>OrderBook</code> is the default runtime alias for
+<a class="autorefs autorefs-internal" title="OrderBookMap" href="#quantpylib.hft.orderbook.OrderBookMap">quantpylib.hft.orderbook.OrderBookMap</a>.
+It is the order-book type created by
+<a class="autorefs autorefs-internal" title="OrderbookMaterializerSink" href="../materializers/#quantpylib.hft.materializers.OrderbookMaterializerSink">quantpylib.hft.materializers.OrderbookMaterializerSink</a>
+when no existing book is supplied.</p>
+
+
+
+
+
+
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="quantpylib.hft.orderbook.Side" class="doc doc-heading">
+            <code>Side</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+
+        <p>Order-book side enum used by native order-book methods.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="quantpylib.hft.orderbook.Side.Bid">Bid</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="Side (quantpylib.hft.orderbook.Side)" href="#quantpylib.hft.orderbook.Side">Side</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Bid side.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="quantpylib.hft.orderbook.Side.Ask">Ask</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="Side (quantpylib.hft.orderbook.Side)" href="#quantpylib.hft.orderbook.Side">Side</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Ask side.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
 
 
 
@@ -3082,21 +3510,66 @@
 
 
 
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
 <div class="doc doc-object doc-class">
 
 
 
-<h2 id="quantpylib.datapoller.metadata.Metadata" class="doc doc-heading">
-            <code>Metadata</code>
+<h2 id="quantpylib.hft.orderbook.OrderBookMap" class="doc doc-heading">
+            <code>OrderBookMap</code>
 
 
 </h2>
 
 
-    <div class="doc doc-contents ">
-            <p class="doc doc-class-bases">
-              Bases: <code><a class="autorefs autorefs-internal" title="BasePoller (quantpylib.datapoller.base.BasePoller)" href="../base/#quantpylib.datapoller.base.BasePoller">BasePoller</a></code></p>
+    <div class="doc doc-contents first">
 
+
+        <p>Map-backed native order book.</p>
+<p><code>OrderBookMap</code> stores aggregate levels in native ordered maps and
+exposes the same Python API as
+<a class="autorefs autorefs-internal" title="OrderBookVec" href="#quantpylib.hft.orderbook.OrderBookVec">quantpylib.hft.orderbook.OrderBookVec</a>.
+<code>OrderBook</code> is the default runtime alias for this implementation.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>reserve_orders</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Initial native capacity for order-level
+storage.</p>
+              </div>
+            </td>
+            <td>
+                  <code>1024</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
 
@@ -3120,15 +3593,302 @@
 <div class="doc doc-object doc-function">
 
 
-<h3 id="quantpylib.datapoller.metadata.Metadata.query_engine" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">query_engine</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.add_order" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_order</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span></code>
 
 </h3>
 
 
     <div class="doc doc-contents ">
 
-        <p>Execute a query using a specific data poller.</p>
+        <p>Add one order-level entry and update aggregate levels.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.apply" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">apply</span><span class="p">(</span><span class="n">update</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Apply one native <code>BookUpdate</code> snapshot or delta.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.apply_mbp_level" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">apply_mbp_level</span><span class="p">(</span><span class="n">side</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Set or delete one aggregate market-by-price level.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.best_ask" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">best_ask</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return <code>(price, size)</code> for the best ask, or <code>None</code>.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.best_bid" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">best_bid</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return <code>(price, size)</code> for the best bid, or <code>None</code>.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.cancel_order" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">cancel_order</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Cancel one order-level entry and update aggregate levels.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.clear" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">clear</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Clear all book state.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.get_asks" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_asks</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return all ask levels as a best-to-worst int64 array.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.get_bids" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_bids</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return all bid levels as a best-to-worst int64 array.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.get_top_asks" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_top_asks</span><span class="p">(</span><span class="n">depth</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return up to <code>depth</code> best ask levels.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.get_top_bids" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_top_bids</span><span class="p">(</span><span class="n">depth</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return up to <code>depth</code> best bid levels.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.has_order" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">has_order</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return whether an order id is present.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.mid" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">mid</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return the midpoint price, or <code>None</code> when a side is missing.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.modify_order" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">modify_order</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">new_size</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Modify one order-level entry and update aggregate levels.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.order" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">order</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return one order-level entry as a dictionary.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="quantpylib.hft.orderbook.OrderBookVec" class="doc doc-heading">
+            <code>OrderBookVec</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+
+        <p>Vector-backed native order book.</p>
+<p><code>OrderBookVec</code> maintains aggregate L2 levels and optional order-level
+state in contiguous native storage. It accepts
+<a class="autorefs autorefs-internal" title="BookUpdate" href="../../standards/models/#quantpylib.standards.models.BookUpdate">quantpylib.standards.models.BookUpdate</a>
+through <code>apply()</code>, supports direct MBP level mutation through
+<code>apply_mbp_level()</code>, and exposes best-to-worst bid/ask levels as
+NumPy int64 arrays with shape <code>(n, 2)</code>.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -3144,73 +3904,346 @@
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>query</code>
+                <code>reserve_levels</code>
             </td>
             <td>
-                  <code><span title="str">str</span></code>
+                  <code><span title="int">int</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The query to be executed.</p>
+                <p>Initial native capacity for bid and ask
+price levels.</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>1024</code>
             </td>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>**kwargs</code>
+                <code>reserve_orders</code>
             </td>
             <td>
+                  <code><span title="int">int</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Additional keyword arguments for executing the query.</p>
+                <p>Initial native capacity for order-level
+storage.</p>
               </div>
             </td>
             <td>
-                  <code>{}</code>
+                  <code>1024</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>mbp_point_threshold</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Delta size threshold below which MBP
+deltas use point updates instead of batch merge.</p>
+              </div>
+            </td>
+            <td>
+                  <code>8</code>
             </td>
           </tr>
       </tbody>
     </table>
 
 
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The result of the query execution using the specified data poller.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookVec.add_order" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_order</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Add one order-level entry and update aggregate levels.</p>
 
 
     </div>
 
 </div>
 
+<div class="doc doc-object doc-function">
 
 
-  </div>
+<h3 id="quantpylib.hft.orderbook.OrderBookVec.apply" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">apply</span><span class="p">(</span><span class="n">update</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Apply one native <code>BookUpdate</code> snapshot or delta.</p>
+
 
     </div>
 
 </div>
 
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookVec.apply_mbp_level" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">apply_mbp_level</span><span class="p">(</span><span class="n">side</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Set or delete one aggregate market-by-price level.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookVec.best_ask" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">best_ask</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return <code>(price, size)</code> for the best ask, or <code>None</code>.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookVec.best_bid" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">best_bid</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return <code>(price, size)</code> for the best bid, or <code>None</code>.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookVec.cancel_order" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">cancel_order</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Cancel one order-level entry and update aggregate levels.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookVec.clear" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">clear</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Clear all book state.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookVec.get_asks" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_asks</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return all ask levels as a best-to-worst int64 array.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookVec.get_bids" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_bids</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return all bid levels as a best-to-worst int64 array.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookVec.get_top_asks" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_top_asks</span><span class="p">(</span><span class="n">depth</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return up to <code>depth</code> best ask levels.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookVec.get_top_bids" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_top_bids</span><span class="p">(</span><span class="n">depth</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return up to <code>depth</code> best bid levels.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookVec.has_order" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">has_order</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return whether an order id is present.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookVec.mid" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">mid</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return the midpoint price, or <code>None</code> when a side is missing.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookVec.modify_order" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">modify_order</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">new_size</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Modify one order-level entry and update aggregate levels.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookVec.order" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">order</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return one order-level entry as a dictionary.</p>
+
+
+    </div>
+
+</div>
 
 
 

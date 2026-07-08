@@ -784,6 +784,98 @@
   
   
     <li class="md-nav__item">
+      <a href="../../hft/archival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.archival
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/materializers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.materializers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/orderbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.orderbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/l0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.l0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../hft/oms/" class="md-nav__link">
         
   
@@ -1999,6 +2091,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../standards/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.standards.models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../standards/intervals/" class="md-nav__link">
         
   
@@ -2723,29 +2838,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/tick_archival/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Tick Archival
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../scripts/trend_following/" class="md-nav__link">
         
   
@@ -3037,7 +3129,7 @@ For instance, if we would like to get position data using the <code>quantpylib.g
 we can do so by creating a <code>obj = Gateway(...)</code> instance, and calling <code>obj.positions.positions_get(...,exc="binance")</code>.
 The function call is only valid if it is supported by both the gateway type and the exchange client, which we can check by their matching 
 function signatures. In general each exchange has its own parameters to the vendor-specific endpoint, as well as different
-specifications (such as limit orders through a specified price or a price-matching rule), so the library
+specifications (such as limit orders through a specified price or a price rule), so the library
 provides a flexible variation between these specifications to support the different configurations for each external API - it would be 
 alot easier to understand through the given examples.</p>
 <p>Note that each of the exchange client wrappers are also designed to be available for use as standalone Python-SDKs.
@@ -3148,8 +3240,8 @@ a print-handler and let it sleep. Before the sleep times out, I made a market or
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">res</span> <span class="o">=</span> <span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">executor</span><span class="o">.</span><span class="n">limit_order</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s1">&#39;PENDLE&#39;</span><span class="p">,</span><span class="n">amount</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span><span class="n">price</span><span class="o">=</span><span class="mf">5.001</span><span class="p">,</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;hyperliquid&#39;</span><span class="p">)</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">res</span> <span class="o">=</span> <span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">executor</span><span class="o">.</span><span class="n">limit_order</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s1">&#39;PENDLEUSDT&#39;</span><span class="p">,</span><span class="n">amount</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span><span class="n">price</span><span class="o">=</span><span class="mf">5.001</span><span class="p">,</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;binance&#39;</span><span class="p">)</span>
 </code></pre></div>
-<code>Binance</code> exchange allows limit order that does not need to specify price - instead, the price is set relative to the order book state through a price-matching rule. This is specified in the <code>price_match</code> argument to the <a href="../../wrappers/binance/#quantpylib.wrappers.binance.Binance.limit_order"><code>quantpylib.wrappers.Binance.limit_order</code></a>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">res</span> <span class="o">=</span> <span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">executor</span><span class="o">.</span><span class="n">limit_order</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s1">&#39;PENDLEUSDT&#39;</span><span class="p">,</span><span class="n">amount</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span><span class="n">price_match</span><span class="o">=</span><span class="n">markets</span><span class="o">.</span><span class="n">PRICE_MATCH_QUEUE_20</span><span class="p">,</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;binance&#39;</span><span class="p">)</span>
+<code>Binance</code> exchange allows a limit order that does not need to specify a literal price. Instead, the price is derived from the order book through a price rule. This is specified in the <code>price_rule</code> argument to the <a href="../../wrappers/binance/#quantpylib.wrappers.binance.Binance.limit_order"><code>quantpylib.wrappers.Binance.limit_order</code></a>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">res</span> <span class="o">=</span> <span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">executor</span><span class="o">.</span><span class="n">limit_order</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s1">&#39;PENDLEUSDT&#39;</span><span class="p">,</span><span class="n">amount</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span><span class="n">price_rule</span><span class="o">=</span><span class="n">markets</span><span class="o">.</span><span class="n">PRICE_RULE_QUEUE_20</span><span class="p">,</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;binance&#39;</span><span class="p">)</span>
 </code></pre></div>
 Here, our order sits as a maker order at price 20-levels deep.
 Of course, there are market orders too:
@@ -3167,7 +3259,7 @@ Of course, there are market orders too:
 <a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>{&#39;ts&#39;: 1716119324540, &#39;b&#39;: array([[8.7165e+01, 6.7900e+00],...])&#39;a&#39;:array([[8.7190e+01, 3.4490e+01],[8.7198e+01, 8.3140e+01],...])}
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>{&#39;ts&#39;: 1716119324940, &#39;b&#39;: (87.13, 48.1), &#39;a&#39;: (87.19, 34.49)}
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>{&#39;ts&#39;: 1716119324940, &#39;b&#39;: array([[87.13, 48.1], [87.12, 12.4]]), &#39;a&#39;: array([[87.19, 34.49], [87.2, 8.31]])}
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>{&#39;lastUpdateId&#39;: 4633878434615, &#39;E&#39;: 1716119327150, &#39;T&#39;: 1716119327141, &#39;bids&#39;: [[&#39;87.090&#39;, &#39;25.7&#39;], [&#39;87.080&#39;, &#39;29.9&#39;], [&#39;87.070&#39;, &#39;76.1&#39;], [&#39;87.060&#39;, &#39;111.7&#39;], [&#39;87.050&#39;, &#39;87.9&#39;], [&#39;87.040&#39;, &#39;80.8&#39;], [&#39;87.030&#39;, &#39;34.1&#39;], [&#39;87.020&#39;, &#39;179.0&#39;], [&#39;87.010&#39;, &#39;130.4&#39;], [&#39;87.000&#39;, &#39;190.9&#39;]], &#39;asks&#39;: [[&#39;87.100&#39;, &#39;0.2&#39;], [&#39;87.110&#39;, &#39;8.8&#39;], [&#39;87.120&#39;, &#39;27.9&#39;], [&#39;87.130&#39;, &#39;37.2&#39;], [&#39;87.140&#39;, &#39;118.4&#39;], [&#39;87.150&#39;, &#39;57.9&#39;], [&#39;87.160&#39;, &#39;40.3&#39;], [&#39;87.170&#39;, &#39;83.7&#39;], [&#39;87.180&#39;, &#39;130.3&#39;], [&#39;87.190&#39;, &#39;26.4&#39;]]}
 </code></pre></div>
 Instead of requesting a snapshot each time we need it, a socket subscription is probably more efficient if we need a constant stream of order book updates:

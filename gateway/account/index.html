@@ -784,6 +784,98 @@
   
   
     <li class="md-nav__item">
+      <a href="../../hft/archival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.archival
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/materializers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.materializers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/orderbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.orderbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/l0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.l0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../hft/oms/" class="md-nav__link">
         
   
@@ -1725,6 +1817,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#quantpylib.gateway.account.Account.account_fills_mirror" class="md-nav__link">
+    <span class="md-ellipsis">
+      account_fills_mirror
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1964,6 +2065,29 @@
   
   <span class="md-ellipsis">
     quantpylib.standards
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.standards.models
     
   </span>
   
@@ -2705,29 +2829,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/tick_archival/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Tick Archival
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../scripts/trend_following/" class="md-nav__link">
         
   
@@ -3149,7 +3250,9 @@
 
     <div class="doc doc-contents ">
 
-        <p>Subscribe to order fill events.</p>
+        <p>Subscribe to account fill updates.</p>
+<p>Schema modes follow the wrapper contract: <code>0</code> passes the raw venue
+payload and <code>1</code> emits <code>quantpylib.standards.portfolio.Fill</code> objects.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -3188,7 +3291,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A coroutine handler for the message received.</p>
+                <p>Callback invoked for each fill update.</p>
               </div>
             </td>
             <td>
@@ -3233,7 +3336,7 @@
 
     <div class="doc doc-contents ">
 
-        <p>Unsubscribe from order fill events.</p>
+        <p>Unsubscribe from account fill updates.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -3261,6 +3364,113 @@
             </td>
             <td>
                 <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange wrapper specific keyword arguments.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.gateway.account.Account.account_fills_mirror" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">account_fills_mirror</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Keep a live, internal account fill mirror.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Alias for the exchange client.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange wrapper specific keyword arguments.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="quantpylib.standards.portfolio.Fills">Fills</span> | <span title="list">list</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Mirrored
+fill state in the wrapper-selected representation.</p>
+              </div>
             </td>
           </tr>
       </tbody>

@@ -12,7 +12,7 @@
         <link rel="prev" href="../hft/">
       
       
-        <link rel="next" href="../oms/">
+        <link rel="next" href="../archival/">
       
       
       <link rel="icon" href="../../icons/logo.png">
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quantpylib.hft.feed" class="md-skip">
+        <a href="#feed" class="md-skip">
           Skip to content
         </a>
       
@@ -769,6 +769,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -801,12 +803,74 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#feed-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feed Path
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Objects
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sink-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sink Contract
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sink Contract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#order-book-materialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order Book Materialization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l0qbn-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      L0/QBN Capture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Reference
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#quantpylib.hft.feed" class="md-nav__link">
@@ -837,9 +901,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#quantpylib.hft.feed.Feed.add_handler_to_feed" class="md-nav__link">
+  <a href="#quantpylib.hft.feed.Feed.add_bba_feed" class="md-nav__link">
     <span class="md-ellipsis">
-      add_handler_to_feed
+      add_bba_feed
     </span>
   </a>
   
@@ -849,6 +913,24 @@
   <a href="#quantpylib.hft.feed.Feed.add_l2_book_feed" class="md-nav__link">
     <span class="md-ellipsis">
       add_l2_book_feed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.feed.Feed.add_l2_book_feeds" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_l2_book_feeds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.feed.Feed.add_oracle_feed" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_oracle_feed
     </span>
   </a>
   
@@ -873,18 +955,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#quantpylib.hft.feed.Feed.cleanup" class="md-nav__link">
+  <a href="#quantpylib.hft.feed.Feed.add_trades_feeds" class="md-nav__link">
     <span class="md-ellipsis">
-      cleanup
+      add_trades_feeds
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#quantpylib.hft.feed.Feed.flush_archives" class="md-nav__link">
+  <a href="#quantpylib.hft.feed.Feed.cleanup" class="md-nav__link">
     <span class="md-ellipsis">
-      flush_archives
+      cleanup
     </span>
   </a>
   
@@ -917,60 +999,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#quantpylib.hft.feed.Feed.load_lob_archive" class="md-nav__link">
-    <span class="md-ellipsis">
-      load_lob_archive
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quantpylib.hft.feed.Feed.load_lob_archives" class="md-nav__link">
-    <span class="md-ellipsis">
-      load_lob_archives
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quantpylib.hft.feed.Feed.load_trade_archive" class="md-nav__link">
-    <span class="md-ellipsis">
-      load_trade_archive
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quantpylib.hft.feed.Feed.load_trade_archives" class="md-nav__link">
-    <span class="md-ellipsis">
-      load_trade_archives
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quantpylib.hft.feed.Feed.run_archive_scheduler" class="md-nav__link">
-    <span class="md-ellipsis">
-      run_archive_scheduler
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quantpylib.hft.feed.Feed.squash_archives" class="md-nav__link">
-    <span class="md-ellipsis">
-      squash_archives
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -998,6 +1026,98 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.archival
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../materializers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.materializers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orderbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.orderbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../l0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.l0
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2116,6 +2236,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../standards/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.standards.models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../standards/intervals/" class="md-nav__link">
         
   
@@ -2840,29 +2983,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/tick_archival/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Tick Archival
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../scripts/trend_following/" class="md-nav__link">
         
   
@@ -3117,7 +3237,166 @@
 
 
 
-  <h1>quantpylib.hft.feed</h1>
+<h1 id="feed">Feed</h1>
+<p><code>Feed</code> is the tick data layer above
+<a class="autorefs autorefs-internal" title="Gateway" href="../../gateway/master/#quantpylib.gateway.master.Gateway">quantpylib.gateway.master.Gateway</a>.
+It subscribes through the gateway executor, receives standardized native
+market-data events from wrapper subscriptions, stores the latest event for each
+feed id, and forwards each event to configured sinks and
+optional <code>on_msg</code> callback.</p>
+<h2 id="feed-path">Feed Path</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>exchange message
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    |
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    v
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>wrapper subscription
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    |
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    v
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>gateway executor
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    |
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    v
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>Feed
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    |
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    +--&gt; FeedSink.write(feed_id, event)
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    |
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    +--&gt; on_msg(event)
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    |
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    +--&gt; feed.feeds[feed_id] / feed.get_feed(feed_id)
+</code></pre></div>
+<p><code>add_*_feed</code> methods return a
+<a href="../../standards/models/">quantpylib.standards.models.FeedId</a>.
+Use that id with <code>get_feed(feed_id)</code> to read the latest object or buffer held
+by the feed.</p>
+<h2 id="event-objects">Event Objects</h2>
+<p>BBA, L2 book, and trades feed methods use <code>standardize_schema=2</code>, so the event
+passed to sinks and callbacks is a native quantpylib model object.</p>
+<table>
+<thead>
+<tr>
+<th>Feed method</th>
+<th>Feed type</th>
+<th>Event received by sinks and callbacks</th>
+<th>Feed storage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>add_bba_feed(...)</code></td>
+<td><code>bba</code></td>
+<td><a class="autorefs autorefs-internal" title="BBAUpdate" href="../../standards/models/#quantpylib.standards.models.BBAUpdate">quantpylib.standards.models.BBAUpdate</a></td>
+<td>latest <code>BBAUpdate</code></td>
+</tr>
+<tr>
+<td><code>add_l2_book_feed(...)</code></td>
+<td><code>l2book</code></td>
+<td><a class="autorefs autorefs-internal" title="BookUpdate" href="../../standards/models/#quantpylib.standards.models.BookUpdate">quantpylib.standards.models.BookUpdate</a></td>
+<td>latest <code>BookUpdate</code></td>
+</tr>
+<tr>
+<td><code>add_l2_book_feeds(...)</code></td>
+<td><code>l2book</code></td>
+<td><a class="autorefs autorefs-internal" title="BookUpdate" href="../../standards/models/#quantpylib.standards.models.BookUpdate">quantpylib.standards.models.BookUpdate</a> per ticker</td>
+<td>latest <code>BookUpdate</code> per returned <code>FeedId</code></td>
+</tr>
+<tr>
+<td><code>add_trades_feed(...)</code></td>
+<td><code>trades</code></td>
+<td><a class="autorefs autorefs-internal" title="TradeUpdate" href="../../standards/models/#quantpylib.standards.models.TradeUpdate">quantpylib.standards.models.TradeUpdate</a></td>
+<td>latest <code>TradeUpdate</code></td>
+</tr>
+<tr>
+<td><code>add_trades_feeds(...)</code></td>
+<td><code>trades</code></td>
+<td><a class="autorefs autorefs-internal" title="TradeUpdate" href="../../standards/models/#quantpylib.standards.models.TradeUpdate">quantpylib.standards.models.TradeUpdate</a> per ticker</td>
+<td>latest <code>TradeUpdate</code> per returned <code>FeedId</code></td>
+</tr>
+<tr>
+<td><code>add_oracle_feed(...)</code></td>
+<td><code>mid</code></td>
+<td>numeric oracle value</td>
+<td><a href="../../utilities/cringbuffer/">quantpylib.utilities.cringbuffer.RingBuffer</a></td>
+</tr>
+</tbody>
+</table>
+<!-- `add_bars_feed(...)` and `add_sampling_bars_feed(...)` are intentionally
+inactive. Derived bars should currently be built from `TradeUpdate` events. -->
+
+<h2 id="sink-contract">Sink Contract</h2>
+<p>A sink is a <a class="autorefs autorefs-internal" title="FeedSink" href="../archival/#quantpylib.hft.archival.FeedSink">quantpylib.hft.archival.FeedSink</a>
+instance. <code>Feed</code> calls:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">sink</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">feed_id</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span>
+</code></pre></div>
+<p>for every event routed to that sink. <code>write()</code> may be synchronous or
+asynchronous; if it returns an awaitable, <code>Feed</code> awaits it. The return value is
+sink-specific and is ignored by <code>Feed</code>.</p>
+<p><code>Feed.cleanup()</code> calls <code>sink.close()</code> for configured sinks. <code>close()</code> may also
+be synchronous or asynchronous and should be safe to call more than once. Sinks
+that buffer work may expose <code>flush()</code>, but <code>Feed</code> does not require custom sinks
+to implement flushing semantics if the default <code>FeedSink</code> base method is sufficient.</p>
+<p>Sink routing is explicit:</p>
+<table>
+<thead>
+<tr>
+<th>Where sinks are passed</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Feed(gateway, sinks=[...])</code></td>
+<td>Global sinks used by feeds that do not override sinks.</td>
+</tr>
+<tr>
+<td><code>add_*_feed(..., sinks=None)</code></td>
+<td>Use the global sinks.</td>
+</tr>
+<tr>
+<td><code>add_*_feed(..., sinks=[...])</code></td>
+<td>Use these sinks for this feed.</td>
+</tr>
+<tr>
+<td><code>add_*_feed(..., sinks=[])</code></td>
+<td>Disable sink fanout for this feed.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="order-book-materialization">Order Book Materialization</h3>
+<p>Use <a class="autorefs autorefs-internal" title="OrderbookMaterializerSink" href="../materializers/#quantpylib.hft.materializers.OrderbookMaterializerSink">quantpylib.hft.materializers.OrderbookMaterializerSink</a>
+when a strategy needs live order-book state from <code>BookUpdate</code> events:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrderbookMaterializerSink</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft.feed</span><span class="w"> </span><span class="kn">import</span> <span class="n">Feed</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">book_sink</span> <span class="o">=</span> <span class="n">OrderbookMaterializerSink</span><span class="p">()</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">feed</span> <span class="o">=</span> <span class="n">Feed</span><span class="p">(</span><span class="n">gateway</span><span class="o">=</span><span class="n">gateway</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">book_feed</span> <span class="o">=</span> <span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">add_l2_book_feed</span><span class="p">(</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">exc</span><span class="o">=</span><span class="s2">&quot;binance&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">sinks</span><span class="o">=</span><span class="p">[</span><span class="n">book_sink</span><span class="p">],</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">)</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">orderbook</span> <span class="o">=</span> <span class="n">book_sink</span><span class="o">.</span><span class="n">orderbook</span> <span class="c1">#in memory orderbook</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="n">latest_update</span> <span class="o">=</span> <span class="n">feed</span><span class="o">.</span><span class="n">get_feed</span><span class="p">(</span><span class="n">book_feed</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="l0qbn-capture">L0/QBN Capture</h3>
+<p>Use <a class="autorefs autorefs-internal" title="L0ArchiveSink" href="../l0/#quantpylib.hft.l0.L0ArchiveSink">quantpylib.hft.l0.L0ArchiveSink</a> when
+you want to persist feed events as L0/QBN records:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft.feed</span><span class="w"> </span><span class="kn">import</span> <span class="n">Feed</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft.l0</span><span class="w"> </span><span class="kn">import</span> <span class="n">L0ArchiveSink</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">archive_sink</span> <span class="o">=</span> <span class="n">L0ArchiveSink</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s2">&quot;./archives&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">feed</span> <span class="o">=</span> <span class="n">Feed</span><span class="p">(</span><span class="n">gateway</span><span class="o">=</span><span class="n">gateway</span><span class="p">,</span> <span class="n">sinks</span><span class="o">=</span><span class="p">[</span><span class="n">archive_sink</span><span class="p">])</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">add_bba_feed</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="s2">&quot;binance&quot;</span><span class="p">,</span> <span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">add_l2_book_feed</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="s2">&quot;binance&quot;</span><span class="p">,</span> <span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">add_trades_feed</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="s2">&quot;binance&quot;</span><span class="p">,</span> <span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>See <a href="../l0/">L0 Data Capture / QBN</a> for file layout, writers, readers, and
+read-back examples.</p>
+<p>See <a href="../archival/">quantpylib.hft.archival</a> for the base sink interfaces
+and queue sinks. See <a href="../materializers/">quantpylib.hft.materializers</a> for
+materializer sinks.</p>
+<h2 id="api-reference">API Reference</h2>
+
 
 <div class="doc doc-object doc-module">
 
@@ -3157,6 +3436,16 @@
     <div class="doc doc-contents ">
 
 
+        <p>Gateway-backed market-data fanout.</p>
+<p><code>Feed</code> subscribes through a gateway executor, stores the latest event or
+buffer for each <code>FeedId</code>, writes each event to configured (if any) <code>FeedSink</code>
+objects, and then calls the optional <code>on_msg</code> callback. Native market-data
+feed methods use <code>standardize_schema=2</code>, so BBA, L2 book, and trade feeds
+receive <code>BBAUpdate</code>, <code>BookUpdate</code>, and <code>TradeUpdate</code> objects.</p>
+<p><code>Feed</code> does not materialize order-book state or persist records by itself.
+Use a materializer sink, such as <code>OrderbookMaterializerSink</code>, for live
+derived state, or <code>L0ArchiveSink</code> for L0/QBN capture.</p>
+
 
 
 
@@ -3180,14 +3469,14 @@
 
 
 <h3 id="quantpylib.hft.feed.Feed.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">gateway</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">archiver</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">gateway</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sinks</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
 
     <div class="doc doc-contents ">
 
-        <p>Initialize the feeder object.</p>
+        <p>Initialize the feed object.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -3210,7 +3499,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Initialized gateway object.</p>
+                <p>Initialized gateway.</p>
               </div>
             </td>
             <td>
@@ -3226,7 +3515,25 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The list of exchanges to subscribe to. If None, use the clients in the gateway.</p>
+                <p>Exchanges this feed may subscribe to.
+If <code>None</code>, use the clients configured on the gateway.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>sinks</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="FeedSink (quantpylib.hft.archival.FeedSink)" href="../archival/#quantpylib.hft.archival.FeedSink">FeedSink</a> or <span title="iterable">iterable</span>[<a class="autorefs autorefs-internal" title="FeedSink (quantpylib.hft.archival.FeedSink)" href="../archival/#quantpylib.hft.archival.FeedSink">FeedSink</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Global sinks used
+by feed subscriptions that do not provide a per-feed override.</p>
               </div>
             </td>
             <td>
@@ -3244,73 +3551,8 @@
 <div class="doc doc-object doc-function">
 
 
-<h3 id="quantpylib.hft.feed.Feed.add_handler_to_feed" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">add_handler_to_feed</span><span class="p">(</span><span class="n">feed_id</span><span class="p">,</span> <span class="n">handler</span><span class="p">)</span></code>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Add a handler to a feed.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>feed_id</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The feed id.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>handler</code>
-            </td>
-            <td>
-                  <code><span title="coroutine">coroutine</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The handler to add.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.hft.feed.Feed.add_l2_book_feed" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">add_l2_book_feed</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="n">apply_shadow_depth</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">implied_orderbook</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">implied_orderbook_updates_buffer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<h3 id="quantpylib.hft.feed.Feed.add_bba_feed" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_bba_feed</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">on_msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sinks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -3321,7 +3563,10 @@
 
     <div class="doc doc-contents ">
 
-        <p>Add a level 2 order book feed.</p>
+        <p>Add a best bid/ask feed.</p>
+<p>Sinks and <code>on_msg</code> receive
+<code>quantpylib.standards.models.BBAUpdate</code> objects. <code>get_feed(feed_id)</code>
+returns the latest received <code>BBAUpdate</code>.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -3344,7 +3589,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The exchange.</p>
+                <p>Exchange name.</p>
               </div>
             </td>
             <td>
@@ -3360,7 +3605,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The ticker.</p>
+                <p>Ticker symbol.</p>
               </div>
             </td>
             <td>
@@ -3369,14 +3614,179 @@
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>handler</code>
+                <code>on_msg</code>
             </td>
             <td>
-                  <code><span title="coroutine">coroutine</span></code>
+                  <code><span title="callable">callable</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The handler to add. Defaults to None.</p>
+                <p>Callback for <code>BBAUpdate</code> events after
+sink fanout.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>sinks</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="FeedSink (quantpylib.hft.archival.FeedSink)" href="../archival/#quantpylib.hft.archival.FeedSink">FeedSink</a> or <span title="iterable">iterable</span>[<a class="autorefs autorefs-internal" title="FeedSink (quantpylib.hft.archival.FeedSink)" href="../archival/#quantpylib.hft.archival.FeedSink">FeedSink</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Per-feed sink
+override. <code>None</code> uses global sinks; <code>[]</code> disables sinks.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>feed_cls</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Feed market class. Defaults to <code>FeedCls.PERPETUAL</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="quantpylib.hft.feed.FeedCls.PERPETUAL">PERPETUAL</span></code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="quantpylib.standards.models.FeedId">FeedId</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>quantpylib.standards.models.FeedId: Feed id for the latest event.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.feed.Feed.add_l2_book_feed" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_l2_book_feed</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">on_msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sinks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Add a level 2 order book feed.</p>
+<p>Sinks and <code>on_msg</code> receive
+<code>quantpylib.standards.models.BookUpdate</code> objects. <code>get_feed(feed_id)</code>
+returns the latest received <code>BookUpdate</code>. Use
+<code>OrderbookMaterializerSink</code> when downstream code needs live order-book
+state.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange name.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Ticker symbol.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>on_msg</code>
+            </td>
+            <td>
+                  <code><span title="callable">callable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Callback for <code>BookUpdate</code> events after
+sink fanout.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>sinks</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="FeedSink (quantpylib.hft.archival.FeedSink)" href="../archival/#quantpylib.hft.archival.FeedSink">FeedSink</a> or <span title="iterable">iterable</span>[<a class="autorefs autorefs-internal" title="FeedSink (quantpylib.hft.archival.FeedSink)" href="../archival/#quantpylib.hft.archival.FeedSink">FeedSink</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Per-feed sink
+override. <code>None</code> uses global sinks; <code>[]</code> disables sinks.</p>
               </div>
             </td>
             <td>
@@ -3392,11 +3802,302 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The depth of the order book. Defaults to 20.</p>
+                <p>Feed identity depth parameter. Defaults to 20.</p>
               </div>
             </td>
             <td>
                   <code>20</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>feed_cls</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Feed market class. Defaults to <code>FeedCls.PERPETUAL</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="quantpylib.hft.feed.FeedCls.PERPETUAL">PERPETUAL</span></code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="quantpylib.standards.models.FeedId">FeedId</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>quantpylib.standards.models.FeedId: Feed id for the latest event.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.feed.Feed.add_l2_book_feeds" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_l2_book_feeds</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">tickers</span><span class="p">,</span> <span class="n">on_msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sinks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Add multiple level 2 order book feeds as one batched subscription request.</p>
+<p>Each returned feed receives
+<code>quantpylib.standards.models.BookUpdate</code> objects for the corresponding
+ticker. Use <code>OrderbookMaterializerSink</code> when downstream code needs live
+order-book state.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange name.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>tickers</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Ticker symbols.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>on_msg</code>
+            </td>
+            <td>
+                  <code><span title="callable">callable</span> or <span title="list">list</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Shared callback or one
+callback per ticker. Each callback receives <code>BookUpdate</code>
+events after sink fanout.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>sinks</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="FeedSink (quantpylib.hft.archival.FeedSink)" href="../archival/#quantpylib.hft.archival.FeedSink">FeedSink</a> or <span title="iterable">iterable</span>[<a class="autorefs autorefs-internal" title="FeedSink (quantpylib.hft.archival.FeedSink)" href="../archival/#quantpylib.hft.archival.FeedSink">FeedSink</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Per-feed sink
+override for all created feeds. <code>None</code> uses global sinks; <code>[]</code>
+disables sinks.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>depth</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Feed identity depth parameter. Defaults to 20.</p>
+              </div>
+            </td>
+            <td>
+                  <code>20</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>feed_cls</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Feed market class. Defaults to <code>FeedCls.PERPETUAL</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="quantpylib.hft.feed.FeedCls.PERPETUAL">PERPETUAL</span></code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="list">list</span>[<span title="quantpylib.standards.models.FeedId">FeedId</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>list[quantpylib.standards.models.FeedId]: Feed ids in ticker order.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.feed.Feed.add_oracle_feed" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_oracle_feed</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">on_msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Add a numeric oracle/mid feed.</p>
+<p>The received values are appended to a <code>RingBuffer</code> and passed to
+<code>on_msg</code> when provided. This feed does not use the <code>FeedSink</code> fanout
+path.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange name.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Ticker symbol.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>on_msg</code>
+            </td>
+            <td>
+                  <code><span title="callable">callable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Callback for numeric oracle values.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -3408,75 +4109,34 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The buffer size. Defaults to 100.</p>
+                <p>Ring buffer capacity.</p>
               </div>
             </td>
             <td>
                   <code>100</code>
             </td>
           </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>feed_cls</code>
-            </td>
-            <td>
-                  <code><span title="type">type</span></code>
+                  <code><span title="quantpylib.standards.models.FeedId">FeedId</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The class of the feed. Defaults to FeedCls.PERPETUAL.</p>
+                <p>quantpylib.standards.models.FeedId: Feed id for the buffer.</p>
               </div>
-            </td>
-            <td>
-                  <code><span title="quantpylib.hft.feed.FeedCls.PERPETUAL">PERPETUAL</span></code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>apply_shadow_depth</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to apply shadow depth. Defaults to False.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>implied_orderbook</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to allow trade feed to update the orderbook between delta updates. Defaults to False.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>implied_orderbook_updates_buffer</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether orderbook states due to trade arrivals are stored in buffer. Defaults to False.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
             </td>
           </tr>
       </tbody>
@@ -3491,7 +4151,7 @@
 
 
 <h3 id="quantpylib.hft.feed.Feed.add_sampling_bars_feed" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">add_sampling_bars_feed</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="n">bar_cls</span><span class="o">=</span><span class="n">bars</span><span class="o">.</span><span class="n">TimeBars</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">add_sampling_bars_feed</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="n">bar_cls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -3503,6 +4163,34 @@
     <div class="doc doc-contents ">
 
         <p>Add a sampling bars feed.</p>
+<p>Bars remain available as local aggregators in quantpylib.hft.bars. The
+Feed-level derived stream needs a cleaner materializer/sink contract
+before it is restored, so this API is intentionally inactive.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.feed.Feed.add_trades_feed" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_trades_feed</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">on_msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sinks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Add a trades feed.</p>
+<p>Sinks and <code>on_msg</code> receive
+<code>quantpylib.standards.models.TradeUpdate</code> objects. <code>get_feed(feed_id)</code>
+returns the latest received <code>TradeUpdate</code>.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -3525,7 +4213,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The exchange.</p>
+                <p>Exchange name.</p>
               </div>
             </td>
             <td>
@@ -3541,7 +4229,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The ticker.</p>
+                <p>Ticker symbol.</p>
               </div>
             </td>
             <td>
@@ -3550,14 +4238,15 @@
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>handler</code>
+                <code>on_msg</code>
             </td>
             <td>
-                  <code><span title="coroutine">coroutine</span></code>
+                  <code><span title="callable">callable</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The handler to add. Defaults to None.</p>
+                <p>Callback for <code>TradeUpdate</code> events
+after sink fanout.</p>
               </div>
             </td>
             <td>
@@ -3566,18 +4255,19 @@
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>buffer</code>
+                <code>sinks</code>
             </td>
             <td>
-                  <code><span title="int">int</span></code>
+                  <code><a class="autorefs autorefs-internal" title="FeedSink (quantpylib.hft.archival.FeedSink)" href="../archival/#quantpylib.hft.archival.FeedSink">FeedSink</a> or <span title="iterable">iterable</span>[<a class="autorefs autorefs-internal" title="FeedSink (quantpylib.hft.archival.FeedSink)" href="../archival/#quantpylib.hft.archival.FeedSink">FeedSink</a>]</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The buffer size. Defaults to 100.</p>
+                <p>Per-feed sink
+override. <code>None</code> uses global sinks; <code>[]</code> disables sinks.</p>
               </div>
             </td>
             <td>
-                  <code>100</code>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -3585,46 +4275,38 @@
                 <code>feed_cls</code>
             </td>
             <td>
-                  <code><span title="type">type</span></code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The class of the feed. Defaults to FeedCls.PERPETUAL.</p>
+                <p>Feed market class. Defaults to <code>FeedCls.PERPETUAL</code>.</p>
               </div>
             </td>
             <td>
                   <code><span title="quantpylib.hft.feed.FeedCls.PERPETUAL">PERPETUAL</span></code>
             </td>
           </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>bar_cls</code>
-            </td>
-            <td>
-                  <code><span title="type">type</span></code>
+                  <code><span title="quantpylib.standards.models.FeedId">FeedId</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The class of the bar. Defaults to bars.TimeBars.</p>
+                <p>quantpylib.standards.models.FeedId: Feed id for the latest event.</p>
               </div>
-            </td>
-            <td>
-                  <code><span title="quantpylib.hft.bars.TimeBars">TimeBars</span></code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>**kwargs</code>
-            </td>
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Additional arguments for the bar class.</p>
-              </div>
-            </td>
-            <td>
-                  <code>{}</code>
             </td>
           </tr>
       </tbody>
@@ -3638,8 +4320,8 @@
 <div class="doc doc-object doc-function">
 
 
-<h3 id="quantpylib.hft.feed.Feed.add_trades_feed" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">add_trades_feed</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<h3 id="quantpylib.hft.feed.Feed.add_trades_feeds" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_trades_feeds</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">tickers</span><span class="p">,</span> <span class="n">on_msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sinks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -3650,7 +4332,10 @@
 
     <div class="doc doc-contents ">
 
-        <p>Add a trades feed.</p>
+        <p>Add multiple trades feeds as one batched subscription request.</p>
+<p>Each returned feed receives
+<code>quantpylib.standards.models.TradeUpdate</code> objects for the corresponding
+ticker.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -3673,7 +4358,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The exchange.</p>
+                <p>Exchange name.</p>
               </div>
             </td>
             <td>
@@ -3682,14 +4367,14 @@
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>ticker</code>
+                <code>tickers</code>
             </td>
             <td>
-                  <code><span title="str">str</span></code>
+                  <code><span title="list">list</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The ticker.</p>
+                <p>Ticker symbols.</p>
               </div>
             </td>
             <td>
@@ -3698,14 +4383,16 @@
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>handler</code>
+                <code>on_msg</code>
             </td>
             <td>
-                  <code><span title="coroutine">coroutine</span></code>
+                  <code><span title="callable">callable</span> or <span title="list">list</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The handler to add. Defaults to None.</p>
+                <p>Shared callback or one
+callback per ticker. Each callback receives <code>TradeUpdate</code>
+events after sink fanout.</p>
               </div>
             </td>
             <td>
@@ -3714,18 +4401,20 @@
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>buffer</code>
+                <code>sinks</code>
             </td>
             <td>
-                  <code><span title="int">int</span></code>
+                  <code><a class="autorefs autorefs-internal" title="FeedSink (quantpylib.hft.archival.FeedSink)" href="../archival/#quantpylib.hft.archival.FeedSink">FeedSink</a> or <span title="iterable">iterable</span>[<a class="autorefs autorefs-internal" title="FeedSink (quantpylib.hft.archival.FeedSink)" href="../archival/#quantpylib.hft.archival.FeedSink">FeedSink</a>]</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The buffer size. Defaults to 100.</p>
+                <p>Per-feed sink
+override for all created feeds. <code>None</code> uses global sinks; <code>[]</code>
+disables sinks.</p>
               </div>
             </td>
             <td>
-                  <code>100</code>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -3733,15 +4422,38 @@
                 <code>feed_cls</code>
             </td>
             <td>
-                  <code><span title="type">type</span></code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The class of the feed. Defaults to FeedCls.PERPETUAL.</p>
+                <p>Feed market class. Defaults to <code>FeedCls.PERPETUAL</code>.</p>
               </div>
             </td>
             <td>
                   <code><span title="quantpylib.hft.feed.FeedCls.PERPETUAL">PERPETUAL</span></code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="list">list</span>[<span title="quantpylib.standards.models.FeedId">FeedId</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>list[quantpylib.standards.models.FeedId]: Feed ids in ticker order.</p>
+              </div>
             </td>
           </tr>
       </tbody>
@@ -3768,103 +4480,6 @@
     <div class="doc doc-contents ">
 
         <p>Cleanup the feeder object.</p>
-
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.hft.feed.Feed.flush_archives" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">flush_archives</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;./archives/&#39;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">postfix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span></code>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Flush the archives to disk with filename <code>{path}/{exchange}/{feed_cls}/{feed_type}/{prefix}{ticker}{_metadata}{postfix}.parquet</code></p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>path</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The path to the archives. Defaults to './archives/'.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;./archives/&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>prefix</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The prefix for the archive filename. Defaults to ''.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>postfix</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The postfix for the archive filename. Defaults to ''.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>idx</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The partial archive index. Defaults to ''.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;&#39;</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
 
 
     </div>
@@ -3924,7 +4539,7 @@
 
 
 <h3 id="quantpylib.hft.feed.Feed.get_feed_id" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">get_feed_id</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">feed_cls</span><span class="p">,</span> <span class="n">feed_type</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">get_feed_id</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">feed_cls</span><span class="p">,</span> <span class="n">feed_type</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
@@ -4017,827 +4632,6 @@
     <div class="doc doc-contents ">
 
         <p>Get list of all feed ids.</p>
-
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.hft.feed.Feed.load_lob_archive" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">load_lob_archive</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;./archives/&#39;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">postfix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Load parquet lob archives from disk. Loads the file from <code>{path}/{exchange}/{feed_cls}/{feed_type}/{prefix}{ticker}{postfix}.parquet</code>.
-An example would be <code>./archives/binance/perp/l2book/BTCUSDT_depth20.parquet</code>.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>exc</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The exchange.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>ticker</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The ticker.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>depth</code>
-            </td>
-            <td>
-                  <code><span title="int">int</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The depth of the order book archive.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>feed_cls</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The asset class. Defaults to FeedCls.PERPETUAL.</p>
-              </div>
-            </td>
-            <td>
-                  <code><span title="quantpylib.hft.feed.FeedCls.PERPETUAL">PERPETUAL</span></code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>path</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The path to the archives. Defaults to './archives/'.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;./archives/&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>prefix</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The prefix for the archive. Defaults to ''.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>postfix</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The postfix for the archive. Defaults to ''.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>raw</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to return the raw loaded parquet dataframe or processed archive <code>[{ts,b,a}]</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.hft.feed.Feed.load_lob_archives" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">load_lob_archives</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;./archives/&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">14</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">),</span> <span class="n">only_paths</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Load parquet lob archives that have been saved by the scheduler.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>exc</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The exchange.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>ticker</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The ticker.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>depth</code>
-            </td>
-            <td>
-                  <code><span title="int">int</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The depth of the order book archive.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>feed_cls</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The asset class. Defaults to FeedCls.PERPETUAL.</p>
-              </div>
-            </td>
-            <td>
-                  <code><span title="quantpylib.hft.feed.FeedCls.PERPETUAL">PERPETUAL</span></code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>path</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The path to the archives. Defaults to './archives/'.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;./archives/&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>start</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span> or <span title="datetime.datetime">datetime</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The start date. Can take str format <code>%Y-%m-%d:%H</code> .Defaults to <code>datetime.now(pytz.utc) - timedelta(days=14)</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code><span title="datetime.datetime.now">now</span>(<span title="pytz.utc">utc</span>) - <span title="datetime.timedelta">timedelta</span>(days=14)</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>end</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span> or <span title="datetime.datetime">datetime</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The end date. Can take str format <code>%Y-%m-%d:%H</code>. Defaults to <code>datetime.now(pytz.utc)</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code><span title="datetime.datetime.now">now</span>(<span title="pytz.utc">utc</span>)</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>only_paths</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to return only the paths to the archives. Defaults to False.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.hft.feed.Feed.load_trade_archive" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">load_trade_archive</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;./archives/&#39;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">postfix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Load parquet trade archives from disk. Loads the file from <code>{path}/{exchange}/{feed_cls}/{feed_type}/{prefix}{ticker}{postfix}.parquet</code>.
-An example would be <code>./archives/binance/perp/trades/BTCUSDT.parquet</code>.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>exc</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The exchange.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>ticker</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The ticker.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>feed_cls</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The asset class. Defaults to FeedCls.PERPETUAL.</p>
-              </div>
-            </td>
-            <td>
-                  <code><span title="quantpylib.hft.feed.FeedCls.PERPETUAL">PERPETUAL</span></code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>path</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The path to the archives. Defaults to './archives/'.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;./archives/&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>prefix</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The prefix for the archive. Defaults to ''.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>postfix</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The postfix for the archive. Defaults to ''.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>raw</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to return the raw loaded parquet or processed archive <code>[[ts,price,size,dir]]</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.hft.feed.Feed.load_trade_archives" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">load_trade_archives</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;./archives/&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">14</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">),</span> <span class="n">only_paths</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Load parquet trade archives that have been saved by the scheduler.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>exc</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The exchange.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>ticker</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The ticker.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>feed_cls</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The asset class. Defaults to FeedCls.PERPETUAL.</p>
-              </div>
-            </td>
-            <td>
-                  <code><span title="quantpylib.hft.feed.FeedCls.PERPETUAL">PERPETUAL</span></code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>path</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The path to the archives. Defaults to './archives/'.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;./archives/&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>start</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span> or <span title="datetime.datetime">datetime</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The start date. Can take str format <code>%Y-%m-%d:%H</code> .Defaults to <code>datetime.now(pytz.utc) - timedelta(days=14)</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code><span title="datetime.datetime.now">now</span>(<span title="pytz.utc">utc</span>) - <span title="datetime.timedelta">timedelta</span>(days=14)</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>end</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span> or <span title="datetime.datetime">datetime</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The end date. Can take str format <code>%Y-%m-%d:%H</code>. Defaults to <code>datetime.now(pytz.utc)</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code><span title="datetime.datetime.now">now</span>(<span title="pytz.utc">utc</span>)</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>only_paths</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to return only the paths to the archives. Defaults to False.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.hft.feed.Feed.run_archive_scheduler" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">run_archive_scheduler</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;./archives/&#39;</span><span class="p">,</span> <span class="n">splits</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">squash</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rm_subfiles</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">max_workers</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Run the archive scheduler which saves data with the following rules.</p>
-<p>1: Store data in an archive buffer.
-2: At the end of every hour, flush the buffer to disk. If splits &gt; 1, flush the buffer every <code>3600 / splits</code> seconds to partial archive to reduce memory load.
-3: The files are stored in <code>./archives/{exchange}/{feed_cls}/{feed_type}/{yy}/{mm}/{ticker}{_metadata}_{ddhh}.parquet</code>.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>splits</code>
-            </td>
-            <td>
-                  <code><span title="int">int</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The number of archival splits in an hour. Defaults to 1.</p>
-              </div>
-            </td>
-            <td>
-                  <code>1</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>squash</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to squash the partial archives automatically. Defaults to True.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>rm_subfiles</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to remove the subfiles after squashing. Defaults to True.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>max_workers</code>
-            </td>
-            <td>
-                  <code><span title="int">int</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The number of thread workers to use for squashing. Defaults to 5.</p>
-              </div>
-            </td>
-            <td>
-                  <code>5</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.hft.feed.Feed.squash_archives" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">squash_archives</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;./archives/&#39;</span><span class="p">,</span> <span class="n">rm_subfiles</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_workers</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Squash the partial parquet archives to a single parquet archive. 
-Partial archives are used to store data in chunks when the scheduler is ran with splits &gt; 1
-to reduce memory footprint.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>path</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The path to the archives. Defaults to './archives/'.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;./archives/&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>rm_subfiles</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to remove the subfiles after squashing. Defaults to False.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>max_workers</code>
-            </td>
-            <td>
-                  <code><span title="int">int</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The number of thread workers to use for squashing. Defaults to 5.</p>
-              </div>
-            </td>
-            <td>
-                  <code>5</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
 
 
     </div>

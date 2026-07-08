@@ -784,6 +784,98 @@
   
   
     <li class="md-nav__item">
+      <a href="../../hft/archival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.archival
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/materializers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.materializers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/orderbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.orderbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/l0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.l0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../hft/oms/" class="md-nav__link">
         
   
@@ -1892,6 +1984,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.standards.models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../intervals/" class="md-nav__link">
         
   
@@ -1970,6 +2085,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#quantpylib.standards.markets.ZeroOrderSizeError" class="md-nav__link">
+    <span class="md-ellipsis">
+      ZeroOrderSizeError
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#trading-system-constants" class="md-nav__link">
     <span class="md-ellipsis">
       Trading System Constants
@@ -1998,6 +2122,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#position-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Position Constants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-registries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Field Registries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#order-constants" class="md-nav__link">
     <span class="md-ellipsis">
       Order Constants
@@ -2006,6 +2148,24 @@
   
     <nav class="md-nav" aria-label="Order Constants">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#order-update-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order Update Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fill-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fill Constants
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#order-types" class="md-nav__link">
@@ -2017,9 +2177,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#price-match-types" class="md-nav__link">
+  <a href="#price-rule-types" class="md-nav__link">
     <span class="md-ellipsis">
-      Price Match Types
+      Price Rule Types
     </span>
   </a>
   
@@ -2043,6 +2203,15 @@
   <a href="#contract-constants" class="md-nav__link">
     <span class="md-ellipsis">
       Contract Constants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funding-and-reference-price-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funding and Reference Price Constants
     </span>
   </a>
   
@@ -2747,29 +2916,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/tick_archival/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Tick Archival
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../scripts/trend_following/" class="md-nav__link">
         
   
@@ -3051,6 +3197,35 @@
 
 
 
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="quantpylib.standards.markets.ZeroOrderSizeError" class="doc doc-heading">
+            <code>ZeroOrderSizeError</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="ValueError">ValueError</span></code></p>
+
+
+        <p>Raised when an order wire resolves to a zero submitted size.</p>
+
+
+
+
+
+
+
+
+    </div>
+
+</div>
+
 
 
 
@@ -3061,17 +3236,18 @@
 </div><h1 id="trading-system-constants">Trading System Constants</h1>
 <p>This module defines various constants used throughout the trading system. These constants are used for defining
 fields in transaction records, account details, order types, and more.</p>
+<p>String fields use <code>None</code> for missing values. <code>standard_types(...)</code> normalizes empty strings to <code>None</code> for fields declared as <code>str</code>.</p>
 <h2 id="general-constants">General Constants</h2>
 <ul>
 <li><code>TIMESTAMP</code> (int): "timestamp"</li>
 <li><code>TICKER</code> (str): "ticker"</li>
 <li><code>AMOUNT</code> (Decimal): "amount"</li>
-<li><code>PRICE</code> (float): "price"</li>
+<li><code>PRICE</code> (Decimal): "price"</li>
 <li><code>ENTRY</code> (Decimal): "entry"</li>
 <li><code>LEVERAGE</code> (float): "leverage"</li>
-<li><code>LIQUIDATION</code> (float): "liquidation"</li>
+<li><code>LIQUIDATION</code> (Decimal): "liquidation"</li>
 <li><code>MARGIN</code> (float): "margin"</li>
-<li><code>VALUE</code> (Decimal): "value"</li>
+<li><code>VALUE</code> (float): "value"</li>
 <li><code>REALIZED_PNL</code> (float): "realized_pnl"</li>
 <li><code>UNREALIZED_PNL</code> (float): "unrealized_pnl"</li>
 </ul>
@@ -3080,16 +3256,70 @@ fields in transaction records, account details, order types, and more.</p>
 <li><code>ACCOUNT_EQUITY</code> (float): "equity_total"</li>
 <li><code>ACCOUNT_WITHDRAWABLE</code> (float): "equity_withdrawable"</li>
 <li><code>ACCOUNT_NOTIONAL_POS</code> (float): "notional_position"</li>
+<li><code>ACCOUNT_UNREALIZED_PNL</code> (float): "unrealized_pnl"</li>
 <li><code>MARGIN_MAINTENANCE</code> (float): "margin_maintenance"</li>
 <li><code>MARGIN_TOTAL</code> (float): "margin_total"</li>
+<li><code>MARGIN_AVAILABLE</code> (float): "margin_available"</li>
+</ul>
+<h2 id="position-constants">Position Constants</h2>
+<p><code>POSITION_FIELDS</code> is the lean materialized position state used by <code>Position</code> and <code>Positions</code>: ticker, signed amount, and average entry. HTTP position snapshots may carry additional venue-provided risk/accounting fields, so wrappers that expose them use <code>POSITION_SNAPSHOT_FIELDS</code>. Snapshot fields are available-basis fields: wrappers may omit unsupported keys or return <code>None</code> when the venue does not provide a value.</p>
+<ul>
+<li><code>POSITION_TICKER</code> (str): "ticker"</li>
+<li><code>POSITION_AMOUNT</code> (Decimal): "amount"</li>
+<li><code>POSITION_ENTRY</code> (Decimal): "entry"</li>
+<li><code>POSITION_VALUE</code> (float): "value"</li>
+<li><code>POSITION_MARGIN</code> (float): "margin"</li>
+<li><code>POSITION_LEVERAGE</code> (float): "leverage"</li>
+<li><code>POSITION_LIQUIDATION</code> (Decimal): "liquidation"</li>
+<li><code>POSITION_REALIZED_PNL</code> (float): "realized_pnl"</li>
+<li><code>POSITION_UNREALIZED_PNL</code> (float): "unrealized_pnl"</li>
+<li><code>POSITION_DELTA</code> (Decimal): "delta"</li>
+<li><code>POSITION_FILL_ENTRY</code> (Decimal): "fill_entry"</li>
+<li><code>POSITION_TS_EXCH_NS</code> (int): "ts_exch_ns"</li>
+<li><code>POSITION_TS_UPDATE_NS</code> (int): "ts_update_ns"</li>
+</ul>
+<h2 id="field-registries">Field Registries</h2>
+<p>Standardized wrappers populate fields on an available basis. The field registries define the normalized key surface for each object or message; they do not guarantee every key is present or non-null for every venue response.</p>
+<ul>
+<li><code>FIELD_REGISTRY["account_balance"]</code>: account balance snapshot fields.</li>
+<li><code>FIELD_REGISTRY["position"]</code>: lean materialized <code>Position</code> fields.</li>
+<li><code>FIELD_REGISTRY["position_snapshot"]</code>: richer <code>positions_get(...)</code> snapshot fields populated on an available basis.</li>
+<li><code>FIELD_REGISTRY["position_delta"]</code>: position delta message fields emitted by <code>Positions.update_position(...)</code>.</li>
+<li><code>FIELD_REGISTRY["order"]</code>: normalized order fields.</li>
+<li><code>FIELD_REGISTRY["fill"]</code>: normalized fill fields.</li>
 </ul>
 <h2 id="order-constants">Order Constants</h2>
 <ul>
-<li><code>LIMIT_PRICE</code> (float): "limit_price"</li>
-<li><code>ORDER_ID</code> (str): "order_id"</li>
+<li><code>ORDER_PRICE</code> (Decimal): "price"</li>
+<li><code>ORDER_ID</code> (str): "oid"</li>
+<li><code>ORDER_CLOID</code> (str): "cloid"</li>
 <li><code>ORDER_TAG</code> (str): "order_tag"</li>
-<li><code>ORDER_TOFILL</code> (Decimal): "amount_left"</li>
-<li><code>ORDER_AMOUNT</code> (Decimal): "amount_total"</li>
+<li><code>ORDER_AMOUNT</code> (Decimal): "amount"</li>
+<li><code>ORDER_SIZE</code> (Decimal): "order_sz"</li>
+<li><code>ORDER_FILLED_SIZE</code> (Decimal): "filled_sz"</li>
+<li><code>ORDER_LAST_FILL_SIZE</code> (Decimal): "last_fill_sz"</li>
+<li><code>ORDER_FILLS</code> (list): "fills", ordered fill records attached to the order</li>
+<li><code>ORDER_TS_SUBMIT_NS</code> (int): "ts_submit_ns"</li>
+<li><code>ORDER_TS_CANCEL_NS</code> (int): "ts_cancel_ns"</li>
+<li><code>ORDER_TS_EXCH_NS</code> (int): "ts_exch_ns"</li>
+<li><code>ORDER_TS_UPDATE_NS</code> (int): "ts_update_ns"</li>
+</ul>
+<h3 id="order-update-events">Order Update Events</h3>
+<p><code>Order</code> is a durable state artifact. Mutation labels are emitted in update
+envelopes as <code>{ORDER_EVENT: &lt;label&gt;, "order": &lt;Order&gt;}</code> and are not stored on
+the order itself.</p>
+<ul>
+<li><code>ORDER_EVENT</code> (str): "order_event"</li>
+</ul>
+<h3 id="fill-constants">Fill Constants</h3>
+<ul>
+<li><code>FILL_ID</code> (str): "tid"</li>
+<li><code>FILL_FEE</code> (Decimal): "fee"</li>
+<li><code>FILL_FEE_CCY</code> (str): "fee_ccy"</li>
+<li><code>FILL_IS_MAKER</code> (bool): "is_maker"</li>
+<li><code>FILL_REALIZED_PNL</code> (float): "realized_pnl"</li>
+<li><code>FILL_TS_EXCH_NS</code> (int): "ts_exch_ns"</li>
+<li><code>FILL_TS_UPDATE_NS</code> (int): "ts_update_ns"</li>
 </ul>
 <h3 id="order-types">Order Types</h3>
 <ul>
@@ -3100,16 +3330,16 @@ fields in transaction records, account details, order types, and more.</p>
 <li><code>ORDER_TYPE_STOP_LIMIT</code> (str): "stop_limit"</li>
 <li><code>ORDER_TYPE_TWAP</code> (str): "twap"</li>
 </ul>
-<h3 id="price-match-types">Price Match Types</h3>
+<h3 id="price-rule-types">Price Rule Types</h3>
 <ul>
-<li><code>PRICE_MATCH_OPPONENT_1</code> (str): "OPPONENT"</li>
-<li><code>PRICE_MATCH_OPPONENT_5</code> (str): "OPPONENT_5"</li>
-<li><code>PRICE_MATCH_OPPONENT_10</code> (str): "OPPONENT_10"</li>
-<li><code>PRICE_MATCH_OPPONENT_20</code> (str): "OPPONENT_20"</li>
-<li><code>PRICE_MATCH_QUEUE_1</code> (str): "QUEUE"</li>
-<li><code>PRICE_MATCH_QUEUE_5</code> (str): "QUEUE_5"</li>
-<li><code>PRICE_MATCH_QUEUE_10</code> (str): "QUEUE_10"</li>
-<li><code>PRICE_MATCH_QUEUE_20</code> (str): "QUEUE_20"</li>
+<li><code>PRICE_RULE_OPPONENT_1</code> (str): "OPPONENT"</li>
+<li><code>PRICE_RULE_OPPONENT_5</code> (str): "OPPONENT_5"</li>
+<li><code>PRICE_RULE_OPPONENT_10</code> (str): "OPPONENT_10"</li>
+<li><code>PRICE_RULE_OPPONENT_20</code> (str): "OPPONENT_20"</li>
+<li><code>PRICE_RULE_QUEUE_1</code> (str): "QUEUE"</li>
+<li><code>PRICE_RULE_QUEUE_5</code> (str): "QUEUE_5"</li>
+<li><code>PRICE_RULE_QUEUE_10</code> (str): "QUEUE_10"</li>
+<li><code>PRICE_RULE_QUEUE_20</code> (str): "QUEUE_20"</li>
 </ul>
 <h2 id="time-in-force-constants">Time In Force Constants</h2>
 <ul>
@@ -3128,7 +3358,17 @@ fields in transaction records, account details, order types, and more.</p>
 <li><code>SYMBOL_PRICE_PRECISION</code> (int): "price_precision"</li>
 <li><code>SYMBOL_QUOTE_PRECISION</code> (int): "quote_precision"</li>
 <li><code>SYMBOL_QUANTITY_PRECISION</code> (int): "quantity_precision"</li>
-<li><code>SYMBOL_MIN_NOTIONAL</code> (float): "min_notional"</li>
+<li><code>SYMBOL_MIN_NOTIONAL</code> (Decimal): "min_notional"</li>
+</ul>
+<h2 id="funding-and-reference-price-constants">Funding and Reference Price Constants</h2>
+<ul>
+<li><code>FUNDING_RATE</code> (float): "funding_rate"</li>
+<li><code>FUNDING_INTERVAL</code> (int): "funding_interval"</li>
+<li><code>MARK_PRICE</code> (Decimal): "mark_price"</li>
+<li><code>LAST_SALE</code> (Decimal): "last_sale"</li>
+<li><code>INDEX_PRICE</code> (Decimal): "index_price"</li>
+<li><code>LAST_FUNDING</code> (int): "last_funding"</li>
+<li><code>NEXT_FUNDING</code> (int): "next_funding"</li>
 </ul>
 
 

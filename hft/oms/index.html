@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../feed/">
+        <link rel="prev" href="../l0/">
       
       
         <link rel="next" href="../mocks/">
@@ -783,6 +783,98 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../archival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.archival
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../materializers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.materializers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orderbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.orderbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../l0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.l0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -860,6 +952,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.hft.oms.OMS.account_fills_mirror" class="md-nav__link">
+    <span class="md-ellipsis">
+      account_fills_mirror
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.hft.oms.OMS.add_clock_callback" class="md-nav__link">
     <span class="md-ellipsis">
       add_clock_callback
@@ -926,6 +1027,15 @@
   <a href="#quantpylib.hft.oms.OMS.contract_specs" class="md-nav__link">
     <span class="md-ellipsis">
       contract_specs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.oms.OMS.fills_peek" class="md-nav__link">
+    <span class="md-ellipsis">
+      fills_peek
     </span>
   </a>
   
@@ -1232,6 +1342,15 @@
   <a href="#quantpylib.hft.oms.OMS.update_exc_orders" class="md-nav__link">
     <span class="md-ellipsis">
       update_exc_orders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.oms.OMS.update_exchange_contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      update_exchange_contracts
     </span>
   </a>
   
@@ -2341,6 +2460,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../standards/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.standards.models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../standards/intervals/" class="md-nav__link">
         
   
@@ -3065,29 +3207,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/tick_archival/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Tick Archival
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../scripts/trend_following/" class="md-nav__link">
         
   
@@ -3405,7 +3524,7 @@
 
 
 <h3 id="quantpylib.hft.oms.OMS.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">gateway</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orders_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positions_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pending_timeout</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">refresh_orders_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">refresh_positions_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">orders_cls_init</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">gateway</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orders_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positions_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fills_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pending_timeout</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">refresh_orders_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">refresh_positions_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orders_cls_init</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positions_cls_init</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fills_cls_init</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">contract_specs_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3492,6 +3611,22 @@
           </tr>
           <tr class="doc-section-item">
             <td>
+                <code>fills_mirrored_exchanges</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The list of exchanges to mirror account fills. If None, fills are not mirrored by init.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
                 <code>pending_timeout</code>
             </td>
             <td>
@@ -3538,6 +3673,111 @@
                   <code>60</code>
             </td>
           </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>contract_specs_kwargs</code>
+            </td>
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Per-exchange keyword arguments forwarded to
+gateway.exchange.contract_specifications(exc=exc) on every contract-spec fetch
+(both the full rebuild and the single-exchange refresh). Keyed by exchange alias,
+e.g. {"binance": {"contract_types": ("PERPETUAL", "TRADIFI_PERPETUAL")}} to admit
+Binance TradFi perpetuals. Exchanges absent from the mapping use wrapper defaults.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.oms.OMS.account_fills_mirror" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">account_fills_mirror</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">on_update</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">on_delta</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Mirror account fills for a given exchange. Uses socket.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>on_update</code>
+            </td>
+            <td>
+                  <code><span title="coroutine">coroutine</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The update handler receives fill page snapshots. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>on_delta</code>
+            </td>
+            <td>
+                  <code><span title="coroutine">coroutine</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The delta handler receives accepted fills. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
       </tbody>
     </table>
 
@@ -3562,7 +3802,7 @@
     <div class="doc doc-contents ">
 
         <p>Add a callback to the event loop that is triggered every interval_ms.
-Can be used for clock-based trading agents. Callback is shutdown when 
+Can be used for clock-based trading agents. Callback is shutdown when
 OMS is cleaned up.</p>
 
 
@@ -4181,6 +4421,24 @@ for given ticker.</p>
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.hft.oms.OMS.fills_peek" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">fills_peek</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return the <code>quantpylib.standards.portfolio.Fills</code> object maintained for a given exchange.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="quantpylib.hft.oms.OMS.get_all_balances" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_all_balances</span><span class="p">()</span></code>
 
@@ -4523,8 +4781,8 @@ the quote asset for BTCUSDT is USDT.</p>
     <div class="doc doc-contents ">
 
         <p>Place a maker-taker order. The maker order is the order that is being hedged. The taker order is the order that
-hedges the maker order - taker order has no <code>amount</code> specified, size executed is contingent on the size of maker fills. 
-Each order are dictionaries - and are passed as named arguments (**order) into the gateway 
+hedges the maker order - taker order has no <code>amount</code> specified, size executed is contingent on the size of maker fills.
+Each order are dictionaries - and are passed as named arguments (**order) into the gateway
 as per the <code>quantpylib.gateway.executor.limit_order</code> and <code>quantpylib.gateway.executor.market_order</code> methods respectively.</p>
 
 
@@ -4569,7 +4827,7 @@ as per the <code>quantpylib.gateway.executor.limit_order</code> and <code>quantp
 
     <div class="doc doc-contents ">
 
-        <p>Initialize the OMS object with information such as exchange contract trading specifications and metadata. 
+        <p>Initialize the OMS object with information such as exchange contract trading specifications and metadata.
 To be called after the OMS has been created.</p>
 
 
@@ -4646,7 +4904,7 @@ To be called after the OMS has been created.</p>
 
 
 <h3 id="quantpylib.hft.oms.OMS.limit_order" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">limit_order</span><span class="p">(</span><span class="n">round_to_specs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">limit_order</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -4657,8 +4915,8 @@ To be called after the OMS has been created.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Place a limit order. If round_to_specs is True, round the order amount to the lot precision.
-Updates the orders page maintained by the OMS with a PENDING status.</p>
+        <p>Place a limit order.
+Updates the orders page maintained by the OMS with a CREATE_PENDING status.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4672,22 +4930,6 @@ Updates the orders page maintained by the OMS with a PENDING status.</p>
         </tr>
       </thead>
       <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>round_to_specs</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Round the order amount to the lot precision. Defaults to False.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
           <tr class="doc-section-item">
             <td>
                 <code>**kwargs</code>
@@ -4792,7 +5034,7 @@ Updates the orders page maintained by the OMS with a PENDING status.</p>
     <div class="doc doc-contents ">
 
         <p>Place a market order. If round_to_specs is True, round the order amount to the lot precision.
-Updates the orders page maintained by the OMS with a PENDING status.</p>
+Updates the orders page maintained by the OMS with a CREATE_PENDING status.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -5888,12 +6130,73 @@ and size differences are submitted to a hedge balance that waits for future arri
 1. get all oids from snapshot. get all oids from mirror.
 2. for oids in snapshot but not mirror, upsert (mirror may not have because behind OR ahead and complete)
 3. for oids in both mirror and snapshot, upsert
-4. for oids in mirror but not snapshot, 
+4. for oids in mirror but not snapshot,
     a. if pending not timed out: ignore
     b. otherwise, query and upsert. (snapshot may be behind OR 2) ahead and complete, to remove)
 Args:
     exc (str): Exchange identifier
     **kwargs: Additional arguments passed to orders_get</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.oms.OMS.update_exchange_contracts" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">update_exchange_contracts</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Refresh exchange contract trading specifications and metadata.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If provided, refresh only this exchange's
+contract specifications, updating just that exchange's slice
+across the contract-spec maps while preserving the entries for
+every other exchange. If None (default), refresh all exchanges
+with a full rebuild. The single-exchange refresh is idempotent
+and safe to call mid-session while orders and positions are
+live, so a caller can refresh and retry after a missing-contract
+lookup (for example a newly-listed market) instead of waiting
+for the periodic full refresh.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
     </div>

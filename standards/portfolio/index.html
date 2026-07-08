@@ -784,6 +784,98 @@
   
   
     <li class="md-nav__item">
+      <a href="../../hft/archival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.archival
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/materializers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.materializers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/orderbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.orderbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/l0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.l0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../hft/oms/" class="md-nav__link">
         
   
@@ -1892,6 +1984,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.standards.models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../intervals/" class="md-nav__link">
         
   
@@ -2048,6 +2163,15 @@
   <a href="#quantpylib.standards.portfolio.Orders.__init__" class="md-nav__link">
     <span class="md-ellipsis">
       __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.standards.portfolio.Orders.apply_order_trace" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_order_trace
     </span>
   </a>
   
@@ -3002,29 +3126,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/tick_archival/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Tick Archival
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../scripts/trend_following/" class="md-nav__link">
         
   
@@ -3319,6 +3420,48 @@
     <div class="doc doc-contents ">
 
 
+        <p>Normalized order state artifact.</p>
+<p><code>Order</code> is the current known state of one venue order, keyed by <code>oid</code> when
+the exchange order id is known and by <code>cloid</code> (if available) while the order is still local
+or awaiting acknowledgement. Signed <code>amount</code> encodes side: positive means
+buy/long-increasing, negative means sell/short-increasing. <code>price</code> is the
+submitted order price; actual execution prices live on first-class <code>Fill</code>
+records. <code>price_rule</code> is a matching-engine or gateway rule used to derive a
+submitted price when no explicit price was supplied.</p>
+<p><code>filled_sz</code> is the non-negative cumulative fill size accepted as local order
+state. <code>last_fill_sz</code> is the latest local delta in cumulative filled size and
+is the universal authority for order-update deltas.</p>
+
+
+<details class="timestamp-semantics" open>
+  <summary>Timestamp semantics</summary>
+  <ul>
+<li><code>ts_submit_ns</code>: local time when submit or modify was attempted.</li>
+<li><code>ts_cancel_ns</code>: local time when cancel was attempted.</li>
+<li><code>ts_exch_ns</code>: exchange order/matching-engine timestamp, if provided.</li>
+<li><code>ts_update_ns</code>: local time when this order-state mutation was accepted.
+  Duplicate/no-op messages do not advance it or trigger handlers.</li>
+</ul>
+</details>
+
+<details class="example-derived-timings" open>
+  <summary>Example derived timings</summary>
+  <ul>
+<li>Submit acknowledgement latency:
+  <code>ack.ts_update_ns - submit.ts_submit_ns</code> on the first exchange
+  acknowledgement (<code>NEW</code>, <code>PARTIAL</code>, <code>FILLED</code>, or <code>REJECTED</code>).</li>
+<li>Cancel acknowledgement latency:
+  <code>cancelled.ts_update_ns - cancel_pending.ts_cancel_ns</code> when a cancel
+  attempt resolves to <code>CANCELLED</code>, <code>FILLED</code>, <code>PARTIAL</code>, <code>REJECTED</code>, or
+  another venue-specific terminal/current status.</li>
+<li>Observed time to first fill:
+  <code>first_fill_update.ts_update_ns - submit.ts_submit_ns</code>, using the
+  first accepted update where <code>filled_sz</code> increases.</li>
+<li>Exchange-to-local update lag:
+  <code>ts_update_ns - ts_exch_ns</code> when the venue timestamp is present
+  and clocks are comparable.</li>
+</ul>
+</details>
 
 
 
@@ -3342,7 +3485,7 @@
 
 
 <h3 id="quantpylib.standards.portfolio.Order.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">price_match</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tif</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ord_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduce_only</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sl</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ord_status</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filled_sz</span><span class="o">=</span><span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">),</span> <span class="n">last_fill_sz</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timestamp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">price_rule</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tif</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ord_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduce_only</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sl</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ord_status</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filled_sz</span><span class="o">=</span><span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">),</span> <span class="n">last_fill_sz</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ts_submit_ns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ts_cancel_ns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ts_exch_ns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ts_update_ns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3376,7 +3519,7 @@
               </div>
             </td>
             <td>
-                  <code>None</code>
+                <em>required</em>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -3461,14 +3604,14 @@
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>price_match</code>
+                <code>price_rule</code>
             </td>
             <td>
-                  <code><span title="decimal.Decimal">Decimal</span></code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The price of the order that was matched. Defaults to None.</p>
+                <p>Exchange-side rule for deriving the order price. Defaults to None.</p>
               </div>
             </td>
             <td>
@@ -3605,14 +3748,62 @@
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>timestamp</code>
+                <code>ts_submit_ns</code>
             </td>
             <td>
                   <code><span title="int">int</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The timestamp of the order. Defaults to _time(units='ms').</p>
+                <p>Local submit or modify timestamp in nanoseconds.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ts_cancel_ns</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Local cancel-attempt timestamp in nanoseconds.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ts_exch_ns</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange matching-engine/order timestamp in nanoseconds, if provided.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ts_update_ns</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Local timestamp for the latest accepted order update in nanoseconds.</p>
               </div>
             </td>
             <td>
@@ -3708,7 +3899,7 @@
 
 
 <h3 id="quantpylib.standards.portfolio.Orders.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">orders</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delta_handlers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy_to_handlers</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">orders</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delta_handlers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy_to_handlers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3729,6 +3920,22 @@
         </tr>
       </thead>
       <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Venue/container provenance stamped onto orders.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
           <tr class="doc-section-item">
             <td>
                 <code>orders</code>
@@ -3763,14 +3970,14 @@
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>default_args</code>
+                <code>logger</code>
             </td>
             <td>
-                  <code><span title="dict">dict</span></code>
+                  <code><span title="Logger">Logger</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Default arguments for orders. Defaults to None.</p>
+                <p>Structured logger for trace emission. Defaults to None.</p>
               </div>
             </td>
             <td>
@@ -3779,6 +3986,27 @@
           </tr>
       </tbody>
     </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.standards.portfolio.Orders.apply_order_trace" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">apply_order_trace</span><span class="p">(</span><span class="n">clear_unalived</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Materialize an archived accepted order trace without live OMS side effects.</p>
+<p>The trace update timestamp is preserved, no logger record is emitted, and
+delta handlers are not triggered. Staleness, identity, fill-regression,
+and dead-order rejection rules match upsert_order.</p>
 
 
     </div>
@@ -4068,8 +4296,8 @@ Defaults to True.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Whether to include orders with a pending status. 
-Defaults to True.</p>
+                <p>Whether to include locally submitted
+orders that are not exchange-acknowledged yet. Defaults to True.</p>
               </div>
             </td>
             <td>
@@ -4184,8 +4412,8 @@ Defaults to True.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Whether to include orders with a pending status. 
-Defaults to True.</p>
+                <p>Whether to include locally submitted
+orders that are not exchange-acknowledged yet. Defaults to True.</p>
               </div>
             </td>
             <td>
@@ -4499,7 +4727,7 @@ Defaults to True.</p>
 
 
 <h3 id="quantpylib.standards.portfolio.Orders.upsert_order" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">upsert_order</span><span class="p">(</span><span class="n">clear_unalived</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">trigger_handlers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">infer</span><span class="o">=</span><span class="p">[],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">upsert_order</span><span class="p">(</span><span class="n">clear_unalived</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">trigger_handlers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -4558,22 +4786,6 @@ Defaults to True.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>infer</code>
-            </td>
-            <td>
-                  <code><span title="list">list</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>List of fields to infer (e.g., ORDER_LAST_FILL_SIZE)</p>
-              </div>
-            </td>
-            <td>
-                  <code>[]</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
                 <code>**kwargs</code>
             </td>
             <td>
@@ -4605,7 +4817,25 @@ Defaults to True.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The updated/created order, or None if update was rejected</p>
+                <p>The accepted order state, or None if the update was rejected</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+<td></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>or a no-op. The mutation classifier is stored on</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+<td></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p><code>self.last_order_event</code>.</p>
               </div>
             </td>
           </tr>
@@ -4856,7 +5086,7 @@ Defaults to True.</p>
 
 
 <h3 id="quantpylib.standards.portfolio.Positions.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">positions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delta_handlers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default_args</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delta_handlers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -4877,6 +5107,22 @@ Defaults to True.</p>
         </tr>
       </thead>
       <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Venue/container provenance stamped onto emitted deltas.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
           <tr class="doc-section-item">
             <td>
                 <code>positions</code>
@@ -4903,6 +5149,22 @@ Defaults to True.</p>
             <td>
               <div class="doc-md-description">
                 <p>List of coroutine handlers for position updates. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>logger</code>
+            </td>
+            <td>
+                  <code><span title="Logger">Logger</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Structured logger for trace emission. Defaults to None.</p>
               </div>
             </td>
             <td>
@@ -5213,7 +5475,7 @@ Defaults to True.</p>
 
 
 <h3 id="quantpylib.standards.portfolio.Positions.update_position" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">update_position</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_amount</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">entry</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_entry</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">trigger_handlers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">update_position</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_amount</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">entry</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_entry</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ts_exch_ns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ts_update_ns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">trigger_handlers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -5312,6 +5574,38 @@ Defaults to True.</p>
             <td>
               <div class="doc-md-description">
                 <p>The filled entry price. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ts_exch_ns</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange timestamp for the position-changing event.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ts_update_ns</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Local timestamp for accepting this position delta.</p>
               </div>
             </td>
             <td>

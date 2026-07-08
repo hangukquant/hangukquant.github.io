@@ -784,6 +784,98 @@
   
   
     <li class="md-nav__item">
+      <a href="../../hft/archival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.archival
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/materializers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.materializers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/orderbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.orderbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/l0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.l0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../hft/oms/" class="md-nav__link">
         
   
@@ -1890,6 +1982,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../standards/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.standards.models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../standards/intervals/" class="md-nav__link">
         
   
@@ -2527,6 +2642,15 @@
   <a href="#quantpylib.wrappers.polymarket.Polymarket.cancel_orders_bytes" class="md-nav__link">
     <span class="md-ellipsis">
       cancel_orders_bytes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.polymarket.Polymarket.cancel_wire" class="md-nav__link">
+    <span class="md-ellipsis">
+      cancel_wire
     </span>
   </a>
   
@@ -3509,29 +3633,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/tick_archival/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Tick Archival
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../scripts/trend_following/" class="md-nav__link">
         
   
@@ -4169,6 +4270,8 @@ subscribe to Polymarket's live crypto price feeds:</p>
 
 
     <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="quantpylib.utilities.subscriptions_manager.AsyncWsManager">AsyncWsManager</span></code></p>
 
 
         <p>Manage Polymarket CLOB market and authenticated user WebSocket streams.</p>
@@ -4296,7 +4399,7 @@ subscribe to Polymarket's live crypto price feeds:</p>
 
 
 <h3 id="quantpylib.wrappers.polymarket.Polymarket.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">polymarket_key</span><span class="p">,</span> <span class="n">secret</span><span class="p">,</span> <span class="n">chain_id</span><span class="o">=</span><span class="n">POLYGON</span><span class="p">,</span> <span class="n">sig_type</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">funder</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">polymarket_key</span><span class="p">,</span> <span class="n">secret</span><span class="p">,</span> <span class="n">chain_id</span><span class="o">=</span><span class="n">POLYGON</span><span class="p">,</span> <span class="n">sig_type</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">funder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -4724,7 +4827,7 @@ wallet accounts and <code>2</code> for browser wallet accounts.</p>
 
 
 <h3 id="quantpylib.wrappers.polymarket.Polymarket.cancel_order" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">cancel_order</span><span class="p">(</span><span class="n">order_id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">cancel_order</span><span class="p">(</span><span class="n">order_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -4912,6 +5015,28 @@ JSON batch-cancel payload to sign and send.</p>
           </tr>
       </tbody>
     </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.wrappers.polymarket.Polymarket.cancel_wire" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">cancel_wire</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">order_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Build an exchange-native cancel wire.</p>
 
 
     </div>
@@ -6164,7 +6289,7 @@ allowance, order, trade, or user WebSocket methods.</p>
 
 
 <h3 id="quantpylib.wrappers.polymarket.Polymarket.l2_book_get" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">l2_book_get</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">as_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">l2_book_get</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">as_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">standardize_schema</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -6175,7 +6300,7 @@ allowance, order, trade, or user WebSocket methods.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Retrieve L2 snapshot for a given coin.</p>
+        <p>Retrieve an L2 order-book snapshot.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -6214,12 +6339,33 @@ allowance, order, trade, or user WebSocket methods.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>If True, return the standardized dictionary
-representation. If False, return the <code>LOB</code> object. Defaults to True.</p>
+                <p>When returning the local <code>LOB</code>
+representation, return it as a dictionary if True; otherwise
+return the <code>LOB</code> object. Defaults to True.</p>
               </div>
             </td>
             <td>
                   <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>standardize_schema</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Payload schema mode. <code>0</code> returns the raw
+provider payload, <code>1</code> returns the legacy <code>{ts,b,a}</code>
+dictionary, and <code>2</code> returns
+<a class="autorefs autorefs-internal" title="BookUpdate" href="../../standards/models/#quantpylib.standards.models.BookUpdate">quantpylib.standards.models.BookUpdate</a>.
+Defaults to <code>1</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>1</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -6253,12 +6399,12 @@ representation. If False, return the <code>LOB</code> object. Defaults to True.<
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code><span title="dict">dict</span> | <span title="quantpylib.hft.lob.LOB">LOB</span></code>
+                  <code><span title="dict">dict</span> | <span title="quantpylib.hft.lob.LOB">LOB</span> | <a class="autorefs autorefs-internal" title="BookUpdate (quantpylib.standards.models.BookUpdate)" href="../../standards/models/#quantpylib.standards.models.BookUpdate">BookUpdate</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A dictionary containing the L2 snapshot information,
-or the underlying <code>LOB</code> object when <code>as_dict</code> is False.</p>
+                <p>Order book
+data in the selected schema.</p>
               </div>
             </td>
           </tr>
@@ -6449,7 +6595,7 @@ the wrapper requests it from the CLOB.</p>
 
 
 <h3 id="quantpylib.wrappers.polymarket.Polymarket.limit_order" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">limit_order</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">tif</span><span class="o">=</span><span class="s1">&#39;GTC&#39;</span><span class="p">,</span> <span class="n">round_price</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tick_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">neg_risk</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">submit_order</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">post_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">defer_exec</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">expiration</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">limit_order</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">tif</span><span class="o">=</span><span class="s1">&#39;GTC&#39;</span><span class="p">,</span> <span class="n">round_price</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tick_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">neg_risk</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">post_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">defer_exec</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">expiration</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -6589,23 +6735,6 @@ Allowed values are "GTC", "FOK", and "GTD".</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>submit_order</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If True, sign and POST the order. If False,
-return the signed <code>(order, tif, cloid)</code> tuple for later submission. Defaults to True.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
                 <code>post_only</code>
             </td>
             <td>
@@ -6687,8 +6816,7 @@ return the signed <code>(order, tif, cloid)</code> tuple for later submission. D
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The result of the order placement, the deferred signed order
-tuple, or <code>None</code> for zero-sized orders.</p>
+                <p>The result of the order placement, or <code>None</code> for zero-sized orders.</p>
               </div>
             </td>
           </tr>
@@ -6860,7 +6988,6 @@ every requested order has zero size.</p>
                 <code>**kwargs</code>
             </td>
             <td>
-                  <code><span title="dict">dict</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6971,7 +7098,7 @@ is the order ID, with value dict:</p>
 <ul>
 <li>markets.TICKER: The Polymarket token ID.</li>
 <li>markets.ORDER_ID: The unique identifier of the order.</li>
-<li>markets.LIMIT_PRICE: The limit price of the order.</li>
+<li>markets.ORDER_PRICE: The limit price of the order.</li>
 <li>markets.ORDER_AMOUNT: The original size of the order.</li>
 <li>markets.ORDER_FILLED_SIZE: The size of the order that has been filled.</li>
 <li>markets.TIME_IN_FORCE: The time in force for the order.</li>
@@ -7819,6 +7946,8 @@ subscription. Defaults to the unfiltered user subscription.</p>
 
 
     <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="quantpylib.utilities.subscriptions_manager.AsyncWsManager">AsyncWsManager</span></code></p>
 
 
         <p>Manage Polymarket real-time data stream price subscriptions.</p>

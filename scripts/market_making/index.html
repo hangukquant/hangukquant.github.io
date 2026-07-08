@@ -12,7 +12,7 @@
         <link rel="prev" href="../../pricing/pricing/">
       
       
-        <link rel="next" href="../tick_archival/">
+        <link rel="next" href="../trend_following/">
       
       
       <link rel="icon" href="../../icons/logo.png">
@@ -753,6 +753,98 @@
   
   <span class="md-ellipsis">
     quantpylib.hft.feed
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/archival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.archival
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/materializers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.materializers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/orderbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.orderbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/l0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.l0
     
   </span>
   
@@ -1876,6 +1968,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../standards/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.standards.models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../standards/intervals/" class="md-nav__link">
         
   
@@ -2679,29 +2794,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../tick_archival/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Tick Archival
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../trend_following/" class="md-nav__link">
         
   
@@ -2983,14 +3075,18 @@
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft.oms</span><span class="w"> </span><span class="kn">import</span> <span class="n">OMS</span>
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft.feed</span><span class="w"> </span><span class="kn">import</span> <span class="n">Feed</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.gateway.master</span><span class="w"> </span><span class="kn">import</span> <span class="n">Gateway</span> 
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.utilities.general</span><span class="w"> </span><span class="kn">import</span> <span class="n">_time</span><span class="p">,</span><span class="n">pdf_snapshot</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="n">show</span> <span class="o">=</span> <span class="kc">True</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Parse script mode.&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;mode&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="k">lambda</span> <span class="n">arg</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">arg</span><span class="p">),</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Set script mode.&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="n">simulated</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">True</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrderbookMaterializerSink</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft.trades</span><span class="w"> </span><span class="kn">import</span> <span class="n">Trades</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="kn">import</span><span class="w"> </span><span class="nn">quantpylib.hft.cfeatures</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cfeatures</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.gateway.master</span><span class="w"> </span><span class="kn">import</span> <span class="n">Gateway</span> 
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.standards.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">PRICE_SCALE</span><span class="p">,</span> <span class="n">trade_update_to_tuple</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.utilities.general</span><span class="w"> </span><span class="kn">import</span> <span class="n">_time</span><span class="p">,</span><span class="n">pdf_snapshot</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="n">show</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Parse script mode.&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;mode&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="k">lambda</span> <span class="n">arg</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">arg</span><span class="p">),</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Set script mode.&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="n">simulated</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">True</span>
 </code></pre></div>
 If we run <code>python3 script.py 0</code> we will run it in simulation (backtest) mode, otherwise we will trade in a live market for <code>python3 script.py 1</code>.</p>
 <p>For <code>binance</code>, we are only using the public data feeds, while we need to perform privileged activity on <code>bybit</code>. So we will need keys for bybit:
@@ -3021,27 +3117,28 @@ These are our setup and configs:
 <a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
 <a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="k">if</span> <span class="n">simulated</span><span class="p">:</span>
 <a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft.mocks</span><span class="w"> </span><span class="kn">import</span> <span class="n">Replayer</span><span class="p">,</span><span class="n">Latencies</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2025-01-10:01&#39;</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2025-01-10:02&#39;</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="n">latencies</span><span class="o">=</span><span class="p">{</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PUBLIC</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PRIVATE</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PUBLIC</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PRIVATE</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PUBLIC</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PRIVATE</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>    <span class="p">}</span>
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>    <span class="n">replayer_configs</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>        <span class="s2">&quot;maker_fees&quot;</span><span class="p">:</span><span class="mf">0.000</span><span class="p">,</span>
-<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>        <span class="s2">&quot;taker_fees&quot;</span><span class="p">:</span><span class="mf">0.000</span><span class="p">,</span>
-<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>        <span class="s2">&quot;latencies&quot;</span><span class="p">:</span><span class="n">latencies</span><span class="p">,</span>
-<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>    <span class="p">}</span>
-<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
-<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>    <span class="n">run</span> <span class="o">=</span> <span class="k">lambda</span> <span class="p">:</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1e9</span><span class="p">)</span>
-<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>    <span class="n">time</span> <span class="o">=</span> <span class="k">lambda</span> <span class="p">:</span> <span class="n">_time</span><span class="p">()</span>
-<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
-<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="n">gateway</span> <span class="o">=</span> <span class="n">Gateway</span><span class="p">(</span><span class="n">config_keys</span><span class="o">=</span><span class="n">config_keys</span><span class="p">)</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    <span class="n">capture_date</span> <span class="o">=</span> <span class="s2">&quot;2025-01-10&quot;</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    <span class="n">start_ns</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="n">end_ns</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    <span class="n">latencies</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PUBLIC</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PRIVATE</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PUBLIC</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PRIVATE</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PUBLIC</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PRIVATE</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>    <span class="p">}</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>    <span class="n">replayer_configs</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>        <span class="s2">&quot;maker_fees&quot;</span><span class="p">:</span><span class="mf">0.000</span><span class="p">,</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>        <span class="s2">&quot;taker_fees&quot;</span><span class="p">:</span><span class="mf">0.000</span><span class="p">,</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>        <span class="s2">&quot;latencies&quot;</span><span class="p">:</span><span class="n">latencies</span><span class="p">,</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>    <span class="p">}</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>    <span class="n">run</span> <span class="o">=</span> <span class="k">lambda</span> <span class="p">:</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1e9</span><span class="p">)</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>    <span class="n">time</span> <span class="o">=</span> <span class="k">lambda</span> <span class="p">:</span> <span class="n">_time</span><span class="p">()</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="n">gateway</span> <span class="o">=</span> <span class="n">Gateway</span><span class="p">(</span><span class="n">config_keys</span><span class="o">=</span><span class="n">config_keys</span><span class="p">)</span>
 </code></pre></div>
 We demonstrate with null latencies and fees in our simulation mode. You can also specify in <code>milliseconds</code> the latency for the different message channels, as well as fee tiers for reality modelling. </p>
 <p>We will kick off the script like this:
@@ -3060,56 +3157,58 @@ We demonstrate with null latencies and fees in our simulation mode. You can also
 <a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
 <a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div></p>
-<p>The <a href="../../gateway/gateway"><code>gateway</code></a> is the connector to the relevant exchanges - which is passed into the <a href="../../hft/oms"><code>oms</code></a> and <a href="../../hft/feed"><code>feed</code></a> objects. The <code>oms</code> handles order/position tracking, recovery, execution and auxiliary tasks. The <code>feed</code> does tick data subscription, storing, and retrieval. In simulation environments, we would first need to load data from archives into RAM. The code showing data load and formats are explained in detail in our post on <a href="../tick_archival">obtaining, archiving, and restoring data</a>.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">sim_prepare</span><span class="p">():</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">l2_data</span> <span class="o">=</span> <span class="p">{</span><span class="n">exchange</span><span class="p">:{}</span> <span class="k">for</span> <span class="n">exchange</span> <span class="ow">in</span> <span class="n">stream_data</span><span class="p">}</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">trade_data</span> <span class="o">=</span> <span class="p">{</span><span class="n">exchange</span><span class="p">:{}</span> <span class="k">for</span> <span class="n">exchange</span> <span class="ow">in</span> <span class="n">stream_data</span><span class="p">}</span>
+<p>The <a href="../../gateway/gateway"><code>gateway</code></a> is the connector to the relevant exchanges - which is passed into the <a href="../../hft/oms"><code>oms</code></a> and <a href="../../hft/feed"><code>feed</code></a> objects. The <code>oms</code> handles order/position tracking, recovery, execution and auxiliary tasks. The <code>feed</code> handles live tick data subscription and fanout. For durable capture, attach an L0 archive sink as shown in the <a href="../../hft/hft/#data-archival">HFT data archival section</a>.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft.l0</span><span class="w"> </span><span class="kn">import</span> <span class="n">reader_for_file</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="k">for</span> <span class="n">exchange</span><span class="p">,</span><span class="n">tickers</span> <span class="ow">in</span> <span class="n">stream_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="c1"># await asyncio.gather(*[</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="c1">#     restore_archives(</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="c1">#         exc=exchange,</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="c1">#         ticker=ticker,</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="c1">#         depth=20,</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        <span class="c1">#         start=start,</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>        <span class="c1">#         end=end,</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        <span class="c1">#     ) for ticker in tickers</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        <span class="c1"># ])</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>        <span class="n">lob_archives</span> <span class="o">=</span> <span class="p">[</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>            <span class="n">Feed</span><span class="o">.</span><span class="n">load_lob_archives</span><span class="p">(</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>                <span class="n">exc</span><span class="o">=</span><span class="n">exchange</span><span class="p">,</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>                <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>                <span class="n">depth</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>                <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>                <span class="n">end</span><span class="o">=</span><span class="n">end</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>            <span class="p">)</span> <span class="k">for</span> <span class="n">ticker</span> <span class="ow">in</span> <span class="n">tickers</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>        <span class="p">]</span> 
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>        <span class="n">trade_archives</span> <span class="o">=</span> <span class="p">[</span>
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>            <span class="n">Feed</span><span class="o">.</span><span class="n">load_trade_archives</span><span class="p">(</span>
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>                <span class="n">exc</span><span class="o">=</span><span class="n">exchange</span><span class="p">,</span>
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>                <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>                <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span>
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>                <span class="n">end</span><span class="o">=</span><span class="n">end</span>
-<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>            <span class="p">)</span> <span class="k">for</span> <span class="n">ticker</span> <span class="ow">in</span> <span class="n">tickers</span>
-<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>        <span class="p">]</span>
-<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>
-<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>        <span class="n">l2_data</span><span class="p">[</span><span class="n">exchange</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">ticker</span><span class="p">:</span><span class="n">lob_archive</span> <span class="k">for</span> <span class="n">ticker</span><span class="p">,</span><span class="n">lob_archive</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tickers</span><span class="p">,</span><span class="n">lob_archives</span><span class="p">)}</span>
-<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>        <span class="n">trade_data</span><span class="p">[</span><span class="n">exchange</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">ticker</span><span class="p">:</span><span class="n">trade_archive</span> <span class="k">for</span> <span class="n">ticker</span><span class="p">,</span><span class="n">trade_archive</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tickers</span><span class="p">,</span><span class="n">trade_archives</span><span class="p">)}</span>
-<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>
-<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>    <span class="k">global</span> <span class="n">replayer</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">time</span>
-<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>    <span class="n">replayer</span> <span class="o">=</span> <span class="n">Replayer</span><span class="p">(</span>
-<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>        <span class="n">l2_data</span><span class="o">=</span><span class="n">l2_data</span><span class="p">,</span>
-<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>        <span class="n">trade_data</span><span class="o">=</span><span class="n">trade_data</span><span class="p">,</span>
-<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>        <span class="n">gateway</span><span class="o">=</span><span class="n">gateway</span><span class="p">,</span>
-<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>        <span class="o">**</span><span class="n">replayer_configs</span>
-<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>    <span class="p">)</span>
-<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>    <span class="n">oms</span> <span class="o">=</span> <span class="n">replayer</span><span class="o">.</span><span class="n">get_oms</span><span class="p">()</span>
-<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>    <span class="n">feed</span> <span class="o">=</span> <span class="n">replayer</span><span class="o">.</span><span class="n">get_feed</span><span class="p">()</span>
-<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>    <span class="n">run</span> <span class="o">=</span> <span class="k">lambda</span> <span class="p">:</span> <span class="n">replayer</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
-<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a>    <span class="n">time</span> <span class="o">=</span> <span class="k">lambda</span> <span class="p">:</span> <span class="n">replayer</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>    <span class="k">return</span> <span class="n">oms</span><span class="p">,</span> <span class="n">feed</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">archive_root</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;./archives&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">qbn_path</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">feed_type</span><span class="p">,</span> <span class="n">capture_date</span><span class="p">):</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="k">return</span> <span class="n">archive_root</span> <span class="o">/</span> <span class="n">exc</span> <span class="o">/</span> <span class="s2">&quot;perp&quot;</span> <span class="o">/</span> <span class="n">feed_type</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">capture_date</span><span class="si">}</span><span class="s2">.qbn&quot;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">load_qbn_records</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">start_ns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end_ns</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="n">reader</span> <span class="o">=</span> <span class="n">reader_for_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">reader</span><span class="o">.</span><span class="n">records</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">start_ns</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end_ns</span><span class="p">))</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">sim_prepare</span><span class="p">():</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    <span class="n">l2_data</span> <span class="o">=</span> <span class="p">{</span><span class="n">exchange</span><span class="p">:{}</span> <span class="k">for</span> <span class="n">exchange</span> <span class="ow">in</span> <span class="n">stream_data</span><span class="p">}</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="n">trade_data</span> <span class="o">=</span> <span class="p">{</span><span class="n">exchange</span><span class="p">:{}</span> <span class="k">for</span> <span class="n">exchange</span> <span class="ow">in</span> <span class="n">stream_data</span><span class="p">}</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    <span class="k">for</span> <span class="n">exchange</span><span class="p">,</span><span class="n">tickers</span> <span class="ow">in</span> <span class="n">stream_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>        <span class="n">lob_archives</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>            <span class="n">load_qbn_records</span><span class="p">(</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>                <span class="n">qbn_path</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="s2">&quot;l2book&quot;</span><span class="p">,</span> <span class="n">capture_date</span><span class="p">),</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>                <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>                <span class="n">start_ns</span><span class="o">=</span><span class="n">start_ns</span><span class="p">,</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>                <span class="n">end_ns</span><span class="o">=</span><span class="n">end_ns</span><span class="p">,</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>            <span class="p">)</span> <span class="k">for</span> <span class="n">ticker</span> <span class="ow">in</span> <span class="n">tickers</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>        <span class="p">]</span> 
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>        <span class="n">trade_archives</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>            <span class="n">load_qbn_records</span><span class="p">(</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>                <span class="n">qbn_path</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="s2">&quot;trades&quot;</span><span class="p">,</span> <span class="n">capture_date</span><span class="p">),</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>                <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>                <span class="n">start_ns</span><span class="o">=</span><span class="n">start_ns</span><span class="p">,</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>                <span class="n">end_ns</span><span class="o">=</span><span class="n">end_ns</span><span class="p">,</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>            <span class="p">)</span> <span class="k">for</span> <span class="n">ticker</span> <span class="ow">in</span> <span class="n">tickers</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>        <span class="p">]</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>        <span class="n">l2_data</span><span class="p">[</span><span class="n">exchange</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">ticker</span><span class="p">:</span><span class="n">lob_archive</span> <span class="k">for</span> <span class="n">ticker</span><span class="p">,</span><span class="n">lob_archive</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tickers</span><span class="p">,</span><span class="n">lob_archives</span><span class="p">)}</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>        <span class="n">trade_data</span><span class="p">[</span><span class="n">exchange</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">ticker</span><span class="p">:</span><span class="n">trade_archive</span> <span class="k">for</span> <span class="n">ticker</span><span class="p">,</span><span class="n">trade_archive</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tickers</span><span class="p">,</span><span class="n">trade_archives</span><span class="p">)}</span>
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>    <span class="k">global</span> <span class="n">replayer</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">time</span>
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>    <span class="n">replayer</span> <span class="o">=</span> <span class="n">Replayer</span><span class="p">(</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>        <span class="n">l2_data</span><span class="o">=</span><span class="n">l2_data</span><span class="p">,</span>
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>        <span class="n">trade_data</span><span class="o">=</span><span class="n">trade_data</span><span class="p">,</span>
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>        <span class="n">gateway</span><span class="o">=</span><span class="n">gateway</span><span class="p">,</span>
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>        <span class="o">**</span><span class="n">replayer_configs</span>
+<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>    <span class="p">)</span>
+<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>    <span class="n">oms</span> <span class="o">=</span> <span class="n">replayer</span><span class="o">.</span><span class="n">get_oms</span><span class="p">()</span>
+<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a>    <span class="n">feed</span> <span class="o">=</span> <span class="n">replayer</span><span class="o">.</span><span class="n">get_feed</span><span class="p">()</span>
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>    <span class="n">run</span> <span class="o">=</span> <span class="k">lambda</span> <span class="p">:</span> <span class="n">replayer</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a>    <span class="n">time</span> <span class="o">=</span> <span class="k">lambda</span> <span class="p">:</span> <span class="n">replayer</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a>    <span class="k">return</span> <span class="n">oms</span><span class="p">,</span> <span class="n">feed</span>
 </code></pre></div>
 In the code above - the <a href="../../hft/mocks"><code>quantpylib.hft.mocks</code></a> module <code>MockOMS</code> and <code>MockFeed</code> are used in place of the <code>OMS</code> and <code>Feed</code> objects during simulation. These can be obtained from the <code>Replayer</code> object. Instead of the system time - the replayer time is used for simulations.</p>
 <p>We can subscribe to leader tick data feeds, such as BTC trade feeds. For instance, we can use this to compute lead-lag correlations between the quote market and leader market for trade signal. We show how to perform the subscription - but we will not use this in our demonstration. Here the <code>replayer</code> is <code>None</code> in live trading and <code>quantpylib.hft.mocks.Replayer</code> in backtest: 
@@ -3118,56 +3217,57 @@ In the code above - the <a href="../../hft/mocks"><code>quantpylib.hft.mocks</co
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">btc_feed</span> <span class="o">=</span> <span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">add_trades_feed</span><span class="p">(</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="n">exc</span><span class="o">=</span><span class="s1">&#39;binance&#39;</span><span class="p">,</span>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        <span class="n">ticker</span><span class="o">=</span><span class="s1">&#39;BTCUSDT&#39;</span><span class="p">,</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="n">buffer</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="p">)</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        <span class="n">quote_markets</span><span class="p">(</span><span class="n">replayer</span><span class="o">=</span><span class="n">replayer</span><span class="p">,</span><span class="n">oms</span><span class="o">=</span><span class="n">oms</span><span class="p">,</span><span class="n">feed</span><span class="o">=</span><span class="n">feed</span><span class="p">,</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">)</span> 
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        <span class="k">for</span> <span class="n">ticker</span> <span class="ow">in</span> <span class="n">tickers</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="p">])</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="k">await</span> <span class="n">run</span><span class="p">()</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="k">if</span> <span class="n">simulated</span><span class="p">:</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        <span class="k">await</span> <span class="n">sim_report</span><span class="p">(</span><span class="n">replayer</span><span class="p">)</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="p">)</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        <span class="n">quote_markets</span><span class="p">(</span><span class="n">replayer</span><span class="o">=</span><span class="n">replayer</span><span class="p">,</span><span class="n">oms</span><span class="o">=</span><span class="n">oms</span><span class="p">,</span><span class="n">feed</span><span class="o">=</span><span class="n">feed</span><span class="p">,</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">)</span> 
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        <span class="k">for</span> <span class="n">ticker</span> <span class="ow">in</span> <span class="n">tickers</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="p">])</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="k">await</span> <span class="n">run</span><span class="p">()</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="k">if</span> <span class="n">simulated</span><span class="p">:</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        <span class="k">await</span> <span class="n">sim_report</span><span class="p">(</span><span class="n">replayer</span><span class="p">)</span>
 </code></pre></div>
 Let's implement <code>quote_markets</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">trade_handler</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="k">pass</span> <span class="c1">#msg : (ts,price,size,dir)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">book_handler</span><span class="p">(</span><span class="n">lob</span><span class="p">):</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="k">pass</span> <span class="c1">#lob : quantpylib.hft.lob.LOB</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">book_handler</span><span class="p">(</span><span class="n">lob</span><span class="p">):</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="k">pass</span> <span class="c1">#lob : quantpylib.hft.lob.LOB</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">quote_markets</span><span class="p">(</span><span class="n">replayer</span><span class="p">,</span><span class="n">oms</span><span class="p">,</span><span class="n">feed</span><span class="p">,</span><span class="n">ticker</span><span class="p">):</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="n">live_orders</span> <span class="o">=</span> <span class="n">oms</span><span class="o">.</span><span class="n">orders_peek</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">)</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="n">live_positions</span> <span class="o">=</span> <span class="n">oms</span><span class="o">.</span><span class="n">positions_peek</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">)</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="n">ref_exc</span><span class="p">,</span><span class="n">ref_ticker</span> <span class="o">=</span> <span class="n">reference</span><span class="p">[</span><span class="n">ticker</span><span class="p">]</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="n">reference_trade_id</span> <span class="o">=</span> <span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">add_trades_feed</span><span class="p">(</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>        <span class="n">exc</span><span class="o">=</span><span class="n">ref_exc</span><span class="p">,</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>        <span class="n">ticker</span><span class="o">=</span><span class="n">ref_ticker</span><span class="p">,</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>        <span class="n">buffer</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>        <span class="c1"># handler=trade_handler</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">quote_markets</span><span class="p">(</span><span class="n">replayer</span><span class="p">,</span><span class="n">oms</span><span class="p">,</span><span class="n">feed</span><span class="p">,</span><span class="n">ticker</span><span class="p">):</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="n">live_orders</span> <span class="o">=</span> <span class="n">oms</span><span class="o">.</span><span class="n">orders_peek</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="n">live_positions</span> <span class="o">=</span> <span class="n">oms</span><span class="o">.</span><span class="n">positions_peek</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">)</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="n">ref_exc</span><span class="p">,</span><span class="n">ref_ticker</span> <span class="o">=</span> <span class="n">reference</span><span class="p">[</span><span class="n">ticker</span><span class="p">]</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="n">reference_trades</span> <span class="o">=</span> <span class="n">Trades</span><span class="p">(</span><span class="n">buffer_size</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">reference_trade_handler</span><span class="p">(</span><span class="n">update</span><span class="p">):</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>        <span class="n">reference_trades</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">trade_update_to_tuple</span><span class="p">(</span><span class="n">update</span><span class="p">))</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="n">reference_trade_id</span> <span class="o">=</span> <span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">add_trades_feed</span><span class="p">(</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>        <span class="n">exc</span><span class="o">=</span><span class="n">ref_exc</span><span class="p">,</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>        <span class="n">ticker</span><span class="o">=</span><span class="n">ref_ticker</span><span class="p">,</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>        <span class="n">on_msg</span><span class="o">=</span><span class="n">reference_trade_handler</span><span class="p">,</span>
 <a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    <span class="p">)</span>
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    <span class="n">reference_trades</span> <span class="o">=</span> <span class="n">feed</span><span class="o">.</span><span class="n">get_feed</span><span class="p">(</span><span class="n">reference_trade_id</span><span class="p">)</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    <span class="n">reference_book_sink</span> <span class="o">=</span> <span class="n">OrderbookMaterializerSink</span><span class="p">()</span>
 <a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    <span class="n">reference_l2_id</span> <span class="o">=</span> <span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">add_l2_book_feed</span><span class="p">(</span>
 <a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>        <span class="n">exc</span><span class="o">=</span><span class="n">ref_exc</span><span class="p">,</span>
 <a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>        <span class="n">ticker</span><span class="o">=</span><span class="n">ref_ticker</span><span class="p">,</span>
 <a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>        <span class="n">depth</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
-<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>        <span class="n">buffer</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
-<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>        <span class="c1"># handler=book_handler</span>
-<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>    <span class="p">)</span>
-<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>    <span class="n">reference_lob</span> <span class="o">=</span> <span class="n">feed</span><span class="o">.</span><span class="n">get_feed</span><span class="p">(</span><span class="n">reference_l2_id</span><span class="p">)</span>
-<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>
-<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>    <span class="n">ticker_trade_id</span> <span class="o">=</span> <span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">add_trades_feed</span><span class="p">(</span>
-<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>        <span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span>
-<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>        <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
-<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>        <span class="n">buffer</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
-<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>    <span class="p">)</span>
-<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>    <span class="n">ticker_trades</span> <span class="o">=</span> <span class="n">feed</span><span class="o">.</span><span class="n">get_feed</span><span class="p">(</span><span class="n">ticker_trade_id</span><span class="p">)</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>        <span class="n">sinks</span><span class="o">=</span><span class="p">[</span><span class="n">reference_book_sink</span><span class="p">],</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>    <span class="p">)</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>    <span class="n">reference_lob</span> <span class="o">=</span> <span class="n">reference_book_sink</span><span class="o">.</span><span class="n">orderbook</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>    <span class="n">ticker_trades</span> <span class="o">=</span> <span class="n">Trades</span><span class="p">(</span><span class="n">buffer_size</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">ticker_trade_handler</span><span class="p">(</span><span class="n">update</span><span class="p">):</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>        <span class="n">ticker_trades</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">trade_update_to_tuple</span><span class="p">(</span><span class="n">update</span><span class="p">))</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>    <span class="n">ticker_trade_id</span> <span class="o">=</span> <span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">add_trades_feed</span><span class="p">(</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>        <span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>        <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>        <span class="n">on_msg</span><span class="o">=</span><span class="n">ticker_trade_handler</span><span class="p">,</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>    <span class="p">)</span>
 </code></pre></div>
 The <code>oms</code> does order tracking and maintains <code>live_orders</code> which is a <a href="../../standards/portfolio"><code>quantpylib.standards.portfolio.Orders</code></a> object. Similarly, the <code>oms</code> maintains <code>live_positions</code> which is a <a href="../../standards/portfolio"><code>quantpylib.standards.portfolio.Positions</code></a> object. 
 These are achieved via the <code>gateway</code>'s underlying socket connections and requests. Note that the <code>oms</code> itself is a separate functionality provided by <code>quantpylib</code>, and is able to do a variety of useful things - such as registering coroutine handlers for order updates, position fills and so on - see examples <a href="../../hft/hft/#oms">here</a>. In this section, we will not register any order/position update handlers, and just rely on the live updation of our orders which is intitated by default on <code>oms.init()</code>.</p>
-<p>Also, we subscribe to the reference market tick data feeds. We can register handlers for a 'on-tick' behavior - the trades receive <code>ts,price,size,dir</code> in the handler and orderbook updates receive <code>quantpylib.hft.lob.LOB</code> object. We are not going to have triggers for orders (you can, if you want) on the reference market tick events. Instead, we are going to use the live data buffers <code>reference_trades</code> (a <a href="../../hft/trades"><code>quantpylib.hft.trades.Trades</code></a>) object and <code>reference_lob</code> (a <a href="../../hft/lob"><code>quantpylib.hft.lob.LOB</code></a>) object. These live data buffer classes have in-built methods to compute useful statistics such as <code>get_imbalance</code>, <code>get_vol</code>, <code>get_mid</code> and so on. In our demonstration, we choose action triggers to follow the on tick behaviour of orderbook events on the quote market.</p>
+<p>Also, we subscribe to the reference market tick data feeds. Trade <code>on_msg</code> callbacks receive native <code>TradeUpdate</code> events, and orderbook materialization is handled by an <code>OrderbookMaterializerSink</code> over native <code>BookUpdate</code> events. We are not going to trigger orders directly from reference-market trade events. Instead, we explicitly maintain a local <code>reference_trades</code> (<a href="../../hft/trades"><code>quantpylib.hft.trades.Trades</code></a>) buffer from the native trade callback, while <code>reference_lob</code> is the order book owned by the materializer sink. In our demonstration, we choose action triggers to follow the on-tick behaviour of orderbook events on the quote market.</p>
 <p>Say, we would like to submit/cancel orders using the following logic (there is no alpha in this quoter):</p>
 <div class="highlight"><pre><span></span><code>1. Fix order notional value at 200.
 2. Compute volume adjusted mid price (VAMP) with notional value of the sum of last 15 taker trades. The VAMP is computed on the orderbook of the reference market, not quote market.
@@ -3175,101 +3275,126 @@ These are achieved via the <code>gateway</code>'s underlying socket connections 
 4. If the bid and ask level does not exist, submit new orders. If other price level orders exist, cancel.
 </code></pre></div>
 <p>We make no comment or assertions on the viability of said 'rules'. For specifics on how to pass the parameters to <code>oms</code> methods, refer to <a href="../../hft/oms">documentation</a> and <a href="../../hft/hft">examples</a>. <a href="../../gateway/gateway">gateway documentation and examples</a> should be helpful. Let's continue with the <code>quote_markets</code> implementation:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">quote_markets</span><span class="p">(</span><span class="n">replayer</span><span class="p">,</span><span class="n">oms</span><span class="p">,</span><span class="n">feed</span><span class="p">,</span><span class="n">ticker</span><span class="p">):</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="c1">#...</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="n">ticker_trades</span> <span class="o">=</span> <span class="n">feed</span><span class="o">.</span><span class="n">get_feed</span><span class="p">(</span><span class="n">ticker_trade_id</span><span class="p">)</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="c1">#...code above</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">order_value</span> <span class="o">=</span> <span class="mi">200</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="n">last_print</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">l2_handler</span><span class="p">(</span><span class="n">lob</span><span class="p">):</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        <span class="k">nonlocal</span> <span class="n">last_print</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>        <span class="n">stamp</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>        <span class="n">stamp</span> <span class="o">=</span> <span class="n">stamp</span> <span class="o">-</span> <span class="p">(</span><span class="n">stamp</span> <span class="o">%</span> <span class="n">print_interval</span><span class="p">)</span>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>        <span class="k">if</span> <span class="n">stamp</span> <span class="o">!=</span> <span class="n">last_print</span><span class="p">:</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">time</span><span class="p">()</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span><span class="n">tz</span><span class="o">=</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">))</span>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>            <span class="n">last_print</span> <span class="o">=</span> <span class="n">stamp</span>
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>        <span class="n">pos_amount</span> <span class="o">=</span> <span class="n">live_positions</span><span class="o">.</span><span class="n">get_ticker_amount</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">)</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>        <span class="n">inventory_notional</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">pos_amount</span><span class="p">)</span> <span class="o">*</span> <span class="n">lob</span><span class="o">.</span><span class="n">get_mid</span><span class="p">()</span> 
-<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>        <span class="n">q</span> <span class="o">=</span> <span class="n">inventory_notional</span> <span class="o">/</span> <span class="n">order_value</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">book_levels</span><span class="p">(</span><span class="n">book</span><span class="p">):</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="k">return</span> <span class="p">(</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>        <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">get_bids</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">/</span> <span class="n">PRICE_SCALE</span><span class="p">,</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>        <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">get_asks</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">/</span> <span class="n">PRICE_SCALE</span><span class="p">,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="p">)</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">book_mid</span><span class="p">(</span><span class="n">book</span><span class="p">):</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="n">mid</span> <span class="o">=</span> <span class="n">book</span><span class="o">.</span><span class="n">mid</span><span class="p">()</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">mid</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">mid</span> <span class="o">/</span> <span class="n">PRICE_SCALE</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="k">def</span><span class="w"> </span><span class="nf">book_vamp</span><span class="p">(</span><span class="n">book</span><span class="p">,</span> <span class="n">notional</span><span class="p">):</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="n">bids</span><span class="p">,</span> <span class="n">asks</span> <span class="o">=</span> <span class="n">book_levels</span><span class="p">(</span><span class="n">book</span><span class="p">)</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">bids</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">asks</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>    <span class="k">return</span> <span class="n">cfeatures</span><span class="o">.</span><span class="n">vamp</span><span class="p">(</span><span class="n">bids</span><span class="p">,</span> <span class="n">asks</span><span class="p">,</span> <span class="n">notional</span><span class="p">)</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
 <a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
-<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>        <span class="n">order_bids</span> <span class="o">=</span> <span class="n">live_orders</span><span class="o">.</span><span class="n">get_bid_orders</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">)</span> 
-<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>        <span class="n">order_asks</span> <span class="o">=</span> <span class="n">live_orders</span><span class="o">.</span><span class="n">get_ask_orders</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">)</span>
-<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>
-<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>        <span class="n">tds</span> <span class="o">=</span> <span class="n">reference_trades</span><span class="o">.</span><span class="n">get_sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>        <span class="n">notional</span> <span class="o">=</span> <span class="mi">20000</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tds</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tds</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">tds</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
-<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>        <span class="n">ref_vamp</span> <span class="o">=</span> <span class="n">reference_lob</span><span class="o">.</span><span class="n">get_vamp</span><span class="p">(</span><span class="n">notional</span><span class="p">)</span>
-<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">ref_vamp</span><span class="p">):</span>
-<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>            <span class="k">return</span>
-<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>
-<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>        <span class="n">bid</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span>
-<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>            <span class="n">ref_vamp</span> <span class="o">-</span> <span class="p">((</span><span class="mi">6</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-4</span><span class="p">)</span> <span class="o">*</span> <span class="n">ref_vamp</span><span class="p">,</span>
-<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>            <span class="n">lob</span><span class="o">.</span><span class="n">get_bids</span><span class="p">()[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>        <span class="p">)</span>
-<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>        <span class="n">ask</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span>
-<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>            <span class="n">ref_vamp</span> <span class="o">+</span> <span class="p">((</span><span class="mi">6</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="o">-</span><span class="n">q</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-4</span><span class="p">)</span> <span class="o">*</span> <span class="n">ref_vamp</span><span class="p">,</span>
-<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>            <span class="n">lob</span><span class="o">.</span><span class="n">get_asks</span><span class="p">()[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>        <span class="p">)</span>
-<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>
-<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>        <span class="n">bid_price</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">oms</span><span class="o">.</span><span class="n">rounded_price</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span><span class="n">price</span><span class="o">=</span><span class="n">bid</span><span class="p">)))</span>
-<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>        <span class="n">ask_price</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">oms</span><span class="o">.</span><span class="n">rounded_price</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span><span class="n">price</span><span class="o">=</span><span class="n">ask</span><span class="p">)))</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">quote_markets</span><span class="p">(</span><span class="n">replayer</span><span class="p">,</span><span class="n">oms</span><span class="p">,</span><span class="n">feed</span><span class="p">,</span><span class="n">ticker</span><span class="p">):</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>    <span class="c1">#...</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>    <span class="c1">#...code above</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>    <span class="n">order_value</span> <span class="o">=</span> <span class="mi">200</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>    <span class="n">last_print</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">l2_handler</span><span class="p">(</span><span class="n">lob</span><span class="p">):</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>        <span class="k">nonlocal</span> <span class="n">last_print</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>        <span class="n">stamp</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>        <span class="n">stamp</span> <span class="o">=</span> <span class="n">stamp</span> <span class="o">-</span> <span class="p">(</span><span class="n">stamp</span> <span class="o">%</span> <span class="n">print_interval</span><span class="p">)</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>        <span class="k">if</span> <span class="n">stamp</span> <span class="o">!=</span> <span class="n">last_print</span><span class="p">:</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">time</span><span class="p">()</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span><span class="n">tz</span><span class="o">=</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">))</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>            <span class="n">last_print</span> <span class="o">=</span> <span class="n">stamp</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>        <span class="n">mid</span> <span class="o">=</span> <span class="n">book_mid</span><span class="p">(</span><span class="n">lob</span><span class="p">)</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>        <span class="k">if</span> <span class="n">mid</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>            <span class="k">return</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>        <span class="n">bids</span><span class="p">,</span> <span class="n">asks</span> <span class="o">=</span> <span class="n">book_levels</span><span class="p">(</span><span class="n">lob</span><span class="p">)</span>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">bids</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">asks</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>            <span class="k">return</span>
 <a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>
-<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>        <span class="n">orders</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">bid</span><span class="o">.</span><span class="n">price</span> <span class="o">==</span> <span class="n">bid_price</span> <span class="k">for</span> <span class="n">bid</span> <span class="ow">in</span> <span class="n">order_bids</span><span class="p">):</span>
-<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>            <span class="n">orders</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
-<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a>                <span class="s2">&quot;exc&quot;</span><span class="p">:</span><span class="n">exc</span><span class="p">,</span>
-<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a>                <span class="s2">&quot;ticker&quot;</span><span class="p">:</span><span class="n">ticker</span><span class="p">,</span>
-<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a>                <span class="s2">&quot;amount&quot;</span><span class="p">:</span><span class="n">order_value</span><span class="o">/</span><span class="n">lob</span><span class="o">.</span><span class="n">get_mid</span><span class="p">(),</span>
-<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a>                <span class="s2">&quot;price&quot;</span><span class="p">:</span><span class="n">bid_price</span><span class="p">,</span>
-<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a>                <span class="s2">&quot;round_to_specs&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
-<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a>            <span class="p">})</span>
-<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">ask</span><span class="o">.</span><span class="n">price</span> <span class="o">==</span> <span class="n">ask_price</span> <span class="k">for</span> <span class="n">ask</span> <span class="ow">in</span> <span class="n">order_asks</span><span class="p">):</span>
-<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a>            <span class="n">orders</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
-<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a>                <span class="s2">&quot;exc&quot;</span><span class="p">:</span><span class="n">exc</span><span class="p">,</span>
-<a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a>                <span class="s2">&quot;ticker&quot;</span><span class="p">:</span><span class="n">ticker</span><span class="p">,</span>
-<a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a>                <span class="s2">&quot;amount&quot;</span><span class="p">:</span><span class="n">order_value</span><span class="o">/</span><span class="n">lob</span><span class="o">.</span><span class="n">get_mid</span><span class="p">()</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-<a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a>                <span class="s2">&quot;price&quot;</span><span class="p">:</span><span class="n">ask_price</span><span class="p">,</span>
-<a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a>                <span class="s2">&quot;round_to_specs&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
-<a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a>            <span class="p">})</span>
-<a id="__codelineno-7-58" name="__codelineno-7-58" href="#__codelineno-7-58"></a>
-<a id="__codelineno-7-59" name="__codelineno-7-59" href="#__codelineno-7-59"></a>        <span class="n">cancels</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-7-60" name="__codelineno-7-60" href="#__codelineno-7-60"></a>        <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">order_bids</span><span class="p">:</span>
-<a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a>            <span class="k">if</span> <span class="n">order</span><span class="o">.</span><span class="n">price</span> <span class="o">!=</span> <span class="n">bid_price</span><span class="p">:</span>
-<a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a>                <span class="n">cancels</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
-<a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a>                    <span class="s2">&quot;exc&quot;</span><span class="p">:</span><span class="n">order</span><span class="o">.</span><span class="n">exc</span><span class="p">,</span>
-<a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a>                    <span class="s2">&quot;ticker&quot;</span><span class="p">:</span><span class="n">order</span><span class="o">.</span><span class="n">ticker</span><span class="p">,</span>
-<a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a>                    <span class="s2">&quot;cloid&quot;</span><span class="p">:</span><span class="n">order</span><span class="o">.</span><span class="n">cloid</span>
-<a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a>                <span class="p">})</span>
-<a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a>        <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">order_asks</span><span class="p">:</span>
-<a id="__codelineno-7-68" name="__codelineno-7-68" href="#__codelineno-7-68"></a>            <span class="k">if</span> <span class="n">order</span><span class="o">.</span><span class="n">price</span> <span class="o">!=</span> <span class="n">ask_price</span><span class="p">:</span>
-<a id="__codelineno-7-69" name="__codelineno-7-69" href="#__codelineno-7-69"></a>                <span class="n">cancels</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
-<a id="__codelineno-7-70" name="__codelineno-7-70" href="#__codelineno-7-70"></a>                    <span class="s2">&quot;exc&quot;</span><span class="p">:</span><span class="n">order</span><span class="o">.</span><span class="n">exc</span><span class="p">,</span>
-<a id="__codelineno-7-71" name="__codelineno-7-71" href="#__codelineno-7-71"></a>                    <span class="s2">&quot;ticker&quot;</span><span class="p">:</span><span class="n">order</span><span class="o">.</span><span class="n">ticker</span><span class="p">,</span>
-<a id="__codelineno-7-72" name="__codelineno-7-72" href="#__codelineno-7-72"></a>                    <span class="s2">&quot;cloid&quot;</span><span class="p">:</span><span class="n">order</span><span class="o">.</span><span class="n">cloid</span>
-<a id="__codelineno-7-73" name="__codelineno-7-73" href="#__codelineno-7-73"></a>                <span class="p">})</span>
-<a id="__codelineno-7-74" name="__codelineno-7-74" href="#__codelineno-7-74"></a>        <span class="k">if</span> <span class="n">orders</span><span class="p">:</span>
-<a id="__codelineno-7-75" name="__codelineno-7-75" href="#__codelineno-7-75"></a>            <span class="k">try</span><span class="p">:</span>
-<a id="__codelineno-7-76" name="__codelineno-7-76" href="#__codelineno-7-76"></a>                <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
-<a id="__codelineno-7-77" name="__codelineno-7-77" href="#__codelineno-7-77"></a>                    <span class="n">oms</span><span class="o">.</span><span class="n">limit_order</span><span class="p">(</span><span class="o">**</span><span class="n">order</span><span class="p">)</span> <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">orders</span>
-<a id="__codelineno-7-78" name="__codelineno-7-78" href="#__codelineno-7-78"></a>                <span class="p">])</span>
-<a id="__codelineno-7-79" name="__codelineno-7-79" href="#__codelineno-7-79"></a>            <span class="k">except</span> <span class="n">e</span><span class="p">:</span>
-<a id="__codelineno-7-80" name="__codelineno-7-80" href="#__codelineno-7-80"></a>                <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-<a id="__codelineno-7-81" name="__codelineno-7-81" href="#__codelineno-7-81"></a>        <span class="k">if</span> <span class="n">cancels</span><span class="p">:</span>
-<a id="__codelineno-7-82" name="__codelineno-7-82" href="#__codelineno-7-82"></a>            <span class="k">try</span><span class="p">:</span>
-<a id="__codelineno-7-83" name="__codelineno-7-83" href="#__codelineno-7-83"></a>                <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
-<a id="__codelineno-7-84" name="__codelineno-7-84" href="#__codelineno-7-84"></a>                    <span class="n">oms</span><span class="o">.</span><span class="n">cancel_order</span><span class="p">(</span><span class="o">**</span><span class="n">cancel</span><span class="p">)</span> <span class="k">for</span> <span class="n">cancel</span> <span class="ow">in</span> <span class="n">cancels</span>
-<a id="__codelineno-7-85" name="__codelineno-7-85" href="#__codelineno-7-85"></a>                <span class="p">])</span>
-<a id="__codelineno-7-86" name="__codelineno-7-86" href="#__codelineno-7-86"></a>            <span class="k">except</span><span class="p">:</span>
-<a id="__codelineno-7-87" name="__codelineno-7-87" href="#__codelineno-7-87"></a>                <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-<a id="__codelineno-7-88" name="__codelineno-7-88" href="#__codelineno-7-88"></a>
-<a id="__codelineno-7-89" name="__codelineno-7-89" href="#__codelineno-7-89"></a>    <span class="n">l2_feed</span> <span class="o">=</span> <span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">add_l2_book_feed</span><span class="p">(</span>
-<a id="__codelineno-7-90" name="__codelineno-7-90" href="#__codelineno-7-90"></a>        <span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span>
-<a id="__codelineno-7-91" name="__codelineno-7-91" href="#__codelineno-7-91"></a>        <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
-<a id="__codelineno-7-92" name="__codelineno-7-92" href="#__codelineno-7-92"></a>        <span class="n">depth</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
-<a id="__codelineno-7-93" name="__codelineno-7-93" href="#__codelineno-7-93"></a>        <span class="n">buffer</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
-<a id="__codelineno-7-94" name="__codelineno-7-94" href="#__codelineno-7-94"></a>        <span class="n">handler</span><span class="o">=</span><span class="n">l2_handler</span>
-<a id="__codelineno-7-95" name="__codelineno-7-95" href="#__codelineno-7-95"></a>    <span class="p">)</span>
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>        <span class="n">pos_amount</span> <span class="o">=</span> <span class="n">live_positions</span><span class="o">.</span><span class="n">get_ticker_amount</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">)</span>
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>        <span class="n">inventory_notional</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">pos_amount</span><span class="p">)</span> <span class="o">*</span> <span class="n">mid</span>
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>        <span class="n">q</span> <span class="o">=</span> <span class="n">inventory_notional</span> <span class="o">/</span> <span class="n">order_value</span>
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a>
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a>        <span class="n">order_bids</span> <span class="o">=</span> <span class="n">live_orders</span><span class="o">.</span><span class="n">get_bid_orders</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">)</span> 
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a>        <span class="n">order_asks</span> <span class="o">=</span> <span class="n">live_orders</span><span class="o">.</span><span class="n">get_ask_orders</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">)</span>
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a>
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a>        <span class="n">tds</span> <span class="o">=</span> <span class="n">reference_trades</span><span class="o">.</span><span class="n">get_sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a>        <span class="n">notional</span> <span class="o">=</span> <span class="mi">20000</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tds</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tds</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">tds</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a>        <span class="n">ref_vamp</span> <span class="o">=</span> <span class="n">book_vamp</span><span class="p">(</span><span class="n">reference_lob</span><span class="p">,</span> <span class="n">notional</span><span class="p">)</span>
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a>        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">ref_vamp</span><span class="p">):</span>
+<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a>            <span class="k">return</span>
+<a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a>
+<a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a>        <span class="n">bid</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span>
+<a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a>            <span class="n">ref_vamp</span> <span class="o">-</span> <span class="p">((</span><span class="mi">6</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-4</span><span class="p">)</span> <span class="o">*</span> <span class="n">ref_vamp</span><span class="p">,</span>
+<a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a>            <span class="n">bids</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a>        <span class="p">)</span>
+<a id="__codelineno-7-58" name="__codelineno-7-58" href="#__codelineno-7-58"></a>        <span class="n">ask</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span>
+<a id="__codelineno-7-59" name="__codelineno-7-59" href="#__codelineno-7-59"></a>            <span class="n">ref_vamp</span> <span class="o">+</span> <span class="p">((</span><span class="mi">6</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="o">-</span><span class="n">q</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-4</span><span class="p">)</span> <span class="o">*</span> <span class="n">ref_vamp</span><span class="p">,</span>
+<a id="__codelineno-7-60" name="__codelineno-7-60" href="#__codelineno-7-60"></a>            <span class="n">asks</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a>        <span class="p">)</span>
+<a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a>
+<a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a>        <span class="n">bid_price</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">oms</span><span class="o">.</span><span class="n">rounded_price</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span><span class="n">price</span><span class="o">=</span><span class="n">bid</span><span class="p">)))</span>
+<a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a>        <span class="n">ask_price</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">oms</span><span class="o">.</span><span class="n">rounded_price</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span><span class="n">price</span><span class="o">=</span><span class="n">ask</span><span class="p">)))</span>
+<a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a>
+<a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a>        <span class="n">orders</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">bid</span><span class="o">.</span><span class="n">price</span> <span class="o">==</span> <span class="n">bid_price</span> <span class="k">for</span> <span class="n">bid</span> <span class="ow">in</span> <span class="n">order_bids</span><span class="p">):</span>
+<a id="__codelineno-7-68" name="__codelineno-7-68" href="#__codelineno-7-68"></a>            <span class="n">orders</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+<a id="__codelineno-7-69" name="__codelineno-7-69" href="#__codelineno-7-69"></a>                <span class="s2">&quot;exc&quot;</span><span class="p">:</span><span class="n">exc</span><span class="p">,</span>
+<a id="__codelineno-7-70" name="__codelineno-7-70" href="#__codelineno-7-70"></a>                <span class="s2">&quot;ticker&quot;</span><span class="p">:</span><span class="n">ticker</span><span class="p">,</span>
+<a id="__codelineno-7-71" name="__codelineno-7-71" href="#__codelineno-7-71"></a>                <span class="s2">&quot;amount&quot;</span><span class="p">:</span><span class="n">order_value</span> <span class="o">/</span> <span class="n">mid</span><span class="p">,</span>
+<a id="__codelineno-7-72" name="__codelineno-7-72" href="#__codelineno-7-72"></a>                <span class="s2">&quot;price&quot;</span><span class="p">:</span><span class="n">bid_price</span><span class="p">,</span>
+<a id="__codelineno-7-73" name="__codelineno-7-73" href="#__codelineno-7-73"></a>                <span class="s2">&quot;round_to_specs&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-7-74" name="__codelineno-7-74" href="#__codelineno-7-74"></a>            <span class="p">})</span>
+<a id="__codelineno-7-75" name="__codelineno-7-75" href="#__codelineno-7-75"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">ask</span><span class="o">.</span><span class="n">price</span> <span class="o">==</span> <span class="n">ask_price</span> <span class="k">for</span> <span class="n">ask</span> <span class="ow">in</span> <span class="n">order_asks</span><span class="p">):</span>
+<a id="__codelineno-7-76" name="__codelineno-7-76" href="#__codelineno-7-76"></a>            <span class="n">orders</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+<a id="__codelineno-7-77" name="__codelineno-7-77" href="#__codelineno-7-77"></a>                <span class="s2">&quot;exc&quot;</span><span class="p">:</span><span class="n">exc</span><span class="p">,</span>
+<a id="__codelineno-7-78" name="__codelineno-7-78" href="#__codelineno-7-78"></a>                <span class="s2">&quot;ticker&quot;</span><span class="p">:</span><span class="n">ticker</span><span class="p">,</span>
+<a id="__codelineno-7-79" name="__codelineno-7-79" href="#__codelineno-7-79"></a>                <span class="s2">&quot;amount&quot;</span><span class="p">:</span><span class="n">order_value</span> <span class="o">/</span> <span class="n">mid</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-7-80" name="__codelineno-7-80" href="#__codelineno-7-80"></a>                <span class="s2">&quot;price&quot;</span><span class="p">:</span><span class="n">ask_price</span><span class="p">,</span>
+<a id="__codelineno-7-81" name="__codelineno-7-81" href="#__codelineno-7-81"></a>                <span class="s2">&quot;round_to_specs&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-7-82" name="__codelineno-7-82" href="#__codelineno-7-82"></a>            <span class="p">})</span>
+<a id="__codelineno-7-83" name="__codelineno-7-83" href="#__codelineno-7-83"></a>
+<a id="__codelineno-7-84" name="__codelineno-7-84" href="#__codelineno-7-84"></a>        <span class="n">cancels</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-7-85" name="__codelineno-7-85" href="#__codelineno-7-85"></a>        <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">order_bids</span><span class="p">:</span>
+<a id="__codelineno-7-86" name="__codelineno-7-86" href="#__codelineno-7-86"></a>            <span class="k">if</span> <span class="n">order</span><span class="o">.</span><span class="n">price</span> <span class="o">!=</span> <span class="n">bid_price</span><span class="p">:</span>
+<a id="__codelineno-7-87" name="__codelineno-7-87" href="#__codelineno-7-87"></a>                <span class="n">cancels</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+<a id="__codelineno-7-88" name="__codelineno-7-88" href="#__codelineno-7-88"></a>                    <span class="s2">&quot;exc&quot;</span><span class="p">:</span><span class="n">order</span><span class="o">.</span><span class="n">exc</span><span class="p">,</span>
+<a id="__codelineno-7-89" name="__codelineno-7-89" href="#__codelineno-7-89"></a>                    <span class="s2">&quot;ticker&quot;</span><span class="p">:</span><span class="n">order</span><span class="o">.</span><span class="n">ticker</span><span class="p">,</span>
+<a id="__codelineno-7-90" name="__codelineno-7-90" href="#__codelineno-7-90"></a>                    <span class="s2">&quot;cloid&quot;</span><span class="p">:</span><span class="n">order</span><span class="o">.</span><span class="n">cloid</span>
+<a id="__codelineno-7-91" name="__codelineno-7-91" href="#__codelineno-7-91"></a>                <span class="p">})</span>
+<a id="__codelineno-7-92" name="__codelineno-7-92" href="#__codelineno-7-92"></a>        <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">order_asks</span><span class="p">:</span>
+<a id="__codelineno-7-93" name="__codelineno-7-93" href="#__codelineno-7-93"></a>            <span class="k">if</span> <span class="n">order</span><span class="o">.</span><span class="n">price</span> <span class="o">!=</span> <span class="n">ask_price</span><span class="p">:</span>
+<a id="__codelineno-7-94" name="__codelineno-7-94" href="#__codelineno-7-94"></a>                <span class="n">cancels</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+<a id="__codelineno-7-95" name="__codelineno-7-95" href="#__codelineno-7-95"></a>                    <span class="s2">&quot;exc&quot;</span><span class="p">:</span><span class="n">order</span><span class="o">.</span><span class="n">exc</span><span class="p">,</span>
+<a id="__codelineno-7-96" name="__codelineno-7-96" href="#__codelineno-7-96"></a>                    <span class="s2">&quot;ticker&quot;</span><span class="p">:</span><span class="n">order</span><span class="o">.</span><span class="n">ticker</span><span class="p">,</span>
+<a id="__codelineno-7-97" name="__codelineno-7-97" href="#__codelineno-7-97"></a>                    <span class="s2">&quot;cloid&quot;</span><span class="p">:</span><span class="n">order</span><span class="o">.</span><span class="n">cloid</span>
+<a id="__codelineno-7-98" name="__codelineno-7-98" href="#__codelineno-7-98"></a>                <span class="p">})</span>
+<a id="__codelineno-7-99" name="__codelineno-7-99" href="#__codelineno-7-99"></a>        <span class="k">if</span> <span class="n">orders</span><span class="p">:</span>
+<a id="__codelineno-7-100" name="__codelineno-7-100" href="#__codelineno-7-100"></a>            <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-7-101" name="__codelineno-7-101" href="#__codelineno-7-101"></a>                <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+<a id="__codelineno-7-102" name="__codelineno-7-102" href="#__codelineno-7-102"></a>                    <span class="n">oms</span><span class="o">.</span><span class="n">limit_order</span><span class="p">(</span><span class="o">**</span><span class="n">order</span><span class="p">)</span> <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">orders</span>
+<a id="__codelineno-7-103" name="__codelineno-7-103" href="#__codelineno-7-103"></a>                <span class="p">])</span>
+<a id="__codelineno-7-104" name="__codelineno-7-104" href="#__codelineno-7-104"></a>            <span class="k">except</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-7-105" name="__codelineno-7-105" href="#__codelineno-7-105"></a>                <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<a id="__codelineno-7-106" name="__codelineno-7-106" href="#__codelineno-7-106"></a>        <span class="k">if</span> <span class="n">cancels</span><span class="p">:</span>
+<a id="__codelineno-7-107" name="__codelineno-7-107" href="#__codelineno-7-107"></a>            <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-7-108" name="__codelineno-7-108" href="#__codelineno-7-108"></a>                <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+<a id="__codelineno-7-109" name="__codelineno-7-109" href="#__codelineno-7-109"></a>                    <span class="n">oms</span><span class="o">.</span><span class="n">cancel_order</span><span class="p">(</span><span class="o">**</span><span class="n">cancel</span><span class="p">)</span> <span class="k">for</span> <span class="n">cancel</span> <span class="ow">in</span> <span class="n">cancels</span>
+<a id="__codelineno-7-110" name="__codelineno-7-110" href="#__codelineno-7-110"></a>                <span class="p">])</span>
+<a id="__codelineno-7-111" name="__codelineno-7-111" href="#__codelineno-7-111"></a>            <span class="k">except</span><span class="p">:</span>
+<a id="__codelineno-7-112" name="__codelineno-7-112" href="#__codelineno-7-112"></a>                <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<a id="__codelineno-7-113" name="__codelineno-7-113" href="#__codelineno-7-113"></a>
+<a id="__codelineno-7-114" name="__codelineno-7-114" href="#__codelineno-7-114"></a>    <span class="n">book_sink</span> <span class="o">=</span> <span class="n">OrderbookMaterializerSink</span><span class="p">(</span><span class="n">on_update</span><span class="o">=</span><span class="n">l2_handler</span><span class="p">)</span>
+<a id="__codelineno-7-115" name="__codelineno-7-115" href="#__codelineno-7-115"></a>    <span class="n">l2_feed</span> <span class="o">=</span> <span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">add_l2_book_feed</span><span class="p">(</span>
+<a id="__codelineno-7-116" name="__codelineno-7-116" href="#__codelineno-7-116"></a>        <span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span>
+<a id="__codelineno-7-117" name="__codelineno-7-117" href="#__codelineno-7-117"></a>        <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
+<a id="__codelineno-7-118" name="__codelineno-7-118" href="#__codelineno-7-118"></a>        <span class="n">depth</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+<a id="__codelineno-7-119" name="__codelineno-7-119" href="#__codelineno-7-119"></a>        <span class="n">sinks</span><span class="o">=</span><span class="p">[</span><span class="n">book_sink</span><span class="p">],</span>
+<a id="__codelineno-7-120" name="__codelineno-7-120" href="#__codelineno-7-120"></a>    <span class="p">)</span>
 </code></pre></div>
 This quote market orderbook feed is subscribed to with the on-tick behaviour of <code>l2_handler</code>. The specified rules are then implemented. On the web-platform of selected exchange (bybit) we can see the quotes submitted (if live):</p>
 <p><img alt="alt text" src="../../archives/quotes_bybit.jpg" /></p>
@@ -3319,7 +3444,7 @@ This quote market orderbook feed is subscribed to with the on-tick behaviour of 
 <a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>    <span class="n">report_data</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;counterparty_pnl&#39;</span><span class="p">,</span><span class="n">counterparty_plot</span><span class="p">,</span><span class="s1">&#39;img&#39;</span><span class="p">))</span>
 <a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a>
 <a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a>    <span class="n">pdf_snapshot</span><span class="p">(</span>
-<a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>        <span class="n">save</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s1">.pdf&#39;</span><span class="p">,</span>
+<a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>        <span class="n">save</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">.pdf&quot;</span><span class="p">,</span>
 <a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a>        <span class="n">code_file</span><span class="o">=</span><span class="vm">__file__</span><span class="p">,</span>
 <a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a>        <span class="n">report_data</span><span class="o">=</span><span class="n">report_data</span><span class="p">,</span>
 <a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a>        <span class="n">include_comments</span><span class="o">=</span><span class="kc">False</span>
@@ -3359,7 +3484,7 @@ We can see that our inventory management was somewhat effective, and our pnl is 
 <h2 id="open-research-standard">Open Research Standard</h2>
 <p>The code lines in the previous <a href="#simulation-report-ors">section</a> help to generate an ORS report. It takes the file path to save, the implementation file, as well as report data which takes types of <code>df</code>, <code>img</code>, or <code>dict</code> to render.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>pdf_snapshot(
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    save=f&#39;{folder}/{datetime.now().strftime(&#39;%Y-%m-%d %H:%M:%S&#39;)}.pdf&#39;,
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    save=f&quot;{folder}/{datetime.now().strftime(&#39;%Y-%m-%d %H:%M:%S&#39;)}.pdf&quot;,
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    code_file=__file__,
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    report_data=report_data,
 <a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    include_comments=False
@@ -3384,50 +3509,54 @@ This would make modelling extremely simple. In fact, we only need to change one 
 <a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
 <a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft.oms</span><span class="w"> </span><span class="kn">import</span> <span class="n">OMS</span>
 <a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft.feed</span><span class="w"> </span><span class="kn">import</span> <span class="n">Feed</span>
-<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.gateway.master</span><span class="w"> </span><span class="kn">import</span> <span class="n">Gateway</span> 
-<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.utilities.general</span><span class="w"> </span><span class="kn">import</span> <span class="n">_time</span><span class="p">,</span><span class="n">pdf_snapshot</span>
-<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
-<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="n">show</span> <span class="o">=</span> <span class="kc">False</span>
-<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="n">simulated</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrderbookMaterializerSink</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="kn">import</span><span class="w"> </span><span class="nn">quantpylib.hft.cfeatures</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cfeatures</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.gateway.master</span><span class="w"> </span><span class="kn">import</span> <span class="n">Gateway</span> 
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.standards.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">PRICE_SCALE</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.utilities.general</span><span class="w"> </span><span class="kn">import</span> <span class="n">_time</span><span class="p">,</span><span class="n">pdf_snapshot</span>
 <a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
-<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="n">config_keys</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>    <span class="s2">&quot;binance&quot;</span><span class="p">:{},</span>
-<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="p">}</span>
-<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>
-<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="n">exc</span> <span class="o">=</span> <span class="s1">&#39;binance&#39;</span>
-<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="n">tickers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SOLUSDT&quot;</span><span class="p">]</span>
-<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="n">stream_data</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>    <span class="s2">&quot;binance&quot;</span><span class="p">:[</span><span class="s2">&quot;SOLUSDT&quot;</span><span class="p">],</span>
-<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="p">}</span>
-<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>
-<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a><span class="n">run</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a><span class="n">time</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a><span class="n">replayer</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a><span class="n">print_interval</span> <span class="o">=</span> <span class="mi">120</span> <span class="o">*</span> <span class="mi">1000</span>
-<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a>
-<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a><span class="k">if</span> <span class="n">simulated</span><span class="p">:</span>
-<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft.mocks</span><span class="w"> </span><span class="kn">import</span> <span class="n">Replayer</span><span class="p">,</span><span class="n">Latencies</span>
-<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a>    <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2025-01-10:01&#39;</span>
-<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a>    <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2025-01-10:05&#39;</span>
-<a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a>    <span class="n">latencies</span><span class="o">=</span><span class="p">{</span>
-<a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PUBLIC</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PRIVATE</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PUBLIC</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PRIVATE</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-11-44" name="__codelineno-11-44" href="#__codelineno-11-44"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PUBLIC</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PRIVATE</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-11-46" name="__codelineno-11-46" href="#__codelineno-11-46"></a>    <span class="p">}</span>
-<a id="__codelineno-11-47" name="__codelineno-11-47" href="#__codelineno-11-47"></a>    <span class="n">replayer_configs</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-11-48" name="__codelineno-11-48" href="#__codelineno-11-48"></a>        <span class="s2">&quot;maker_fees&quot;</span><span class="p">:</span><span class="mf">0.000</span><span class="p">,</span>
-<a id="__codelineno-11-49" name="__codelineno-11-49" href="#__codelineno-11-49"></a>        <span class="s2">&quot;taker_fees&quot;</span><span class="p">:</span><span class="mf">0.000</span><span class="p">,</span>
-<a id="__codelineno-11-50" name="__codelineno-11-50" href="#__codelineno-11-50"></a>        <span class="s2">&quot;latencies&quot;</span><span class="p">:</span><span class="n">latencies</span><span class="p">,</span>
-<a id="__codelineno-11-51" name="__codelineno-11-51" href="#__codelineno-11-51"></a>    <span class="p">}</span>
-<a id="__codelineno-11-52" name="__codelineno-11-52" href="#__codelineno-11-52"></a>
-<a id="__codelineno-11-53" name="__codelineno-11-53" href="#__codelineno-11-53"></a><span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-11-54" name="__codelineno-11-54" href="#__codelineno-11-54"></a>    <span class="n">run</span> <span class="o">=</span> <span class="k">lambda</span> <span class="p">:</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1e9</span><span class="p">)</span>
-<a id="__codelineno-11-55" name="__codelineno-11-55" href="#__codelineno-11-55"></a>    <span class="n">time</span> <span class="o">=</span> <span class="k">lambda</span> <span class="p">:</span> <span class="n">_time</span><span class="p">()</span>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="n">show</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="n">simulated</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="n">config_keys</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>    <span class="s2">&quot;binance&quot;</span><span class="p">:{},</span>
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="p">}</span>
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a><span class="n">exc</span> <span class="o">=</span> <span class="s1">&#39;binance&#39;</span>
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="n">tickers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SOLUSDT&quot;</span><span class="p">]</span>
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a><span class="n">stream_data</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>    <span class="s2">&quot;binance&quot;</span><span class="p">:[</span><span class="s2">&quot;SOLUSDT&quot;</span><span class="p">],</span>
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a><span class="p">}</span>
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>
+<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a><span class="n">run</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a><span class="n">time</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a><span class="n">replayer</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a><span class="n">print_interval</span> <span class="o">=</span> <span class="mi">120</span> <span class="o">*</span> <span class="mi">1000</span>
+<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a>
+<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a><span class="k">if</span> <span class="n">simulated</span><span class="p">:</span>
+<a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft.mocks</span><span class="w"> </span><span class="kn">import</span> <span class="n">Replayer</span><span class="p">,</span><span class="n">Latencies</span>
+<a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a>    <span class="n">capture_date</span> <span class="o">=</span> <span class="s2">&quot;2025-01-10&quot;</span>
+<a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a>    <span class="n">start_ns</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a>    <span class="n">end_ns</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a>    <span class="n">latencies</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-11-44" name="__codelineno-11-44" href="#__codelineno-11-44"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PUBLIC</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">REQ_PRIVATE</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-11-46" name="__codelineno-11-46" href="#__codelineno-11-46"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PUBLIC</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-11-47" name="__codelineno-11-47" href="#__codelineno-11-47"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">ACK_PRIVATE</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-11-48" name="__codelineno-11-48" href="#__codelineno-11-48"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PUBLIC</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-11-49" name="__codelineno-11-49" href="#__codelineno-11-49"></a>        <span class="n">Latencies</span><span class="o">.</span><span class="n">FEED_PRIVATE</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-11-50" name="__codelineno-11-50" href="#__codelineno-11-50"></a>    <span class="p">}</span>
+<a id="__codelineno-11-51" name="__codelineno-11-51" href="#__codelineno-11-51"></a>    <span class="n">replayer_configs</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-11-52" name="__codelineno-11-52" href="#__codelineno-11-52"></a>        <span class="s2">&quot;maker_fees&quot;</span><span class="p">:</span><span class="mf">0.000</span><span class="p">,</span>
+<a id="__codelineno-11-53" name="__codelineno-11-53" href="#__codelineno-11-53"></a>        <span class="s2">&quot;taker_fees&quot;</span><span class="p">:</span><span class="mf">0.000</span><span class="p">,</span>
+<a id="__codelineno-11-54" name="__codelineno-11-54" href="#__codelineno-11-54"></a>        <span class="s2">&quot;latencies&quot;</span><span class="p">:</span><span class="n">latencies</span><span class="p">,</span>
+<a id="__codelineno-11-55" name="__codelineno-11-55" href="#__codelineno-11-55"></a>    <span class="p">}</span>
 <a id="__codelineno-11-56" name="__codelineno-11-56" href="#__codelineno-11-56"></a>
-<a id="__codelineno-11-57" name="__codelineno-11-57" href="#__codelineno-11-57"></a><span class="n">gateway</span> <span class="o">=</span> <span class="n">Gateway</span><span class="p">(</span><span class="n">config_keys</span><span class="o">=</span><span class="n">config_keys</span><span class="p">)</span>
+<a id="__codelineno-11-57" name="__codelineno-11-57" href="#__codelineno-11-57"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-11-58" name="__codelineno-11-58" href="#__codelineno-11-58"></a>    <span class="n">run</span> <span class="o">=</span> <span class="k">lambda</span> <span class="p">:</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1e9</span><span class="p">)</span>
+<a id="__codelineno-11-59" name="__codelineno-11-59" href="#__codelineno-11-59"></a>    <span class="n">time</span> <span class="o">=</span> <span class="k">lambda</span> <span class="p">:</span> <span class="n">_time</span><span class="p">()</span>
+<a id="__codelineno-11-60" name="__codelineno-11-60" href="#__codelineno-11-60"></a>
+<a id="__codelineno-11-61" name="__codelineno-11-61" href="#__codelineno-11-61"></a><span class="n">gateway</span> <span class="o">=</span> <span class="n">Gateway</span><span class="p">(</span><span class="n">config_keys</span><span class="o">=</span><span class="n">config_keys</span><span class="p">)</span>
 </code></pre></div>
 The functions 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">hft</span><span class="p">(</span><span class="n">replayer</span><span class="p">,</span><span class="n">oms</span><span class="p">,</span><span class="n">feed</span><span class="p">):</span>
@@ -3438,33 +3567,41 @@ The functions
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="k">pass</span>
 </code></pre></div>
 remain unchanged from the previous section. Obviously, we are not submitting order actions and backtesting a hft-strategy. Rather, we are doing some quantitative analysis on replayed tick data. We would have to modify the <code>quote_markets</code> function. Again, we can choose to act on trade ticks, orderbook ticks, or clock ticks. We will stay with the orderbook ticks. This is both extremely simple and self-explanatory:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">quote_markets</span><span class="p">(</span><span class="n">replayer</span><span class="p">,</span><span class="n">oms</span><span class="p">,</span><span class="n">feed</span><span class="p">,</span><span class="n">ticker</span><span class="p">):</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="n">last_print</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">l2_handler</span><span class="p">(</span><span class="n">lob</span><span class="p">):</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>        <span class="k">nonlocal</span> <span class="n">last_print</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>        <span class="n">stamp</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>        <span class="n">stamp</span> <span class="o">=</span> <span class="n">stamp</span> <span class="o">-</span> <span class="p">(</span><span class="n">stamp</span> <span class="o">%</span> <span class="n">print_interval</span><span class="p">)</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>        <span class="k">if</span> <span class="n">stamp</span> <span class="o">!=</span> <span class="n">last_print</span><span class="p">:</span>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">time</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">,</span><span class="n">tz</span><span class="o">=</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">))</span>
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>            <span class="n">last_print</span> <span class="o">=</span> <span class="n">stamp</span>
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>        <span class="k">for</span> <span class="n">vamp</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">]:</span>
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>            <span class="n">replayer</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span>
-<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>                <span class="n">key</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;vamp</span><span class="si">{</span><span class="n">vamp</span><span class="si">}</span><span class="s1">k&#39;</span><span class="p">,</span>
-<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>                <span class="n">value</span><span class="o">=</span><span class="n">lob</span><span class="o">.</span><span class="n">get_vamp</span><span class="p">(</span><span class="n">vamp</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">),</span>
-<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>                <span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span>
-<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>                <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
-<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>                <span class="n">group</span><span class="o">=</span><span class="s1">&#39;vamp&#39;</span>
-<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>            <span class="p">)</span>    
-<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>
-<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>    <span class="n">l2_feed</span> <span class="o">=</span> <span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">add_l2_book_feed</span><span class="p">(</span>
-<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>        <span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span>
-<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>        <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
-<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>        <span class="n">depth</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
-<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>        <span class="n">buffer</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
-<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>        <span class="n">handler</span><span class="o">=</span><span class="n">l2_handler</span>
-<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>    <span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">book_vamp</span><span class="p">(</span><span class="n">book</span><span class="p">,</span> <span class="n">notional</span><span class="p">):</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="n">bids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">get_bids</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">/</span> <span class="n">PRICE_SCALE</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="n">asks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">get_asks</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">/</span> <span class="n">PRICE_SCALE</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">bids</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">asks</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    <span class="k">return</span> <span class="n">cfeatures</span><span class="o">.</span><span class="n">vamp</span><span class="p">(</span><span class="n">bids</span><span class="p">,</span> <span class="n">asks</span><span class="p">,</span> <span class="n">notional</span><span class="p">)</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">quote_markets</span><span class="p">(</span><span class="n">replayer</span><span class="p">,</span><span class="n">oms</span><span class="p">,</span><span class="n">feed</span><span class="p">,</span><span class="n">ticker</span><span class="p">):</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>    <span class="n">last_print</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">l2_handler</span><span class="p">(</span><span class="n">lob</span><span class="p">):</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>        <span class="k">nonlocal</span> <span class="n">last_print</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>        <span class="n">stamp</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>        <span class="n">stamp</span> <span class="o">=</span> <span class="n">stamp</span> <span class="o">-</span> <span class="p">(</span><span class="n">stamp</span> <span class="o">%</span> <span class="n">print_interval</span><span class="p">)</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>        <span class="k">if</span> <span class="n">stamp</span> <span class="o">!=</span> <span class="n">last_print</span><span class="p">:</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">time</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">,</span><span class="n">tz</span><span class="o">=</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">))</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>            <span class="n">last_print</span> <span class="o">=</span> <span class="n">stamp</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>        <span class="k">for</span> <span class="n">vamp</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">]:</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>            <span class="n">replayer</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>                <span class="n">key</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;vamp</span><span class="si">{</span><span class="n">vamp</span><span class="si">}</span><span class="s1">k&#39;</span><span class="p">,</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>                <span class="n">value</span><span class="o">=</span><span class="n">book_vamp</span><span class="p">(</span><span class="n">lob</span><span class="p">,</span> <span class="n">vamp</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">),</span>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>                <span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span>
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>                <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>                <span class="n">group</span><span class="o">=</span><span class="s1">&#39;vamp&#39;</span>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>            <span class="p">)</span>    
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>    <span class="n">book_sink</span> <span class="o">=</span> <span class="n">OrderbookMaterializerSink</span><span class="p">(</span><span class="n">on_update</span><span class="o">=</span><span class="n">l2_handler</span><span class="p">)</span>
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>    <span class="n">l2_feed</span> <span class="o">=</span> <span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">add_l2_book_feed</span><span class="p">(</span>
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>        <span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span>
+<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>        <span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">,</span>
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>        <span class="n">depth</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+<a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>        <span class="n">sinks</span><span class="o">=</span><span class="p">[</span><span class="n">book_sink</span><span class="p">],</span>
+<a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a>    <span class="p">)</span>
 </code></pre></div>
 It is not difficult to understand this, if the last section has been perused.
 The additional method is the <code>declare</code> method, which takes in key-value arguments for arbitrary random variable and corresponding realised estimate. The <code>exc</code>, <code>ticker</code> and <code>group</code> are optional labels, and it would come in very handy.</p>

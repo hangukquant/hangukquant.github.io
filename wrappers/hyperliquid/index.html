@@ -784,6 +784,98 @@
   
   
     <li class="md-nav__item">
+      <a href="../../hft/archival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.archival
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/materializers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.materializers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/orderbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.orderbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/l0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.l0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../hft/oms/" class="md-nav__link">
         
   
@@ -1890,6 +1982,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../standards/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.standards.models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../standards/intervals/" class="md-nav__link">
         
   
@@ -2852,6 +2967,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.bba_subscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      bba_subscribe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.bba_unsubscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      bba_unsubscribe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.borrow_lend_reserve_state" class="md-nav__link">
     <span class="md-ellipsis">
       borrow_lend_reserve_state
@@ -2882,6 +3015,15 @@
   <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.cancel_order" class="md-nav__link">
     <span class="md-ellipsis">
       cancel_order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.cancel_wire" class="md-nav__link">
+    <span class="md-ellipsis">
+      cancel_wire
     </span>
   </a>
   
@@ -3194,15 +3336,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.order_create" class="md-nav__link">
-    <span class="md-ellipsis">
-      order_create
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.order_fills" class="md-nav__link">
     <span class="md-ellipsis">
       order_fills
@@ -3269,6 +3402,15 @@
   <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.order_updates_unsubscribe" class="md-nav__link">
     <span class="md-ellipsis">
       order_updates_unsubscribe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.hyperliquid.Hyperliquid.order_wire" class="md-nav__link">
+    <span class="md-ellipsis">
+      order_wire
     </span>
   </a>
   
@@ -4382,29 +4524,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/tick_archival/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Tick Archival
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../scripts/trend_following/" class="md-nav__link">
         
   
@@ -5393,98 +5512,102 @@ Each subscribe method has a corresponding unsubscribe method with matching param
 <a id="__codelineno-40-395" name="__codelineno-40-395" href="#__codelineno-40-395"></a>    <span class="c1">#     aws.candle_unsubscribe(coin=ticker,interval=interval)</span>
 <a id="__codelineno-40-396" name="__codelineno-40-396" href="#__codelineno-40-396"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-397" name="__codelineno-40-397" href="#__codelineno-40-397"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-398" name="__codelineno-40-398" href="#__codelineno-40-398"></a>    <span class="c1">#     aws.l2_book_subscribe(ticker=ticker,handler=print_handler),</span>
-<a id="__codelineno-40-399" name="__codelineno-40-399" href="#__codelineno-40-399"></a>    <span class="c1">#     aws.l2_book_unsubscribe(ticker=ticker)</span>
+<a id="__codelineno-40-398" name="__codelineno-40-398" href="#__codelineno-40-398"></a>    <span class="c1">#     aws.bbo_subscribe(coin=ticker,handler=print_handler),</span>
+<a id="__codelineno-40-399" name="__codelineno-40-399" href="#__codelineno-40-399"></a>    <span class="c1">#     aws.bbo_unsubscribe(coin=ticker)</span>
 <a id="__codelineno-40-400" name="__codelineno-40-400" href="#__codelineno-40-400"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-401" name="__codelineno-40-401" href="#__codelineno-40-401"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-402" name="__codelineno-40-402" href="#__codelineno-40-402"></a>    <span class="c1">#     aws.l2_book_subscribe(ticker=ticker,handler=print_handler,nSigFigs=5,mantissa=2),</span>
-<a id="__codelineno-40-403" name="__codelineno-40-403" href="#__codelineno-40-403"></a>    <span class="c1">#     aws.l2_book_unsubscribe(ticker=ticker,nSigFigs=5,mantissa=2)</span>
+<a id="__codelineno-40-402" name="__codelineno-40-402" href="#__codelineno-40-402"></a>    <span class="c1">#     aws.l2_book_subscribe(ticker=ticker,handler=print_handler),</span>
+<a id="__codelineno-40-403" name="__codelineno-40-403" href="#__codelineno-40-403"></a>    <span class="c1">#     aws.l2_book_unsubscribe(ticker=ticker)</span>
 <a id="__codelineno-40-404" name="__codelineno-40-404" href="#__codelineno-40-404"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-405" name="__codelineno-40-405" href="#__codelineno-40-405"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-406" name="__codelineno-40-406" href="#__codelineno-40-406"></a>    <span class="c1">#     aws.trades_subscribe(ticker=ticker,handler=print_handler),</span>
-<a id="__codelineno-40-407" name="__codelineno-40-407" href="#__codelineno-40-407"></a>    <span class="c1">#     aws.trades_unsubscribe(ticker=ticker)</span>
+<a id="__codelineno-40-406" name="__codelineno-40-406" href="#__codelineno-40-406"></a>    <span class="c1">#     aws.l2_book_subscribe(ticker=ticker,handler=print_handler,nSigFigs=5,mantissa=2),</span>
+<a id="__codelineno-40-407" name="__codelineno-40-407" href="#__codelineno-40-407"></a>    <span class="c1">#     aws.l2_book_unsubscribe(ticker=ticker,nSigFigs=5,mantissa=2)</span>
 <a id="__codelineno-40-408" name="__codelineno-40-408" href="#__codelineno-40-408"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-409" name="__codelineno-40-409" href="#__codelineno-40-409"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-410" name="__codelineno-40-410" href="#__codelineno-40-410"></a>    <span class="c1">#     aws.order_updates_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-411" name="__codelineno-40-411" href="#__codelineno-40-411"></a>    <span class="c1">#     aws.order_updates_unsubscribe()</span>
+<a id="__codelineno-40-410" name="__codelineno-40-410" href="#__codelineno-40-410"></a>    <span class="c1">#     aws.trades_subscribe(ticker=ticker,handler=print_handler),</span>
+<a id="__codelineno-40-411" name="__codelineno-40-411" href="#__codelineno-40-411"></a>    <span class="c1">#     aws.trades_unsubscribe(ticker=ticker)</span>
 <a id="__codelineno-40-412" name="__codelineno-40-412" href="#__codelineno-40-412"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-413" name="__codelineno-40-413" href="#__codelineno-40-413"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-414" name="__codelineno-40-414" href="#__codelineno-40-414"></a>    <span class="c1">#     aws.user_events_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-415" name="__codelineno-40-415" href="#__codelineno-40-415"></a>    <span class="c1">#     aws.user_events_unsubscribe()</span>
+<a id="__codelineno-40-414" name="__codelineno-40-414" href="#__codelineno-40-414"></a>    <span class="c1">#     aws.order_updates_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-415" name="__codelineno-40-415" href="#__codelineno-40-415"></a>    <span class="c1">#     aws.order_updates_unsubscribe()</span>
 <a id="__codelineno-40-416" name="__codelineno-40-416" href="#__codelineno-40-416"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-417" name="__codelineno-40-417" href="#__codelineno-40-417"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-418" name="__codelineno-40-418" href="#__codelineno-40-418"></a>    <span class="c1">#    aws.account_fill_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-419" name="__codelineno-40-419" href="#__codelineno-40-419"></a>    <span class="c1">#     aws.account_fill_unsubscribe()</span>
+<a id="__codelineno-40-418" name="__codelineno-40-418" href="#__codelineno-40-418"></a>    <span class="c1">#     aws.user_events_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-419" name="__codelineno-40-419" href="#__codelineno-40-419"></a>    <span class="c1">#     aws.user_events_unsubscribe()</span>
 <a id="__codelineno-40-420" name="__codelineno-40-420" href="#__codelineno-40-420"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-421" name="__codelineno-40-421" href="#__codelineno-40-421"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-422" name="__codelineno-40-422" href="#__codelineno-40-422"></a>    <span class="c1">#     aws.account_fill_subscribe(handler=print_handler,aggregateByTime=True),</span>
-<a id="__codelineno-40-423" name="__codelineno-40-423" href="#__codelineno-40-423"></a>    <span class="c1">#     aws.account_fill_unsubscribe(aggregateByTime=True)</span>
+<a id="__codelineno-40-422" name="__codelineno-40-422" href="#__codelineno-40-422"></a>    <span class="c1">#    aws.account_fill_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-423" name="__codelineno-40-423" href="#__codelineno-40-423"></a>    <span class="c1">#     aws.account_fill_unsubscribe()</span>
 <a id="__codelineno-40-424" name="__codelineno-40-424" href="#__codelineno-40-424"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-425" name="__codelineno-40-425" href="#__codelineno-40-425"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-426" name="__codelineno-40-426" href="#__codelineno-40-426"></a>    <span class="c1">#     aws.user_fundings_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-427" name="__codelineno-40-427" href="#__codelineno-40-427"></a>    <span class="c1">#     aws.user_fundings_unsubscribe()</span>
+<a id="__codelineno-40-426" name="__codelineno-40-426" href="#__codelineno-40-426"></a>    <span class="c1">#     aws.account_fill_subscribe(handler=print_handler,aggregateByTime=True),</span>
+<a id="__codelineno-40-427" name="__codelineno-40-427" href="#__codelineno-40-427"></a>    <span class="c1">#     aws.account_fill_unsubscribe(aggregateByTime=True)</span>
 <a id="__codelineno-40-428" name="__codelineno-40-428" href="#__codelineno-40-428"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-429" name="__codelineno-40-429" href="#__codelineno-40-429"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-430" name="__codelineno-40-430" href="#__codelineno-40-430"></a>    <span class="c1">#     aws.user_ledger_updates_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-431" name="__codelineno-40-431" href="#__codelineno-40-431"></a>    <span class="c1">#     aws.user_ledger_updates_unsubscribe()</span>
+<a id="__codelineno-40-430" name="__codelineno-40-430" href="#__codelineno-40-430"></a>    <span class="c1">#     aws.user_fundings_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-431" name="__codelineno-40-431" href="#__codelineno-40-431"></a>    <span class="c1">#     aws.user_fundings_unsubscribe()</span>
 <a id="__codelineno-40-432" name="__codelineno-40-432" href="#__codelineno-40-432"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-433" name="__codelineno-40-433" href="#__codelineno-40-433"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-434" name="__codelineno-40-434" href="#__codelineno-40-434"></a>    <span class="c1">#     aws.active_asset_ctx_subscribe(coin=ticker,handler=print_handler),</span>
-<a id="__codelineno-40-435" name="__codelineno-40-435" href="#__codelineno-40-435"></a>    <span class="c1">#     aws.active_asset_ctx_unsubscribe(coin=ticker)</span>
+<a id="__codelineno-40-434" name="__codelineno-40-434" href="#__codelineno-40-434"></a>    <span class="c1">#     aws.user_ledger_updates_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-435" name="__codelineno-40-435" href="#__codelineno-40-435"></a>    <span class="c1">#     aws.user_ledger_updates_unsubscribe()</span>
 <a id="__codelineno-40-436" name="__codelineno-40-436" href="#__codelineno-40-436"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-437" name="__codelineno-40-437" href="#__codelineno-40-437"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-438" name="__codelineno-40-438" href="#__codelineno-40-438"></a>    <span class="c1">#     aws.active_asset_data_subscribe(coin=ticker,handler=print_handler),</span>
-<a id="__codelineno-40-439" name="__codelineno-40-439" href="#__codelineno-40-439"></a>    <span class="c1">#     aws.active_asset_data_unsubscribe(coin=ticker)</span>
+<a id="__codelineno-40-438" name="__codelineno-40-438" href="#__codelineno-40-438"></a>    <span class="c1">#     aws.active_asset_ctx_subscribe(coin=ticker,handler=print_handler),</span>
+<a id="__codelineno-40-439" name="__codelineno-40-439" href="#__codelineno-40-439"></a>    <span class="c1">#     aws.active_asset_ctx_unsubscribe(coin=ticker)</span>
 <a id="__codelineno-40-440" name="__codelineno-40-440" href="#__codelineno-40-440"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-441" name="__codelineno-40-441" href="#__codelineno-40-441"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-442" name="__codelineno-40-442" href="#__codelineno-40-442"></a>    <span class="c1">#     aws.user_twap_slice_fills_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-443" name="__codelineno-40-443" href="#__codelineno-40-443"></a>    <span class="c1">#     aws.user_twap_slice_fills_unsubscribe()</span>
+<a id="__codelineno-40-442" name="__codelineno-40-442" href="#__codelineno-40-442"></a>    <span class="c1">#     aws.active_asset_data_subscribe(coin=ticker,handler=print_handler),</span>
+<a id="__codelineno-40-443" name="__codelineno-40-443" href="#__codelineno-40-443"></a>    <span class="c1">#     aws.active_asset_data_unsubscribe(coin=ticker)</span>
 <a id="__codelineno-40-444" name="__codelineno-40-444" href="#__codelineno-40-444"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-445" name="__codelineno-40-445" href="#__codelineno-40-445"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-446" name="__codelineno-40-446" href="#__codelineno-40-446"></a>    <span class="c1">#     aws.user_twap_history_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-447" name="__codelineno-40-447" href="#__codelineno-40-447"></a>    <span class="c1">#     aws.user_twap_history_unsubscribe()</span>
+<a id="__codelineno-40-446" name="__codelineno-40-446" href="#__codelineno-40-446"></a>    <span class="c1">#     aws.user_twap_slice_fills_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-447" name="__codelineno-40-447" href="#__codelineno-40-447"></a>    <span class="c1">#     aws.user_twap_slice_fills_unsubscribe()</span>
 <a id="__codelineno-40-448" name="__codelineno-40-448" href="#__codelineno-40-448"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-449" name="__codelineno-40-449" href="#__codelineno-40-449"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-450" name="__codelineno-40-450" href="#__codelineno-40-450"></a>    <span class="c1">#     aws.bbo_subscribe(coin=ticker,handler=print_handler),</span>
-<a id="__codelineno-40-451" name="__codelineno-40-451" href="#__codelineno-40-451"></a>    <span class="c1">#     aws.bbo_unsubscribe(coin=ticker)</span>
+<a id="__codelineno-40-450" name="__codelineno-40-450" href="#__codelineno-40-450"></a>    <span class="c1">#     aws.user_twap_history_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-451" name="__codelineno-40-451" href="#__codelineno-40-451"></a>    <span class="c1">#     aws.user_twap_history_unsubscribe()</span>
 <a id="__codelineno-40-452" name="__codelineno-40-452" href="#__codelineno-40-452"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-453" name="__codelineno-40-453" href="#__codelineno-40-453"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-454" name="__codelineno-40-454" href="#__codelineno-40-454"></a>    <span class="c1">#     aws.spot_state_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-455" name="__codelineno-40-455" href="#__codelineno-40-455"></a>    <span class="c1">#     aws.spot_state_unsubscribe()</span>
+<a id="__codelineno-40-454" name="__codelineno-40-454" href="#__codelineno-40-454"></a>    <span class="c1">#     aws.bbo_subscribe(coin=ticker,handler=print_handler),</span>
+<a id="__codelineno-40-455" name="__codelineno-40-455" href="#__codelineno-40-455"></a>    <span class="c1">#     aws.bbo_unsubscribe(coin=ticker)</span>
 <a id="__codelineno-40-456" name="__codelineno-40-456" href="#__codelineno-40-456"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-457" name="__codelineno-40-457" href="#__codelineno-40-457"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-458" name="__codelineno-40-458" href="#__codelineno-40-458"></a>    <span class="c1">#     aws.spot_state_subscribe(handler=print_handler,isPortfolioMargin=True),</span>
-<a id="__codelineno-40-459" name="__codelineno-40-459" href="#__codelineno-40-459"></a>    <span class="c1">#     aws.spot_state_unsubscribe(isPortfolioMargin=True)</span>
+<a id="__codelineno-40-458" name="__codelineno-40-458" href="#__codelineno-40-458"></a>    <span class="c1">#     aws.spot_state_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-459" name="__codelineno-40-459" href="#__codelineno-40-459"></a>    <span class="c1">#     aws.spot_state_unsubscribe()</span>
 <a id="__codelineno-40-460" name="__codelineno-40-460" href="#__codelineno-40-460"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-461" name="__codelineno-40-461" href="#__codelineno-40-461"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-462" name="__codelineno-40-462" href="#__codelineno-40-462"></a>    <span class="c1">#     aws.all_dexs_clearinghouse_state_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-463" name="__codelineno-40-463" href="#__codelineno-40-463"></a>    <span class="c1">#     aws.all_dexs_clearinghouse_state_unsubscribe()</span>
+<a id="__codelineno-40-462" name="__codelineno-40-462" href="#__codelineno-40-462"></a>    <span class="c1">#     aws.spot_state_subscribe(handler=print_handler,isPortfolioMargin=True),</span>
+<a id="__codelineno-40-463" name="__codelineno-40-463" href="#__codelineno-40-463"></a>    <span class="c1">#     aws.spot_state_unsubscribe(isPortfolioMargin=True)</span>
 <a id="__codelineno-40-464" name="__codelineno-40-464" href="#__codelineno-40-464"></a>    <span class="c1"># )</span>
 <a id="__codelineno-40-465" name="__codelineno-40-465" href="#__codelineno-40-465"></a>    <span class="c1"># await stream_for(</span>
-<a id="__codelineno-40-466" name="__codelineno-40-466" href="#__codelineno-40-466"></a>    <span class="c1">#     aws.all_dexs_asset_ctxs_subscribe(handler=print_handler),</span>
-<a id="__codelineno-40-467" name="__codelineno-40-467" href="#__codelineno-40-467"></a>    <span class="c1">#     aws.all_dexs_asset_ctxs_unsubscribe()</span>
+<a id="__codelineno-40-466" name="__codelineno-40-466" href="#__codelineno-40-466"></a>    <span class="c1">#     aws.all_dexs_clearinghouse_state_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-467" name="__codelineno-40-467" href="#__codelineno-40-467"></a>    <span class="c1">#     aws.all_dexs_clearinghouse_state_unsubscribe()</span>
 <a id="__codelineno-40-468" name="__codelineno-40-468" href="#__codelineno-40-468"></a>    <span class="c1"># )</span>
-<a id="__codelineno-40-469" name="__codelineno-40-469" href="#__codelineno-40-469"></a>
-<a id="__codelineno-40-470" name="__codelineno-40-470" href="#__codelineno-40-470"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-<a id="__codelineno-40-471" name="__codelineno-40-471" href="#__codelineno-40-471"></a>    <span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">init_client</span><span class="p">()</span>
-<a id="__codelineno-40-472" name="__codelineno-40-472" href="#__codelineno-40-472"></a>    <span class="k">try</span><span class="p">:</span>
-<a id="__codelineno-40-473" name="__codelineno-40-473" href="#__codelineno-40-473"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39;uncomment examples to run</span>
-<a id="__codelineno-40-474" name="__codelineno-40-474" href="#__codelineno-40-474"></a><span class="sd">        NOTE: that some code may trigger exchange actions such as live orders</span>
-<a id="__codelineno-40-475" name="__codelineno-40-475" href="#__codelineno-40-475"></a><span class="sd">        &#39;&#39;&#39;</span>
-<a id="__codelineno-40-476" name="__codelineno-40-476" href="#__codelineno-40-476"></a>
-<a id="__codelineno-40-477" name="__codelineno-40-477" href="#__codelineno-40-477"></a>        <span class="c1">#await exchange_sdk_examnples()</span>
-<a id="__codelineno-40-478" name="__codelineno-40-478" href="#__codelineno-40-478"></a>        <span class="c1">#await info_sdk_examples()</span>
-<a id="__codelineno-40-479" name="__codelineno-40-479" href="#__codelineno-40-479"></a>        <span class="c1">#await gateway_examples()</span>
-<a id="__codelineno-40-480" name="__codelineno-40-480" href="#__codelineno-40-480"></a>        <span class="k">await</span> <span class="n">socket_examples</span><span class="p">()</span>
-<a id="__codelineno-40-481" name="__codelineno-40-481" href="#__codelineno-40-481"></a>
-<a id="__codelineno-40-482" name="__codelineno-40-482" href="#__codelineno-40-482"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<a id="__codelineno-40-483" name="__codelineno-40-483" href="#__codelineno-40-483"></a>        <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Error in SDK examples: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-<a id="__codelineno-40-484" name="__codelineno-40-484" href="#__codelineno-40-484"></a>
-<a id="__codelineno-40-485" name="__codelineno-40-485" href="#__codelineno-40-485"></a>    <span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
-<a id="__codelineno-40-486" name="__codelineno-40-486" href="#__codelineno-40-486"></a>
-<a id="__codelineno-40-487" name="__codelineno-40-487" href="#__codelineno-40-487"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<a id="__codelineno-40-488" name="__codelineno-40-488" href="#__codelineno-40-488"></a>    <span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
-<a id="__codelineno-40-489" name="__codelineno-40-489" href="#__codelineno-40-489"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+<a id="__codelineno-40-469" name="__codelineno-40-469" href="#__codelineno-40-469"></a>    <span class="c1"># await stream_for(</span>
+<a id="__codelineno-40-470" name="__codelineno-40-470" href="#__codelineno-40-470"></a>    <span class="c1">#     aws.all_dexs_asset_ctxs_subscribe(handler=print_handler),</span>
+<a id="__codelineno-40-471" name="__codelineno-40-471" href="#__codelineno-40-471"></a>    <span class="c1">#     aws.all_dexs_asset_ctxs_unsubscribe()</span>
+<a id="__codelineno-40-472" name="__codelineno-40-472" href="#__codelineno-40-472"></a>    <span class="c1"># )</span>
+<a id="__codelineno-40-473" name="__codelineno-40-473" href="#__codelineno-40-473"></a>
+<a id="__codelineno-40-474" name="__codelineno-40-474" href="#__codelineno-40-474"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-40-475" name="__codelineno-40-475" href="#__codelineno-40-475"></a>    <span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">init_client</span><span class="p">()</span>
+<a id="__codelineno-40-476" name="__codelineno-40-476" href="#__codelineno-40-476"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-40-477" name="__codelineno-40-477" href="#__codelineno-40-477"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39;uncomment examples to run</span>
+<a id="__codelineno-40-478" name="__codelineno-40-478" href="#__codelineno-40-478"></a><span class="sd">        NOTE: that some code may trigger exchange actions such as live orders</span>
+<a id="__codelineno-40-479" name="__codelineno-40-479" href="#__codelineno-40-479"></a><span class="sd">        &#39;&#39;&#39;</span>
+<a id="__codelineno-40-480" name="__codelineno-40-480" href="#__codelineno-40-480"></a>
+<a id="__codelineno-40-481" name="__codelineno-40-481" href="#__codelineno-40-481"></a>        <span class="c1">#await exchange_sdk_examnples()</span>
+<a id="__codelineno-40-482" name="__codelineno-40-482" href="#__codelineno-40-482"></a>        <span class="c1">#await info_sdk_examples()</span>
+<a id="__codelineno-40-483" name="__codelineno-40-483" href="#__codelineno-40-483"></a>        <span class="c1">#await gateway_examples()</span>
+<a id="__codelineno-40-484" name="__codelineno-40-484" href="#__codelineno-40-484"></a>        <span class="k">await</span> <span class="n">socket_examples</span><span class="p">()</span>
+<a id="__codelineno-40-485" name="__codelineno-40-485" href="#__codelineno-40-485"></a>
+<a id="__codelineno-40-486" name="__codelineno-40-486" href="#__codelineno-40-486"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-40-487" name="__codelineno-40-487" href="#__codelineno-40-487"></a>        <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Error in SDK examples: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<a id="__codelineno-40-488" name="__codelineno-40-488" href="#__codelineno-40-488"></a>
+<a id="__codelineno-40-489" name="__codelineno-40-489" href="#__codelineno-40-489"></a>    <span class="k">await</span> <span class="n">hyp</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+<a id="__codelineno-40-490" name="__codelineno-40-490" href="#__codelineno-40-490"></a>
+<a id="__codelineno-40-491" name="__codelineno-40-491" href="#__codelineno-40-491"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-40-492" name="__codelineno-40-492" href="#__codelineno-40-492"></a>    <span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<a id="__codelineno-40-493" name="__codelineno-40-493" href="#__codelineno-40-493"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div>
 <h2 id="documentation">Documentation</h2>
 
@@ -5525,6 +5648,8 @@ Each subscribe method has a corresponding unsubscribe method with matching param
 
 
     <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="quantpylib.utilities.subscriptions_manager.AsyncWsManager">AsyncWsManager</span></code></p>
 
 
 
@@ -5946,7 +6071,7 @@ Each subscribe method has a corresponding unsubscribe method with matching param
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.AsyncWebsocketManager.l2_book_subscribe" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">l2_book_subscribe</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">handler</span><span class="p">,</span> <span class="n">nSigFigs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mantissa</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">l2_book_subscribe</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">handler</span><span class="p">,</span> <span class="n">nSigFigs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mantissa</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fast</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -5986,7 +6111,7 @@ Each subscribe method has a corresponding unsubscribe method with matching param
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.AsyncWebsocketManager.l2_book_unsubscribe" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">l2_book_unsubscribe</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">nSigFigs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mantissa</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">l2_book_unsubscribe</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">nSigFigs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mantissa</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fast</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -6876,7 +7001,7 @@ Each subscribe method has a corresponding unsubscribe method with matching param
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">vault_address</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">ExchangeModes</span><span class="o">.</span><span class="n">LIVE</span><span class="p">,</span> <span class="n">builder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">perp_dexs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hip3_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">vault_address</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">ExchangeModes</span><span class="o">.</span><span class="n">LIVE</span><span class="p">,</span> <span class="n">builder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">perp_dexs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hip3_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 </h3>
 
@@ -7021,7 +7146,7 @@ Each subscribe method has a corresponding unsubscribe method with matching param
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.account_balance" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">account_balance</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">account_balance</span><span class="p">(</span><span class="n">dex</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">agg_perp_dexs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">refresh_abstraction</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -7033,6 +7158,73 @@ Each subscribe method has a corresponding unsubscribe method with matching param
     <div class="doc doc-contents ">
 
         <p>Retrieve balance details of the user, such as equity, margin (total, maintenance) and pnl.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>dex</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>DEX to query.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>agg_perp_dexs</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, aggregates across self.query_dexs. Only valid when
+dex is "" (raises otherwise). For Manual/Standard accounts, sums per-DEX states.
+For Unified Account / Portfolio Margin, collateral is shared so only the main
+DEX state is returned.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>refresh_abstraction</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Force a re-read of the cached account abstraction
+mode before resolving balances. See _resolve_abstraction.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
     <p><span class="doc-section-title">Returns:</span></p>
@@ -7066,7 +7258,7 @@ Each subscribe method has a corresponding unsubscribe method with matching param
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.account_fill_subscribe" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">account_fill_subscribe</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">aggregateByTime</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">account_fill_subscribe</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">aggregateByTime</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">standardize_schema</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">as_canonical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -7100,7 +7292,7 @@ Each subscribe method has a corresponding unsubscribe method with matching param
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A coroutine handler for the message received.</p>
+                <p>A coroutine handler for fill events.</p>
               </div>
             </td>
             <td>
@@ -7121,6 +7313,39 @@ Each subscribe method has a corresponding unsubscribe method with matching param
             </td>
             <td>
                   <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>standardize_schema</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p><code>0</code> passes the raw venue payload,
+<code>1</code> emits normalized <code>Fill</code> objects. Defaults to 1.</p>
+              </div>
+            </td>
+            <td>
+                  <code>1</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>as_canonical</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, the method returns tickers in their canonical form. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -7682,6 +7907,214 @@ Each subscribe method has a corresponding unsubscribe method with matching param
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.bba_subscribe" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">bba_subscribe</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">handler</span><span class="p">,</span> <span class="n">standardize_schema</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">is_canonical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Subscribe to best bid/ask updates.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Ticker symbol.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>handler</code>
+            </td>
+            <td>
+                  <code><span title="coroutine">coroutine</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Callback invoked for each best bid/ask update.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>standardize_schema</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Payload schema mode. <code>0</code>
+passes the raw provider payload, <code>1</code> emits the legacy
+<code>{ts,bid,ask,bid_sz,ask_sz}</code> dictionary, and <code>2</code> emits
+<a class="autorefs autorefs-internal" title="BBAUpdate" href="../../standards/models/#quantpylib.standards.models.BBAUpdate">quantpylib.standards.models.BBAUpdate</a>.
+Defaults to <code>1</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>1</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>is_canonical</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, <code>ticker</code> is treated as a
+canonical name and converted to the accredited name. Defaults
+to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange wrapper specific keyword arguments.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.bba_unsubscribe" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">bba_unsubscribe</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">is_canonical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Unsubscribe from best bid/ask updates.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Ticker symbol.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>is_canonical</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, <code>ticker</code> is treated as a
+canonical name and converted to the accredited name. Defaults
+to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange wrapper specific keyword arguments.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.borrow_lend_reserve_state" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">borrow_lend_reserve_state</span><span class="p">(</span><span class="n">token</span><span class="p">)</span></code>
 
@@ -8014,6 +8447,28 @@ Each subscribe method has a corresponding unsubscribe method with matching param
           </tr>
       </tbody>
     </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.cancel_wire" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">cancel_wire</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">is_canonical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Build a native cancel wire for later submission.</p>
 
 
     </div>
@@ -8742,7 +9197,7 @@ JEFF/USDC maps to @4.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The symbol of the specific contract for which to retrieve the mid-price. 
+                <p>The symbol of the specific contract for which to retrieve the mid-price.
                 If not provided, mid-prices for all contracts will be returned. Defaults to None.</p>
               </div>
             </td>
@@ -8792,7 +9247,7 @@ JEFF/USDC maps to @4.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A dictionary with contract symbols as keys and their corresponding mid-prices (Decimal) as values 
+                <p>A dictionary with contract symbols as keys and their corresponding mid-prices (Decimal) as values
 if <code>ticker</code> is not provided.</p>
               </div>
             </td>
@@ -9205,7 +9660,7 @@ For perpetuals, this is an identity mapping. For spot, (for instance)
 
     <div class="doc doc-contents ">
 
-        <p>Get a unique nonce value using a nonce buffer to ensure no overlaps 
+        <p>Get a unique nonce value using a nonce buffer to ensure no overlaps
 between exchange requests.</p>
 
 
@@ -9246,7 +9701,7 @@ between exchange requests.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Get the price precision for a specified asset. Note that prices quoted 
+        <p>Get the price precision for a specified asset. Note that prices quoted
 are less of price precision and 5 significant figures.</p>
 
 
@@ -9553,7 +10008,7 @@ are less of price precision and 5 significant figures.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Initializes the exchange client with important metadata for mapping tickers to asset ids, 
+        <p>Initializes the exchange client with important metadata for mapping tickers to asset ids,
 contract precision and mapping. Should be called upon object initialization.</p>
 
 
@@ -9635,7 +10090,7 @@ Can be used to cancel pending actions that have not yet been processed.</p>
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.l2_book_get" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">l2_book_get</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">nsigfig</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">depth_cum</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">l2_book_get</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">nsigfig</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">standardize_schema</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -9646,7 +10101,7 @@ Can be used to cancel pending actions that have not yet been processed.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Retrieve L2 snapshot for a given coin.</p>
+        <p>Retrieve an L2 order-book snapshot.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -9669,7 +10124,7 @@ Can be used to cancel pending actions that have not yet been processed.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The coin symbol.</p>
+                <p>Ticker symbol.</p>
               </div>
             </td>
             <td>
@@ -9685,7 +10140,8 @@ Can be used to cancel pending actions that have not yet been processed.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Number of significant figures requested. Defaults to None.</p>
+                <p>Hyperliquid significant-figure grouping
+requested for the snapshot. Defaults to None.</p>
               </div>
             </td>
             <td>
@@ -9701,7 +10157,7 @@ Can be used to cancel pending actions that have not yet been processed.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Depth of the order-book representation, if <code>as_dict</code> is <code>False</code>.</p>
+                <p>Number of top bid/ask levels to return.</p>
               </div>
             </td>
             <td>
@@ -9710,18 +10166,22 @@ Can be used to cancel pending actions that have not yet been processed.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>depth_cum</code>
+                <code>standardize_schema</code>
             </td>
             <td>
-                  <code><span title="bool">bool</span></code>
+                  <code><span title="int">int</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Flag indicating whether to return cumulative depth or not.</p>
+                <p>Payload schema mode. <code>0</code> returns the raw
+provider payload, <code>1</code> returns the legacy <code>{ts,b,a}</code>
+dictionary, and <code>2</code> returns
+<a class="autorefs autorefs-internal" title="BookUpdate" href="../../standards/models/#quantpylib.standards.models.BookUpdate">quantpylib.standards.models.BookUpdate</a>.
+Defaults to <code>1</code>.</p>
               </div>
             </td>
             <td>
-                  <code>True</code>
+                  <code>1</code>
             </td>
           </tr>
       </tbody>
@@ -9732,17 +10192,19 @@ Can be used to cancel pending actions that have not yet been processed.</p>
     <table>
       <thead>
         <tr>
-<th>Name</th>          <th>Type</th>
+          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-<td><code>dict</code></td>            <td>
+            <td>
+                  <code><span title="dict">dict</span> | <a class="autorefs autorefs-internal" title="BookUpdate (quantpylib.standards.models.BookUpdate)" href="../../standards/models/#quantpylib.standards.models.BookUpdate">BookUpdate</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A dictionary containing the L2 snapshot information.</p>
+                <p>Order book data
+in the selected schema.</p>
               </div>
             </td>
           </tr>
@@ -9808,7 +10270,8 @@ Can be used to cancel pending actions that have not yet been processed.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Depth of the order-book representation, if <code>as_dict</code> is <code>False</code>.</p>
+                <p>Depth of the local order-book
+representation. Defaults to 100.</p>
               </div>
             </td>
             <td>
@@ -9824,7 +10287,8 @@ Can be used to cancel pending actions that have not yet been processed.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Size of the order-book buffer, if <code>as_dict</code> is <code>False</code>.</p>
+                <p>Size of the local order-book buffer.
+Defaults to 100.</p>
               </div>
             </td>
             <td>
@@ -9836,11 +10300,13 @@ Can be used to cancel pending actions that have not yet been processed.</p>
                 <code>as_dict</code>
             </td>
             <td>
-                  <code>(<span title="bool">bool</span>, True)</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>If <code>True</code>, pass state as dictionary, otherwise as a <code>quantpylib.hft.lob.LOB</code> object into handlers.</p>
+                <p>If <code>True</code>, pass state as a <code>{ts,b,a}</code>
+dictionary; otherwise pass the local <code>LOB</code> object into handlers.
+Defaults to True.</p>
               </div>
             </td>
             <td>
@@ -9856,7 +10322,8 @@ Can be used to cancel pending actions that have not yet been processed.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A coroutine handler when order book state is updated.</p>
+                <p>Callback invoked after local mirror
+updates. Defaults to None.</p>
               </div>
             </td>
             <td>
@@ -9868,11 +10335,12 @@ Can be used to cancel pending actions that have not yet been processed.</p>
                 <code>apply_shadow_depth</code>
             </td>
             <td>
-                  <code>(<span title="bool">bool</span>, False)</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>If True, applies shadow depth to the LOB.</p>
+                <p>Whether to maintain additional
+book levels inside the LOB. Defaults to False.</p>
               </div>
             </td>
             <td>
@@ -9884,11 +10352,13 @@ Can be used to cancel pending actions that have not yet been processed.</p>
                 <code>is_canonical</code>
             </td>
             <td>
-                  <code>(<span title="bool">bool</span>, False)</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>If the ticker passed in is a canonical name for the spot pairs.</p>
+                <p>If True, <code>ticker</code> is treated as a
+canonical name and converted to the accredited name. Defaults
+to False.</p>
               </div>
             </td>
             <td>
@@ -9929,7 +10399,7 @@ Can be used to cancel pending actions that have not yet been processed.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Retrieve the mirrored, local internal L2 Order Book representation.</p>
+        <p>Return the local L2 order-book mirror created by <code>l2_book_mirror()</code>.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -9964,11 +10434,13 @@ Can be used to cancel pending actions that have not yet been processed.</p>
                 <code>as_dict</code>
             </td>
             <td>
-                  <code>(<span title="bool">bool</span>, True)</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>If <code>True</code>, return state as dictionary, otherwise as a <code>quantpylib.hft.lob.LOB</code> object.</p>
+                <p>If <code>True</code>, return the mirror as a
+<code>{ts,b,a}</code> dictionary; otherwise return the local <code>LOB</code>
+object. Defaults to True.</p>
               </div>
             </td>
             <td>
@@ -9980,11 +10452,13 @@ Can be used to cancel pending actions that have not yet been processed.</p>
                 <code>is_canonical</code>
             </td>
             <td>
-                  <code>(<span title="bool">bool</span>, False)</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>If the ticker passed in is a canonical name for the spot pairs.</p>
+                <p>If True, <code>ticker</code> is treated as a
+canonical name and converted to the accredited name. Defaults
+to False.</p>
               </div>
             </td>
             <td>
@@ -10010,6 +10484,29 @@ Can be used to cancel pending actions that have not yet been processed.</p>
     </table>
 
 
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="dict">dict</span> | <span title="quantpylib.hft.lob.LOB">LOB</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Current mirrored order-book state.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
     </div>
 
 </div>
@@ -10018,7 +10515,7 @@ Can be used to cancel pending actions that have not yet been processed.</p>
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.l2_book_subscribe" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">l2_book_subscribe</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">handler</span><span class="p">,</span> <span class="n">standardize_schema</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nSigFigs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mantissa</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">l2_book_subscribe</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">handler</span><span class="p">,</span> <span class="n">standardize_schema</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nSigFigs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mantissa</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fast</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -10029,7 +10526,7 @@ Can be used to cancel pending actions that have not yet been processed.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Subscribe to L2 Order Book stream.</p>
+        <p>Subscribe to L2 order-book updates.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -10068,7 +10565,7 @@ Can be used to cancel pending actions that have not yet been processed.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A coroutine handler for the message received.</p>
+                <p>Callback invoked for each order-book update.</p>
               </div>
             </td>
             <td>
@@ -10080,15 +10577,18 @@ Can be used to cancel pending actions that have not yet been processed.</p>
                 <code>standardize_schema</code>
             </td>
             <td>
-                  <code>(<span title="bool">bool</span>, True)</code>
+                  <code>(<span title="int">int</span>, 1)</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Processes the incoming message to <code>{ts,b,a}</code></p>
+                <p>Payload schema mode. <code>0</code> passes the
+raw provider payload, <code>1</code> emits the legacy <code>{ts,b,a}</code>
+dictionary, and <code>2</code> emits
+<a class="autorefs autorefs-internal" title="BookUpdate" href="../../standards/models/#quantpylib.standards.models.BookUpdate">quantpylib.standards.models.BookUpdate</a>.</p>
               </div>
             </td>
             <td>
-                  <code>True</code>
+                  <code>1</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -10100,7 +10600,7 @@ Can be used to cancel pending actions that have not yet been processed.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Number of significant figures for price grouping.</p>
+                <p>Hyperliquid significant-figure grouping.</p>
               </div>
             </td>
             <td>
@@ -10116,7 +10616,23 @@ Can be used to cancel pending actions that have not yet been processed.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Mantissa for price grouping.</p>
+                <p>Hyperliquid mantissa grouping.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>fast</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Request Hyperliquid fast L2 book cadence.</p>
               </div>
             </td>
             <td>
@@ -10157,7 +10673,30 @@ Can be used to cancel pending actions that have not yet been processed.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Retrieve the list of open l2 book subscriptions.</p>
+        <p>Return active L2 order-book subscription identifiers.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="set">set</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Open L2 order-book subscription identifiers.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
     </div>
@@ -10168,7 +10707,7 @@ Can be used to cancel pending actions that have not yet been processed.</p>
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.l2_book_unsubscribe" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">l2_book_unsubscribe</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">nSigFigs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mantissa</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">l2_book_unsubscribe</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">nSigFigs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mantissa</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fast</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -10179,7 +10718,7 @@ Can be used to cancel pending actions that have not yet been processed.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Unsubscribe from L2 Order Book.</p>
+        <p>Unsubscribe from L2 order-book updates.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -10218,7 +10757,8 @@ Can be used to cancel pending actions that have not yet been processed.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Number of significant figures for price grouping.</p>
+                <p>Hyperliquid significant-figure grouping
+used for the subscription.</p>
               </div>
             </td>
             <td>
@@ -10234,7 +10774,25 @@ Can be used to cancel pending actions that have not yet been processed.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Mantissa for price grouping.</p>
+                <p>Hyperliquid mantissa grouping used for
+the subscription.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>fast</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Hyperliquid fast L2 book cadence used for
+the subscription.</p>
               </div>
             </td>
             <td>
@@ -10375,7 +10933,7 @@ Can be used to cancel pending actions that have not yet been processed.</p>
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.limit_order" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">limit_order</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">tif</span><span class="o">=</span><span class="s1">&#39;Gtc&#39;</span><span class="p">,</span> <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sl</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">trigger_market</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">round_price</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">round_size</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_canonical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">submit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">limit_order</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">tif</span><span class="o">=</span><span class="s1">&#39;Gtc&#39;</span><span class="p">,</span> <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sl</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">trigger_market</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">round_price</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">round_size</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_canonical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -10906,7 +11464,7 @@ Can be used to cancel pending actions that have not yet been processed.</p>
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.order_cancel" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">order_cancel</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">oid</span><span class="p">,</span> <span class="n">expires_after</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">submit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">order_cancel</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">oid</span><span class="p">,</span> <span class="n">expires_after</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -10979,22 +11537,6 @@ Can be used to cancel pending actions that have not yet been processed.</p>
                   <code>None</code>
             </td>
           </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>submit</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If True, the cancel action is submitted. Defaults to True.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
       </tbody>
     </table>
 
@@ -11013,7 +11555,7 @@ Can be used to cancel pending actions that have not yet been processed.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The result of the order cancellation request if <code>submit</code> is True, otherwise the action dictionary.</p>
+                <p>The result of the order cancellation request.</p>
               </div>
             </td>
           </tr>
@@ -11029,7 +11571,7 @@ Can be used to cancel pending actions that have not yet been processed.</p>
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.order_cancel_cloid" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">order_cancel_cloid</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">cloid</span><span class="p">,</span> <span class="n">expires_after</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">submit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">order_cancel_cloid</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">cloid</span><span class="p">,</span> <span class="n">expires_after</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -11102,22 +11644,6 @@ Can be used to cancel pending actions that have not yet been processed.</p>
                   <code>None</code>
             </td>
           </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>submit</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If True, the cancel action is submitted. Defaults to True.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
       </tbody>
     </table>
 
@@ -11136,306 +11662,7 @@ Can be used to cancel pending actions that have not yet been processed.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The result of the order cancellation request if <code>submit</code> is True, otherwise the action dictionary.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.order_create" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">order_create</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">tif</span><span class="o">=</span><span class="s1">&#39;Gtc&#39;</span><span class="p">,</span> <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sl</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">trigger_market</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">grouping</span><span class="o">=</span><span class="s1">&#39;na&#39;</span><span class="p">,</span> <span class="n">round_price</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">round_size</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">submit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">is_canonical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Create a new order.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>ticker</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The ticker symbol of the asset.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>amount</code>
-            </td>
-            <td>
-                  <code><span title="float">float</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The quantity of the asset to trade. Positive for buy (long), negative for sell (short).</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>price</code>
-            </td>
-            <td>
-                  <code><span title="float">float</span> or <span title="decimal.Decimal">Decimal</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The limit price for the order.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>tif</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Time in force for the order. Defaults to "Gtc" (Good 'til canceled).</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;Gtc&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>reduce_only</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If True, the order can only reduce an existing position. Defaults to False.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>cloid</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Client order ID for tracking. Defaults to None.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>tp</code>
-            </td>
-            <td>
-                  <code><span title="float">float</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Take profit price. Defaults to None.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>sl</code>
-            </td>
-            <td>
-                  <code><span title="float">float</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Stop loss price. Defaults to None.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>trigger_market</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether the tpsl trigger (if not None) is a market order. Defaults to True.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>grouping</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Order grouping type. Defaults to "na".</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;na&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>round_price</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to round the price to a valid order specification. Defaults to False.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>round_size</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to round the price to a valid order specification. Defaults to False.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>submit</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If True, the order is submitted immediately, otherwise the order schema is returned. Defaults to True.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>is_canonical</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If True, the ticker is treated as a canonical name. Defaults to False.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>nonce</code>
-            </td>
-            <td>
-                  <code><span title="int">int</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>A specific nonce to use. Defaults to None (auto-generated).</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>dict</code></td>            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The result of the order creation or the action object if <code>submit</code> is False.</p>
+                <p>The result of the order cancellation request.</p>
               </div>
             </td>
           </tr>
@@ -12308,6 +12535,257 @@ Can be used to cancel pending actions that have not yet been processed.</p>
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.order_wire" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">order_wire</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">tif</span><span class="o">=</span><span class="s1">&#39;Gtc&#39;</span><span class="p">,</span> <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sl</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">trigger_market</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">round_price</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">round_size</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_canonical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Build a native limit-order wire for later submission.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker symbol of the asset.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>amount</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The quantity of the asset to trade. Positive for buy (long), negative for sell (short).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>price</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span> or <span title="decimal.Decimal">Decimal</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The limit price for the order.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>tif</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Time in force for the order. Defaults to "Gtc" (Good 'til canceled).</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;Gtc&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>reduce_only</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, the order can only reduce an existing position. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>cloid</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Client order ID for tracking. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>tp</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Take profit price. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>sl</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Stop loss price. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>trigger_market</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether the tpsl trigger (if not None) is a market order. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>round_price</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to round the price to a valid order specification. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>round_size</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to round the price to a valid order specification. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>is_canonical</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, the ticker is treated as a canonical name. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>dict</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Wire object with normalized OMS specs and the exchange-native payload.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.orders_cancel" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">orders_cancel</span><span class="p">(</span><span class="n">order_actions</span><span class="p">,</span> <span class="n">expires_after</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
@@ -12692,11 +13170,11 @@ Can be used to cancel pending actions that have not yet been processed.</p>
 - markets.TICKER: The asset's ticker symbol, either in standard or canonical form.
 - markets.ORDER_ID: The unique identifier of the order.
 - markets.ORDER_CLOID: The client order ID.
-- markets.LIMIT_PRICE: The limit price of the order.
+- markets.ORDER_PRICE: The limit price of the order.
 - markets.ORDER_AMOUNT: The original size of the order.
 - markets.ORDER_FILLED_SIZE: The remaining size of the order yet to be filled.
 - markets.ORDER_STATUS: The status of the order.
-- markets.TIMESTAMP: The timestamp when the order was created.</p>
+- markets.ORDER_TS_EXCH_NS: The exchange order timestamp in nanoseconds, when provided.</p>
               </div>
             </td>
           </tr>
@@ -14734,7 +15212,7 @@ https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A random hexadecimal string with a total length of 32 characters, 
+                <p>A random hexadecimal string with a total length of 32 characters,
 including the optional 'start' and 'end' strings, and an optional '0x' prefix.</p>
               </div>
             </td>
@@ -15488,7 +15966,7 @@ including the optional 'start' and 'end' strings, and an optional '0x' prefix.</
 
 
 <h3 id="quantpylib.wrappers.hyperliquid.Hyperliquid.spot_balances" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">spot_balances</span><span class="p">()</span></code>
+            <code class="highlight language-python"><span class="n">spot_balances</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -15500,6 +15978,39 @@ including the optional 'start' and 'end' strings, and an optional '0x' prefix.</
     <div class="doc doc-contents ">
 
         <p>Retrieve the user's spot balances.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>user</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Address to query. Defaults to self.key. account_balance
+passes self.vault_address or self.key so vault/subaccount routing reads the
+correct spot collateral.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
     <p><span class="doc-section-title">Returns:</span></p>
@@ -16115,7 +16626,7 @@ including the optional 'start' and 'end' strings, and an optional '0x' prefix.</
 
     <div class="doc doc-contents ">
 
-        <p>Subscribe to ticker trades.</p>
+        <p>Subscribe to public trade updates.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -16138,7 +16649,7 @@ including the optional 'start' and 'end' strings, and an optional '0x' prefix.</
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Ticker symbol for the asset. If <code>is_canonical</code> is True, this should be the canonical name.</p>
+                <p>Ticker symbol.</p>
               </div>
             </td>
             <td>
@@ -16154,7 +16665,7 @@ including the optional 'start' and 'end' strings, and an optional '0x' prefix.</
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A coroutine handler for processing the received trade messages.</p>
+                <p>Callback invoked for each trade update.</p>
               </div>
             </td>
             <td>
@@ -16166,11 +16677,15 @@ including the optional 'start' and 'end' strings, and an optional '0x' prefix.</
                 <code>standardize_schema</code>
             </td>
             <td>
-                  <code><span title="bool">bool</span></code>
+                  <code><span title="int">int</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>If True, processes the incoming message to a standardized format. Defaults to True.</p>
+                <p>Payload schema mode. <code>0</code>
+passes the raw provider payload, <code>1</code> emits the legacy
+normalized <code>(ts,price,sz,dir)</code> tuple, and <code>2</code> emits
+<a class="autorefs autorefs-internal" title="TradeUpdate" href="../../standards/models/#quantpylib.standards.models.TradeUpdate">quantpylib.standards.models.TradeUpdate</a>.
+Defaults to True (<code>1</code>).</p>
               </div>
             </td>
             <td>
@@ -16186,7 +16701,9 @@ including the optional 'start' and 'end' strings, and an optional '0x' prefix.</
             </td>
             <td>
               <div class="doc-md-description">
-                <p>If True, the <code>ticker</code> is treated as a canonical name and converted to the accredited name. Defaults to False.</p>
+                <p>If True, <code>ticker</code> is treated as a
+canonical name and converted to the accredited name. Defaults
+to False.</p>
               </div>
             </td>
             <td>
@@ -16201,7 +16718,7 @@ including the optional 'start' and 'end' strings, and an optional '0x' prefix.</
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Additional keyword arguments specific to the exchange wrapper.</p>
+                <p>Exchange wrapper specific keyword arguments.</p>
               </div>
             </td>
             <td>
@@ -16231,7 +16748,7 @@ including the optional 'start' and 'end' strings, and an optional '0x' prefix.</
 
     <div class="doc doc-contents ">
 
-        <p>Unsubscribe from trade data.</p>
+        <p>Unsubscribe from public trade updates.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -16254,7 +16771,7 @@ including the optional 'start' and 'end' strings, and an optional '0x' prefix.</
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Ticker symbol for the asset. If <code>is_canonical</code> is True, this should be the canonical name.</p>
+                <p>Ticker symbol.</p>
               </div>
             </td>
             <td>
@@ -16270,7 +16787,9 @@ including the optional 'start' and 'end' strings, and an optional '0x' prefix.</
             </td>
             <td>
               <div class="doc-md-description">
-                <p>If True, the <code>ticker</code> is treated as a canonical name and converted to the accredited name. Defaults to False.</p>
+                <p>If True, <code>ticker</code> is treated as a
+canonical name and converted to the accredited name. Defaults
+to False.</p>
               </div>
             </td>
             <td>
@@ -16285,33 +16804,11 @@ including the optional 'start' and 'end' strings, and an optional '0x' prefix.</
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Additional keyword arguments specific to the exchange wrapper.</p>
+                <p>Exchange wrapper specific keyword arguments.</p>
               </div>
             </td>
             <td>
                   <code>{}</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>Coroutine</code></td>            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>A coroutine that can be awaited to complete the unsubscription process.</p>
-              </div>
             </td>
           </tr>
       </tbody>
