@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
+      <link rel="stylesheet" href="../../stylesheets/tutorial-navigation.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -295,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../scripts/market_making/" class="md-tabs__link">
+        <a href="../../tutorials/hft_event_journal/" class="md-tabs__link">
           
   
   
@@ -335,11 +337,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../bounties/" class="md-tabs__link">
+        <a href="../../terminal/" class="md-tabs__link">
           
   
   
-  Bounties
+  Terminal
 
         </a>
       </li>
@@ -2815,7 +2817,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/market_making/" class="md-nav__link">
+      <a href="../../tutorials/hft_event_journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HFT Event Journal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/market_making/" class="md-nav__link">
         
   
   
@@ -2838,7 +2863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/trend_following/" class="md-nav__link">
+      <a href="../../tutorials/trend_following/" class="md-nav__link">
         
   
   
@@ -3031,7 +3056,7 @@
   
   
   <span class="md-ellipsis">
-    Bounties
+    Terminal
     
   </span>
   
@@ -3042,7 +3067,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Bounties
+            Terminal
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3053,12 +3078,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bounties/" class="md-nav__link">
+      <a href="../../terminal/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Bounties
+    Terminal
     
   </span>
   
@@ -3291,9 +3316,11 @@ Or maybe we just want mid-prices
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">orders</span><span class="o">.</span><span class="n">orders_get</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;hyperliquid&#39;</span><span class="p">))</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">orders</span><span class="o">.</span><span class="n">orders_get</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;binance&#39;</span><span class="p">))</span>
 </code></pre></div>
-We get
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>{1234: {&#39;ticker&#39;: &#39;PENDLE&#39;, &#39;order_id&#39;: &#39;1234&#39;, &#39;limit_price&#39;: 5.001, &#39;amount_total&#39;: Decimal(&#39;-3.0&#39;), &#39;amount_left&#39;: Decimal(&#39;-3.0&#39;), &#39;timestamp&#39;: 000000}}
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>{1234: {&#39;ticker&#39;: &#39;PENDLEUSDT&#39;, &#39;order_id&#39;: &#39;1234&#39;, &#39;limit_price&#39;: 5.001, &#39;amount_total&#39;: Decimal(&#39;-3&#39;), &#39;amount_filled&#39;: Decimal(&#39;-0&#39;), &#39;tif&#39;: &#39;GTC&#39;, &#39;timestamp&#39;: 000000}}
+The gateway normalizes the outer order-map keys to strings. Direct wrapper calls
+preserve the order-ID key type supplied by the exchange.</p>
+<p>We get
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>{&#39;1234&#39;: {&#39;ticker&#39;: &#39;PENDLE&#39;, &#39;order_id&#39;: &#39;1234&#39;, &#39;limit_price&#39;: 5.001, &#39;amount_total&#39;: Decimal(&#39;-3.0&#39;), &#39;amount_left&#39;: Decimal(&#39;-3.0&#39;), &#39;timestamp&#39;: 000000}}
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>{&#39;1234&#39;: {&#39;ticker&#39;: &#39;PENDLEUSDT&#39;, &#39;order_id&#39;: &#39;1234&#39;, &#39;limit_price&#39;: 5.001, &#39;amount_total&#39;: Decimal(&#39;-3&#39;), &#39;amount_filled&#39;: Decimal(&#39;-0&#39;), &#39;tif&#39;: &#39;GTC&#39;, &#39;timestamp&#39;: 000000}}
 </code></pre></div></p>
 <p>If we need to maintain a local copy of the orders page, it would be more suitable to use event subscriptions. The <code>orders_mirror</code> and <code>orders_peek</code> use the underlying socket endpoints available to keep an updated local copy of it. We need to mirror once, then subsequent calls to peek will fetch the local copy. Additionally, we may want to attach a callback handler, which is invoked whenever the local copy of the order book is modified:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">try</span><span class="p">:</span>
@@ -3413,6 +3440,10 @@ Or keep a local copy and peek:
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/tutorial-navigation.js"></script>
+      
+        <script src="../../javascripts/pricing.js"></script>
       
     
   </body>

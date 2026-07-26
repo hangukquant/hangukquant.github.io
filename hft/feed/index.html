@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
+      <link rel="stylesheet" href="../../stylesheets/tutorial-navigation.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -295,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../scripts/market_making/" class="md-tabs__link">
+        <a href="../../tutorials/hft_event_journal/" class="md-tabs__link">
           
   
   
@@ -335,11 +337,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../bounties/" class="md-tabs__link">
+        <a href="../../terminal/" class="md-tabs__link">
           
   
   
-  Bounties
+  Terminal
 
         </a>
       </li>
@@ -904,6 +906,15 @@
   <a href="#quantpylib.hft.feed.Feed.add_bba_feed" class="md-nav__link">
     <span class="md-ellipsis">
       add_bba_feed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.feed.Feed.add_bba_feeds" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_bba_feeds
     </span>
   </a>
   
@@ -2960,7 +2971,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/market_making/" class="md-nav__link">
+      <a href="../../tutorials/hft_event_journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HFT Event Journal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/market_making/" class="md-nav__link">
         
   
   
@@ -2983,7 +3017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/trend_following/" class="md-nav__link">
+      <a href="../../tutorials/trend_following/" class="md-nav__link">
         
   
   
@@ -3176,7 +3210,7 @@
   
   
   <span class="md-ellipsis">
-    Bounties
+    Terminal
     
   </span>
   
@@ -3187,7 +3221,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Bounties
+            Terminal
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3198,12 +3232,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bounties/" class="md-nav__link">
+      <a href="../../terminal/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Bounties
+    Terminal
     
   </span>
   
@@ -3696,6 +3730,157 @@ override. <code>None</code> uses global sinks; <code>[]</code> disables sinks.</
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.hft.feed.Feed.add_bba_feeds" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_bba_feeds</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">tickers</span><span class="p">,</span> <span class="n">on_msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sinks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Add multiple best bid/ask feeds as one batched subscription request.</p>
+<p>Each returned feed receives
+<code>quantpylib.standards.models.BBAUpdate</code> objects for the corresponding
+ticker.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange name.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>tickers</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Ticker symbols.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>on_msg</code>
+            </td>
+            <td>
+                  <code><span title="callable">callable</span> or <span title="list">list</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Shared callback or one
+callback per ticker. Each callback receives <code>BBAUpdate</code>
+events after sink fanout.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>sinks</code>
+            </td>
+            <td>
+                  <code><span title="optional">optional</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Per-feed sinks, broadcast or per-ticker.
+Broadcast (default): <code>None</code> (global sinks), a <code>FeedSink</code>, or a
+flat list of <code>FeedSink</code>, applied to every ticker. Per-ticker: a
+list of sink lists (or <code>None</code>), one entry per ticker
+(<code>len(sinks) == len(tickers)</code>); entry <code>i</code> is assigned to
+<code>tickers[i]</code>, <code>None</code> falls back to global sinks, and <code>[]</code>
+disables sinks for that ticker.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>feed_cls</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Feed market class. Defaults to <code>FeedCls.PERPETUAL</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="quantpylib.hft.feed.FeedCls.PERPETUAL">PERPETUAL</span></code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="list">list</span>[<span title="quantpylib.standards.models.FeedId">FeedId</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>list[quantpylib.standards.models.FeedId]: Feed ids in ticker order.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="quantpylib.hft.feed.Feed.add_l2_book_feed" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">add_l2_book_feed</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">on_msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sinks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">feed_cls</span><span class="o">=</span><span class="n">FeedCls</span><span class="o">.</span><span class="n">PERPETUAL</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
@@ -3944,13 +4129,17 @@ events after sink fanout.</p>
                 <code>sinks</code>
             </td>
             <td>
-                  <code><a class="autorefs autorefs-internal" title="FeedSink (quantpylib.hft.archival.FeedSink)" href="../archival/#quantpylib.hft.archival.FeedSink">FeedSink</a> or <span title="iterable">iterable</span>[<a class="autorefs autorefs-internal" title="FeedSink (quantpylib.hft.archival.FeedSink)" href="../archival/#quantpylib.hft.archival.FeedSink">FeedSink</a>]</code>
+                  <code><span title="optional">optional</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Per-feed sink
-override for all created feeds. <code>None</code> uses global sinks; <code>[]</code>
-disables sinks.</p>
+                <p>Per-feed sinks, broadcast or per-ticker.
+Broadcast (default): <code>None</code> (global sinks), a <code>FeedSink</code>, or a
+flat list of <code>FeedSink</code>, applied to every ticker. Per-ticker: a
+list of sink lists (or <code>None</code>), one entry per ticker
+(<code>len(sinks) == len(tickers)</code>); entry <code>i</code> is assigned to
+<code>tickers[i]</code>, <code>None</code> falls back to global sinks, and <code>[]</code>
+disables sinks for that ticker.</p>
               </div>
             </td>
             <td>
@@ -4404,13 +4593,17 @@ events after sink fanout.</p>
                 <code>sinks</code>
             </td>
             <td>
-                  <code><a class="autorefs autorefs-internal" title="FeedSink (quantpylib.hft.archival.FeedSink)" href="../archival/#quantpylib.hft.archival.FeedSink">FeedSink</a> or <span title="iterable">iterable</span>[<a class="autorefs autorefs-internal" title="FeedSink (quantpylib.hft.archival.FeedSink)" href="../archival/#quantpylib.hft.archival.FeedSink">FeedSink</a>]</code>
+                  <code><span title="optional">optional</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Per-feed sink
-override for all created feeds. <code>None</code> uses global sinks; <code>[]</code>
-disables sinks.</p>
+                <p>Per-feed sinks, broadcast or per-ticker.
+Broadcast (default): <code>None</code> (global sinks), a <code>FeedSink</code>, or a
+flat list of <code>FeedSink</code>, applied to every ticker. Per-ticker: a
+list of sink lists (or <code>None</code>), one entry per ticker
+(<code>len(sinks) == len(tickers)</code>); entry <code>i</code> is assigned to
+<code>tickers[i]</code>, <code>None</code> falls back to global sinks, and <code>[]</code>
+disables sinks for that ticker.</p>
               </div>
             </td>
             <td>
@@ -4949,6 +5142,10 @@ disables sinks.</p>
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/tutorial-navigation.js"></script>
+      
+        <script src="../../javascripts/pricing.js"></script>
       
     
   </body>

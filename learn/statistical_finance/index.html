@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../../scripts/trend_following/">
+        <link rel="prev" href="../../tutorials/trend_following/">
       
       
         <link rel="next" href="../high_frequency_trading/">
@@ -47,6 +47,8 @@
     
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/tutorial-navigation.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -289,7 +291,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../scripts/market_making/" class="md-tabs__link">
+        <a href="../../tutorials/hft_event_journal/" class="md-tabs__link">
           
   
   
@@ -331,11 +333,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../bounties/" class="md-tabs__link">
+        <a href="../../terminal/" class="md-tabs__link">
           
   
   
-  Bounties
+  Terminal
 
         </a>
       </li>
@@ -2692,7 +2694,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/market_making/" class="md-nav__link">
+      <a href="../../tutorials/hft_event_journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HFT Event Journal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/market_making/" class="md-nav__link">
         
   
   
@@ -2715,7 +2740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/trend_following/" class="md-nav__link">
+      <a href="../../tutorials/trend_following/" class="md-nav__link">
         
   
   
@@ -3050,7 +3075,7 @@
   
   
   <span class="md-ellipsis">
-    Bounties
+    Terminal
     
   </span>
   
@@ -3061,7 +3086,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Bounties
+            Terminal
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3072,12 +3097,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bounties/" class="md-nav__link">
+      <a href="../../terminal/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Bounties
+    Terminal
     
   </span>
   
@@ -4172,8 +4197,8 @@ $$</p>
 <p>In practice, we have <span class="arithmatex">\( n \)</span> strategies, each with its own return vector. We compute <strong>standardised returns</strong> by normalising each strategy’s raw return by an estimate of instantaneous volatility.</p>
 <p>We assume we have a list of <code>DataFrames</code> <code>dfs</code>, each with indices for different time ranges. We use maximally overlapping joint periods along the time axis. To demonstrate that the complexity penalty depends on the orthogonality of the strategies, we choose <span class="arithmatex">\( N = 6 \)</span> and compare a set of <span class="arithmatex">\( N \)</span> momentum strategies with <span class="arithmatex">\( N \)</span> random strategies as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">strategies</span> <span class="o">=</span> <span class="p">[</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="s2">&quot;tszscore_12(close)&quot;</span><span class="p">,</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="s2">&quot;tszscore_24(close)&quot;</span><span class="p">,</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="s2">&quot;tszscre_12(close)&quot;</span><span class="p">,</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="s2">&quot;tszscre_24(close)&quot;</span><span class="p">,</span>
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    <span class="s2">&quot;logret_5(close)&quot;</span><span class="p">,</span>
 <a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    <span class="s2">&quot;logret_20(close)&quot;</span><span class="p">,</span>
 <a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    <span class="s2">&quot;ite(gt(ema_20(close), ema_50(close)), const_1, neg(const_1))&quot;</span><span class="p">,</span>
@@ -4428,6 +4453,10 @@ The last column is (half) the complexity penalty.</p>
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/tutorial-navigation.js"></script>
+      
+        <script src="../../javascripts/pricing.js"></script>
       
     
   </body>

@@ -1,0 +1,27 @@
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary
+    .tutorial-toc-collapsible
+    > label.md-nav__link--active {
+    cursor: pointer;
+    display: flex !important;
+  }
+
+  .md-sidebar--primary
+    .tutorial-toc-collapsible
+    > a.md-nav__link--active {
+    display: none !important;
+  }
+
+  .md-sidebar--primary
+    .tutorial-toc-collapsible
+    > .md-nav--secondary {
+    display: none !important;
+  }
+
+  .md-sidebar--primary
+    .tutorial-toc-collapsible
+    > .md-nav__toggle:checked
+    ~ .md-nav--secondary {
+    display: block !important;
+  }
+}

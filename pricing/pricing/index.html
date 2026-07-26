@@ -12,7 +12,7 @@
         <link rel="prev" href="../../logger/handlers/">
       
       
-        <link rel="next" href="../../scripts/market_making/">
+        <link rel="next" href="../../tutorials/hft_event_journal/">
       
       
       <link rel="icon" href="../../icons/logo.png">
@@ -47,6 +47,8 @@
     
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/tutorial-navigation.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -286,7 +288,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../scripts/market_making/" class="md-tabs__link">
+        <a href="../../tutorials/hft_event_journal/" class="md-tabs__link">
           
   
   
@@ -326,11 +328,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../bounties/" class="md-tabs__link">
+        <a href="../../terminal/" class="md-tabs__link">
           
   
   
-  Bounties
+  Terminal
 
         </a>
       </li>
@@ -2700,7 +2702,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/market_making/" class="md-nav__link">
+      <a href="../../tutorials/hft_event_journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HFT Event Journal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/market_making/" class="md-nav__link">
         
   
   
@@ -2723,7 +2748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/trend_following/" class="md-nav__link">
+      <a href="../../tutorials/trend_following/" class="md-nav__link">
         
   
   
@@ -2916,7 +2941,7 @@
   
   
   <span class="md-ellipsis">
-    Bounties
+    Terminal
     
   </span>
   
@@ -2927,7 +2952,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Bounties
+            Terminal
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2938,12 +2963,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bounties/" class="md-nav__link">
+      <a href="../../terminal/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Bounties
+    Terminal
     
   </span>
   
@@ -2979,24 +3004,43 @@
 
   <h1>pricing</h1>
 
-<p>One-time payment for access to the quantpylib Github repository and fierce updates. </p>
-<p>Your one-stop shop for quant research and trading infrastructure:</p>
+<p>One-time payment access.</p>
 <div style="
-  max-width: 340px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 340px));
+  gap: 48px;
+  justify-content: center;
+  align-items: stretch;
   margin: 40px auto;
+">
+
+<div style="
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 340px;
+  margin: 0;
   padding: 20px;
   text-align: center;
+  border: 1px solid #fff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 ">
 
-  <img src="/archives/logo.png" alt="quantpylib" style="width: 100%; border-radius: 12px; margin-bottom: 16px;" /> 
+  <img src="/archives/logo.png" alt="Quantpylib" style="width: 100%; height: 160px; object-fit: contain; border-radius: 12px; margin-bottom: 16px;" />
 
-  <div style="font-size: 20px; font-weight: 500; color: #555;">quantpylib</div>
-  <div style="font-size: 28px; font-weight: 700; margin: 8px 0;">US$365</div>
+  <div style="font-size: 22px; font-weight: 700; color: var(--md-typeset-color);">Quantpylib</div>
+  <div style="min-height: 42px; margin: 8px 0; font-size: 14px; color: #777;">Your one-stop shop for quant research and trading infrastructure</div>
+  <div style="margin: 8px 0; font-weight: 700;">
+    <span id="quantpylib-original-price" style="font-size: 20px; color: #888; text-decoration: line-through;">US$420</span>
+    <span id="quantpylib-offer-price" style="margin-left: 8px; color: #ff5252; font-size: 28px;">US$294</span>
+  </div>
+  <div id="quantpylib-offer" data-deadline="2026-08-02T22:52:44+08:00" style="min-height: 42px; margin: 4px 0; color: #ff5252; font-size: 14px; font-weight: 700; line-height: 1.5;">
+    30% off with code QUANT<br />
+    <span id="quantpylib-offer-countdown">7 days left</span>
+  </div>
 
-  <a href="https://buy.stripe.com/bIYdS92jq7K7c005ky" target="_blank" style="
+  <a id="quantpylib-buy" href="https://buy.stripe.com/bJedRab1g7yfaQCfGse7m0g?prefilled_promo_code=QUANT" data-base-href="https://buy.stripe.com/bJedRab1g7yfaQCfGse7m0g" target="_blank" rel="noopener" style="
     display: inline-block;
     margin-top: 12px;
     background-color: #0a66ff;
@@ -3018,6 +3062,54 @@
   </div>
 
 </div>
+
+<div style="
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 340px;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+">
+
+  <img src="/archives/quantterminal_logo.png" alt="QuantTerminal" style="width: 100%; height: 160px; object-fit: contain; border-radius: 12px; margin-bottom: 16px;" />
+
+  <div style="font-size: 22px; font-weight: 700; color: var(--md-typeset-color);">QuantTerminal</div>
+  <div style="min-height: 42px; margin: 8px 0; font-size: 14px; color: #777;">Internal Quant Tooling Platform for Professional Users</div>
+  <div style="font-size: 28px; font-weight: 700; margin: 8px 0;">US$224</div>
+  <div aria-hidden="true" style="min-height: 42px; margin: 4px 0;"></div>
+
+  <a href="https://buy.stripe.com/bJe4gA5GW7yfgaW9i4e7m0i" target="_blank" rel="noopener" style="
+    display: inline-block;
+    margin-top: 12px;
+    background-color: #0a66ff;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  ">Buy</a>
+
+  <div style="margin-top: 18px; font-size: 13px; color: #888;">Supported payment methods:</div>
+  <div style="margin-top: 8px;">
+    <img src="https://img.icons8.com/color/32/mastercard-logo.png" style="margin: 0 4px;" />
+    <img src="https://img.icons8.com/color/32/visa.png" style="margin: 0 4px;" />
+    <img src="https://img.icons8.com/color/32/google-pay-india.png" style="margin: 0 4px;" />
+  </div>
+
+</div>
+
+</div>
+
+<p><i>
+Note that QuantTerminal is in beta and priced as-such - we will increase pricing as we continue rollout.
+</i></p>
 
 
 
@@ -3100,6 +3192,10 @@
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/tutorial-navigation.js"></script>
+      
+        <script src="../../javascripts/pricing.js"></script>
       
     
   </body>

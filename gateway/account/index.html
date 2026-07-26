@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
+      <link rel="stylesheet" href="../../stylesheets/tutorial-navigation.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -295,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../scripts/market_making/" class="md-tabs__link">
+        <a href="../../tutorials/hft_event_journal/" class="md-tabs__link">
           
   
   
@@ -335,11 +337,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../bounties/" class="md-tabs__link">
+        <a href="../../terminal/" class="md-tabs__link">
           
   
   
-  Bounties
+  Terminal
 
         </a>
       </li>
@@ -1818,6 +1820,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.gateway.account.Account.account_fills_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      account_fills_get
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.gateway.account.Account.account_fills_mirror" class="md-nav__link">
     <span class="md-ellipsis">
       account_fills_mirror
@@ -2806,7 +2817,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/market_making/" class="md-nav__link">
+      <a href="../../tutorials/hft_event_journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HFT Event Journal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/market_making/" class="md-nav__link">
         
   
   
@@ -2829,7 +2863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/trend_following/" class="md-nav__link">
+      <a href="../../tutorials/trend_following/" class="md-nav__link">
         
   
   
@@ -3022,7 +3056,7 @@
   
   
   <span class="md-ellipsis">
-    Bounties
+    Terminal
     
   </span>
   
@@ -3033,7 +3067,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Bounties
+            Terminal
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3044,12 +3078,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bounties/" class="md-nav__link">
+      <a href="../../terminal/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Bounties
+    Terminal
     
   </span>
   
@@ -3392,6 +3426,97 @@ payload and <code>1</code> emits <code>quantpylib.standards.portfolio.Fill</code
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.gateway.account.Account.account_fills_get" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">account_fills_get</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Retrieve normalized account fills for a complete time range.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Alias for the exchange client.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange wrapper specific query arguments.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>quantpylib.standards.portfolio.Fills: Authoritative fill history
+carrying the queried end in <code>valid_until_ns</code>.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="quantpylib.gateway.account.Account.account_fills_mirror" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">account_fills_mirror</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
@@ -3579,6 +3704,10 @@ fill state in the wrapper-selected representation.</p>
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/tutorial-navigation.js"></script>
+      
+        <script src="../../javascripts/pricing.js"></script>
       
     
   </body>

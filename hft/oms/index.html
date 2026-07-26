@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
+      <link rel="stylesheet" href="../../stylesheets/tutorial-navigation.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -295,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../scripts/market_making/" class="md-tabs__link">
+        <a href="../../tutorials/hft_event_journal/" class="md-tabs__link">
           
   
   
@@ -335,11 +337,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../bounties/" class="md-tabs__link">
+        <a href="../../terminal/" class="md-tabs__link">
           
   
   
-  Bounties
+  Terminal
 
         </a>
       </li>
@@ -952,6 +954,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.hft.oms.OMS.account_fills_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      account_fills_get
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.hft.oms.OMS.account_fills_mirror" class="md-nav__link">
     <span class="md-ellipsis">
       account_fills_mirror
@@ -964,6 +975,15 @@
   <a href="#quantpylib.hft.oms.OMS.add_clock_callback" class="md-nav__link">
     <span class="md-ellipsis">
       add_clock_callback
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.oms.OMS.cached_live_mids" class="md-nav__link">
+    <span class="md-ellipsis">
+      cached_live_mids
     </span>
   </a>
   
@@ -1105,36 +1125,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#quantpylib.hft.oms.OMS.hedge_order" class="md-nav__link">
-    <span class="md-ellipsis">
-      hedge_order
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quantpylib.hft.oms.OMS.hedge_portfolio_delta" class="md-nav__link">
-    <span class="md-ellipsis">
-      hedge_portfolio_delta
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#quantpylib.hft.oms.OMS.init" class="md-nav__link">
     <span class="md-ellipsis">
       init
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quantpylib.hft.oms.OMS.lagged_price" class="md-nav__link">
-    <span class="md-ellipsis">
-      lagged_price
     </span>
   </a>
   
@@ -1180,15 +1173,6 @@
   <a href="#quantpylib.hft.oms.OMS.oid_query" class="md-nav__link">
     <span class="md-ellipsis">
       oid_query
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quantpylib.hft.oms.OMS.order_delta_hedge" class="md-nav__link">
-    <span class="md-ellipsis">
-      order_delta_hedge
     </span>
   </a>
   
@@ -3184,7 +3168,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/market_making/" class="md-nav__link">
+      <a href="../../tutorials/hft_event_journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HFT Event Journal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/market_making/" class="md-nav__link">
         
   
   
@@ -3207,7 +3214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/trend_following/" class="md-nav__link">
+      <a href="../../tutorials/trend_following/" class="md-nav__link">
         
   
   
@@ -3400,7 +3407,7 @@
   
   
   <span class="md-ellipsis">
-    Bounties
+    Terminal
     
   </span>
   
@@ -3411,7 +3418,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Bounties
+            Terminal
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3422,12 +3429,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bounties/" class="md-nav__link">
+      <a href="../../terminal/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Bounties
+    Terminal
     
   </span>
   
@@ -3524,7 +3531,7 @@
 
 
 <h3 id="quantpylib.hft.oms.OMS.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">gateway</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orders_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positions_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fills_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pending_timeout</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">refresh_orders_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">refresh_positions_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orders_cls_init</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positions_cls_init</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fills_cls_init</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">contract_specs_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">gateway</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orders_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positions_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fills_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pending_timeout</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">refresh_orders_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">refresh_positions_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">refresh_fills_snapshot</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orders_cls_init</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positions_cls_init</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fills_cls_init</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">contract_specs_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">track_mids</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3618,7 +3625,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The list of exchanges to mirror account fills. If None, fills are not mirrored by init.</p>
+                <p>The list of exchanges to mirror account fills. If None, defaults to gateway exchanges.</p>
               </div>
             </td>
             <td>
@@ -3675,6 +3682,39 @@
           </tr>
           <tr class="doc-section-item">
             <td>
+                <code>refresh_fills_snapshot</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The refresh interval in seconds to recover account fill gaps. Defaults to 30.</p>
+              </div>
+            </td>
+            <td>
+                  <code>30</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>track_mids</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Initialize and periodically refresh the
+live mid-price cache exposed by <code>cached_live_mids</code>. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
                 <code>contract_specs_kwargs</code>
             </td>
             <td>
@@ -3695,6 +3735,28 @@ Binance TradFi perpetuals. Exchanges absent from the mapping use wrapper default
           </tr>
       </tbody>
     </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.oms.OMS.account_fills_get" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">account_fills_get</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get an authoritative account-fill range using REST.</p>
 
 
     </div>
@@ -3863,6 +3925,71 @@ OMS is cleaned up.</p>
             </td>
             <td>
                   <code>500</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.oms.OMS.cached_live_mids" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">cached_live_mids</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get a cached live mid price when <code>track_mids=True</code>.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The ticker.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
             </td>
           </tr>
       </tbody>
@@ -4768,53 +4895,6 @@ the quote asset for BTCUSDT is USDT.</p>
 <div class="doc doc-object doc-function">
 
 
-<h3 id="quantpylib.hft.oms.OMS.hedge_order" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">hedge_order</span><span class="p">(</span><span class="n">maker_order</span><span class="p">,</span> <span class="n">hedge_order</span><span class="p">,</span> <span class="n">trigger_after_ms</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Place a maker-taker order. The maker order is the order that is being hedged. The taker order is the order that
-hedges the maker order - taker order has no <code>amount</code> specified, size executed is contingent on the size of maker fills.
-Each order are dictionaries - and are passed as named arguments (**order) into the gateway
-as per the <code>quantpylib.gateway.executor.limit_order</code> and <code>quantpylib.gateway.executor.market_order</code> methods respectively.</p>
-
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.hft.oms.OMS.hedge_portfolio_delta" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">hedge_portfolio_delta</span><span class="p">(</span><span class="n">hedge_on</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">default_on</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">markets</span><span class="o">.</span><span class="n">MARGIN_TOTAL</span><span class="p">,</span> <span class="n">ord_type</span><span class="o">=</span><span class="n">markets</span><span class="o">.</span><span class="n">ORDER_TYPE_MARKET</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        
-
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
 <h3 id="quantpylib.hft.oms.OMS.init" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">init</span><span class="p">(</span><span class="n">include_funding</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
@@ -4829,71 +4909,6 @@ as per the <code>quantpylib.gateway.executor.limit_order</code> and <code>quantp
 
         <p>Initialize the OMS object with information such as exchange contract trading specifications and metadata.
 To be called after the OMS has been created.</p>
-
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.hft.oms.OMS.lagged_price" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">lagged_price</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span></code>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Get the lagged price for a given exchange and ticker.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>exc</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The exchange.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>ticker</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The ticker.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
 
 
     </div>
@@ -5211,25 +5226,6 @@ Updates the orders page maintained by the OMS with a CREATE_PENDING status.</p>
           </tr>
       </tbody>
     </table>
-
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="quantpylib.hft.oms.OMS.order_delta_hedge" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">order_delta_hedge</span><span class="p">()</span></code>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Hedge order logic. Fill sizes on maker exchange that are not compatible with trading rules on taker exchange are hedged as much as possible,
-and size differences are submitted to a hedge balance that waits for future arriving fills to be hedged.</p>
 
 
     </div>
@@ -6301,6 +6297,10 @@ for the periodic full refresh.</p>
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/tutorial-navigation.js"></script>
+      
+        <script src="../../javascripts/pricing.js"></script>
       
     
   </body>

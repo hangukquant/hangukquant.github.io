@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
+      <link rel="stylesheet" href="../../stylesheets/tutorial-navigation.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -295,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../scripts/market_making/" class="md-tabs__link">
+        <a href="../../tutorials/hft_event_journal/" class="md-tabs__link">
           
   
   
@@ -335,11 +337,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../bounties/" class="md-tabs__link">
+        <a href="../../terminal/" class="md-tabs__link">
           
   
   
-  Bounties
+  Terminal
 
         </a>
       </li>
@@ -2824,7 +2826,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/market_making/" class="md-nav__link">
+      <a href="../../tutorials/hft_event_journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HFT Event Journal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/market_making/" class="md-nav__link">
         
   
   
@@ -2847,7 +2872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/trend_following/" class="md-nav__link">
+      <a href="../../tutorials/trend_following/" class="md-nav__link">
         
   
   
@@ -3040,7 +3065,7 @@
   
   
   <span class="md-ellipsis">
-    Bounties
+    Terminal
     
   </span>
   
@@ -3051,7 +3076,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Bounties
+            Terminal
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3062,12 +3087,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bounties/" class="md-nav__link">
+      <a href="../../terminal/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Bounties
+    Terminal
     
   </span>
   
@@ -3119,7 +3144,7 @@ Using the quantpylib.simulator.gene.GeneticAlpha is the simplest and recommended
 
 
 <h3 id="quantpylib.simulator.alpha.BaseAlpha.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dfs</span><span class="o">=</span><span class="p">{},</span> <span class="n">instruments</span><span class="o">=</span><span class="p">[],</span> <span class="n">execrates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">commrates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">longswps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shortswps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">funding_rates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">granularity</span><span class="o">=</span><span class="n">Period</span><span class="o">.</span><span class="n">DAILY</span><span class="p">,</span> <span class="n">positional_inertia</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">portfolio_vol</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">weekend_trading</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">around_the_clock</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">currency_denomination</span><span class="o">=</span><span class="s1">&#39;USD&#39;</span><span class="p">,</span> <span class="n">starting_capital</span><span class="o">=</span><span class="mf">10000.0</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dfs</span><span class="o">=</span><span class="p">{},</span> <span class="n">instruments</span><span class="o">=</span><span class="p">[],</span> <span class="n">norm_asset_vol</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">execrates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">commrates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">longswps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shortswps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">funding_rates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">granularity</span><span class="o">=</span><span class="n">Period</span><span class="o">.</span><span class="n">DAILY</span><span class="p">,</span> <span class="n">positional_inertia</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">portfolio_vol</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">weekend_trading</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">around_the_clock</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">currency_denomination</span><span class="o">=</span><span class="s1">&#39;USD&#39;</span><span class="p">,</span> <span class="n">starting_capital</span><span class="o">=</span><span class="mf">10000.0</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3990,6 +4015,10 @@ trading strategy represented by the object instance.</p>
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/tutorial-navigation.js"></script>
+      
+        <script src="../../javascripts/pricing.js"></script>
       
     
   </body>

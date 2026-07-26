@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
+      <link rel="stylesheet" href="../../stylesheets/tutorial-navigation.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -295,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../scripts/market_making/" class="md-tabs__link">
+        <a href="../../tutorials/hft_event_journal/" class="md-tabs__link">
           
   
   
@@ -335,11 +337,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../bounties/" class="md-tabs__link">
+        <a href="../../terminal/" class="md-tabs__link">
           
   
   
-  Bounties
+  Terminal
 
         </a>
       </li>
@@ -2797,7 +2799,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/market_making/" class="md-nav__link">
+      <a href="../../tutorials/hft_event_journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HFT Event Journal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/market_making/" class="md-nav__link">
         
   
   
@@ -2820,7 +2845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/trend_following/" class="md-nav__link">
+      <a href="../../tutorials/trend_following/" class="md-nav__link">
         
   
   
@@ -3013,7 +3038,7 @@
   
   
   <span class="md-ellipsis">
-    Bounties
+    Terminal
     
   </span>
   
@@ -3024,7 +3049,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Bounties
+            Terminal
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3035,12 +3060,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bounties/" class="md-nav__link">
+      <a href="../../terminal/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Bounties
+    Terminal
     
   </span>
   
@@ -3290,7 +3315,7 @@ bba are available in <a href="../../standards/models"><code>quantpylib.standards
 <a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
 <a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
 <a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>    <span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">init_clients</span><span class="p">()</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>    <span class="n">oms</span> <span class="o">=</span> <span class="n">OMS</span><span class="p">(</span><span class="n">gateway</span><span class="p">)</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>    <span class="n">oms</span> <span class="o">=</span> <span class="n">OMS</span><span class="p">(</span><span class="n">gateway</span><span class="p">,</span><span class="n">track_mids</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>    <span class="k">await</span> <span class="n">oms</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 <a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>    <span class="c1">#code goes here... </span>
 <a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>    <span class="c1">###</span>
@@ -3318,7 +3343,7 @@ we get
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>&#39;quote_asset&#39;: &#39;USDT&#39;}
 </code></pre></div>
 Some useful statistics and utilities:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">pprint</span><span class="p">(</span><span class="n">oms</span><span class="o">.</span><span class="n">lagged_price</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;hyperliquid&#39;</span><span class="p">,</span> <span class="n">ticker</span><span class="o">=</span><span class="s1">&#39;ETH&#39;</span><span class="p">))</span> <span class="c1">#Decimal(&#39;2368.25&#39;)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">pprint</span><span class="p">(</span><span class="n">oms</span><span class="o">.</span><span class="n">cached_live_mids</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;hyperliquid&#39;</span><span class="p">,</span> <span class="n">ticker</span><span class="o">=</span><span class="s1">&#39;ETH&#39;</span><span class="p">))</span> <span class="c1">#Decimal(&#39;2368.25&#39;)</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">pprint</span><span class="p">(</span><span class="n">oms</span><span class="o">.</span><span class="n">lot_precision</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;hyperliquid&#39;</span><span class="p">,</span> <span class="n">ticker</span><span class="o">=</span><span class="s1">&#39;BTC&#39;</span><span class="p">))</span> <span class="c1">#5</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">pprint</span><span class="p">(</span><span class="n">oms</span><span class="o">.</span><span class="n">price_precision</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;hyperliquid&#39;</span><span class="p">,</span> <span class="n">ticker</span><span class="o">=</span><span class="s1">&#39;DOGE&#39;</span><span class="p">))</span> <span class="c1">#6</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">pprint</span><span class="p">(</span><span class="n">oms</span><span class="o">.</span><span class="n">rounded_lots</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;hyperliquid&#39;</span><span class="p">,</span> <span class="n">ticker</span><span class="o">=</span><span class="s1">&#39;BTC&#39;</span><span class="p">,</span><span class="n">amount</span><span class="o">=</span><span class="mf">0.0023032</span><span class="p">))</span> <span class="c1">#0.0023</span>
@@ -3713,7 +3738,7 @@ We also get the positions delta and snapshots on hyperliquid:
 </code></pre></div>
 Note that the orders are sent even if it is a partial-fill with matching size - we don't have to wait for the entire maker order to be complete.</p>
 <h3 id="market-making">Market-Making</h3>
-<p>Please refer to the <a href="../../scripts/market_making/">market-making tutorial</a> using the <code>Feed</code> and <code>OMS</code> object to write cross-exchange, cross environment (live, backtest and modelling) code for high-frequency data.</p>
+<p>Please refer to the <a href="../scripts/market_making.md">market-making tutorial</a> using the <code>Feed</code> and <code>OMS</code> object to write cross-exchange, cross environment (live, backtest and modelling) code for high-frequency data.</p>
 <!-- ### Modelling
 Instead of judging the trading problem by terminal wealth, which is certainly affected by a large number of factors - we may be interested in modelling subproblems in market microstructure. Here the `quantpylib.hft.alpha.Model` is of help - which also extends the `Simulator` class as did the `Alpha` backtester. Hence the same logic applies to `compute_*_features` methods - they are pre-processing logic. Here the `Model` class only take in the orderbook and trades data without cash, fees et cetera.
 
@@ -4294,6 +4319,10 @@ Optimal spread has an additive factor of log(1 + c/kappa), where smaller values 
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/tutorial-navigation.js"></script>
+      
+        <script src="../../javascripts/pricing.js"></script>
       
     
   </body>
