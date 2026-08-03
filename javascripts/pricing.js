@@ -14,7 +14,7 @@ function updateQuantpylibOffer() {
   const daysLeft = Math.max(0, Math.ceil((deadline - Date.now()) / millisecondsPerDay));
 
   if (daysLeft === 0) {
-    offer.textContent = "Offer ended";
+    offer.hidden = true;
     buyLink.href = buyLink.dataset.baseHref;
     originalPrice.style.color = "var(--md-typeset-color)";
     originalPrice.style.fontSize = "28px";
@@ -23,6 +23,7 @@ function updateQuantpylibOffer() {
     return;
   }
 
+  offer.hidden = false;
   countdown.textContent = `${daysLeft} ${daysLeft === 1 ? "day" : "days"} left`;
 }
 

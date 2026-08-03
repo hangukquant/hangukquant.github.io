@@ -5166,7 +5166,7 @@ dictionary, and <code>2</code> emits
 
 
 <h3 id="quantpylib.wrappers.asterdex.Asterdex.limit_order" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">limit_order</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">price_rule</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tif</span><span class="o">=</span><span class="n">markets</span><span class="o">.</span><span class="n">TIME_IN_FORCE_GTC</span><span class="p">,</span> <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">limit_order</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tif</span><span class="o">=</span><span class="n">markets</span><span class="o">.</span><span class="n">TIME_IN_FORCE_GTC</span><span class="p">,</span> <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -5177,7 +5177,7 @@ dictionary, and <code>2</code> emits
 
     <div class="doc doc-contents ">
 
-        <p>Submit limit order. If both price and price_rule are specified, then the price_rule is prioritized.</p>
+        <p>Submit limit order.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -5228,27 +5228,11 @@ dictionary, and <code>2</code> emits
                 <code>price</code>
             </td>
             <td>
-                  <code><span title="Optional">Optional</span>[<span title="float">float</span>]</code>
+                  <code><span title="float">float</span> or <span title="decimal.Decimal">Decimal</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The price at which to execute the order. Defaults to None.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>price_rule</code>
-            </td>
-            <td>
-                  <code><span title="Optional">Optional</span>[<span title="str">str</span>]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Exchange-side rule for deriving the order price. Defaults to None. Allowed values are <code>[OPPONENT,OPPONENT_5,OPPONENT_10,OPPONENT_20,QUEUE,QUEUE_5,QUEUE_10]</code></p>
+                <p>The price at which to execute the order.</p>
               </div>
             </td>
             <td>

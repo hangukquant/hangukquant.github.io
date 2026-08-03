@@ -2110,6 +2110,30 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#quantpylib.standards.portfolio.Fills" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fills
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fills">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.standards.portfolio.Fills.apply_fill_trace" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_fill_trace
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quantpylib.standards.portfolio.Order" class="md-nav__link">
     <span class="md-ellipsis">
       Order
@@ -2402,6 +2426,15 @@
   <a href="#quantpylib.standards.portfolio.Positions.add_positions" class="md-nav__link">
     <span class="md-ellipsis">
       add_positions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.standards.portfolio.Positions.apply_position_trace" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_position_trace
     </span>
   </a>
   
@@ -3430,6 +3463,65 @@
 
 
 
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="quantpylib.standards.portfolio.Fills" class="doc doc-heading">
+            <code>Fills</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.standards.portfolio.Fills.apply_fill_trace" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">apply_fill_trace</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Materialize an archived accepted fill trace without live OMS side effects.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
 
 <div class="doc doc-object doc-class">
 
@@ -5312,6 +5404,26 @@ orders that are not exchange-acknowledged yet. Defaults to True.</p>
           </tr>
       </tbody>
     </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.standards.portfolio.Positions.apply_position_trace" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">apply_position_trace</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">entry</span><span class="p">,</span> <span class="n">ts_update_ns</span><span class="p">,</span> <span class="n">fill_entry</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ts_exch_ns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Materialize an archived accepted position delta without live OMS side effects.</p>
+<p>The recorded delta and timestamps are preserved, no logger record is
+emitted, and delta handlers are not triggered.</p>
 
 
     </div>
