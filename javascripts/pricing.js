@@ -1,9 +1,9 @@
-function updateQuantpylibOffer() {
-  const offer = document.getElementById("quantpylib-offer");
-  const countdown = document.getElementById("quantpylib-offer-countdown");
-  const buyLink = document.getElementById("quantpylib-buy");
-  const originalPrice = document.getElementById("quantpylib-original-price");
-  const offerPrice = document.getElementById("quantpylib-offer-price");
+function updatePricingOffer(product) {
+  const offer = document.getElementById(`${product}-offer`);
+  const countdown = document.getElementById(`${product}-offer-countdown`);
+  const buyLink = document.getElementById(`${product}-buy`);
+  const originalPrice = document.getElementById(`${product}-original-price`);
+  const offerPrice = document.getElementById(`${product}-offer-price`);
 
   if (!offer || !countdown || !buyLink || !originalPrice || !offerPrice) {
     return;
@@ -14,7 +14,9 @@ function updateQuantpylibOffer() {
   const daysLeft = Math.max(0, Math.ceil((deadline - Date.now()) / millisecondsPerDay));
 
   if (daysLeft === 0) {
-    offer.hidden = true;
+    offer.hidden = false;
+    offer.style.visibility = "hidden";
+    offer.setAttribute("aria-hidden", "true");
     buyLink.href = buyLink.dataset.baseHref;
     originalPrice.style.color = "var(--md-typeset-color)";
     originalPrice.style.fontSize = "28px";
@@ -24,7 +26,18 @@ function updateQuantpylibOffer() {
   }
 
   offer.hidden = false;
+  offer.style.visibility = "visible";
+  offer.removeAttribute("aria-hidden");
+  originalPrice.style.color = "#888";
+  originalPrice.style.fontSize = "20px";
+  originalPrice.style.textDecoration = "line-through";
+  offerPrice.hidden = false;
   countdown.textContent = `${daysLeft} ${daysLeft === 1 ? "day" : "days"} left`;
 }
 
-updateQuantpylibOffer();
+function updatePricingOffers() {
+  updatePricingOffer("quantpylib");
+  updatePricingOffer("quantterminal");
+}
+
+updatePricingOffers();
