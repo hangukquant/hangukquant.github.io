@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../oms/">
+        <link rel="prev" href="../replay/">
       
       
-        <link rel="next" href="../bars/">
+        <link rel="next" href="../replay_wrapper/">
       
       
       <link rel="icon" href="../../icons/logo.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>quantpylib.hft.mocks - quantpylib</title>
+        <title>quantpylib.hft.replay_exchange - quantpylib</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quantpylib.hft.mocks" class="md-skip">
+        <a href="#quantpylib.hft.replay_exchange.ReplayExchange" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              quantpylib.hft.mocks
+              quantpylib.hft.replay_exchange
             
           </span>
         </div>
@@ -297,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../tutorials/hft_event_journal/" class="md-tabs__link">
+        <a href="../../tutorials/tick_data_archival/" class="md-tabs__link">
           
   
   
@@ -900,6 +900,52 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../qet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.qet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -915,7 +961,7 @@
   
   
   <span class="md-ellipsis">
-    quantpylib.hft.mocks
+    quantpylib.hft.replay_exchange
     
   </span>
   
@@ -928,7 +974,7 @@
   
   
   <span class="md-ellipsis">
-    quantpylib.hft.mocks
+    quantpylib.hft.replay_exchange
     
   </span>
   
@@ -949,11 +995,125 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quantpylib.hft.mocks" class="md-nav__link">
+  <a href="#quantpylib.hft.replay_exchange.ReplayExchange" class="md-nav__link">
     <span class="md-ellipsis">
-      mocks
+      ReplayExchange
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="ReplayExchange">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.replay_exchange.ReplayExchange.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.replay_exchange.ReplayExchange.api_cancel_open_orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      api_cancel_open_orders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.replay_exchange.ReplayExchange.api_cancel_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      api_cancel_order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.replay_exchange.ReplayExchange.api_fill_updates_subscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      api_fill_updates_subscribe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.replay_exchange.ReplayExchange.api_fills_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      api_fills_get
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.replay_exchange.ReplayExchange.api_order_query" class="md-nav__link">
+    <span class="md-ellipsis">
+      api_order_query
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.replay_exchange.ReplayExchange.api_order_updates_subscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      api_order_updates_subscribe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.replay_exchange.ReplayExchange.api_orders_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      api_orders_get
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.replay_exchange.ReplayExchange.api_position_updates_subscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      api_position_updates_subscribe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.replay_exchange.ReplayExchange.api_positions_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      api_positions_get
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.replay_exchange.ReplayExchange.api_submit_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      api_submit_order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.replay_exchange.ReplayExchange.dispatch_market" class="md-nav__link">
+    <span class="md-ellipsis">
+      dispatch_market
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -961,6 +1121,75 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replay_wrapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_wrapper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replay_orderbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_orderbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replay_stream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_stream
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2757,6 +2986,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tutorials/tick_data_archival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HFT Tick Archival/Lake
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tutorials/hft_event_journal/" class="md-nav__link">
         
   
@@ -2785,7 +3037,7 @@
   
   
   <span class="md-ellipsis">
-    Market Maker
+    HFT Market Making and Sims
     
   </span>
   
@@ -2899,12 +3151,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../learn/high_frequency_trading/" class="md-nav__link">
+      <a href="../../learn/feature_resampling/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    High Frequency Trading
+    Feature Resampling
     
   </span>
   
@@ -3057,22 +3309,216 @@
 
 
 
-  <h1>quantpylib.hft.mocks</h1>
+  <h1>quantpylib.hft.replay_exchange</h1>
 
-<p>The mocks module contains classes that replicate the <code>quantpylib.hft.feed.Feed</code> and <code>quantpylib.hft.oms.OMS</code> trading agents, as well as the <code>Replayer</code> class that drives these mock classes. The <code>Replayer</code> has auxiliary statistical and graphical utility functions.</p>
-
-
-<div class="doc doc-object doc-module">
+<div class="doc doc-object doc-class">
 
 
 
-<a id="quantpylib.hft.mocks"></a>
+<h3 id="quantpylib.hft.replay_exchange.ReplayExchange" class="doc doc-heading">
+            <code>quantpylib.hft.replay_exchange.ReplayExchange</code>
+
+
+</h3>
+
+
     <div class="doc doc-contents first">
 
-        <p>Legacy mock replay module disabled.</p>
-<p>The old Replayer/MockFeed/MockOMS surface predates native BookUpdate,
-QBN schema ids, and the native OrderBook materializer path. It is retained
-below as commented reference text for a future authoritative replay system.</p>
+
+        <p>Owns authoritative market, execution, and account state for one venue.</p>
+<p>Public QBN events mutate this object at exchange time. Requests from
+<a class="autorefs autorefs-internal" title="quantpylib.hft.replay_wrapper.ReplayWrapper" href="../replay_wrapper/#quantpylib.hft.replay_wrapper.ReplayWrapper"><code>ReplayWrapper</code></a> requests
+arrive after simulated TX latency and are subject to matching engine
+rules against <a class="autorefs autorefs-internal" title="quantpylib.hft.replay_orderbook.ReplayOrderBook" href="../replay_orderbook/#quantpylib.hft.replay_orderbook.ReplayOrderBook"><code>ReplayOrderBook</code></a>.
+Private updates are emitted to wrapper callbacks; the wrapper owns their RX latency.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>venue</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Gateway alias represented by this exchange.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>clock</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="ReplayClock (quantpylib.hft.replay.ReplayClock)" href="../replay/#quantpylib.hft.replay.ReplayClock">ReplayClock</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Clock domain for exchange-time authority.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>impact_policy</code>
+            </td>
+            <td>
+                  <code><span title="object">object</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Public/private depth attribution
+policy for L2 to L3 queue projection in the matching engine orderbook.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>queue_policy</code>
+            </td>
+            <td>
+                  <code><span title="object">object</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>L2 add and cancellation
+policy for queue positions in the L2 to L3 queue projection.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>maker_fee_bps</code>
+            </td>
+            <td>
+                  <code><span title="decimal.Decimal">Decimal</span> or <span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Maker fee in bps.</p>
+              </div>
+            </td>
+            <td>
+                  <code>0</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>taker_fee_bps</code>
+            </td>
+            <td>
+                  <code><span title="decimal.Decimal">Decimal</span> or <span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Taker fee in bps.</p>
+              </div>
+            </td>
+            <td>
+                  <code>0</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>fee_ccy</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Fee currency on fills, defaults to <code>USDC</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;USDC&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="quantpylib.hft.replay_exchange.ReplayExchange.books">books</span></code></td>
+            <td>
+                  <code><span title="dict">dict</span>[<span title="str">str</span>, <a class="autorefs autorefs-internal" title="quantpylib.hft.replay_orderbook.ReplayOrderBook" href="../replay_orderbook/#quantpylib.hft.replay_orderbook.ReplayOrderBook">ReplayOrderBook</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Matching books by ticker.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="quantpylib.hft.replay_exchange.ReplayExchange.orders">orders</span></code></td>
+            <td>
+                  <code><span title="dict">dict</span>[<span title="str">str</span>, <span title="dict">dict</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Complete venue order history by order ID.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="quantpylib.hft.replay_exchange.ReplayExchange.fills">fills</span></code></td>
+            <td>
+                  <code><span title="dict">dict</span>[<span title="str">str</span>, <span title="dict">dict</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Fill history by fill ID.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="quantpylib.hft.replay_exchange.ReplayExchange.positions">positions</span></code></td>
+            <td>
+                  <code><span title="dict">dict</span>[<span title="str">str</span>, <span title="dict">dict</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Current non-zero positions by ticker.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
 
 
 
@@ -3091,6 +3537,709 @@ below as commented reference text for a future authoritative replay system.</p>
 
 
 
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="quantpylib.hft.replay_exchange.ReplayExchange.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">venue</span><span class="p">,</span> <span class="n">clock</span><span class="p">,</span> <span class="n">impact_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">queue_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maker_fee_bps</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">taker_fee_bps</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">fee_ccy</span><span class="o">=</span><span class="s1">&#39;USDC&#39;</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize empty venue state and private-update subscriber lists.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="quantpylib.hft.replay_exchange.ReplayExchange.api_cancel_open_orders" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">api_cancel_open_orders</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Cancel every live order, optionally restricted to one ticker.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Ticker filter.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>list[dict or None]: Cancellation results in venue insertion order.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="quantpylib.hft.replay_exchange.ReplayExchange.api_cancel_order" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">api_cancel_order</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Cancel one live order by exchange or client order ID.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>specs</code>
+            </td>
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Normalized cancellation specifications containing
+<code>oid</code> or <code>cloid</code>.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>dict or None: Current order state, or <code>None</code> when no order</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>matches the supplied identity.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="quantpylib.hft.replay_exchange.ReplayExchange.api_fill_updates_subscribe" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">api_fill_updates_subscribe</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Register a callback for venue fill updates.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>handler</code>
+            </td>
+            <td>
+                  <code><span title="callable">callable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Callback accepting one normalized fill dict.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="quantpylib.hft.replay_exchange.ReplayExchange.api_fills_get" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">api_fills_get</span><span class="p">(</span><span class="n">start_ns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end_ns</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return fills in an exchange-time half-open interval.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>start_ns</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Inclusive exchange-time lower bound.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>end_ns</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exclusive exchange-time upper bound.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>list[dict]: Copied normalized fills in insertion order.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="quantpylib.hft.replay_exchange.ReplayExchange.api_order_query" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">api_order_query</span><span class="p">(</span><span class="n">oid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cloid</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Query complete order history by exchange or client order ID.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>oid</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange order ID, preferred when supplied.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>cloid</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Client order ID fallback.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>dict or None: Copied order state when found.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="quantpylib.hft.replay_exchange.ReplayExchange.api_order_updates_subscribe" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">api_order_updates_subscribe</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Register a callback for venue order-state updates.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>handler</code>
+            </td>
+            <td>
+                  <code><span title="callable">callable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Callback accepting one normalized order dict.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="quantpylib.hft.replay_exchange.ReplayExchange.api_orders_get" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">api_orders_get</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return copied authoritative states for all currently open orders.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>dict[str, dict]: Open orders keyed by exchange order ID.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="quantpylib.hft.replay_exchange.ReplayExchange.api_position_updates_subscribe" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">api_position_updates_subscribe</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Register a callback for venue position updates.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>handler</code>
+            </td>
+            <td>
+                  <code><span title="callable">callable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Callback accepting one normalized position
+mutation dict.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="quantpylib.hft.replay_exchange.ReplayExchange.api_positions_get" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">api_positions_get</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return copied current non-zero positions keyed by ticker.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>dict[str, dict]: Normalized position snapshots.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="quantpylib.hft.replay_exchange.ReplayExchange.api_submit_order" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">api_submit_order</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Submit one normalized limit order to venue truth.</p>
+<p>A new exchange order ID is assigned before post-only validation. ALO
+orders that would cross are rejected; accepted orders are inserted into
+the matching book and may fill immediately.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>specs</code>
+            </td>
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Normalized order specifications.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>dict</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Current authoritative order state after matching.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="quantpylib.hft.replay_exchange.ReplayExchange.dispatch_market" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">dispatch_market</span><span class="p">(</span><span class="n">replay_event</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Apply one QBN event to authoritative venue state.</p>
+<p>L2 events reconcile public liquidity. BBA and trade events may match
+owned resting orders; matching updates account state and emits
+private updates that can be subscribed to.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>replay_event</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="ReplayEvent
+
+
+  
+      dataclass
+   (quantpylib.hft.replay.ReplayEvent)" href="../replay/#quantpylib.hft.replay.ReplayEvent">ReplayEvent</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange-route public event.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
 
 
 

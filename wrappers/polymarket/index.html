@@ -297,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../tutorials/hft_event_journal/" class="md-tabs__link">
+        <a href="../../tutorials/tick_data_archival/" class="md-tabs__link">
           
   
   
@@ -901,12 +901,127 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hft/mocks/" class="md-nav__link">
+      <a href="../../hft/qet/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    quantpylib.hft.mocks
+    quantpylib.hft.qet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/replay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/replay_exchange/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_exchange
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/replay_wrapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_wrapper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/replay_orderbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_orderbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/replay_stream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_stream
     
   </span>
   
@@ -3169,6 +3284,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.polymarket.RealTimeWebsocketManager.subscribe_chainlink_twap_prices" class="md-nav__link">
+    <span class="md-ellipsis">
+      subscribe_chainlink_twap_prices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.wrappers.polymarket.RealTimeWebsocketManager.subscribe_prices" class="md-nav__link">
     <span class="md-ellipsis">
       subscribe_prices
@@ -3190,6 +3314,15 @@
   <a href="#quantpylib.wrappers.polymarket.RealTimeWebsocketManager.unsubscribe_chainlink_prices" class="md-nav__link">
     <span class="md-ellipsis">
       unsubscribe_chainlink_prices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.polymarket.RealTimeWebsocketManager.unsubscribe_chainlink_twap_prices" class="md-nav__link">
+    <span class="md-ellipsis">
+      unsubscribe_chainlink_twap_prices
     </span>
   </a>
   
@@ -3231,6 +3364,15 @@
   <a href="#quantpylib.wrappers.polymarket.create_level_2_headers" class="md-nav__link">
     <span class="md-ellipsis">
       create_level_2_headers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.polymarket.decode_chainlink_value" class="md-nav__link">
+    <span class="md-ellipsis">
+      decode_chainlink_value
     </span>
   </a>
   
@@ -3612,6 +3754,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tutorials/tick_data_archival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HFT Tick Archival/Lake
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tutorials/hft_event_journal/" class="md-nav__link">
         
   
@@ -3640,7 +3805,7 @@
   
   
   <span class="md-ellipsis">
-    Market Maker
+    HFT Market Making and Sims
     
   </span>
   
@@ -3754,12 +3919,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../learn/high_frequency_trading/" class="md-nav__link">
+      <a href="../../learn/feature_resampling/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    High Frequency Trading
+    Feature Resampling
     
   </span>
   
@@ -8069,7 +8234,7 @@ subscription. Defaults to the unfiltered user subscription.</p>
 
 
 <h3 id="quantpylib.wrappers.polymarket.RealTimeWebsocketManager.subscribe_chainlink_prices" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">subscribe_chainlink_prices</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">subscribe_chainlink_prices</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -8108,6 +8273,107 @@ subscription. Defaults to the unfiltered user subscription.</p>
             </td>
             <td>
                 <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>symbol</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional slash-delimited symbol such as <code>btc/usd</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.wrappers.polymarket.RealTimeWebsocketManager.subscribe_chainlink_twap_prices" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">subscribe_chainlink_twap_prices</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">window_seconds</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Subscribe to Chainlink-computed 30-second or 60-second TWAP updates.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>handler</code>
+            </td>
+            <td>
+                  <code><span title="Callable">Callable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Async callback that receives raw RTDS WebSocket messages.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>window_seconds</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Chainlink TWAP lookback window. Must be 30 or 60.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>symbol</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional slash-delimited symbol such as <code>btc/usd</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
             </td>
           </tr>
       </tbody>
@@ -8276,7 +8542,7 @@ subscription. Defaults to the unfiltered user subscription.</p>
 
 
 <h3 id="quantpylib.wrappers.polymarket.RealTimeWebsocketManager.unsubscribe_chainlink_prices" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">unsubscribe_chainlink_prices</span><span class="p">()</span></code>
+            <code class="highlight language-python"><span class="n">unsubscribe_chainlink_prices</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -8288,6 +8554,28 @@ subscription. Defaults to the unfiltered user subscription.</p>
     <div class="doc doc-contents ">
 
         <p>Unsubscribe from RTDS Chainlink crypto price updates.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.wrappers.polymarket.RealTimeWebsocketManager.unsubscribe_chainlink_twap_prices" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">unsubscribe_chainlink_twap_prices</span><span class="p">(</span><span class="n">window_seconds</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Unsubscribe from a Chainlink TWAP price subscription.</p>
 
 
     </div>
@@ -8437,6 +8725,24 @@ original subscription.</p>
     <div class="doc doc-contents ">
 
         <p>Creates Level 2 Poly headers for a request</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="quantpylib.wrappers.polymarket.decode_chainlink_value" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">decode_chainlink_value</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Decode a Chainlink RTDS E18 value without losing precision.</p>
 
 
     </div>

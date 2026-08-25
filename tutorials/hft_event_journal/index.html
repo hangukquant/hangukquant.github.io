@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../../pricing/pricing/">
+        <link rel="prev" href="../tick_data_archival/">
       
       
         <link rel="next" href="../market_making/">
@@ -293,7 +293,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../tick_data_archival/" class="md-tabs__link">
           
   
   
@@ -887,12 +887,127 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hft/mocks/" class="md-nav__link">
+      <a href="../../hft/qet/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    quantpylib.hft.mocks
+    quantpylib.hft.qet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/replay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/replay_exchange/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_exchange
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/replay_wrapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_wrapper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/replay_orderbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_orderbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/replay_stream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_stream
     
   </span>
   
@@ -2696,6 +2811,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../tick_data_archival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HFT Tick Archival/Lake
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2829,7 +2967,7 @@
   
   
   <span class="md-ellipsis">
-    Market Maker
+    HFT Market Making and Sims
     
   </span>
   
@@ -2943,12 +3081,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../learn/high_frequency_trading/" class="md-nav__link">
+      <a href="../../learn/feature_resampling/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    High Frequency Trading
+    Feature Resampling
     
   </span>
   
@@ -3104,7 +3242,7 @@
 <h1 id="hft-event-journal">HFT Event Journal</h1>
 <p>In software, an event journal is an ordered, append-only record of state
 transitions accepted by a system. In a HFT trading system, it provides a
-durable mirror of important in-memory artefacts such as order state
+durable record of important in-memory artefacts such as order state
 transitions, fills, position deltas, and portfolio snapshots. These artefacts
 can be used downstream for a number of important business functions:</p>
 <ul>

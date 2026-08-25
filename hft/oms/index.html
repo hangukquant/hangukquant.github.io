@@ -12,7 +12,7 @@
         <link rel="prev" href="../l0/">
       
       
-        <link rel="next" href="../mocks/">
+        <link rel="next" href="../qet/">
       
       
       <link rel="icon" href="../../icons/logo.png">
@@ -297,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../tutorials/hft_event_journal/" class="md-tabs__link">
+        <a href="../../tutorials/tick_data_archival/" class="md-tabs__link">
           
   
   
@@ -935,6 +935,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#quantpylib.hft.oms.AsyncioRuntime" class="md-nav__link">
+    <span class="md-ellipsis">
+      AsyncioRuntime
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quantpylib.hft.oms.OMS" class="md-nav__link">
     <span class="md-ellipsis">
       OMS
@@ -1361,12 +1370,127 @@
   
   
     <li class="md-nav__item">
-      <a href="../mocks/" class="md-nav__link">
+      <a href="../qet/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    quantpylib.hft.mocks
+    quantpylib.hft.qet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replay_exchange/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_exchange
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replay_wrapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_wrapper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replay_orderbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_orderbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replay_stream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_stream
     
   </span>
   
@@ -3168,6 +3292,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tutorials/tick_data_archival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HFT Tick Archival/Lake
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tutorials/hft_event_journal/" class="md-nav__link">
         
   
@@ -3196,7 +3343,7 @@
   
   
   <span class="md-ellipsis">
-    Market Maker
+    HFT Market Making and Sims
     
   </span>
   
@@ -3310,12 +3457,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../learn/high_frequency_trading/" class="md-nav__link">
+      <a href="../../learn/feature_resampling/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    High Frequency Trading
+    Feature Resampling
     
   </span>
   
@@ -3498,6 +3645,49 @@
 
 
 
+<h2 id="quantpylib.hft.oms.AsyncioRuntime" class="doc doc-heading">
+            <code>AsyncioRuntime</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Live OMS runtime backed by the wall clock and asyncio.</p>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
 <h2 id="quantpylib.hft.oms.OMS" class="doc doc-heading">
             <code>OMS</code>
 
@@ -3531,7 +3721,7 @@
 
 
 <h3 id="quantpylib.hft.oms.OMS.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">gateway</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orders_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positions_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fills_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pending_timeout</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">refresh_orders_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">refresh_positions_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">refresh_fills_snapshot</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orders_cls_init</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positions_cls_init</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fills_cls_init</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">contract_specs_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">track_mids</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">gateway</span><span class="p">,</span> <span class="n">exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orders_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positions_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fills_mirrored_exchanges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pending_timeout</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">refresh_orders_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">refresh_positions_snapshot</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">refresh_fills_snapshot</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orders_cls_init</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positions_cls_init</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fills_cls_init</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">contract_specs_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">track_mids</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">runtime</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3727,6 +3917,23 @@ gateway.exchange.contract_specifications(exc=exc) on every contract-spec fetch
 (both the full rebuild and the single-exchange refresh). Keyed by exchange alias,
 e.g. {"binance": {"contract_types": ("PERPETUAL", "TRADIFI_PERPETUAL")}} to admit
 Binance TradFi perpetuals. Exchanges absent from the mapping use wrapper defaults.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>runtime</code>
+            </td>
+            <td>
+                  <code><span title="object">object</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Clock and scheduling runtime. Defaults to
+the wall-clock asyncio runtime used by live trading.</p>
               </div>
             </td>
             <td>

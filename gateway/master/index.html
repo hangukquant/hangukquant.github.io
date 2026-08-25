@@ -297,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../tutorials/hft_event_journal/" class="md-tabs__link">
+        <a href="../../tutorials/tick_data_archival/" class="md-tabs__link">
           
   
   
@@ -901,12 +901,127 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hft/mocks/" class="md-nav__link">
+      <a href="../../hft/qet/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    quantpylib.hft.mocks
+    quantpylib.hft.qet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/replay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/replay_exchange/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_exchange
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/replay_wrapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_wrapper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/replay_orderbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_orderbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hft/replay_stream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_stream
     
   </span>
   
@@ -1918,6 +2033,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.gateway.master.Gateway.from_clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_clients
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.gateway.master.Gateway.init_clients" class="md-nav__link">
     <span class="md-ellipsis">
       init_clients
@@ -2814,6 +2938,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tutorials/tick_data_archival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HFT Tick Archival/Lake
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tutorials/hft_event_journal/" class="md-nav__link">
         
   
@@ -2842,7 +2989,7 @@
   
   
   <span class="md-ellipsis">
-    Market Maker
+    HFT Market Making and Sims
     
   </span>
   
@@ -2956,12 +3103,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../learn/high_frequency_trading/" class="md-nav__link">
+      <a href="../../learn/feature_resampling/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    High Frequency Trading
+    Feature Resampling
     
   </span>
   
@@ -3362,6 +3509,84 @@ This is useful for performing any necessary cleanup actions, such as closing con
             <td>
               <div class="doc-md-description">
                 <p>A list of results from the <code>cleanup</code> method calls.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.gateway.master.Gateway.from_clients" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">from_clients</span><span class="p">(</span><span class="n">clients</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Compose a gateway from already initialized wrapper-compatible clients.</p>
+<p>This construction path is intended for injected transports such as
+replay, paper-trading, and controlled test clients. The normal
+configuration-based constructor remains unchanged for live wrappers.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>clients</code>
+            </td>
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange aliases mapped to wrapper-compatible clients.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>Gateway</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Gateway composed over the supplied clients.</p>
               </div>
             </td>
           </tr>

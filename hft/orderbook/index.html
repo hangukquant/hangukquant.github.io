@@ -297,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../tutorials/hft_event_journal/" class="md-tabs__link">
+        <a href="../../tutorials/tick_data_archival/" class="md-tabs__link">
           
   
   
@@ -1038,6 +1038,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.level" class="md-nav__link">
+    <span class="md-ellipsis">
+      level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.match_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      match_order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.hft.orderbook.OrderBookMap.mid" class="md-nav__link">
     <span class="md-ellipsis">
       mid
@@ -1059,6 +1077,15 @@
   <a href="#quantpylib.hft.orderbook.OrderBookMap.order" class="md-nav__link">
     <span class="md-ellipsis">
       order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantpylib.hft.orderbook.OrderBookMap.sweep_level" class="md-nav__link">
+    <span class="md-ellipsis">
+      sweep_level
     </span>
   </a>
   
@@ -1281,12 +1308,127 @@
   
   
     <li class="md-nav__item">
-      <a href="../mocks/" class="md-nav__link">
+      <a href="../qet/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    quantpylib.hft.mocks
+    quantpylib.hft.qet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replay_exchange/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_exchange
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replay_wrapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_wrapper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replay_orderbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_orderbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replay_stream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.hft.replay_stream
     
   </span>
   
@@ -3088,6 +3230,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tutorials/tick_data_archival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HFT Tick Archival/Lake
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tutorials/hft_event_journal/" class="md-nav__link">
         
   
@@ -3116,7 +3281,7 @@
   
   
   <span class="md-ellipsis">
-    Market Maker
+    HFT Market Making and Sims
     
   </span>
   
@@ -3230,12 +3395,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../learn/high_frequency_trading/" class="md-nav__link">
+      <a href="../../learn/feature_resampling/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    High Frequency Trading
+    Feature Resampling
     
   </span>
   
@@ -3834,6 +3999,42 @@ storage.</p>
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.level" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">level</span><span class="p">(</span><span class="n">side</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return aggregate and FIFO endpoints for one price level.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.match_order" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">match_order</span><span class="p">(</span><span class="n">side</span><span class="p">,</span> <span class="n">limit_price</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Consume crossing FIFO orders and return ((id,price,size) remainder).</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="quantpylib.hft.orderbook.OrderBookMap.mid" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">mid</span><span class="p">()</span></code>
 
@@ -3878,7 +4079,25 @@ storage.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Return one order-level entry as a dictionary.</p>
+        <p>Return one order and its adjacent FIFO order ids.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.hft.orderbook.OrderBookMap.sweep_level" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sweep_level</span><span class="p">(</span><span class="n">side</span><span class="p">,</span> <span class="n">limit_price</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Consume every crossing FIFO order through <code>limit_price</code>.</p>
 
 
     </div>
@@ -4263,7 +4482,7 @@ deltas use point updates instead of batch merge.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Return one order-level entry as a dictionary.</p>
+        <p>Return one order and its adjacent FIFO order ids.</p>
 
 
     </div>
