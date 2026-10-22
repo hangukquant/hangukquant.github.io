@@ -3125,6 +3125,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.lighter.Lighter.bba_unsubscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      bba_unsubscribe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.wrappers.lighter.Lighter.block_id" class="md-nav__link">
     <span class="md-ellipsis">
       block_id
@@ -4292,6 +4301,29 @@
   
   <span class="md-ellipsis">
     quantpylib.wrappers.polymarket
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qfex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.qfex
     
   </span>
   
@@ -7428,6 +7460,91 @@ Defaults to <code>1</code>.</p>
             </td>
             <td>
                   <code>1</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange wrapper specific keyword arguments.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.wrappers.lighter.Lighter.bba_unsubscribe" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">bba_unsubscribe</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">is_index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Unsubscribe from best bid/ask updates.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>ticker</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Ticker symbol.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>is_index</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, <code>ticker</code> is treated as the
+Lighter integer market ID. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
             </td>
           </tr>
           <tr class="doc-section-item">

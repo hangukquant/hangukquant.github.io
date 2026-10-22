@@ -2386,6 +2386,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.asterdex.Asterdex.account_fills_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      account_fills_get
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.wrappers.asterdex.Asterdex.account_fills_mirror" class="md-nav__link">
     <span class="md-ellipsis">
       account_fills_mirror
@@ -2870,6 +2879,29 @@
   
   <span class="md-ellipsis">
     quantpylib.wrappers.polymarket
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qfex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.qfex
     
   </span>
   
@@ -3742,6 +3774,131 @@ testnet modes raise an explicit unsupported-mode error.</p>
     <div class="doc doc-contents ">
 
         <p>Unsubscribe the user-facing account fill consumer.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.wrappers.asterdex.Asterdex.account_fills_get" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">account_fills_get</span><span class="p">(</span><span class="n">start_ms</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end_ms</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Retrieve normalized fills over the half-open range <code>[start_ms, end_ms)</code>.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>start_ms</code>
+            </td>
+            <td>
+                  <code><span title="Optional">Optional</span>[<span title="int">int</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Range start in epoch milliseconds, inclusive.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>end_ms</code>
+            </td>
+            <td>
+                  <code><span title="Optional">Optional</span>[<span title="int">int</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Range end in epoch milliseconds, exclusive.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>symbol</code>
+            </td>
+            <td>
+                  <code><span title="Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Ticker symbol to restrict the query to. When
+omitted, <code>/fapi/v1/userTrades</code> serves fills across every symbol
+the account traded in the range.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange wrapper specific keyword arguments.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="Fills (quantpylib.standards.portfolio.Fills)" href="../../standards/portfolio/#quantpylib.standards.portfolio.Fills">Fills</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Deduplicated fills keyed by trade id.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
     </div>

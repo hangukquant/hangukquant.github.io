@@ -945,6 +945,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#record-layouts" class="md-nav__link">
     <span class="md-ellipsis">
       Record Layouts
@@ -3058,6 +3067,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../wrappers/qfex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    quantpylib.wrappers.qfex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../wrappers/eodhd/" class="md-nav__link">
         
   
@@ -3958,6 +3990,41 @@ Defaults are 32 MiB and 60 seconds.</p>
 <p>Runtime event bytes are self-contained and include the ticker string. QBN
 record bytes are archive-local and replace the ticker string with <code>local_id</code>.
 The dictionary stores the symbol once per block.</p>
+<h2 id="compression">Compression</h2>
+<p>Writers and capture sinks accept optional at-rest zstd compression:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">sink</span> <span class="o">=</span> <span class="n">L0ArchiveSink</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s2">&quot;./archives&quot;</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="s2">&quot;zstd&quot;</span><span class="p">,</span> <span class="n">compression_level</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<p>With <code>compression="zstd"</code>, each sealed unit — the file header, then one block
+per seal — is written as an independent zstd frame appended to the capture
+file, and the default daily policy names capture files with a <code>.qbn.zst</code>
+suffix (<code>YYYY-MM-DD.qbn.zst</code>). The uncompressed byte stream inside <code>.zst</code> is exactly
+the QBN layout above — there is no schema or block-layout change — and
+concatenated frames form a valid zstd stream, so stock <code>zstd -d</code> recovers the
+byte-identical <code>.qbn</code> file at any time, including mid-capture. Durability is
+unchanged (bytes hit disk at every block seal), and crash recovery keeps its
+shape: a torn trailing frame is truncated on reopen, exactly like torn-block
+handling on plain files. QBN payloads are highly redundant, so sustained
+capture typically shrinks several-fold at negligible CPU cost.</p>
+<p>Capture paths belong to the routing policy and are used verbatim. When a sink
+builds its own policy from <code>root</code>, it constructs it with <code>suffix=".qbn.zst"</code>,
+so daily files carry the compressed suffix with no per-event work. A
+caller-supplied policy names files itself and should emit the compressed
+suffix the same way:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">policy</span> <span class="o">=</span> <span class="n">DailyCaptureFileSystemPolicy</span><span class="p">(</span><span class="s2">&quot;./archives&quot;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.qbn.zst&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">sink</span> <span class="o">=</span> <span class="n">L0ArchiveSink</span><span class="p">(</span><span class="n">policy</span><span class="o">=</span><span class="n">policy</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="s2">&quot;zstd&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>A policy that emits paths without <code>.zst</code> still produces valid compressed
+captures — readers detect compression by content, not filename — but the
+misleading name is the caller's to avoid. The same applies to
+<a class="autorefs autorefs-internal" href="#quantpylib.hft.l0.L0Writer">L0Writer</a> used directly: the context path is the
+file written.</p>
+<p>Readers detect compressed files by the zstd frame magic and decode them
+through a streaming decompressor, so
+<a class="autorefs autorefs-internal" title="reader_for_file(path)" href="#quantpylib.hft.l0.reader_for_file">reader_for_file</a> and every reader feature
+work identically on both suffixes without materializing the raw file.</p>
+<p>zstd compression requires the optional <code>zstandard</code> dependency:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip install quantpylib[compression]
+</code></pre></div>
 <h2 id="record-layouts">Record Layouts</h2>
 <p>The payload is a sequence of records for the file schema. A file contains one
 schema id and one record domain.</p>
@@ -4186,7 +4253,7 @@ and size fields use the scale documented in
 <a href="../../standards/models/">quantpylib.standards.models</a>.</p>
 <h2 id="file-routing">File Routing</h2>
 <p>Archive sinks route each event by calling:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">context</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">resolve</span><span class="p">(</span><span class="n">feed_id</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">metrics</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">context</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">resolve</span><span class="p">(</span><span class="n">feed_id</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">metrics</span><span class="p">)</span>
 </code></pre></div>
 <p><code>resolve()</code> is the filesystem-policy contract. It must return an
 <a class="autorefs autorefs-internal" title="L0FileContext
@@ -4225,7 +4292,7 @@ and size fields use the scale documented in
 another application-specific partitioning rule. The default
 <a class="autorefs autorefs-internal" href="#quantpylib.hft.l0.DailyCaptureFileSystemPolicy">DailyCaptureFileSystemPolicy</a>
 uses <code>event.ts_recv_ns</code> and routes files by receive date:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>root/venue/market_class/feed_type/YYYY-MM-DD.qbn
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>root/venue/market_class/feed_type/YYYY-MM-DD.qbn
 </code></pre></div>
 <p><a class="autorefs autorefs-internal" href="#quantpylib.hft.l0.FeedTypeFileSystemPolicy">FeedTypeFileSystemPolicy</a> is
 available for feed-type, ticker, or parameter-granular files. It accepts the
@@ -4235,14 +4302,14 @@ and does not require the event.</p>
 <p>Use schema-specific readers when the schema is known, or
 <a class="autorefs autorefs-internal" title="reader_for_file(path)" href="#quantpylib.hft.l0.reader_for_file">reader_for_file</a> when the file header
 should select the reader.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft.l0</span><span class="w"> </span><span class="kn">import</span> <span class="n">L0BookUpdateReader</span><span class="p">,</span> <span class="n">reader_for_file</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">reader</span> <span class="o">=</span> <span class="n">L0BookUpdateReader</span><span class="p">(</span><span class="s2">&quot;./archives/binance/perp/l2book/2026-07-08.qbn&quot;</span><span class="p">)</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">records</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reader</span><span class="o">.</span><span class="n">records</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">))</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">reader</span> <span class="o">=</span> <span class="n">reader_for_file</span><span class="p">(</span><span class="s2">&quot;./archives/binance/perp/l2book/2026-07-08.qbn&quot;</span><span class="p">)</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">df</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">(</span><span class="n">include_offsets</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">parquet_path</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">quantpylib.hft.l0</span><span class="w"> </span><span class="kn">import</span> <span class="n">L0BookUpdateReader</span><span class="p">,</span> <span class="n">reader_for_file</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">reader</span> <span class="o">=</span> <span class="n">L0BookUpdateReader</span><span class="p">(</span><span class="s2">&quot;./archives/binance/perp/l2book/2026-07-08.qbn&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">records</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reader</span><span class="o">.</span><span class="n">records</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">))</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">reader</span> <span class="o">=</span> <span class="n">reader_for_file</span><span class="p">(</span><span class="s2">&quot;./archives/binance/perp/l2book/2026-07-08.qbn&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">df</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">(</span><span class="n">include_offsets</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">parquet_path</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">()</span>
 </code></pre></div>
 <p>Reader filters use exchange-event time:</p>
 <ul>
@@ -4493,6 +4560,43 @@ interval. Use <code>None</code> to disable background metrics logging.</p>
             </td>
             <td>
                   <code><span title="quantpylib.hft.l0.DEFAULT_L0_METRICS_LOG_INTERVAL_SECONDS">DEFAULT_L0_METRICS_LOG_INTERVAL_SECONDS</span></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>compression</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>At-rest capture compression forwarded to
+writers. <code>None</code> (default) writes plain QBN files; <code>"zstd"</code> writes
+zstd frames. The default policy built from <code>root</code> names files with
+a <code>.qbn.zst</code> suffix; a caller-supplied policy names files itself,
+and its resolved paths are used verbatim.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>compression_level</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>zstd compression level used when
+<code>compression="zstd"</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="quantpylib.hft.l0.DEFAULT_L0_COMPRESSION_LEVEL">DEFAULT_L0_COMPRESSION_LEVEL</span></code>
             </td>
           </tr>
       </tbody>
@@ -4946,6 +5050,43 @@ interval. Use <code>None</code> to disable background metrics logging.</p>
             </td>
             <td>
                   <code><span title="quantpylib.hft.l0.DEFAULT_L0_METRICS_LOG_INTERVAL_SECONDS">DEFAULT_L0_METRICS_LOG_INTERVAL_SECONDS</span></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>compression</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>At-rest capture compression forwarded to
+writers. <code>None</code> (default) writes plain QBN files; <code>"zstd"</code> writes
+zstd frames. The default policy built from <code>root</code> names files with
+a <code>.qbn.zst</code> suffix; a caller-supplied policy names files itself,
+and its resolved paths are used verbatim.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>compression_level</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>zstd compression level used when
+<code>compression="zstd"</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="quantpylib.hft.l0.DEFAULT_L0_COMPRESSION_LEVEL">DEFAULT_L0_COMPRESSION_LEVEL</span></code>
             </td>
           </tr>
       </tbody>
@@ -5891,6 +6032,15 @@ used by this policy. The returned context path is rooted at
 header is written lazily on the first event. Existing files are reopened by
 validating complete blocks and truncating any incomplete trailing block
 before appending.</p>
+<p>With <code>compression="zstd"</code>, each sealed unit — the file header, then one
+block per seal — is written as an independent zstd frame. The context path
+is used verbatim; by convention compressed captures carry a <code>.zst</code> suffix,
+as the archive sinks' default policy emits. Concatenated frames form a
+valid zstd stream, so
+<code>zstd -d</code> recovers the byte-identical uncompressed QBN file at any time,
+including mid-day. Durability is unchanged (bytes hit disk at every block
+seal) and reopening truncates a torn trailing frame like torn-block
+handling on plain files.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -5983,7 +6133,10 @@ before appending.</p>
             <td>
               <div class="doc-md-description">
                 <p>Whether to validate existing blocks before
-appending to an existing QBN file.</p>
+appending to an existing QBN file. Compressed files always
+frame-scan on reopen to find the append point and truncate a torn
+trailing frame; this flag controls block CRC validation of the
+decompressed content.</p>
               </div>
             </td>
             <td>
@@ -5999,11 +6152,47 @@ appending to an existing QBN file.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>File metrics object to update.</p>
+                <p>File metrics object to update.
+<code>size_bytes</code> counts bytes on disk, compressed when compression is
+enabled.</p>
               </div>
             </td>
             <td>
                   <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>compression</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>At-rest capture compression. <code>None</code>
+(default) writes plain QBN bytes; <code>"zstd"</code> writes zstd frames.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>compression_level</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>zstd compression level used when
+<code>compression="zstd"</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="quantpylib.hft.l0.DEFAULT_L0_COMPRESSION_LEVEL">DEFAULT_L0_COMPRESSION_LEVEL</span></code>
             </td>
           </tr>
       </tbody>
@@ -6339,6 +6528,8 @@ events.</p>
     <div class="doc doc-contents first">
 
         <p>Open a QBN file with the reader matching its header schema id.</p>
+<p>zstd-compressed capture files are detected by magic and decoded
+transparently.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -6361,7 +6552,7 @@ events.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>QBN file path.</p>
+                <p>QBN file path, plain or zstd-compressed.</p>
               </div>
             </td>
             <td>
@@ -6415,7 +6606,9 @@ events.</p>
 
         <p>Base reader for one L0/QBN event schema.</p>
 <p>Readers validate the file schema, skip incomplete trailing blocks, validate
-complete block CRCs, and decode QBN records back into native event objects.</p>
+complete block CRCs, and decode QBN records back into native event objects.
+zstd-compressed capture files are detected by magic and decoded through a
+streaming decompressor, so both suffixes read identically.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -6438,7 +6631,7 @@ complete block CRCs, and decode QBN records back into native event objects.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>QBN file path.</p>
+                <p>QBN file path, plain or zstd-compressed.</p>
               </div>
             </td>
             <td>
@@ -6938,7 +7131,8 @@ columns.</p>
             <td>
               <div class="doc-md-description">
                 <p>Output path. Defaults to the QBN path
-with a <code>.parquet</code> suffix.</p>
+with a <code>.parquet</code> suffix, ignoring any <code>.zst</code> suffix so both
+capture modes derive the same filename.</p>
               </div>
             </td>
             <td>
