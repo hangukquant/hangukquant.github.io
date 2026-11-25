@@ -3305,7 +3305,7 @@ HYPE limit order:</p>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="s2">&quot;ticker&quot;</span><span class="p">:</span> <span class="s2">&quot;HYPE&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="n">Decimal</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">),</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="n">Decimal</span><span class="p">(</span><span class="s2">&quot;20&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="s2">&quot;tif&quot;</span><span class="p">:</span> <span class="s2">&quot;Alo&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="s2">&quot;tif&quot;</span><span class="p">:</span> <span class="s2">&quot;ALO&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="s2">&quot;cloid&quot;</span><span class="p">:</span> <span class="n">oms</span><span class="o">.</span><span class="n">rand_cloid</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="s2">&quot;hyperliquid&quot;</span><span class="p">),</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
@@ -3326,12 +3326,60 @@ or through <code>CANCEL_PENDING</code> and <code>CANCELLED</code> when we attemp
 <p><img alt="Order lifecycle and binary QET trace" src="../../archives/order_lifecycle_trace.png" /></p>
 <p>The diagram is deliberately simplified. The exact path depends on the venue
 and execution outcome.</p>
-<p>For the <code>CREATE_PENDING</code> order above, the in-memory object and its trace
-artefact look like this:</p>
-<p><img alt="In-memory order encoded as a binary QET trace" src="../../archives/order_trace_layout.png" /></p>
-<p><code>S</code> identifies the
-trading session, while <code>N</code> is the session's trace sequence number. Based on the state machine, the appropriate events. such as <code>trace.orders.insert</code>,
-<code>trace.orders.state_transition</code> is created.</p>
+<p>For this <code>CREATE_PENDING</code> order, the wrapper stamps its runtime <code>exccode</code> into
+<code>Order.exc</code>. With the default Hyperliquid client, the encoding is:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>In-memory order</th>
+<th>QET order (schema 8)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exchange identity</td>
+<td><code>exc = 2</code></td>
+<td><code>uint32 exccode = 2</code></td>
+</tr>
+<tr>
+<td>Amount</td>
+<td><code>Decimal("1")</code></td>
+<td><code>int64 amount = 1_000_000_000</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td><code>Decimal("20")</code></td>
+<td><code>int64 price = 20_000_000_000</code></td>
+</tr>
+<tr>
+<td>Order type</td>
+<td><code>"LIMIT"</code></td>
+<td><code>uint8 type = 1</code></td>
+</tr>
+<tr>
+<td>Time in force</td>
+<td><code>"ALO"</code></td>
+<td><code>uint8 tif = 5</code></td>
+</tr>
+<tr>
+<td>Status</td>
+<td><code>"CREATE_PENDING"</code></td>
+<td><code>uint8 status = 1</code></td>
+</tr>
+<tr>
+<td>Ticker and order IDs</td>
+<td>Python strings; <code>oid</code> is initially absent</td>
+<td>UTF-8 payload with lengths and presence bits</td>
+</tr>
+</tbody>
+</table>
+<p>The fixed header is 144 bytes; <code>record_length</code> includes that header and the
+variable ticker and ID bytes. Decimal values are scaled only at the encoding
+boundary. See the <a href="../../hft/qet/">QET reference</a> for all trace families.</p>
+<p><code>sid</code> identifies the trading session and <code>seqno</code> is its trace sequence number.
+The accepted mutation selects an event such as <code>trace.orders.insert</code> or
+<code>trace.orders.state_transition</code>.</p>
 <p>These actions occur in the trading hot path, so an inefficient transport
 would make the journal unusable. The trace artefact is compactly encoded
 as raw bytes and handed to quantpylib's high performance logging subsystem.
@@ -3339,8 +3387,8 @@ The logger is a native C++ implementation adapted into byte buffers over the LMA
 <a href="https://www.research.hangukquant.com/p/designing-state-of-the-art-logging">Designing State-of-the-Art Logging in Python</a>. Insofar as the trading system is concerned, the trace is complete. This makes the trace subsystem a lightweight attachment (a normal logging statement) and non-intrusively composed with client applications.</p>
 <h2 id="qet-compilation">QET Compilation</h2>
 <p>Once the logging hand-off is complete, the log file receives JSONL records of
-the following shape.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-07...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;trace&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;trace.orders.insert&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;trace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;qwAAAAMAAAAHAAAA...VzAw&quot;</span><span class="p">}</span>
+the following shape (trace payload abbreviated).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-07...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;trace&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;trace.orders.insert&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;trace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;base64 trace bytes&gt;&quot;</span><span class="p">}</span>
 </code></pre></div>
 <p><code>event</code> identifies the accepted mutation. <code>trace</code> is the original binary
 artefact, base64-encoded. Trace records
@@ -3454,18 +3502,21 @@ compiler. Point Alloy at the file written by <code>journal.py</code>:</p>
 <a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 <a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a>    <span class="k">finally</span><span class="p">:</span>
 <a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a>        <span class="k">await</span> <span class="n">oms</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
-<a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
-<a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a>
-<a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<a id="__codelineno-6-60" name="__codelineno-6-60" href="#__codelineno-6-60"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+<a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a>        <span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">cleanup_clients</span><span class="p">()</span>
+<a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+<a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a>
+<a id="__codelineno-6-60" name="__codelineno-6-60" href="#__codelineno-6-60"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-6-61" name="__codelineno-6-61" href="#__codelineno-6-61"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div>
-<p>In <code>journal.log</code> we see one insert and three state transitions, corresponding to create, create-ack, cancel, and cancel-ack. We also see snapshots, which allow recovery when a new session begins.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{&quot;ts&quot;:&quot;2026-07-26 17:15:25.642&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;filename&quot;:&quot;portfolio.py&quot;,&quot;line&quot;:1157,&quot;msg&quot;:&quot;trace&quot;,&quot;event&quot;:&quot;trace.orders.snapshot&quot;,&quot;trace&quot;:&quot;b&#39;...&#39;&quot;}
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>{&quot;ts&quot;:&quot;2026-07-26 17:15:25.766&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;filename&quot;:&quot;portfolio.py&quot;,&quot;line&quot;:408,&quot;msg&quot;:&quot;trace&quot;,&quot;event&quot;:&quot;trace.positions.snapshot&quot;,&quot;trace&quot;:&quot;b&#39;...&#39;&quot;}
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>{&quot;ts&quot;:&quot;2026-07-26 17:15:25.965&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;filename&quot;:&quot;portfolio.py&quot;,&quot;line&quot;:1354,&quot;msg&quot;:&quot;trace&quot;,&quot;event&quot;:&quot;trace.orders.insert&quot;,&quot;trace&quot;:&quot;b&#39;...&#39;&quot;}
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>{&quot;ts&quot;:&quot;2026-07-26 17:15:25.998&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;filename&quot;:&quot;portfolio.py&quot;,&quot;line&quot;:1354,&quot;msg&quot;:&quot;trace&quot;,&quot;event&quot;:&quot;trace.orders.state_transition&quot;,&quot;trace&quot;:&quot;b&#39;...&#39;&quot;}
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>{&quot;ts&quot;:&quot;2026-07-26 17:15:31.000&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;filename&quot;:&quot;portfolio.py&quot;,&quot;line&quot;:1354,&quot;msg&quot;:&quot;trace&quot;,&quot;event&quot;:&quot;trace.orders.state_transition&quot;,&quot;trace&quot;:&quot;b&#39;...&#39;&quot;}
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>{&quot;ts&quot;:&quot;2026-07-26 17:15:31.093&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;filename&quot;:&quot;portfolio.py&quot;,&quot;line&quot;:1354,&quot;msg&quot;:&quot;trace&quot;,&quot;event&quot;:&quot;trace.orders.state_transition&quot;,&quot;trace&quot;:&quot;b&#39;...&#39;&quot;}
+<p>For a successful create-and-cancel sequence, the log contains an insertion and
+three state transitions: create, create-ack, cancel, and cancel-ack. Initialization
+also emits snapshots. A shortened example, with base64 payloads omitted:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{&quot;ts&quot;:&quot;2026-07-26 17:15:25.642&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;filename&quot;:&quot;portfolio.py&quot;,&quot;line&quot;:1157,&quot;msg&quot;:&quot;trace&quot;,&quot;event&quot;:&quot;trace.orders.snapshot&quot;,&quot;trace&quot;:&quot;&lt;base64 trace bytes&gt;&quot;}
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>{&quot;ts&quot;:&quot;2026-07-26 17:15:25.766&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;filename&quot;:&quot;portfolio.py&quot;,&quot;line&quot;:408,&quot;msg&quot;:&quot;trace&quot;,&quot;event&quot;:&quot;trace.positions.snapshot&quot;,&quot;trace&quot;:&quot;&lt;base64 trace bytes&gt;&quot;}
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>{&quot;ts&quot;:&quot;2026-07-26 17:15:25.965&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;filename&quot;:&quot;portfolio.py&quot;,&quot;line&quot;:1354,&quot;msg&quot;:&quot;trace&quot;,&quot;event&quot;:&quot;trace.orders.insert&quot;,&quot;trace&quot;:&quot;&lt;base64 trace bytes&gt;&quot;}
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>{&quot;ts&quot;:&quot;2026-07-26 17:15:25.998&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;filename&quot;:&quot;portfolio.py&quot;,&quot;line&quot;:1354,&quot;msg&quot;:&quot;trace&quot;,&quot;event&quot;:&quot;trace.orders.state_transition&quot;,&quot;trace&quot;:&quot;&lt;base64 trace bytes&gt;&quot;}
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>{&quot;ts&quot;:&quot;2026-07-26 17:15:31.000&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;filename&quot;:&quot;portfolio.py&quot;,&quot;line&quot;:1354,&quot;msg&quot;:&quot;trace&quot;,&quot;event&quot;:&quot;trace.orders.state_transition&quot;,&quot;trace&quot;:&quot;&lt;base64 trace bytes&gt;&quot;}
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>{&quot;ts&quot;:&quot;2026-07-26 17:15:31.093&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;filename&quot;:&quot;portfolio.py&quot;,&quot;line&quot;:1354,&quot;msg&quot;:&quot;trace&quot;,&quot;event&quot;:&quot;trace.orders.state_transition&quot;,&quot;trace&quot;:&quot;&lt;base64 trace bytes&gt;&quot;}
 </code></pre></div></p>
 <p>Inspect the generated qet file here:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>

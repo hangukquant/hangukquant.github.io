@@ -3601,11 +3601,27 @@ pairs. Prices and sizes use <code>PRICE_SCALE</code> and <code>SIZE_SCALE</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Local receive timestamp in nanoseconds.</p>
+                <p>Application receive timestamp in nanoseconds.</p>
               </div>
             </td>
             <td>
                 <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ts_kern_ns</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Kernel RX timestamp; presence and source are carried in flags.</p>
+              </div>
+            </td>
+            <td>
+                  <code>0</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -3948,11 +3964,27 @@ price/size fields and side-availability bits in <code>flags</code>.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Local receive timestamp in nanoseconds.</p>
+                <p>Application receive timestamp in nanoseconds.</p>
               </div>
             </td>
             <td>
                 <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ts_kern_ns</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Kernel RX timestamp; presence and source are carried in flags.</p>
+              </div>
+            </td>
+            <td>
+                  <code>0</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -4273,11 +4305,27 @@ flag semantics table.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Local receive timestamp in nanoseconds.</p>
+                <p>Application receive timestamp in nanoseconds.</p>
               </div>
             </td>
             <td>
                 <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ts_kern_ns</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Kernel RX timestamp; presence and source are carried in flags.</p>
+              </div>
+            </td>
+            <td>
+                  <code>0</code>
             </td>
           </tr>
           <tr class="doc-section-item">

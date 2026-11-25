@@ -3290,6 +3290,7 @@ simulation:</p>
 <a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">cleanup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">oms</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
 <a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">feed</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">gateway</span><span class="o">.</span><span class="n">cleanup_clients</span><span class="p">()</span>
 </code></pre></div>
 <p>The <code>LiveNode</code> initialises the appropriate live connectivity clients that can be used by the strategy node.</p>
 <p>A <code>BacktestNode</code> satisfies the same interface over a deterministic replay. It

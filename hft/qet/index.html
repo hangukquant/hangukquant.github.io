@@ -3568,36 +3568,55 @@ record lengths, trace identity, and nested snapshot boundaries while decoding.</
 <thead>
 <tr>
 <th>Trace</th>
+<th>Schema ID</th>
+<th>Fixed bytes</th>
 <th>Role</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Order</td>
+<td>8</td>
+<td>144</td>
 <td>One accepted order insertion or state transition.</td>
 </tr>
 <tr>
 <td>Fill</td>
+<td>9</td>
+<td>104</td>
 <td>One accepted fill insertion.</td>
 </tr>
 <tr>
 <td>Position delta</td>
+<td>10</td>
+<td>80</td>
 <td>One accepted position mutation caused by a fill.</td>
 </tr>
 <tr>
-<td>Orders snapshot</td>
-<td>Recovery snapshot containing nested order traces.</td>
+<td>Position</td>
+<td>11</td>
+<td>32</td>
+<td>Nested position inside a positions snapshot.</td>
 </tr>
 <tr>
 <td>Positions snapshot</td>
-<td>Recovery snapshot containing nested position traces.</td>
+<td>12</td>
+<td>36</td>
+<td>Snapshot containing nested schema-11 positions.</td>
 </tr>
 <tr>
-<td>Position</td>
-<td>Nested position representation used inside a positions snapshot.</td>
+<td>Orders snapshot</td>
+<td>13</td>
+<td>36</td>
+<td>Snapshot containing nested schema-8 orders.</td>
 </tr>
 </tbody>
 </table>
+<p>Financial fields are encoded as little-endian signed <code>int64</code> values scaled by
+1e9. Encoding rounds finer values to the nearest 1e-9, with ties to even, and
+rejects non-finite values or int64 overflow.
+Decoding returns ordinary-unit <code>Decimal</code> values. Presence bitmaps distinguish
+absent fields from zero. Exchange codes are <code>uint32</code> in the encoded records.</p>
 <p>The current schema registry is exposed as
 <code>QET_SCHEMA_REGISTRY</code>. <code>QET_TOP_LEVEL_SCHEMA_IDS</code> identifies records that may
 be appended directly; nested position records are decoded only as children of a
@@ -4267,8 +4286,7 @@ schema, or session identity is invalid.</p>
 
         <p>Append validated top-level portfolio traces to a QET file.</p>
 <p>A new or empty file receives the QET magic and schema registry before the
-first trace. A non-empty file is opened for append without rewriting or
-validating its existing header. Use
+first trace. Reopening requires the same current schema registry. Use
 <a class="autorefs autorefs-internal" title="flush(durable=False)" href="#quantpylib.hft.qet.QETWriter.flush"><code>flush()</code></a> with <code>durable=True</code> when
 the caller requires an operating-system durability barrier.</p>
 
@@ -4643,88 +4661,7 @@ registry.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Decode one accepted fill trace.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>trace</code>
-            </td>
-            <td>
-                  <code><span title="bytes">bytes</span> - <span title="like">like</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Complete fill trace bytes.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="dict">dict</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Schema and session identity, field bitmap, exchange, trade and
-order identity, ticker, amount, price, fees, realized PnL, position
-start and end amounts, maker flag, and exchange/update timestamps.
-Bitmap-optional fields are <code>None</code> when absent.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><a class="autorefs autorefs-internal" title="QETFormatError (quantpylib.hft.qet.QETFormatError)" href="#quantpylib.hft.qet.QETFormatError">QETFormatError</a></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If the fixed header, schema ID, record length, or
-variable-length payload boundary is invalid.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+        <p>Decode a schema 9 fill trace.</p>
 
 
     </div>
@@ -4742,90 +4679,7 @@ variable-length payload boundary is invalid.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Decode one order insertion or state-transition trace.</p>
-<p>Bitmap-optional fields are returned as <code>None</code> when they were not present
-in the encoded mutation. Decimal-valued fields are reconstructed from their
-lossless ASCII representation.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>trace</code>
-            </td>
-            <td>
-                  <code><span title="bytes">bytes</span> - <span title="like">like</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Complete order trace bytes.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="dict">dict</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Schema and session identity, field bitmap, exchange and order
-identity, order attributes, status, filled quantities, and submit,
-cancel, exchange, and update timestamps.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><a class="autorefs autorefs-internal" title="QETFormatError (quantpylib.hft.qet.QETFormatError)" href="#quantpylib.hft.qet.QETFormatError">QETFormatError</a></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If the fixed header, schema ID, record length, or
-variable-length payload boundary is invalid.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+        <p>Decode a schema 8 order trace.</p>
 
 
     </div>
@@ -4843,87 +4697,7 @@ variable-length payload boundary is invalid.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Decode an order-ledger recovery snapshot.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>trace</code>
-            </td>
-            <td>
-                  <code><span title="bytes">bytes</span> - <span title="like">like</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Complete top-level orders snapshot trace.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="dict">dict</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Schema and session identity, snapshot update timestamp,
-exchange, and decoded nested <code>orders</code> list.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><a class="autorefs autorefs-internal" title="QETFormatError (quantpylib.hft.qet.QETFormatError)" href="#quantpylib.hft.qet.QETFormatError">QETFormatError</a></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If the snapshot header, schema, record length, exchange
-field, nested order boundaries, or final payload boundary is
-invalid.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+        <p>Decode a schema 13 orders snapshot trace.</p>
 
 
     </div>
@@ -4941,87 +4715,7 @@ invalid.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Decode one accepted position-delta trace.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>trace</code>
-            </td>
-            <td>
-                  <code><span title="bytes">bytes</span> - <span title="like">like</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Complete position-delta trace bytes.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="dict">dict</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Schema and session identity, field bitmap, exchange, ticker,
-resulting amount, applied delta, entry values, and exchange/update
-timestamps.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><a class="autorefs autorefs-internal" title="QETFormatError (quantpylib.hft.qet.QETFormatError)" href="#quantpylib.hft.qet.QETFormatError">QETFormatError</a></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If the fixed header, schema ID, record length, or
-variable-length payload boundary is invalid.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+        <p>Decode a schema 10 position delta trace.</p>
 
 
     </div>
@@ -5039,87 +4733,7 @@ variable-length payload boundary is invalid.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Decode one nested position snapshot entry.</p>
-<p>Position traces do not carry their own session identity because they are
-children of a top-level positions snapshot.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>trace</code>
-            </td>
-            <td>
-                  <code><span title="bytes">bytes</span> - <span title="like">like</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Complete nested position trace bytes.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="dict">dict</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Schema ID, exchange, ticker, amount, and entry price.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><a class="autorefs autorefs-internal" title="QETFormatError (quantpylib.hft.qet.QETFormatError)" href="#quantpylib.hft.qet.QETFormatError">QETFormatError</a></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If the fixed header, schema ID, record length, or
-variable-length payload boundary is invalid.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+        <p>Decode a schema 11 position trace.</p>
 
 
     </div>
@@ -5137,87 +4751,7 @@ variable-length payload boundary is invalid.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Decode a position-ledger recovery snapshot.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>trace</code>
-            </td>
-            <td>
-                  <code><span title="bytes">bytes</span> - <span title="like">like</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Complete top-level positions snapshot trace.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="dict">dict</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Schema and session identity, snapshot update timestamp,
-exchange, and decoded nested <code>positions</code> list.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><a class="autorefs autorefs-internal" title="QETFormatError (quantpylib.hft.qet.QETFormatError)" href="#quantpylib.hft.qet.QETFormatError">QETFormatError</a></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If the snapshot header, schema, record length, exchange
-field, nested position boundaries, or final payload boundary is
-invalid.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+        <p>Decode a schema 12 positions snapshot trace.</p>
 
 
     </div>

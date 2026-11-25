@@ -2268,6 +2268,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.standards.portfolio.Order.as_btrace" class="md-nav__link">
+    <span class="md-ellipsis">
+      as_btrace
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.standards.portfolio.Order.as_dict" class="md-nav__link">
     <span class="md-ellipsis">
       as_dict
@@ -3789,11 +3798,11 @@ is the universal authority for order-update deltas.</p>
                 <code>exc</code>
             </td>
             <td>
-                  <code><span title="str">str</span></code>
+                  <code><span title="int">int</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Alias for the exchange client.</p>
+                <p>Runtime exchange code.</p>
               </div>
             </td>
             <td>
@@ -4099,6 +4108,25 @@ is the universal authority for order-update deltas.</p>
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.standards.portfolio.Order.as_btrace" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">as_btrace</span><span class="p">(</span><span class="n">sid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seqno</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">field_bitmap</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Encode schema 8; an explicit bitmap controls sparse overwrite semantics.</p>
+<p>Opaque reserved values are encoded verbatim regardless of their presence bits.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="quantpylib.standards.portfolio.Order.as_dict" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">as_dict</span><span class="p">(</span><span class="n">test</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
@@ -4203,11 +4231,11 @@ is the universal authority for order-update deltas.</p>
                 <code>exc</code>
             </td>
             <td>
-                  <code><span title="str">str</span></code>
+                  <code><span title="int">int</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Venue/container provenance stamped onto orders.</p>
+                <p>Runtime exchange code stamped onto orders.</p>
               </div>
             </td>
             <td>
@@ -5407,11 +5435,11 @@ orders that are not exchange-acknowledged yet. Defaults to True.</p>
                 <code>exc</code>
             </td>
             <td>
-                  <code><span title="str">str</span></code>
+                  <code><span title="int">int</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Venue/container provenance stamped onto emitted deltas.</p>
+                <p>Runtime exchange code stamped onto emitted deltas.</p>
               </div>
             </td>
             <td>

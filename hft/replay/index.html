@@ -3555,6 +3555,9 @@ institutional-grade backtest simulation. It is designed so live trading and
 simulation use a unified code interface, reducing the margin for error created
 by implementation gaps between research and production.</p>
 <p>See the <a href="../../tutorials/market_making/">market-making tutorial</a> for a tutorial on how to write market making code using the replay's runtime.</p>
+<p>Replay execution supports priced limit orders with GTC or post-only (ALO).
+Unsupported execution instructions, including IOC/FOK, reduce-only, conditional
+orders, derived prices and expiry are rejected on submission.</p>
 <h2 id="live-and-replay-runtime-domains">Live and replay runtime domains</h2>
 <p>In replay mode, <a class="autorefs autorefs-internal" href="#quantpylib.hft.replay.ReplayRuntime">ReplayRuntime</a> is injected
 into the OMS. It schedules asynchronous work on the replay
@@ -4448,7 +4451,7 @@ transport, and portfolio states share the replay clock domain.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Per-venue keyword arguments for
+                <p>Keyword arguments keyed by canonical exchange name for
 <a class="autorefs autorefs-internal" title="quantpylib.hft.replay_exchange.ReplayExchange" href="../replay_exchange/#quantpylib.hft.replay_exchange.ReplayExchange"><code>ReplayExchange</code></a>.</p>
               </div>
             </td>
@@ -4465,7 +4468,7 @@ transport, and portfolio states share the replay clock domain.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Per-venue keyword arguments for
+                <p>Keyword arguments keyed by canonical exchange name for
 <a class="autorefs autorefs-internal" title="quantpylib.hft.replay_wrapper.ReplayWrapper" href="../replay_wrapper/#quantpylib.hft.replay_wrapper.ReplayWrapper"><code>ReplayWrapper</code></a>.</p>
               </div>
             </td>
@@ -4516,7 +4519,7 @@ transport, and portfolio states share the replay clock domain.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Venue truth by alias.</p>
+                <p>Venue truth by canonical exchange name.</p>
               </div>
             </td>
           </tr>
@@ -4527,7 +4530,7 @@ transport, and portfolio states share the replay clock domain.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Gateway transports by alias.</p>
+                <p>Gateway transports by canonical exchange name.</p>
               </div>
             </td>
           </tr>

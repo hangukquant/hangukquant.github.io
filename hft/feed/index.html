@@ -3523,7 +3523,8 @@ instance. <code>Feed</code> calls:</p>
 <p>for every event routed to that sink. <code>write()</code> may be synchronous or
 asynchronous; if it returns an awaitable, <code>Feed</code> awaits it. The return value is
 sink-specific and is ignored by <code>Feed</code>.</p>
-<p><code>Feed.cleanup()</code> calls <code>sink.close()</code> for configured sinks. <code>close()</code> may also
+<p><code>Feed.cleanup()</code> stops feed delivery and calls <code>sink.close()</code> for configured sinks.
+The application closes the gateway separately with <code>gateway.cleanup_clients()</code>. <code>close()</code> may also
 be synchronous or asynchronous and should be safe to call more than once. Sinks
 that buffer work may expose <code>flush()</code>, but <code>Feed</code> does not require custom sinks
 to implement flushing semantics if the default <code>FeedSink</code> base method is sufficient.</p>
@@ -3784,7 +3785,7 @@ returns the latest received <code>BBAUpdate</code>.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Exchange name.</p>
+                <p>Gateway client key.</p>
               </div>
             </td>
             <td>
@@ -3929,7 +3930,7 @@ ticker.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Exchange name.</p>
+                <p>Gateway client key.</p>
               </div>
             </td>
             <td>
@@ -4082,7 +4083,7 @@ state.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Exchange name.</p>
+                <p>Gateway client key.</p>
               </div>
             </td>
             <td>
@@ -4244,7 +4245,7 @@ order-book state.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Exchange name.</p>
+                <p>Gateway client key.</p>
               </div>
             </td>
             <td>
@@ -4411,7 +4412,7 @@ path.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Exchange name.</p>
+                <p>Gateway client key.</p>
               </div>
             </td>
             <td>
@@ -4563,7 +4564,7 @@ returns the latest received <code>TradeUpdate</code>.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Exchange name.</p>
+                <p>Gateway client key.</p>
               </div>
             </td>
             <td>
@@ -4708,7 +4709,7 @@ ticker.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Exchange name.</p>
+                <p>Gateway client key.</p>
               </div>
             </td>
             <td>
@@ -4833,7 +4834,7 @@ disables sinks for that ticker.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Cleanup the feeder object.</p>
+        <p>Stop feed delivery and close its sinks. The application owns gateway cleanup.</p>
 
 
     </div>
@@ -4923,11 +4924,11 @@ disables sinks for that ticker.</p>
                 <code>exc</code>
             </td>
             <td>
-                  <code><span title="str">str</span></code>
+                  <code><span title="Exchange">Exchange</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The exchange.</p>
+                <p>Canonical venue.</p>
               </div>
             </td>
             <td>

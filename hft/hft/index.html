@@ -3410,39 +3410,41 @@ Data models for book updates, trades and bba are available in <a href="../../sta
 <a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Capturing </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">MARKETS</span><span class="p">)</span><span class="si">}</span><span class="s2"> venues for </span><span class="si">{</span><span class="n">RUN_SECONDS</span><span class="si">}</span><span class="s2"> seconds...&quot;</span><span class="p">)</span>
 <a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">RUN_SECONDS</span><span class="p">)</span>
 <a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>    <span class="k">finally</span><span class="p">:</span>
-<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>        <span class="k">if</span> <span class="n">feed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>            <span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
-<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>        <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>            <span class="n">sink</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>            <span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">cleanup_clients</span><span class="p">()</span>
-<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>
-<a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>    <span class="n">paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">sink</span><span class="o">.</span><span class="n">writers</span><span class="p">)</span>
-<a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">paths</span><span class="p">:</span>
-<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;archive sink did not write any QBN files&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a>    <span class="k">return</span> <span class="n">paths</span><span class="p">,</span> <span class="n">counts</span>
-<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>
-<a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a>
-<a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a><span class="k">def</span><span class="w"> </span><span class="nf">read_back_archives</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="n">counts</span><span class="p">):</span>
-<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Callback counts:&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a>    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
-<a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a>        <span class="n">venue</span><span class="p">,</span> <span class="n">feed_type</span><span class="p">,</span> <span class="n">ticker</span> <span class="o">=</span> <span class="n">key</span>
-<a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">venue</span><span class="si">:</span><span class="s2">12s</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">feed_type</span><span class="si">:</span><span class="s2">8s</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">ticker</span><span class="si">:</span><span class="s2">10s</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a>
-<a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">QBN files: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">))</span>
-<a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a>    <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
-<a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a>        <span class="n">reader</span> <span class="o">=</span> <span class="n">reader_for_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<a id="__codelineno-1-91" name="__codelineno-1-91" href="#__codelineno-1-91"></a>        <span class="n">header</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">header</span><span class="p">()</span>
-<a id="__codelineno-1-92" name="__codelineno-1-92" href="#__codelineno-1-92"></a>        <span class="n">records</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reader</span><span class="o">.</span><span class="n">records</span><span class="p">(</span><span class="n">with_context</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-<a id="__codelineno-1-93" name="__codelineno-1-93" href="#__codelineno-1-93"></a>        <span class="c1"># for record in records:</span>
-<a id="__codelineno-1-94" name="__codelineno-1-94" href="#__codelineno-1-94"></a>        <span class="c1">#     print(record)</span>
-<a id="__codelineno-1-95" name="__codelineno-1-95" href="#__codelineno-1-95"></a>
-<a id="__codelineno-1-96" name="__codelineno-1-96" href="#__codelineno-1-96"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-<a id="__codelineno-1-97" name="__codelineno-1-97" href="#__codelineno-1-97"></a>    <span class="n">paths</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="k">await</span> <span class="n">capture_archives</span><span class="p">()</span>
-<a id="__codelineno-1-98" name="__codelineno-1-98" href="#__codelineno-1-98"></a>    <span class="n">read_back_archives</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
-<a id="__codelineno-1-99" name="__codelineno-1-99" href="#__codelineno-1-99"></a>
-<a id="__codelineno-1-100" name="__codelineno-1-100" href="#__codelineno-1-100"></a>
-<a id="__codelineno-1-101" name="__codelineno-1-101" href="#__codelineno-1-101"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<a id="__codelineno-1-102" name="__codelineno-1-102" href="#__codelineno-1-102"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>        <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>            <span class="k">if</span> <span class="n">feed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>                <span class="k">await</span> <span class="n">feed</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>            <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>                <span class="n">sink</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>        <span class="k">finally</span><span class="p">:</span>
+<a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>            <span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">cleanup_clients</span><span class="p">()</span>
+<a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>
+<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a>    <span class="n">paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">sink</span><span class="o">.</span><span class="n">writers</span><span class="p">)</span>
+<a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">paths</span><span class="p">:</span>
+<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;archive sink did not write any QBN files&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a>    <span class="k">return</span> <span class="n">paths</span><span class="p">,</span> <span class="n">counts</span>
+<a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a>
+<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a>
+<a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a><span class="k">def</span><span class="w"> </span><span class="nf">read_back_archives</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="n">counts</span><span class="p">):</span>
+<a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Callback counts:&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a>    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+<a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a>        <span class="n">venue</span><span class="p">,</span> <span class="n">feed_type</span><span class="p">,</span> <span class="n">ticker</span> <span class="o">=</span> <span class="n">key</span>
+<a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">venue</span><span class="si">:</span><span class="s2">12s</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">feed_type</span><span class="si">:</span><span class="s2">8s</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">ticker</span><span class="si">:</span><span class="s2">10s</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a>
+<a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">QBN files: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">))</span>
+<a id="__codelineno-1-91" name="__codelineno-1-91" href="#__codelineno-1-91"></a>    <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
+<a id="__codelineno-1-92" name="__codelineno-1-92" href="#__codelineno-1-92"></a>        <span class="n">reader</span> <span class="o">=</span> <span class="n">reader_for_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<a id="__codelineno-1-93" name="__codelineno-1-93" href="#__codelineno-1-93"></a>        <span class="n">header</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">header</span><span class="p">()</span>
+<a id="__codelineno-1-94" name="__codelineno-1-94" href="#__codelineno-1-94"></a>        <span class="n">records</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reader</span><span class="o">.</span><span class="n">records</span><span class="p">(</span><span class="n">with_context</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<a id="__codelineno-1-95" name="__codelineno-1-95" href="#__codelineno-1-95"></a>        <span class="c1"># for record in records:</span>
+<a id="__codelineno-1-96" name="__codelineno-1-96" href="#__codelineno-1-96"></a>        <span class="c1">#     print(record)</span>
+<a id="__codelineno-1-97" name="__codelineno-1-97" href="#__codelineno-1-97"></a>
+<a id="__codelineno-1-98" name="__codelineno-1-98" href="#__codelineno-1-98"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-1-99" name="__codelineno-1-99" href="#__codelineno-1-99"></a>    <span class="n">paths</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="k">await</span> <span class="n">capture_archives</span><span class="p">()</span>
+<a id="__codelineno-1-100" name="__codelineno-1-100" href="#__codelineno-1-100"></a>    <span class="n">read_back_archives</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
+<a id="__codelineno-1-101" name="__codelineno-1-101" href="#__codelineno-1-101"></a>
+<a id="__codelineno-1-102" name="__codelineno-1-102" href="#__codelineno-1-102"></a>
+<a id="__codelineno-1-103" name="__codelineno-1-103" href="#__codelineno-1-103"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-1-104" name="__codelineno-1-104" href="#__codelineno-1-104"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div>
 <p>We get the following
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>QBN files: 
@@ -3458,7 +3460,7 @@ Data models for book updates, trades and bba are available in <a href="../../sta
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>.archival/hyperliquid/perp/trades/2026-07-08.qbn
 </code></pre></div></p>
 <p>Reader and writer APIs are provided, for instance:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{&#39;block_offset&#39;: 25316482, &#39;record_index&#39;: 69486, &#39;venue&#39;: &#39;binance&#39;, &#39;market_class&#39;: &#39;perp&#39;, &#39;feed_type&#39;: &#39;bba&#39;, &#39;symbol&#39;: &#39;ETHUSDT&#39;, &#39;event&#39;: BBAUpdate(ticker=&#39;ETHUSDT&#39;, seq_type=0, seq0=0, bid_price=1733670000000, ask_price=1733680000000)}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{&#39;block_offset&#39;: 25316480, &#39;record_index&#39;: 69486, &#39;venue&#39;: &lt;Exchange.binance: 0&gt;, &#39;market_class&#39;: &#39;perp&#39;, &#39;feed_type&#39;: &#39;bba&#39;, &#39;symbol&#39;: &#39;ETHUSDT&#39;, &#39;event&#39;: BBAUpdate(ticker=&#39;ETHUSDT&#39;, seq_type=0, seq0=0, bid_price=1733670000000, ask_price=1733680000000)}
 </code></pre></div></p>
 <h3 id="oms">OMS</h3>
 <p>It is easy to create a manager class - it is similar to the<a href="../feed/"><code>quantpylib.hft.feed.Feed</code></a> objects. Simply - create a gateway object with the correct keys and pass them in.</p>
@@ -3493,9 +3495,10 @@ Data models for book updates, trades and bba are available in <a href="../../sta
 <a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>    <span class="c1">#code goes here... </span>
 <a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>    <span class="c1">###</span>
 <a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>    <span class="k">await</span> <span class="n">oms</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>
-<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>    <span class="k">await</span> <span class="n">gateway</span><span class="o">.</span><span class="n">cleanup_clients</span><span class="p">()</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div></p>
 <p>For all of our socket-based message handlers, we will use a generic printer to showcase results:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">printer</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
@@ -3576,61 +3579,73 @@ respectively. Only one of each schema level is shown - obviously if more positio
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">await</span> <span class="n">oms</span><span class="o">.</span><span class="n">limit_order</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;binance&#39;</span><span class="p">,</span><span class="n">ticker</span><span class="o">=</span><span class="s1">&#39;SOLUSDT&#39;</span><span class="p">,</span><span class="n">price_rule</span><span class="o">=</span><span class="n">markets</span><span class="o">.</span><span class="n">PRICE_RULE_QUEUE_1</span><span class="p">,</span><span class="n">amount</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 Recall that our handlers are registered for <code>hyperliquid</code>, so let's see what gets printed:
-The <code>on_delta</code> handler receives two messages:
+For an accepted order, <code>on_delta</code> receives creation and acknowledgement updates.
+The following illustrative output uses Hyperliquid's default runtime code,
+<code>int(Exchange.hyperliquid) == 2</code>:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>{&#39;amount&#39;: Decimal(&#39;1&#39;),
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a> &#39;cloid&#39;: &#39;0x272e45bf06706c3259f41079a1d48d2a&#39;,
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a> &#39;exc&#39;: &#39;hyperliquid&#39;,
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a> &#39;exc&#39;: 2,
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a> &#39;filled_sz&#39;: Decimal(&#39;0&#39;),
 <a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a> &#39;last_fill_sz&#39;: Decimal(&#39;0&#39;),
 <a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a> &#39;oid&#39;: None,
 <a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a> &#39;ord_status&#39;: &#39;CREATE_PENDING&#39;,
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a> &#39;ord_type&#39;: None,
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a> &#39;ord_type&#39;: &#39;LIMIT&#39;,
 <a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a> &#39;price&#39;: Decimal(&#39;129.56&#39;),
 <a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a> &#39;price_rule&#39;: None,
-<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a> &#39;reduce_only&#39;: None,
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a> &#39;reduce_only&#39;: False,
 <a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a> &#39;sl&#39;: None,
 <a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a> &#39;ticker&#39;: &#39;SOL&#39;,
-<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a> &#39;tif&#39;: None,
-<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a> &#39;timestamp&#39;: 1726154778980,
-<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a> &#39;tp&#39;: None}
-<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>{&#39;amount&#39;: Decimal(&#39;1.0&#39;),
-<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a> &#39;cloid&#39;: &#39;0x272e45bf06706c3259f41079a1d48d2a&#39;,
-<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a> &#39;exc&#39;: &#39;hyperliquid&#39;,
-<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a> &#39;filled_sz&#39;: Decimal(&#39;0.0&#39;),
-<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a> &#39;last_fill_sz&#39;: Decimal(&#39;0.0&#39;),
-<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a> &#39;oid&#39;: &#39;1234&#39;,
-<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a> &#39;ord_status&#39;: &#39;NEW&#39;,
-<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a> &#39;ord_type&#39;: None,
-<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a> &#39;price&#39;: Decimal(&#39;129.56&#39;),
-<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a> &#39;price_rule&#39;: None,
-<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a> &#39;reduce_only&#39;: None,
-<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a> &#39;sl&#39;: None,
-<a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a> &#39;ticker&#39;: &#39;SOL&#39;,
-<a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a> &#39;tif&#39;: None,
-<a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a> &#39;timestamp&#39;: 1726154781307,
-<a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a> &#39;tp&#39;: None}
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a> &#39;tif&#39;: &#39;GTC&#39;,
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a> &#39;ts_submit_ns&#39;: 1726154778980000000,
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a> &#39;ts_cancel_ns&#39;: None,
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a> &#39;ts_exch_ns&#39;: None,
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a> &#39;ts_update_ns&#39;: 1726154778980000000,
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a> &#39;tp&#39;: None}
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>{&#39;amount&#39;: Decimal(&#39;1.0&#39;),
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a> &#39;cloid&#39;: &#39;0x272e45bf06706c3259f41079a1d48d2a&#39;,
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a> &#39;exc&#39;: 2,
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a> &#39;filled_sz&#39;: Decimal(&#39;0.0&#39;),
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a> &#39;last_fill_sz&#39;: Decimal(&#39;0.0&#39;),
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a> &#39;oid&#39;: &#39;1234&#39;,
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a> &#39;ord_status&#39;: &#39;NEW&#39;,
+<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a> &#39;ord_type&#39;: &#39;LIMIT&#39;,
+<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a> &#39;price&#39;: Decimal(&#39;129.56&#39;),
+<a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a> &#39;price_rule&#39;: None,
+<a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a> &#39;reduce_only&#39;: False,
+<a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a> &#39;sl&#39;: None,
+<a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a> &#39;ticker&#39;: &#39;SOL&#39;,
+<a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a> &#39;tif&#39;: &#39;GTC&#39;,
+<a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a> &#39;ts_submit_ns&#39;: 1726154778980000000,
+<a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a> &#39;ts_cancel_ns&#39;: None,
+<a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a> &#39;ts_exch_ns&#39;: 1726154781307000000,
+<a id="__codelineno-17-37" name="__codelineno-17-37" href="#__codelineno-17-37"></a> &#39;ts_update_ns&#39;: 1726154781308000000,
+<a id="__codelineno-17-38" name="__codelineno-17-38" href="#__codelineno-17-38"></a> &#39;tp&#39;: None}
 </code></pre></div>
 The first is order-creation: a request has been sent to the exchange, but not yet acknowledged. Only the local trading agent is aware, but the order is possibly unsuccessful; hence <code>CREATE_PENDING</code> status. This is followed by a <code>NEW</code> order which means the order was acknowledged successful by the exchange.
 Following an order cancel:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">await</span> <span class="n">oms</span><span class="o">.</span><span class="n">cancel_order</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="s1">&#39;hyperliquid&#39;</span><span class="p">,</span><span class="n">ticker</span><span class="o">=</span><span class="s1">&#39;SOL&#39;</span><span class="p">,</span><span class="n">cloid</span><span class="o">=</span><span class="n">cloid</span><span class="p">)</span> <span class="c1">#or use oid</span>
 </code></pre></div>
-this is acknowledged <code>on_delta</code>:
+<code>on_delta</code> first reports the local <code>CANCEL_PENDING</code> attempt, then the
+acknowledgement, for example:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>{&#39;amount&#39;: Decimal(&#39;1.0&#39;),
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a> &#39;cloid&#39;: &#39;0x272e45bf06706c3259f41079a1d48d2a&#39;,
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a> &#39;exc&#39;: &#39;hyperliquid&#39;,
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a> &#39;exc&#39;: 2,
 <a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a> &#39;filled_sz&#39;: Decimal(&#39;0.0&#39;),
 <a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a> &#39;last_fill_sz&#39;: Decimal(&#39;0.0&#39;),
 <a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a> &#39;oid&#39;: &#39;1234&#39;,
 <a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a> &#39;ord_status&#39;: &#39;CANCELLED&#39;,
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a> &#39;ord_type&#39;: None,
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a> &#39;ord_type&#39;: &#39;LIMIT&#39;,
 <a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a> &#39;price&#39;: Decimal(&#39;129.56&#39;),
 <a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a> &#39;price_rule&#39;: None,
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a> &#39;reduce_only&#39;: None,
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a> &#39;reduce_only&#39;: False,
 <a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a> &#39;sl&#39;: None,
 <a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a> &#39;ticker&#39;: &#39;SOL&#39;,
-<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a> &#39;tif&#39;: None,
-<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a> &#39;timestamp&#39;: 1726154781307,
-<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a> &#39;tp&#39;: None}
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a> &#39;tif&#39;: &#39;GTC&#39;,
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a> &#39;ts_submit_ns&#39;: 1726154778980000000,
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a> &#39;ts_cancel_ns&#39;: 1726154785000000000,
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a> &#39;ts_exch_ns&#39;: 1726154785093000000,
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a> &#39;ts_update_ns&#39;: 1726154785094000000,
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a> &#39;tp&#39;: None}
 </code></pre></div>
 and the <code>on_update</code> prints the new list (not shown), this time without the cancelled order - since it is not on the orders page anymore (it is no longer open).</p>
 <h3 id="market-making-and-sims">Market Making and Sims</h3>

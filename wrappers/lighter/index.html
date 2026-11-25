@@ -3935,6 +3935,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.lighter.Lighter.specs_peek" class="md-nav__link">
+    <span class="md-ellipsis">
+      specs_peek
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.wrappers.lighter.Lighter.stake_assets" class="md-nav__link">
     <span class="md-ellipsis">
       stake_assets
@@ -6588,7 +6597,7 @@ https://github.com/elliottech/lighter-go/tree/main</p>
 
 
 <h3 id="quantpylib.wrappers.lighter.Lighter.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">account_index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">all_secret</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maker_secret</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reserve_from</span><span class="o">=</span><span class="n">RESERVE_FROM</span><span class="p">,</span> <span class="n">cache_stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">account_index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">all_secret</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maker_secret</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reserve_from</span><span class="o">=</span><span class="n">RESERVE_FROM</span><span class="p">,</span> <span class="n">cache_stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exccode</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">Exchange</span><span class="o">.</span><span class="n">lighter</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 </h3>
 
@@ -6721,6 +6730,22 @@ client serving public market data only. See <code>init_client</code>.</p>
             </td>
             <td>
                   <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>exccode</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Runtime account identity; defaults to the canonical venue code.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="int">int</span>(<span title="quantpylib.standards.exchange.Exchange.lighter">lighter</span>)</code>
             </td>
           </tr>
       </tbody>
@@ -12357,6 +12382,24 @@ inactive orders are visible; older fills/cancels return ord_status=ORDER_STATUS_
     <div class="doc doc-contents ">
 
         <p>Mark the given api_key_index list as maker-only on-chain.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.wrappers.lighter.Lighter.specs_peek" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">specs_peek</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">is_perpetuals</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return cached rules for the selected market without I/O.</p>
 
 
     </div>

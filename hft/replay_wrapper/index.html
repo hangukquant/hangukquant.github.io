@@ -1384,6 +1384,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.hft.replay_wrapper.ReplayWrapper.specs_peek" class="md-nav__link">
+    <span class="md-ellipsis">
+      specs_peek
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.hft.replay_wrapper.ReplayWrapper.subscriptions" class="md-nav__link">
     <span class="md-ellipsis">
       subscriptions
@@ -3670,14 +3679,14 @@ inbound/outbound delays.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>venue</code>
+                <code>exchange</code>
             </td>
             <td>
-                  <code><span title="str">str</span></code>
+                  <code><span title="quantpylib.standards.exchange.Exchange">Exchange</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Gateway alias for the simulated venue.</p>
+                <p>Canonical exchange enum. Runtime identity is taken from <code>model.exccode</code>.</p>
               </div>
             </td>
             <td>
@@ -3702,14 +3711,14 @@ inbound/outbound delays.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>exchange</code>
+                <code>model</code>
             </td>
             <td>
                   <code><span title="ReplayExchange">ReplayExchange</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Authoritative simulated venue state.</p>
+                <p>Authoritative simulated exchange state.</p>
               </div>
             </td>
             <td>
@@ -3823,7 +3832,7 @@ Initialization loads contract specifications and then closes it.</p>
 
 
 <h4 id="quantpylib.hft.replay_wrapper.ReplayWrapper.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">venue</span><span class="p">,</span> <span class="n">runtime</span><span class="p">,</span> <span class="n">exchange</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">order_outbound_latency_ns</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cancel_outbound_latency_ns</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">response_inbound_latency_ns</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">private_socket_rx_latency</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">live_client</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="n">runtime</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">order_outbound_latency_ns</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cancel_outbound_latency_ns</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">response_inbound_latency_ns</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">private_socket_rx_latency</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">live_client</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h4>
 
@@ -4318,7 +4327,7 @@ fill mirror using the replay clock.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Remove every BBA handler registered for <code>ticker</code>.</p>
+        <p>Remove the BBA handler registered for <code>ticker</code>.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4918,7 +4927,7 @@ fill mirror using the replay clock.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Client-route event to fan out.</p>
+                <p>Client-route event to deliver.</p>
               </div>
             </td>
             <td>
@@ -4943,7 +4952,7 @@ fill mirror using the replay clock.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Number of handlers invoked.</p>
+                <p>One if a handler was invoked, otherwise zero.</p>
               </div>
             </td>
           </tr>
@@ -5176,7 +5185,7 @@ fill mirror using the replay clock.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Return whether <code>feed_id</code> has any client-route handlers.</p>
+        <p>Return whether <code>feed_id</code> has a client-route handler.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -5224,7 +5233,7 @@ fill mirror using the replay clock.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Whether at least one handler is registered.</p>
+                <p>Whether a handler is registered.</p>
               </div>
             </td>
           </tr>
@@ -5417,7 +5426,7 @@ fill mirror using the replay clock.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Return tickers with at least one registered L2 handler.</p>
+        <p>Return tickers with a registered L2 handler.</p>
 
 
     <p><span class="doc-section-title">Returns:</span></p>
@@ -5461,7 +5470,7 @@ fill mirror using the replay clock.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Remove every L2 handler registered for <code>ticker</code>.</p>
+        <p>Remove the L2 handler registered for <code>ticker</code>.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -5793,7 +5802,8 @@ fields.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Build the normalized wire representation for a limit order.</p>
+        <p>Build normalized order specs, preserving additional instructions.</p>
+<p>The exchange validates execution instructions on submission.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -6660,6 +6670,24 @@ Current client-mirror state.</p>
 <div class="doc doc-object doc-function">
 
 
+<h4 id="quantpylib.hft.replay_wrapper.ReplayWrapper.specs_peek" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">specs_peek</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return the client's cached contract specifications without I/O.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h4 id="quantpylib.hft.replay_wrapper.ReplayWrapper.subscriptions" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">subscriptions</span><span class="p">()</span></code>
 
@@ -6891,7 +6919,7 @@ Current client-mirror state.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Remove every public-trade handler registered for <code>ticker</code>.</p>
+        <p>Remove the public-trade handler registered for <code>ticker</code>.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>

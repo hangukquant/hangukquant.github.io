@@ -3190,6 +3190,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.paradex.Paradex.specs_peek" class="md-nav__link">
+    <span class="md-ellipsis">
+      specs_peek
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.wrappers.paradex.Paradex.trades_subscribe" class="md-nav__link">
     <span class="md-ellipsis">
       trades_subscribe
@@ -4121,7 +4130,7 @@ concurrency. The websocket manager handles reconnections and resubsriptions unde
 
 
 <h3 id="quantpylib.wrappers.paradex.Paradex.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">l2_secret</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">l2_secret</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exccode</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">Exchange</span><span class="o">.</span><span class="n">paradex</span><span class="p">))</span></code>
 
 </h3>
 
@@ -4188,6 +4197,22 @@ concurrency. The websocket manager handles reconnections and resubsriptions unde
             </td>
             <td>
                   <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>exccode</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Runtime account identity; defaults to the canonical venue code.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="int">int</span>(<span title="quantpylib.standards.exchange.Exchange.paradex">paradex</span>)</code>
             </td>
           </tr>
       </tbody>
@@ -8951,6 +8976,24 @@ including the optional 'start' and 'end' strings.</p>
           </tr>
       </tbody>
     </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.wrappers.paradex.Paradex.specs_peek" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">specs_peek</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return the client's cached contract specifications without I/O.</p>
 
 
     </div>

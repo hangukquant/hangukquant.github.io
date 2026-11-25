@@ -3369,18 +3369,34 @@ Private updates are emitted to wrapper callbacks; the wrapper owns their RX late
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>venue</code>
+                <code>exchange</code>
             </td>
             <td>
-                  <code><span title="str">str</span></code>
+                  <code><span title="quantpylib.standards.exchange.Exchange">Exchange</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Gateway alias represented by this exchange.</p>
+                <p>Canonical exchange enum.</p>
               </div>
             </td>
             <td>
                 <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>exccode</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Runtime account identity; defaults to <code>int(exchange)</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -3565,7 +3581,7 @@ policy for queue positions in the L2 to L3 queue projection.</p>
 
 
 <h4 id="quantpylib.hft.replay_exchange.ReplayExchange.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">venue</span><span class="p">,</span> <span class="n">clock</span><span class="p">,</span> <span class="n">impact_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">queue_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maker_fee_bps</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">taker_fee_bps</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">fee_ccy</span><span class="o">=</span><span class="s1">&#39;USDC&#39;</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span> <span class="n">clock</span><span class="p">,</span> <span class="n">impact_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">queue_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maker_fee_bps</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">taker_fee_bps</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">fee_ccy</span><span class="o">=</span><span class="s1">&#39;USDC&#39;</span><span class="p">,</span> <span class="n">exccode</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h4>
 

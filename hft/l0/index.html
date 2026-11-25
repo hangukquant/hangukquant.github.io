@@ -3766,6 +3766,9 @@
 
   <h1>quantpylib.hft.l0</h1>
 
+<p>QBN2/QBLK2 and schemas 23–25 are supported. File headers, block starts
+and record starts are eight-byte aligned in the uncompressed byte stream.
+Block padding is zero-filled and covered by CRC32. Zstd frames wrap the same bytes.</p>
 <h2 id="l0-file-layout">L0 File Layout</h2>
 <p>A QBN file starts with one file header followed by zero or more sealed blocks.
 All fixed-width numeric fields are little-endian.</p>
@@ -3777,19 +3780,21 @@ All fixed-width numeric fields are little-endian.</p>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>|   |
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>|   +-- BlockHeader
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>|   +-- InstrumentDictionary
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>|   +-- RecordPayload
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>|       |
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>|       +-- Record 0
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>|       +-- Record 1
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>|       +-- ...
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>|
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>+-- Block 1
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>|   |
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>|   +-- BlockHeader
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>|   +-- InstrumentDictionary
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>|   +-- RecordPayload
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>|
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>+-- ...
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>|   +-- Zero padding to an 8-byte boundary
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>|   +-- RecordPayload
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>|       |
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>|       +-- Record 0
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>|       +-- Record 1
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>|       +-- ...
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>|
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>+-- Block 1
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>|   |
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>|   +-- BlockHeader
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>|   +-- InstrumentDictionary
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>|   +-- Zero padding to an 8-byte boundary
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>|   +-- RecordPayload
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>|
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>+-- ...
 </code></pre></div>
 <h3 id="file-header">File Header</h3>
 <table>
@@ -3804,7 +3809,7 @@ All fixed-width numeric fields are little-endian.</p>
 <tr>
 <td><code>FILE_MAGIC</code></td>
 <td><code>char[4]</code></td>
-<td>File magic. Current value: <code>QBN1</code>.</td>
+<td>File magic. Current value: <code>QBN2</code>.</td>
 </tr>
 <tr>
 <td><code>schema_id</code></td>
@@ -3822,19 +3827,24 @@ All fixed-width numeric fields are little-endian.</p>
 <td>UTF-8 record-domain string describing the record layout.</td>
 </tr>
 <tr>
-<td><code>venue_length</code>, <code>venue</code></td>
-<td><code>uint16</code>, <code>bytes</code></td>
-<td>Venue name.</td>
+<td><code>exccode</code></td>
+<td><code>uint32</code></td>
+<td>Canonical <code>standards.exchange.Exchange</code> venue code.</td>
 </tr>
 <tr>
-<td><code>market_class_length</code>, <code>market_class</code></td>
-<td><code>uint16</code>, <code>bytes</code></td>
-<td>Market class.</td>
+<td><code>market_type</code></td>
+<td><code>uint8</code></td>
+<td>0 unknown; 1 spot; 2 perpetual.</td>
 </tr>
 <tr>
-<td><code>feed_type_length</code>, <code>feed_type</code></td>
-<td><code>uint16</code>, <code>bytes</code></td>
-<td>Feed type.</td>
+<td><code>feed_type</code></td>
+<td><code>uint8</code></td>
+<td>0 BBA; 1 trades; 2 L2 book.</td>
+</tr>
+<tr>
+<td>padding</td>
+<td>0–7 zero bytes</td>
+<td>Align the next block to eight bytes.</td>
 </tr>
 </tbody>
 </table>
@@ -3850,19 +3860,19 @@ All fixed-width numeric fields are little-endian.</p>
 </thead>
 <tbody>
 <tr>
-<td><code>20</code></td>
+<td><code>23</code></td>
 <td><a class="autorefs autorefs-internal" href="../../standards/models/#quantpylib.standards.models.BookUpdate">BookUpdate</a></td>
 <td><a class="autorefs autorefs-internal" href="#quantpylib.hft.l0.L0BookUpdateReader">L0BookUpdateReader</a></td>
 <td><a class="autorefs autorefs-internal" href="#quantpylib.hft.l0.L0BookUpdateWriter">L0BookUpdateWriter</a></td>
 </tr>
 <tr>
-<td><code>21</code></td>
+<td><code>24</code></td>
 <td><a class="autorefs autorefs-internal" href="../../standards/models/#quantpylib.standards.models.BBAUpdate">BBAUpdate</a></td>
 <td><a class="autorefs autorefs-internal" href="#quantpylib.hft.l0.L0BBAUpdateReader">L0BBAUpdateReader</a></td>
 <td><a class="autorefs autorefs-internal" href="#quantpylib.hft.l0.L0BBAUpdateWriter">L0BBAUpdateWriter</a></td>
 </tr>
 <tr>
-<td><code>22</code></td>
+<td><code>25</code></td>
 <td><a class="autorefs autorefs-internal" href="../../standards/models/#quantpylib.standards.models.TradeUpdate">TradeUpdate</a></td>
 <td><a class="autorefs autorefs-internal" href="#quantpylib.hft.l0.L0TradeUpdateReader">L0TradeUpdateReader</a></td>
 <td><a class="autorefs autorefs-internal" href="#quantpylib.hft.l0.L0TradeUpdateWriter">L0TradeUpdateWriter</a></td>
@@ -3874,7 +3884,7 @@ All fixed-width numeric fields are little-endian.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Block
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>|
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>+-- BlockHeader
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>|   magic = QBLK1
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>|   magic = QBLK2
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>|   block_length
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>|   record_count
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>|   min_ts_exch_ns / max_ts_exch_ns
@@ -3887,8 +3897,9 @@ All fixed-width numeric fields are little-endian.</p>
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>|   symbol_count
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>|   repeated local_id, symbol_length, symbol
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>|
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>+-- RecordPayload
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    repeated schema-specific QBN records
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>+-- Zero padding to an 8-byte boundary
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>+-- RecordPayload
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    repeated schema-specific QBN records
 </code></pre></div>
 <table>
 <thead>
@@ -3902,12 +3913,12 @@ All fixed-width numeric fields are little-endian.</p>
 <tr>
 <td><code>BLOCK_MAGIC</code></td>
 <td><code>char[5]</code></td>
-<td>Block magic. Current value: <code>QBLK1</code>.</td>
+<td>Block magic. Current value: <code>QBLK2</code>.</td>
 </tr>
 <tr>
 <td><code>block_length</code></td>
 <td><code>uint32</code></td>
-<td>Total block bytes, including header, dictionary, and payload.</td>
+<td>Total block bytes, including header, dictionary, padding, and payload.</td>
 </tr>
 <tr>
 <td><code>record_count</code></td>
@@ -3917,12 +3928,12 @@ All fixed-width numeric fields are little-endian.</p>
 <tr>
 <td><code>min_ts_exch_ns</code></td>
 <td><code>uint64</code></td>
-<td>Minimum exchange-event timestamp in the block.</td>
+<td>Minimum market-data exchange timestamp; excludes discontinuities, zero if none.</td>
 </tr>
 <tr>
 <td><code>max_ts_exch_ns</code></td>
 <td><code>uint64</code></td>
-<td>Maximum exchange-event timestamp in the block.</td>
+<td>Maximum market-data exchange timestamp; excludes discontinuities, zero if none.</td>
 </tr>
 <tr>
 <td><code>min_ts_recv_ns</code></td>
@@ -3947,7 +3958,7 @@ All fixed-width numeric fields are little-endian.</p>
 <tr>
 <td><code>crc</code></td>
 <td><code>uint32</code></td>
-<td>CRC32 over the zero-CRC header plus dictionary and payload.</td>
+<td>CRC32 over the zero-CRC header plus dictionary, padding and payload.</td>
 </tr>
 </tbody>
 </table>
@@ -4029,7 +4040,7 @@ work identically on both suffixes without materializing the raw file.</p>
 <p>The payload is a sequence of records for the file schema. A file contains one
 schema id and one record domain.</p>
 <h3 id="bookupdate">BookUpdate</h3>
-<p><code>BookUpdate</code> records use schema id <code>20</code>.</p>
+<p><code>BookUpdate</code> records use schema id <code>23</code>.</p>
 <table>
 <thead>
 <tr>
@@ -4050,14 +4061,14 @@ schema id and one record domain.</p>
 <td>Instrument dictionary id.</td>
 </tr>
 <tr>
-<td><code>data_length</code></td>
-<td><code>uint32</code></td>
-<td>Book-level buffer byte length.</td>
-</tr>
-<tr>
 <td><code>flags</code></td>
 <td><code>uint32</code></td>
 <td>Snapshot, timestamp, and ordering flags.</td>
+</tr>
+<tr>
+<td><code>data_length</code></td>
+<td><code>uint32</code></td>
+<td>Book-level buffer byte length.</td>
 </tr>
 <tr>
 <td><code>nbids</code></td>
@@ -4092,7 +4103,12 @@ schema id and one record domain.</p>
 <tr>
 <td><code>ts_recv_ns</code></td>
 <td><code>uint64</code></td>
-<td>Local receive timestamp.</td>
+<td>Application receive timestamp.</td>
+</tr>
+<tr>
+<td><code>ts_kern_ns</code></td>
+<td><code>uint64</code></td>
+<td>Optional kernel RX timestamp.</td>
 </tr>
 <tr>
 <td><code>seq0</code>, <code>seq1</code>, <code>seq2</code></td>
@@ -4107,7 +4123,7 @@ schema id and one record domain.</p>
 </tbody>
 </table>
 <h3 id="bbaupdate">BBAUpdate</h3>
-<p><code>BBAUpdate</code> records use schema id <code>21</code>.</p>
+<p><code>BBAUpdate</code> records use schema id <code>24</code>.</p>
 <table>
 <thead>
 <tr>
@@ -4155,7 +4171,12 @@ schema id and one record domain.</p>
 <tr>
 <td><code>ts_recv_ns</code></td>
 <td><code>uint64</code></td>
-<td>Local receive timestamp.</td>
+<td>Application receive timestamp.</td>
+</tr>
+<tr>
+<td><code>ts_kern_ns</code></td>
+<td><code>uint64</code></td>
+<td>Optional kernel RX timestamp.</td>
 </tr>
 <tr>
 <td><code>seq0</code>, <code>seq1</code>, <code>seq2</code></td>
@@ -4175,7 +4196,7 @@ schema id and one record domain.</p>
 </tbody>
 </table>
 <h3 id="tradeupdate">TradeUpdate</h3>
-<p><code>TradeUpdate</code> records use schema id <code>22</code>.</p>
+<p><code>TradeUpdate</code> records use schema id <code>25</code>.</p>
 <table>
 <thead>
 <tr>
@@ -4218,7 +4239,12 @@ schema id and one record domain.</p>
 <tr>
 <td><code>ts_recv_ns</code></td>
 <td><code>uint64</code></td>
-<td>Local receive timestamp.</td>
+<td>Application receive timestamp.</td>
+</tr>
+<tr>
+<td><code>ts_kern_ns</code></td>
+<td><code>uint64</code></td>
+<td>Optional kernel RX timestamp.</td>
 </tr>
 <tr>
 <td><code>seq0</code>, <code>seq1</code>, <code>seq2</code></td>
@@ -4276,7 +4302,7 @@ and size fields use the scale documented in
 </tr>
 <tr>
 <td><code>venue</code></td>
-<td>Venue string written to the QBN file header.</td>
+<td>Canonical <code>Exchange</code> code written to the QBN file header.</td>
 </tr>
 <tr>
 <td><code>market_class</code></td>
@@ -4311,10 +4337,10 @@ should select the reader.</p>
 <a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">df</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">(</span><span class="n">include_offsets</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">parquet_path</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">()</span>
 </code></pre></div>
-<p>Reader filters use exchange-event time:</p>
+<p>Reader filters use application receive time:</p>
 <ul>
-<li><code>start</code>: inclusive <code>ts_exch_ns</code>.</li>
-<li><code>end</code>: exclusive <code>ts_exch_ns</code>.</li>
+<li><code>start</code>: inclusive <code>ts_recv_ns</code>.</li>
+<li><code>end</code>: exclusive <code>ts_recv_ns</code>.</li>
 <li><code>symbol</code>: event ticker after dictionary resolution.</li>
 </ul>
 <h2 id="native-objects">Native Objects</h2>
@@ -5939,11 +5965,11 @@ used by this policy. The returned context path is rooted at
                 <code>venue</code>
             </td>
             <td>
-                  <code><span title="str">str</span></code>
+                  <code><span title="quantpylib.standards.exchange.Exchange">Exchange</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Venue name stored in the file header.</p>
+                <p>Canonical venue encoded by its stable integer code.</p>
               </div>
             </td>
             <td>
@@ -6710,7 +6736,7 @@ streaming decompressor, so both suffixes read identically.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Inclusive exchange-event timestamp filter
+                <p>Inclusive application-receive timestamp filter
 in nanoseconds.</p>
               </div>
             </td>
@@ -6727,7 +6753,7 @@ in nanoseconds.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Exclusive exchange-event timestamp filter in
+                <p>Exclusive application-receive timestamp filter in
 nanoseconds.</p>
               </div>
             </td>
@@ -6858,7 +6884,7 @@ nanoseconds.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Inclusive exchange-event timestamp filter
+                <p>Inclusive application-receive timestamp filter
 in nanoseconds.</p>
               </div>
             </td>
@@ -6875,7 +6901,7 @@ in nanoseconds.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Exclusive exchange-event timestamp filter in
+                <p>Exclusive application-receive timestamp filter in
 nanoseconds.</p>
               </div>
             </td>
@@ -7023,7 +7049,7 @@ context dictionary when <code>with_context</code> is true.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Inclusive exchange-event timestamp filter
+                <p>Inclusive application-receive timestamp filter
 in nanoseconds.</p>
               </div>
             </td>
@@ -7040,7 +7066,7 @@ in nanoseconds.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Exclusive exchange-event timestamp filter in
+                <p>Exclusive application-receive timestamp filter in
 nanoseconds.</p>
               </div>
             </td>
@@ -7164,7 +7190,7 @@ capture modes derive the same filename.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Inclusive exchange-event timestamp filter
+                <p>Inclusive application-receive timestamp filter
 in nanoseconds.</p>
               </div>
             </td>
@@ -7181,7 +7207,7 @@ in nanoseconds.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Exclusive exchange-event timestamp filter in
+                <p>Exclusive application-receive timestamp filter in
 nanoseconds.</p>
               </div>
             </td>

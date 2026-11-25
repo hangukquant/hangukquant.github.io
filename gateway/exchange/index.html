@@ -1989,6 +1989,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#quantpylib.gateway.exchange.Exchange.specs_peek" class="md-nav__link">
+    <span class="md-ellipsis">
+      specs_peek
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3345,7 +3354,7 @@
 
     <div class="doc doc-contents ">
 
-        <p>Retrieve the contract's trading rules from the exchange.</p>
+        <p>Refresh the client's contract specifications and execution-rule cache.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -3693,6 +3702,93 @@
             <td>
               <div class="doc-md-description">
                 <p>funding interval, next funding time etc.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.gateway.exchange.Exchange.specs_peek" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">specs_peek</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Read the initialized client's contract-specification cache without I/O.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>exc</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exchange client alias.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional ticker and wrapper-specific cached market or symbol-namespace selectors.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Cached contract rules, to be treated as read-only.</p>
               </div>
             </td>
           </tr>

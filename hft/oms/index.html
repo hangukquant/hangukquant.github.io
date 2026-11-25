@@ -1332,6 +1332,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.hft.oms.OMS.specs_peek" class="md-nav__link">
+    <span class="md-ellipsis">
+      specs_peek
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.hft.oms.OMS.update_exc_orders" class="md-nav__link">
     <span class="md-ellipsis">
       update_exc_orders
@@ -4245,8 +4254,7 @@ OMS is cleaned up.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Cancel an order by order id or client order id. If both oid and cloid are None, cancel all open orders
-for given ticker.</p>
+        <p>Cancel one identified order and record its local cancellation attempt.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4301,7 +4309,7 @@ for given ticker.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The order id. Defaults to None.</p>
+                <p>The order id.</p>
               </div>
             </td>
             <td>
@@ -4317,11 +4325,35 @@ for given ticker.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The client order id. Defaults to None.</p>
+                <p>The client order id.</p>
               </div>
             </td>
             <td>
                   <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="ValueError">ValueError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Neither oid nor cloid was provided. Bulk cancellation
+remains available through gateway.executor.cancel_open_orders.</p>
+              </div>
             </td>
           </tr>
       </tbody>
@@ -4347,7 +4379,7 @@ for given ticker.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Clean up the OMS object.</p>
+        <p>Stop and await OMS background tasks. The application owns gateway cleanup.</p>
 
 
     </div>
@@ -6340,6 +6372,24 @@ Updates the orders page maintained by the OMS with a CREATE_PENDING status.</p>
 <div class="doc doc-object doc-function">
 
 
+<h3 id="quantpylib.hft.oms.OMS.specs_peek" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">specs_peek</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Read the client's cached trading rules without I/O.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="quantpylib.hft.oms.OMS.update_exc_orders" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">update_exc_orders</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
@@ -6383,46 +6433,7 @@ Args:
 
     <div class="doc doc-contents ">
 
-        <p>Refresh exchange contract trading specifications and metadata.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>exc</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If provided, refresh only this exchange's
-contract specifications, updating just that exchange's slice
-across the contract-spec maps while preserving the entries for
-every other exchange. If None (default), refresh all exchanges
-with a full rebuild. The single-exchange refresh is idempotent
-and safe to call mid-session while orders and positions are
-live, so a caller can refresh and retry after a missing-contract
-lookup (for example a newly-listed market) instead of waiting
-for the periodic full refresh.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+        <p>Refresh client-owned trading rules for one configured exchange or all.</p>
 
 
     </div>

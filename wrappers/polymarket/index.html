@@ -3188,6 +3188,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantpylib.wrappers.polymarket.Polymarket.specs_peek" class="md-nav__link">
+    <span class="md-ellipsis">
+      specs_peek
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantpylib.wrappers.polymarket.Polymarket.subscribe_market" class="md-nav__link">
     <span class="md-ellipsis">
       subscribe_market
@@ -4612,7 +4621,7 @@ subscribe to Polymarket's live crypto price feeds:</p>
 
 
 <h3 id="quantpylib.wrappers.polymarket.Polymarket.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">polymarket_key</span><span class="p">,</span> <span class="n">secret</span><span class="p">,</span> <span class="n">chain_id</span><span class="o">=</span><span class="n">POLYGON</span><span class="p">,</span> <span class="n">sig_type</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">funder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">polymarket_key</span><span class="p">,</span> <span class="n">secret</span><span class="p">,</span> <span class="n">chain_id</span><span class="o">=</span><span class="n">POLYGON</span><span class="p">,</span> <span class="n">sig_type</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">funder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exccode</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">Exchange</span><span class="o">.</span><span class="n">polymarket</span><span class="p">))</span></code>
 
 </h3>
 
@@ -4715,6 +4724,22 @@ wallet accounts and <code>2</code> for browser wallet accounts.</p>
             </td>
             <td>
                   <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>exccode</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Runtime account identity; defaults to the canonical venue code.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="int">int</span>(<span title="quantpylib.standards.exchange.Exchange.polymarket">polymarket</span>)</code>
             </td>
           </tr>
       </tbody>
@@ -7800,6 +7825,24 @@ payload to sign and send.</p>
           </tr>
       </tbody>
     </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="quantpylib.wrappers.polymarket.Polymarket.specs_peek" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">specs_peek</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return cached native market metadata without I/O.</p>
 
 
     </div>
